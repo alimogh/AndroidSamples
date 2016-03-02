@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_a700a443f8898f638133439571e86a9fbe0ec9a4.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\incremental-classes\debug\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="105b3c7eaf6de7b6147966c9fc361f90e8c3e5eb">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\classes_d695d786b0f9746c974affcbab50cb45b32c11c3.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_0423f5f58850d4726927642648cc090ee3e7a500.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.0_0ef10c19a4b4942b3e043de204e12cc6f9c08413.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="d67e318207f57cebe666eba12cc18cd9fa1c7317">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\instant-run_5e3a545e829263d153a4d800f01e81b382feba68.jar" />
+    </item>
+    <item
+        jar="D:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_3d2c0bcc95ca7691dc08539814a4109cb0431c98.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.0_64e7d03697e339a2dbfa93d0c2c2e5e9518e6e5b.jar" />
+    </item>
+    <item
+        jar="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="F:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\pre-dexed\debug\internal_impl-23.2.0_6f060de86200813654a078332d390aae9266e7a6.jar" />
+    </item>
+
+</items>
