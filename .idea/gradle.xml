@@ -5,16 +5,18 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\Android\android-studio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\Android\AndroidStudio\gradle\gradle-2.10" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/按钮select" />
             <option value="$PROJECT_DIR$/简单成绩管理" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/按钮select" />
             <option value="$PROJECT_DIR$/简单成绩管理" />
           </set>
         </option>
