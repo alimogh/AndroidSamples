@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/按钮select" />
             <option value="$PROJECT_DIR$/简单成绩管理" />
+            <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>
         <option name="myModules">
@@ -18,6 +19,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/按钮select" />
             <option value="$PROJECT_DIR$/简单成绩管理" />
+            <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>
       </GradleProjectSettings>

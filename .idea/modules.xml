@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/按钮select/按钮select.iml" filepath="$PROJECT_DIR$/按钮select/按钮select.iml" />
       <module fileurl="file://$PROJECT_DIR$/简单成绩管理/简单成绩管理.iml" filepath="$PROJECT_DIR$/简单成绩管理/简单成绩管理.iml" />
+      <module fileurl="file://$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" filepath="$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" />
     </modules>
   </component>
 </project>

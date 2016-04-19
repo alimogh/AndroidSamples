@@ -2,60 +2,74 @@
 <items version="2" >
 
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\libs\Sunflower.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.0_11f60009b8475825c2c36d8f413da2eb90fa9288\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="67c9d332536e750a67c7a31d0c3c51d6e228e4aa">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\2\Sunflower_1d752cc76fc5bae12b1d672a97587f4e285f0bc8\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="6e239441500605809818997dd63b62a947195f8c">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.0_649ca261bb98c89817d812c65efcadc3b5c6d4ad\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.3.0_dcfc8499caf83b05ac03c478042ef5a19ef361a8\classes.dex" />
     </item>
     <item
-        jar="D:\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.0_e0acce36ed4149beeb27e2f85204f665dca55bc6\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.3.0_6a77248220bd6a58c63d1c5b6854f8befd1a9c4b\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jar="D:\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.0_18a75251d352236221acd36bf3d391cf6a4fe251\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.3.0_89fdecb78a523f6d2212d3e4c5d31c8945b20113\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="5eb4116ec81da6d6c698ad0c8f0456bd559c3016">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b667f13a6ba7f3498a0194cdfb4f65c516810f63\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="5840007984c3717ed52eaa03ea39147ba5bc11ce">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_dcbe655f6c53d724d496481c69bbbde1d121eef7\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="16cc8c32af9986f6fed508ef5cd619f01882d429">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_fffab23f48c9f682de51dac15db4e5d0041c0e13\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.3.0_343d67954a4c28d8325b7149ef341773a592d393\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="292a9fa091757208efa65e77eef63088247e51f3">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.0_2eabaeba65ba8c5a81a1581dc604ccf287c38fc7\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.3.0_5975287550e5ecb782f0b1d804885a2e1af32e8a\classes.dex" />
     </item>
     <item
-        jar="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\libs\Msc.jar"
         jumboMode="true"
-        revision="23.0.2"
-        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
-        <dex dex="G:\AndroidStudioProjects\Test\简单成绩管理\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.0_e55d07d5bc03866c61e9b3d654bddd17ba931f13\classes.dex" />
+        revision="24.0.0 rc3"
+        sha1="85a46b29703ef8930a92d2fdea8ff336275c7ab2">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\2\Msc_e3b5ab0d73ec5b3d87e041b877b2476b2d37b735\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.0 rc3"
+        sha1="bb070075b486d6b23dd7c498a5b91cfbf5d4ebf5">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_a23fc75689ac5f5f558d67db37b3539effd3c9f3\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="true"
+        revision="24.0.0 rc3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\讯飞语音测试\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.3.0_0b0ba95f91b7d459393456548d702d57f26e4397\classes.dex" />
     </item>
 
 </items>
