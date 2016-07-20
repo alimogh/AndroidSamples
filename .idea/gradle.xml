@@ -9,16 +9,20 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/JsoupDemo" />
+            <option value="$PROJECT_DIR$/MVPDemo" />
+            <option value="$PROJECT_DIR$/RecyclerDemo" />
             <option value="$PROJECT_DIR$/按钮select" />
-            <option value="$PROJECT_DIR$/简单成绩管理" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/JsoupDemo" />
+            <option value="$PROJECT_DIR$/MVPDemo" />
+            <option value="$PROJECT_DIR$/RecyclerDemo" />
             <option value="$PROJECT_DIR$/按钮select" />
-            <option value="$PROJECT_DIR$/简单成绩管理" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>

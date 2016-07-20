@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="androidutils-1.0.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/MVPDemo/build/intermediates/exploded-aar/com.wuxiaolong.androidutils/androidutils/1.0.2/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/MVPDemo/build/intermediates/exploded-aar/com.wuxiaolong.androidutils/androidutils/1.0.2/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.wuxiaolong.androidutils/androidutils/1.0.2/816f87e719edcdb91b41db4c9050c1519f9923c3/androidutils-1.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
