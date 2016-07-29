@@ -1,3 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\sdwfqin\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\24.0.0\2943c74db6d4346ab8c6531adac91fa05c137c40\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_6ccb6a0bacae4ad7b9c1c72fcfa2c6a4cb6c6b11\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.0.0_b4b2763f25a1454ba6f7b362e186d96729d539af\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="608e9861e86a9049b1dcaddf6c3ba0dd598a37ea">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e9fd4a4842a00159625a0dac4da52f137616e975\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.0.0_c1ed12c98fa615529c9647fd0d268b2c6921d500\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.0.0_296f3506b24e25d22b7adfc4452013680b47ec73\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_ef9fcb9bcb65ceded389883ff2878087466a05ed\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_b03c6894d6575fc826c67bec139ae731dfd829e6\classes.dex" />
+    </item>
+    <item
+        jar="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.0"
+        sha1="7d59a7da7c9a5ddd852d709d541f943ff63f6070">
+        <dex dex="F:\WorkSpace\AndroidStudioProjects\Test\按钮select\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_bc50d5f47d0a1896805cc7f8fb11608ece6552cd\classes.dex" />
+    </item>
+
+</items>
