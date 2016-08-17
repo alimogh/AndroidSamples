@@ -1,4 +1,4 @@
-package com.sdwfqin.buttonselect;
+package com.sdwfqin.bottomsheetdemo;
 
 import org.junit.Test;
 
