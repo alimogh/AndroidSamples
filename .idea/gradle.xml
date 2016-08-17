@@ -5,14 +5,16 @@
       <GradleProjectSettings>
         <option name="distributionType" value="LOCAL" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="D:\Android\AndroidStudio\gradle\gradle-2.10" />
+        <option name="gradleHome" value="D:\Android\AndroidStudio\gradle\gradle-2.14.1" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/JsoupDemo" />
             <option value="$PROJECT_DIR$/MVPDemo" />
             <option value="$PROJECT_DIR$/RecyclerDemo" />
-            <option value="$PROJECT_DIR$/按钮select" />
+            <option value="$PROJECT_DIR$/androidmvp" />
+            <option value="$PROJECT_DIR$/bottomsheetdemo" />
+            <option value="$PROJECT_DIR$/rxdemo" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>
@@ -22,7 +24,9 @@
             <option value="$PROJECT_DIR$/JsoupDemo" />
             <option value="$PROJECT_DIR$/MVPDemo" />
             <option value="$PROJECT_DIR$/RecyclerDemo" />
-            <option value="$PROJECT_DIR$/按钮select" />
+            <option value="$PROJECT_DIR$/androidmvp" />
+            <option value="$PROJECT_DIR$/bottomsheetdemo" />
+            <option value="$PROJECT_DIR$/rxdemo" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>

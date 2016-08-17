@@ -1,1 +1,1 @@
-include ':按钮select', ':讯飞语音测试', ':MVPDemo', ':JsoupDemo', ':RecyclerDemo'
+include ':讯飞语音测试', ':MVPDemo', ':JsoupDemo', ':RecyclerDemo', ':bottomsheetdemo', ':androidmvp', ':rxdemo'

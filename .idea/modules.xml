@@ -6,7 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/MVPDemo/MVPDemo.iml" filepath="$PROJECT_DIR$/MVPDemo/MVPDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/按钮select/按钮select.iml" filepath="$PROJECT_DIR$/按钮select/按钮select.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidmvp/androidmvp.iml" filepath="$PROJECT_DIR$/androidmvp/androidmvp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bottomsheetdemo/bottomsheetdemo.iml" filepath="$PROJECT_DIR$/bottomsheetdemo/bottomsheetdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" filepath="$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" />
     </modules>
   </component>
