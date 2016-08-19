@@ -20,6 +20,7 @@
         <activity android:name=".PopshowAtLocationActivity"/>
         <activity android:name=".PopupAnimActivity"/>
         <activity android:name=".PopupShowAsDropDownActivity"/>
+        <activity android:name=".PopDropDownBgSeniorActivity"/>
     </application>
 
 </manifest>

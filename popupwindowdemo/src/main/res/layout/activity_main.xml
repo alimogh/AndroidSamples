@@ -34,4 +34,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PopupShowAsDropDown"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="======================"/>
+
+    <Button
+        android:id="@+id/btn_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PopDropDownBgSeniorActivity"/>
 </LinearLayout>
