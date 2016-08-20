@@ -41,7 +41,7 @@ public class PopDropDownBgSeniorActivity extends AppCompatActivity implements Vi
 //        是否响应touch事件
 //        mPopWindow.setTouchable(false);
 //        是否具有获取焦点的能力
-//        mPopWindow.setFocusable(false);
+        mPopWindow.setFocusable(true);
 
         //外部是否可以点击
         mPopWindow.setBackgroundDrawable(new BitmapDrawable());
@@ -53,7 +53,6 @@ public class PopDropDownBgSeniorActivity extends AppCompatActivity implements Vi
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);
-
 
         mPopWindow.showAsDropDown(mMenuTv);
 
