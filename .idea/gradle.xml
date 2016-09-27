@@ -16,24 +16,10 @@
             <option value="$PROJECT_DIR$/bottomsheetdemo" />
             <option value="$PROJECT_DIR$/popupwindowdemo" />
             <option value="$PROJECT_DIR$/rxdemo" />
-            <option value="$PROJECT_DIR$/textdemo" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/JsoupDemo" />
-            <option value="$PROJECT_DIR$/MVPDemo" />
-            <option value="$PROJECT_DIR$/RecyclerDemo" />
-            <option value="$PROJECT_DIR$/androidmvp" />
-            <option value="$PROJECT_DIR$/bottomsheetdemo" />
-            <option value="$PROJECT_DIR$/popupwindowdemo" />
-            <option value="$PROJECT_DIR$/rxdemo" />
-            <option value="$PROJECT_DIR$/textdemo" />
-            <option value="$PROJECT_DIR$/讯飞语音测试" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

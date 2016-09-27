@@ -2,8 +2,8 @@
   <library name="support-v4-24.0.0">
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/MVPDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RecyclerDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-v4/24.0.0/jars/libs/internal_impl-24.0.0.jar!/" />
@@ -12,6 +12,9 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/" />
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/" />
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-v4/24.0.0/support-v4-24.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v4/24.0.0/16200284c24098f46a52d93f8f608486423369de/support-v4-24.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v4/24.0.0/16200284c24098f46a52d93f8f608486423369de/support-v4-24.0.0-sources.jar!/" />
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-v4/24.0.0/16200284c24098f46a52d93f8f608486423369de/support-v4-24.0.0-sources.jar!/" />
