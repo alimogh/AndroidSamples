@@ -97,5 +97,6 @@
     <orderEntry type="library" exported="" scope="TEST" name="mockito-core-2.0.90-beta" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="byte-buddy-1.4.8" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="objenesis-2.4" level="project" />
+    <orderEntry type="library" exported="" name="android-android-24" level="project" />
   </component>
 </module>

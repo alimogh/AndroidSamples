@@ -132,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
                                     Log.e("test", "这是来自计时器的第二条消息");
                                 }
                             }, 1000);
-
                         }
                     }).start();
                     break;
