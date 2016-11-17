@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/DesignSupportLibrarySample" />
             <option value="$PROJECT_DIR$/JsoupDemo" />
             <option value="$PROJECT_DIR$/MVPDemo" />
             <option value="$PROJECT_DIR$/RecyclerDemo" />

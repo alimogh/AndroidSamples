@@ -1,12 +1,24 @@
 <component name="libraryTable">
   <library name="support-core-ui-25.0.0">
+    <ANNOTATIONS>
+      <root url="jar://$PROJECT_DIR$/DesignSupportLibrarySample/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/MVPDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RecyclerDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/bottomsheetdemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/handlertimer/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/popupwindowdemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/rxdemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/讯飞语音测试/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/annotations.zip!/" />
+    </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/res" />
-      <root url="jar://$PROJECT_DIR$/JsoupDemo/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar!/" />
+      <root url="file://$PROJECT_DIR$/DesignSupportLibrarySample/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/res" />
+      <root url="jar://$PROJECT_DIR$/DesignSupportLibrarySample/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/DesignSupportLibrarySample/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-ui/25.0.0/support-core-ui-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-ui/25.0.0/support-core-ui-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-ui/25.0.0/support-core-ui-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-ui/25.0.0/support-core-ui-25.0.0-sources.jar!/" />

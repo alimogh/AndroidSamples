@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/DesignSupportLibrarySample/DesignSupportLibrarySample.iml" filepath="$PROJECT_DIR$/DesignSupportLibrarySample/DesignSupportLibrarySample.iml" />
       <module fileurl="file://$PROJECT_DIR$/JsoupDemo/JsoupDemo.iml" filepath="$PROJECT_DIR$/JsoupDemo/JsoupDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MVPDemo/MVPDemo.iml" filepath="$PROJECT_DIR$/MVPDemo/MVPDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />

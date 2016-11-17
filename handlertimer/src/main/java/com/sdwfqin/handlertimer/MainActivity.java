@@ -13,8 +13,8 @@ import java.util.TimerTask;
  * 计时器Demo
  *
  * @author sdwfqin
- * @version 1.0.0
- * @since 2016-10-20
+ * @version 1.1.0
+ * @since 2016-11-17
  * <p/>
  * 博客: www.sdwfqin.com  邮箱: zhangqin@sdwfqin.com
  * 项目地址：https://github.com/sdwfqin/Test/tree/master/handlertimer
@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
     // 状态锁
     private static Boolean isGuang = true;
+    private static String TAG = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
                 handlerA.sendEmptyMessage(2);
             }
         }).start();
+
+        // 延时5s发送数据
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                handlerA.sendEmptyMessage(3);
+            }
+        }, 5000);
     }
 
     private final Handler handlerA = new Handler() {
@@ -48,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
-                    Log.e("test", "handlerA:case:1");
-                    Log.e("test", "这是来自主线程的Handler");
+                    Log.e(TAG, "handlerA:case:1");
+                    Log.e(TAG, "这是来自主线程的Handler");
                     // 计时器
                     Timer timer = new Timer();
                     /**
@@ -64,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
                     timer.schedule(task, 1000, 2000);
                     break;
                 case 2:
-                    Log.e("test", "handlerA:case:2");
-                    Log.e("test", "这是来自主线程的子线程的Handler");
+                    Log.e(TAG, "handlerA:case:2");
+                    Log.e(TAG, "这是来自主线程的子线程的Handler");
                     new Thread(new Runnable() {
 
                         @Override
@@ -78,11 +87,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 handlerB.sendEmptyMessage(0x02);
                                 isGuang = false;
-                                Log.e("test", "isGuang = " + isGuang);
+                                Log.e(TAG, "isGuang = " + isGuang);
                             }
 
                         }
                     }).start();
+                    break;
+                case 3:
+                    Log.e(TAG, "handlerA:case:3");
                     break;
 
                 default:
@@ -95,12 +107,12 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 0x01:
-                    Log.e("test", "handlerB:case:0x01");
-                    Log.e("test", "这是来自主线程的handlerA的计时器的Handler");
+                    Log.e(TAG, "handlerB:case:0x01");
+                    Log.e(TAG, "这是来自主线程的handlerA的计时器的Handler");
                     break;
                 case 0x02:
-                    Log.e("test", "handlerB:case:0x02");
-                    Log.e("test", "这是来自主线程的handlerA的子线程的Handler");
+                    Log.e(TAG, "handlerB:case:0x02");
+                    Log.e(TAG, "这是来自主线程的handlerA的子线程的Handler");
                     new Thread(new Runnable() {
 
                         @Override
@@ -112,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             isGuang = true;
-                            Log.e("test", "isGuang = " + isGuang);
+                            Log.e(TAG, "isGuang = " + isGuang);
 
                             // 计时器
                             Timer timer = new Timer();
@@ -121,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 @Override
                                 public void run() {
-                                    Log.e("test", "这是来自计时器的第一条消息");
+                                    Log.e(TAG, "这是来自计时器的第一条消息");
                                     try {
                                         // 休眠1000ms
                                         Thread.sleep(1000);
@@ -129,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                                         // TODO Auto-generated catch block
                                         e.printStackTrace();
                                     }
-                                    Log.e("test", "这是来自计时器的第二条消息");
+                                    Log.e(TAG, "这是来自计时器的第二条消息");
                                 }
                             }, 1000);
                         }
