@@ -12,6 +12,9 @@ import rx.Subscriber;
 import rx.functions.Action0;
 import rx.functions.Action1;
 
+/**
+ * Created by sdwfqin on 2016/8/17.
+ */
 public class MainActivity extends BaseActivity {
 
     Context mContext = MainActivity.this;
