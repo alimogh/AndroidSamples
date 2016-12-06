@@ -8,9 +8,13 @@ import android.view.View;
 
 import rx.Observable;
 import rx.Observer;
+import rx.Scheduler;
 import rx.Subscriber;
+import rx.Subscription;
+import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action0;
 import rx.functions.Action1;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by sdwfqin on 2016/12/06
@@ -26,11 +30,16 @@ public class MainActivity extends BaseActivity {
 
         mObservable.subscribe(mObserver);
         // 或
-        mObservable.subscribe(mSubscriber);
+        mObservable
+                // 指定 subscribe() 发生在 IO 线程，事件产生线程
+                .subscribeOn(Schedulers.io())
+                // 指定 Subscriber 的回调发生在主线程，事件消费线程
+                .subscribeOn(AndroidSchedulers.mainThread())
+                .subscribe(mSubscriber);
     }
 
     // 被观察者
-    Observable mObservable = Observable.create(new Observable.OnSubscribe<String>(){
+    Observable mObservable = Observable.create(new Observable.OnSubscribe<String>() {
         @Override
         public void call(Subscriber<? super String> subscriber) {
             subscriber.onNext("Hello");
@@ -44,7 +53,7 @@ public class MainActivity extends BaseActivity {
     Observer<String> mObserver = new Observer<String>() {
         @Override
         public void onCompleted() {
-            Log.e(TAG, "onCompleted: " );
+            Log.e(TAG, "onCompleted: ");
         }
 
         @Override
