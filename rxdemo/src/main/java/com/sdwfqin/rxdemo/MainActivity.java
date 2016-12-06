@@ -13,7 +13,7 @@ import rx.functions.Action0;
 import rx.functions.Action1;
 
 /**
- * Created by sdwfqin on 2016/8/17.
+ * Created by sdwfqin on 2016/12/06
  */
 public class MainActivity extends BaseActivity {
 
@@ -24,118 +24,64 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(mContext, PrintActivity.class));
-            }
-        });
-
-        /*************************订阅****************************/
-//        observable.subscribe(observer);
-//        observable.subscribe(subscriber);
-
-        /*************************不完整定义的回调****************************/
-        Action1<String> onNextAction = new Action1<String>() {
-            // onNext()
-            @Override
-            public void call(String s) {
-                Log.d(TAG, s);
-            }
-        };
-        Action1<Throwable> onErrorAction = new Action1<Throwable>() {
-            // onError()
-            @Override
-            public void call(Throwable throwable) {
-                // Error handling
-            }
-        };
-        Action0 onCompletedAction = new Action0() {
-            // onCompleted()
-            @Override
-            public void call() {
-                Log.d(TAG, "completed");
-            }
-        };
-        // 订阅
-        // 自动创建 Subscriber ，并使用 onNextAction 来定义 onNext()
-        observable.subscribe(onNextAction);
-        // 自动创建 Subscriber ，并使用 onNextAction 和 onErrorAction 来定义 onNext() 和 onError()
-        observable.subscribe(onNextAction, onErrorAction);
-        // 自动创建 Subscriber ，并使用 onNextAction、 onErrorAction 和 onCompletedAction 来定义 onNext()、 onError() 和 onCompleted()
-        observable.subscribe(onNextAction, onErrorAction, onCompletedAction);
+        mObservable.subscribe(mObserver);
+        // 或
+        mObservable.subscribe(mSubscriber);
     }
 
-    /********************************
-     * 被观察者
-     ************************************/
-//    Observable observable = Observable.create(new Observable.OnSubscribe<String>() {
-//        @Override
-//        public void call(Subscriber<? super String> subscriber) {
-//            subscriber.onNext("Hello");
-//            subscriber.onNext("Hi");
-//            subscriber.onNext("Aloha");
-//            subscriber.onCompleted();
-//        }
-//    });
-
-//    Observable mObservable = Observable.just("哈哈哈");
-
-    String[] words = {"Hello", "Hi", "Aloha"};
-    Observable observable = Observable.from(words);
-
-    /**************************
-     * 观察者
-     **************************/
-    // 观察者（Observer 也总是会先被转换成一个 Subscriber 再使用）
-    Observer<String> observer = new Observer<String>() {
+    // 被观察者
+    Observable mObservable = Observable.create(new Observable.OnSubscribe<String>(){
         @Override
-        public void onNext(String s) {
-            Log.d(TAG, "Item: " + s);
+        public void call(Subscriber<? super String> subscriber) {
+            subscriber.onNext("Hello");
+            subscriber.onNext("Hi");
+            subscriber.onNext("Aloha");
+            subscriber.onCompleted();
         }
+    });
 
+    // 观察者
+    Observer<String> mObserver = new Observer<String>() {
         @Override
         public void onCompleted() {
-            Log.d(TAG, "Completed!");
+            Log.e(TAG, "onCompleted: " );
         }
 
         @Override
         public void onError(Throwable e) {
-            Log.d(TAG, "Error!");
+            Log.e(TAG, "onError: ");
+        }
+
+        @Override
+        public void onNext(String s) {
+            Log.e(TAG, "onNext: " + s);
         }
     };
 
-    /**************************
-     * 订阅者（推荐）
-     **************************/
-    Subscriber<String> subscriber = new Subscriber<String>() {
+    //Subscriber 对 Observer 接口进行了一些扩展，但他们的基本使用方式是完全一样的
+    Subscriber<String> mSubscriber = new Subscriber<String>() {
+
+        // 新增加的方法。它会在 subscribe 刚开始，而事件还未发送之前被调用，可以用于做一些准备工作。默认为空
         @Override
         public void onStart() {
             super.onStart();
-            Log.d(TAG, "onStart: ");
-        }
-
-        @Override
-        public void onNext(String s) {
-            Log.d(TAG, "Item: " + s);
+            Log.e(TAG, "onStart: ");
         }
 
         @Override
         public void onCompleted() {
-            Log.d(TAG, "Completed!");
+            Log.e(TAG, "onCompleted: ");
         }
 
         @Override
         public void onError(Throwable e) {
-            Log.d(TAG, "Error!");
+            Log.e(TAG, "onError: ");
+        }
+
+        @Override
+        public void onNext(String s) {
+            Log.e(TAG, "onNext: " + s);
         }
     };
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (subscriber.isUnsubscribed()) {
-            subscriber.unsubscribe();
-        }
-    }
 }

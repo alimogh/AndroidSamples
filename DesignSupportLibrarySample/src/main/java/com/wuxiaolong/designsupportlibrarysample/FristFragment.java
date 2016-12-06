@@ -66,6 +66,7 @@ public class FristFragment extends BaseFragment {
         });
     }
 
+    // 搜索栏
     private void initSearchView() {
         final SearchView searchView = (SearchView) mToolbar.getMenu()
                 .findItem(R.id.menu_search).getActionView();
