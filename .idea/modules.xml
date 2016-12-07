@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/bottomsheetdemo/bottomsheetdemo.iml" filepath="$PROJECT_DIR$/bottomsheetdemo/bottomsheetdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/handlertimer/handlertimer.iml" filepath="$PROJECT_DIR$/handlertimer/handlertimer.iml" />
       <module fileurl="file://$PROJECT_DIR$/popupwindowdemo/popupwindowdemo.iml" filepath="$PROJECT_DIR$/popupwindowdemo/popupwindowdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit/retrofit.iml" filepath="$PROJECT_DIR$/retrofit/retrofit.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxdemo/rxdemo.iml" filepath="$PROJECT_DIR$/rxdemo/rxdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" filepath="$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" />
     </modules>
