@@ -1,4 +1,4 @@
-package com.sdwfqin.mvpdemo.model;
+package com.sdwfqin.mvpdemo.interactor;
 
 import com.sdwfqin.mvpdemo.bean.User;
 
@@ -9,8 +9,8 @@ import com.sdwfqin.mvpdemo.bean.User;
 public interface UserLoginInteractor {
 
     interface OnLoginListener{
-        public void onSuccess(User user);
-        public void onFailed();
+        void onSuccess(User user);
+        void onFailed();
     }
 
     void login(String username, String password, UserLoginInteractor.OnLoginListener loginListener);

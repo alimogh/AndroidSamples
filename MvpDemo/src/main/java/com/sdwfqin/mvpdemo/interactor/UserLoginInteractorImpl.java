@@ -1,4 +1,4 @@
-package com.sdwfqin.mvpdemo.model;
+package com.sdwfqin.mvpdemo.interactor;
 
 import android.util.Log;
 

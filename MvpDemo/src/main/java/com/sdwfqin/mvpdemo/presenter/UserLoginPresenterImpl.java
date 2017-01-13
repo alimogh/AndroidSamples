@@ -4,64 +4,68 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.sdwfqin.mvpdemo.bean.User;
-import com.sdwfqin.mvpdemo.model.UserLoginInteractorImpl;
-import com.sdwfqin.mvpdemo.model.UserLoginInteractor;
+import com.sdwfqin.mvpdemo.interactor.UserLoginInteractor;
+import com.sdwfqin.mvpdemo.view.UserLoginView;
 
 /**
  * Created by sdwfqin on 2017/1/13.
  */
 
-public class UserLoginPresenterImpl {
+public class UserLoginPresenterImpl implements UserLoginPresenter,UserLoginInteractor.OnLoginListener {
 
-    private UserModel iUserModel;
-    private UserLoginPresenter userLoginView;
+    private UserLoginInteractor mLoginInteractor;
+    private UserLoginView userLoginView;
     private Handler mHandler = new Handler();
 
-    public UserLoginPresenterImpl(UserLoginPresenter userLogenView){
+    public UserLoginPresenterImpl(UserLoginView userLogenView, UserLoginInteractor mLoginInteractor){
         this.userLoginView = userLogenView;
-        this.iUserModel = new UserLoginInteractorImpl();
+        this.mLoginInteractor = mLoginInteractor;
     };
 
-    public void login(){
-        Log.e("test", "login");
+    @Override
+    public void validateCredentials(String username, String password) {
+        if (userLoginView != null) {
+            userLoginView.showLoading();
+        }
 
-        userLoginView.showLoading();
-        iUserModel.login(userLoginView.getUserName(), userLoginView.getPassword(), new UserLoginInteractor() {
-            // 登陆成功
-            @Override
-            public void onSuccess(final User user) {
-                Log.e("test", "onSuccess:");
-                mHandler.post(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        userLoginView.toMainActivity(user);
-                        userLoginView.hideLoading();
-                    }
-                });
-            }
-
-            // 登陆失败
-            @Override
-            public void onFailed() {
-                Log.e("test", "onFailed:");
-                mHandler.post(new Runnable()
-                {
-                    @Override
-                    public void run()
-                    {
-                        userLoginView.showFailedError();
-                        userLoginView.hideLoading();
-                    }
-                });
-            }
-        });
-
+        mLoginInteractor.login(username, password, this);
     }
 
     public void clean(){
         userLoginView.clearUserName();
         userLoginView.clearPassword();
+    }
+
+    @Override
+    public void onSuccess(final User user) {
+        Log.e("test", "onSuccess:");
+        mHandler.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                userLoginView.toMainActivity(user);
+                userLoginView.hideLoading();
+            }
+        });
+    }
+
+    @Override
+    public void onFailed() {
+        Log.e("test", "onFailed:");
+        mHandler.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                userLoginView.showFailedError();
+                userLoginView.hideLoading();
+            }
+        });
+    }
+
+    @Override
+    public void onDestroy() {
+        userLoginView = null;
     }
 }

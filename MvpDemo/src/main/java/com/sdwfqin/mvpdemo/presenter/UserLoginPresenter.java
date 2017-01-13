@@ -1,25 +1,13 @@
 package com.sdwfqin.mvpdemo.presenter;
 
-import com.sdwfqin.mvpdemo.bean.User;
-
 /**
  * Created by sdwfqin on 2017/1/13.
  */
 
 public interface UserLoginPresenter {
-    public String getUserName();
+    void validateCredentials(String username, String password);
 
-    public String getPassword();
+    void clean();
 
-    public void clearUserName();
-
-    public void clearPassword();
-
-    public void showLoading();
-
-    public void hideLoading();
-
-    public void toMainActivity(User user);
-
-    public void showFailedError();
+    void onDestroy();
 }
