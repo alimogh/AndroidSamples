@@ -1,4 +1,4 @@
-package com.sdwfqin.mvpdemo.presenter;
+package com.sdwfqin.mvpdemo.view;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.sdwfqin.mvpdemo.R;
 import com.sdwfqin.mvpdemo.bean.User;
 import com.sdwfqin.mvpdemo.presenter.UserLoginPresenterImpl;
-import com.sdwfqin.mvpdemo.view.UserLoginPresenter;
+import com.sdwfqin.mvpdemo.presenter.UserLoginPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

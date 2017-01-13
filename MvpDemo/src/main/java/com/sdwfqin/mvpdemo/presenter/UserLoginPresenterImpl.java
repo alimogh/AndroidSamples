@@ -4,10 +4,8 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.sdwfqin.mvpdemo.bean.User;
-import com.sdwfqin.mvpdemo.model.UserModel;
-import com.sdwfqin.mvpdemo.model.OnLoginListener;
-import com.sdwfqin.mvpdemo.model.UserModelImpl;
-import com.sdwfqin.mvpdemo.view.UserLoginPresenter;
+import com.sdwfqin.mvpdemo.model.UserLoginInteractorImpl;
+import com.sdwfqin.mvpdemo.model.UserLoginInteractor;
 
 /**
  * Created by sdwfqin on 2017/1/13.
@@ -21,14 +19,14 @@ public class UserLoginPresenterImpl {
 
     public UserLoginPresenterImpl(UserLoginPresenter userLogenView){
         this.userLoginView = userLogenView;
-        this.iUserModel = new UserModelImpl();
+        this.iUserModel = new UserLoginInteractorImpl();
     };
 
     public void login(){
         Log.e("test", "login");
 
         userLoginView.showLoading();
-        iUserModel.login(userLoginView.getUserName(), userLoginView.getPassword(), new OnLoginListener() {
+        iUserModel.login(userLoginView.getUserName(), userLoginView.getPassword(), new UserLoginInteractor() {
             // 登陆成功
             @Override
             public void onSuccess(final User user) {

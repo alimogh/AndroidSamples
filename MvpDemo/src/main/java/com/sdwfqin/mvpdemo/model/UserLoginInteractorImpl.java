@@ -8,16 +8,16 @@ import com.sdwfqin.mvpdemo.bean.User;
  * Created by sdwfqin on 2017/1/13.
  */
 
-public class UserModelImpl implements UserModel {
+public class UserLoginInteractorImpl implements UserLoginInteractor {
 
-    public UserModelImpl(){
-        Log.e("test", "创建：UserModelImpl");
+    public UserLoginInteractorImpl(){
+        Log.e("test", "创建：UserLoginInteractorImpl");
     }
 
     @Override
-    public void login(final String username, final String password, final OnLoginListener loginListener) {
+    public void login(final String username, final String password, final UserLoginInteractor.OnLoginListener loginListener) {
 
-        Log.e("test", "UserModelImpl=login");
+        Log.e("test", "UserLoginInteractorImpl=login");
 
         // 模拟登陆
         new Thread(new Runnable() {

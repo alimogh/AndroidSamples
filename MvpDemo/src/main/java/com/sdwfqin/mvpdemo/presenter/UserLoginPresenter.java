@@ -1,4 +1,4 @@
-package com.sdwfqin.mvpdemo.view;
+package com.sdwfqin.mvpdemo.presenter;
 
 import com.sdwfqin.mvpdemo.bean.User;
 
