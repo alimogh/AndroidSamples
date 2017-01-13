@@ -9,12 +9,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/BottomSheetDemo" />
-            <option value="$PROJECT_DIR$/HandlerTimer" />
-            <option value="$PROJECT_DIR$/PopupWindowDemo" />
             <option value="$PROJECT_DIR$/RecyclerDemo" />
             <option value="$PROJECT_DIR$/RetrofitDemo" />
             <option value="$PROJECT_DIR$/RxJavaDemo" />
+            <option value="$PROJECT_DIR$/bottomsheetdemo" />
+            <option value="$PROJECT_DIR$/handlertimer" />
+            <option value="$PROJECT_DIR$/popupwindowdemo" />
             <option value="$PROJECT_DIR$/讯飞语音测试" />
           </set>
         </option>

@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/BottomSheetDemo/bottomsheetdemo.iml" filepath="$PROJECT_DIR$/BottomSheetDemo/bottomsheetdemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HandlerTimer/handlertimer.iml" filepath="$PROJECT_DIR$/HandlerTimer/handlertimer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PopupWindowDemo/popupwindowdemo.iml" filepath="$PROJECT_DIR$/PopupWindowDemo/popupwindowdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bottomsheetdemo/BottomSheetDemo.iml" filepath="$PROJECT_DIR$/bottomsheetdemo/BottomSheetDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handlertimer/HandlerTimer.iml" filepath="$PROJECT_DIR$/handlertimer/HandlerTimer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/popupwindowdemo/PopupWindowDemo.iml" filepath="$PROJECT_DIR$/popupwindowdemo/PopupWindowDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" filepath="$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" filepath="$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" />
     </modules>
   </component>
