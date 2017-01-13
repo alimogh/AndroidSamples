@@ -1,1 +1,1 @@
-include ':讯飞语音测试', ':RecyclerDemo', ':bottomsheetdemo', ':androidmvp', ':rxdemo', ':popupwindowdemo', ':handlertimer', ':retrofit'
+include ':讯飞语音测试', ':RecyclerDemo', ':BottomSheetDemo', ':RxJavaDemo', ':PopupWindowDemo', ':HandlerTimer', ':RetrofitDemo'
