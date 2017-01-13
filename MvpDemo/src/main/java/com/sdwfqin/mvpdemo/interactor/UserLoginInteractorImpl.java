@@ -2,7 +2,7 @@ package com.sdwfqin.mvpdemo.interactor;
 
 import android.util.Log;
 
-import com.sdwfqin.mvpdemo.bean.User;
+import com.sdwfqin.mvpdemo.model.User;
 
 /**
  * Created by sdwfqin on 2017/1/13.

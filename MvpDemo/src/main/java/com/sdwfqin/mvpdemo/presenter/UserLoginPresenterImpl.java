@@ -3,7 +3,7 @@ package com.sdwfqin.mvpdemo.presenter;
 import android.os.Handler;
 import android.util.Log;
 
-import com.sdwfqin.mvpdemo.bean.User;
+import com.sdwfqin.mvpdemo.model.User;
 import com.sdwfqin.mvpdemo.interactor.UserLoginInteractor;
 import com.sdwfqin.mvpdemo.view.UserLoginView;
 

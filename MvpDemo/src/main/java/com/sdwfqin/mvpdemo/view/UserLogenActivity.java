@@ -8,7 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.sdwfqin.mvpdemo.R;
-import com.sdwfqin.mvpdemo.bean.User;
+import com.sdwfqin.mvpdemo.model.User;
 import com.sdwfqin.mvpdemo.interactor.UserLoginInteractorImpl;
 import com.sdwfqin.mvpdemo.presenter.UserLoginPresenterImpl;
 import com.sdwfqin.mvpdemo.presenter.UserLoginPresenter;

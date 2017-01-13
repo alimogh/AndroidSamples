@@ -1,6 +1,6 @@
 package com.sdwfqin.mvpdemo.view;
 
-import com.sdwfqin.mvpdemo.bean.User;
+import com.sdwfqin.mvpdemo.model.User;
 
 /**
  * Created by sdwfqin on 2017/1/13.
