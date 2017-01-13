@@ -1,1 +1,1 @@
-include ':讯飞语音测试', ':RecyclerDemo', ':BottomSheetDemo', ':RxJavaDemo', ':PopupWindowDemo', ':HandlerTimer', ':RetrofitDemo'
+include ':讯飞语音测试', ':RecyclerDemo', ':BottomSheetDemo', ':RxJavaDemo', ':PopupWindowDemo', ':HandlerTimer', ':RetrofitDemo', ':MvpDemo'

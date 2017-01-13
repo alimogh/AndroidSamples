@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/BottomSheetDemo/BottomSheetDemo.iml" filepath="$PROJECT_DIR$/BottomSheetDemo/BottomSheetDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/HandlerTimer/HandlerTimer.iml" filepath="$PROJECT_DIR$/HandlerTimer/HandlerTimer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MvpDemo/MvpDemo.iml" filepath="$PROJECT_DIR$/MvpDemo/MvpDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" filepath="$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" />
