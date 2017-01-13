@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.sdwfqin.mvpdemo.bean.User;
-import com.sdwfqin.mvpdemo.model.IUserModel;
-import com.sdwfqin.mvpdemo.model.OnLoginListener;
 import com.sdwfqin.mvpdemo.model.UserModel;
+import com.sdwfqin.mvpdemo.model.OnLoginListener;
+import com.sdwfqin.mvpdemo.model.UserModelImpl;
 import com.sdwfqin.mvpdemo.view.IUserLogenView;
 
 /**
@@ -15,13 +15,13 @@ import com.sdwfqin.mvpdemo.view.IUserLogenView;
 
 public class UserLoginPresenter {
 
-    private IUserModel iUserModel;
+    private UserModel iUserModel;
     private IUserLogenView userLoginView;
     private Handler mHandler = new Handler();
 
     public UserLoginPresenter(IUserLogenView userLogenView){
         this.userLoginView = userLogenView;
-        this.iUserModel = new UserModel();
+        this.iUserModel = new UserModelImpl();
     };
 
     public void login(){
