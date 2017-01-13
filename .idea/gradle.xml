@@ -9,8 +9,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DesignSupportLibrarySample" />
-            <option value="$PROJECT_DIR$/JsoupDemo" />
             <option value="$PROJECT_DIR$/RecyclerDemo" />
             <option value="$PROJECT_DIR$/androidmvp" />
             <option value="$PROJECT_DIR$/bottomsheetdemo" />

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DesignSupportLibrarySample/DesignSupportLibrarySample.iml" filepath="$PROJECT_DIR$/DesignSupportLibrarySample/DesignSupportLibrarySample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JsoupDemo/JsoupDemo.iml" filepath="$PROJECT_DIR$/JsoupDemo/JsoupDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Test.iml" filepath="$PROJECT_DIR$/Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidmvp/androidmvp.iml" filepath="$PROJECT_DIR$/androidmvp/androidmvp.iml" />

@@ -8,10 +8,6 @@
 
     文档：http://www.sdwfqin.com/2016/12/07/%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84Retrofit%E4%BE%8B%E5%AD%90/
 
-- Jsoup
-
-    抓取网页数据
-
 - bottomSheet
 
     底部弹窗
