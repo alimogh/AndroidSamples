@@ -6,7 +6,7 @@ import com.sdwfqin.mvpdemo.bean.User;
  * Created by sdwfqin on 2017/1/13.
  */
 
-public interface IUserLogenView {
+public interface UserLoginPresenter {
     public String getUserName();
 
     public String getPassword();

@@ -7,19 +7,19 @@ import com.sdwfqin.mvpdemo.bean.User;
 import com.sdwfqin.mvpdemo.model.UserModel;
 import com.sdwfqin.mvpdemo.model.OnLoginListener;
 import com.sdwfqin.mvpdemo.model.UserModelImpl;
-import com.sdwfqin.mvpdemo.view.IUserLogenView;
+import com.sdwfqin.mvpdemo.view.UserLoginPresenter;
 
 /**
  * Created by sdwfqin on 2017/1/13.
  */
 
-public class UserLoginPresenter {
+public class UserLoginPresenterImpl {
 
     private UserModel iUserModel;
-    private IUserLogenView userLoginView;
+    private UserLoginPresenter userLoginView;
     private Handler mHandler = new Handler();
 
-    public UserLoginPresenter(IUserLogenView userLogenView){
+    public UserLoginPresenterImpl(UserLoginPresenter userLogenView){
         this.userLoginView = userLogenView;
         this.iUserModel = new UserModelImpl();
     };

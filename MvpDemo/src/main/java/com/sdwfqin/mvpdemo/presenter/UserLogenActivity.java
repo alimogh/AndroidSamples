@@ -1,4 +1,4 @@
-package com.sdwfqin.mvpdemo.view;
+package com.sdwfqin.mvpdemo.presenter;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,13 +9,14 @@ import android.widget.Toast;
 
 import com.sdwfqin.mvpdemo.R;
 import com.sdwfqin.mvpdemo.bean.User;
-import com.sdwfqin.mvpdemo.presenter.UserLoginPresenter;
+import com.sdwfqin.mvpdemo.presenter.UserLoginPresenterImpl;
+import com.sdwfqin.mvpdemo.view.UserLoginPresenter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class UserLogenActivity extends AppCompatActivity implements IUserLogenView {
+public class UserLogenActivity extends AppCompatActivity implements UserLoginPresenter {
 
     @BindView(R.id.user)
     EditText mUser;
@@ -23,7 +24,7 @@ public class UserLogenActivity extends AppCompatActivity implements IUserLogenVi
     EditText mPass;
     @BindView(R.id.id_pb_loading)
     ProgressBar mIdPbLoading;
-    private UserLoginPresenter mUserLoginPresenter = new UserLoginPresenter(this);
+    private UserLoginPresenterImpl mUserLoginPresenter = new UserLoginPresenterImpl(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
