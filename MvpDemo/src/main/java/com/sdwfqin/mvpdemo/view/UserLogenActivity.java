@@ -41,7 +41,7 @@ public class UserLogenActivity extends AppCompatActivity implements UserLoginVie
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_login:
-                mUserLoginPresenter.validateCredentials(mUser.getText().toString(),mPass.getText().toString());
+                mUserLoginPresenter.validateCredentials(mUser.getText().toString(), mPass.getText().toString());
                 break;
             case R.id.btn_clean:
                 mUserLoginPresenter.clean();

@@ -10,7 +10,7 @@ import com.sdwfqin.mvpdemo.model.User;
 
 public class UserLoginInteractorImpl implements UserLoginInteractor {
 
-    public UserLoginInteractorImpl(){
+    public UserLoginInteractorImpl() {
         Log.e("test", "创建：UserLoginInteractorImpl");
     }
 
@@ -23,14 +23,14 @@ public class UserLoginInteractorImpl implements UserLoginInteractor {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                Log.e("test","run方法");
+                Log.e("test", "run方法");
                 try {
                     Thread.sleep(2000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                Log.e("test","开始判断");
-                if(username.equals("sdwfqin") && password.equals("123")){
+                Log.e("test", "开始判断");
+                if (username.equals("sdwfqin") && password.equals("123")) {
                     User user = new User();
                     user.setName(username);
                     user.setPass(password);
