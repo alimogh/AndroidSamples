@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<WeatherModel> call, Response<WeatherModel> response) {
 
-                if(response.body() == null){
+                if (response.body() == null) {
                     Log.e("test", "onResponse: " + null);
                 } else {
                     Log.e("test", "onResponse: " + response.body().getWeatherinfo().toString());
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<String> call, Response<String> response) {
                 Log.e("test", "onResponse字符串：" + response.body());
             }
+
             @Override
             public void onFailure(Call<String> call, Throwable t) {
 
