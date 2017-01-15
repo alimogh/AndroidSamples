@@ -1,7 +1,6 @@
 package com.wuxiaolong.androidmvpsample.ui;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 
 import com.wuxiaolong.androidmvpsample.R;
@@ -10,8 +9,7 @@ import com.wuxiaolong.androidmvpsample.mvp.MainPresenter;
 import com.wuxiaolong.androidmvpsample.mvp.MainView;
 import com.wuxiaolong.androidmvpsample.mvp.MvpActivity;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -19,7 +17,7 @@ import butterknife.OnClick;
  */
 public class MainActivity extends MvpActivity<MainPresenter> implements MainView {
 
-    @Bind(R.id.text)
+    @BindView(R.id.text)
     TextView text;
 
     @Override
@@ -27,7 +25,6 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initToolBarAsHome("MVP+Retrofit+Rxjava");
-
     }
 
     // 创建Presenter，在MvpActivity中调用
@@ -36,14 +33,10 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainView
         return new MainPresenter(this);
     }
 
-    @OnClick({R.id.button2})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button2:
-                //请求接口
-                mvpPresenter.loadDataByRetrofitRxjava("101310222");
-                break;
-        }
+    @OnClick(R.id.button)
+    public void onClick() {
+        //请求接口
+        mvpPresenter.loadDataByRetrofitRxjava("101310222");
     }
 
     private void dataSuccess(MainModel model) {
@@ -66,4 +59,5 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainView
     public void getDataFail(String msg) {
         toastShow("网络不给力");
     }
+
 }

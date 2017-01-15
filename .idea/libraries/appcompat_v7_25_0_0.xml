@@ -3,11 +3,13 @@
     <ANNOTATIONS>
       <root url="jar://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/HandlerTimer/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/MvpDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/PopupWindowDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/RecyclerDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/RetrofitDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/RxJavaDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/讯飞语音测试/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
       <root url="jar://$PROJECT_DIR$/WxlMvpSample/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
+      <root url="jar://$PROJECT_DIR$/讯飞语音测试/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar!/" />
@@ -15,6 +17,8 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.0/appcompat-v7-25.0.0-sources.jar!/" />
+      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.0/appcompat-v7-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.0/appcompat-v7-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.0/appcompat-v7-25.0.0-sources.jar!/" />
       <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.0/appcompat-v7-25.0.0-sources.jar!/" />
