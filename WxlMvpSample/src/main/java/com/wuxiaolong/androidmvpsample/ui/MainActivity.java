@@ -15,13 +15,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 由Activity/Fragment实现View里方法，包含一个Presenter的引用
- * Created by WuXiaolong
- * on 2015/9/23.
- * github:https://github.com/WuXiaolong/
- * weibo:http://weibo.com/u/2175011601
- * 微信公众号：吴小龙同学
- * 个人博客：http://wuxiaolong.me/
+ * 由Activity实现View里方法，包含一个Presenter的引用
  */
 public class MainActivity extends MvpActivity<MainPresenter> implements MainView {
 
@@ -32,7 +26,6 @@ public class MainActivity extends MvpActivity<MainPresenter> implements MainView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         initToolBarAsHome("MVP+Retrofit+Rxjava");
 
     }
