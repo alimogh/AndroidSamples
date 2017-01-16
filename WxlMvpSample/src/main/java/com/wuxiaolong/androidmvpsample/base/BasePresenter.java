@@ -51,6 +51,8 @@ public class BasePresenter<V> {
      */
     public void addSubscription(Observable observable, Subscriber subscriber) {
         if (mCompositeSubscription == null) {
+            // 通过CompositeSubscription来持有所有的Subscriptions
+            // 可以一起退订
             mCompositeSubscription = new CompositeSubscription();
         }
         mCompositeSubscription.add(observable
