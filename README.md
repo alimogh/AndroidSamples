@@ -15,8 +15,7 @@
 - Recycler
 
     文档：http://www.sdwfqin.com/2016/07/07/RecyclerView/
-    
-- 讯飞语音Demo
+
 - HandlerTimer
     
     Handler与计时器Demo
