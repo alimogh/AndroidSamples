@@ -3,15 +3,13 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/BottomSheetDemo/BottomSheetDemo.iml" filepath="$PROJECT_DIR$/BottomSheetDemo/BottomSheetDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HandlerTimer/HandlerTimer.iml" filepath="$PROJECT_DIR$/HandlerTimer/HandlerTimer.iml" />
       <module fileurl="file://$PROJECT_DIR$/MvpDemo/MvpDemo.iml" filepath="$PROJECT_DIR$/MvpDemo/MvpDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" filepath="$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" filepath="$PROJECT_DIR$/RecyclerDemo/RecyclerDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" filepath="$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WxlMvpSample/WxlMvpSample.iml" filepath="$PROJECT_DIR$/WxlMvpSample/WxlMvpSample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" filepath="$PROJECT_DIR$/讯飞语音测试/讯飞语音测试.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/wxlMvpSample/WxlMvpSample.iml" filepath="$PROJECT_DIR$/wxlMvpSample/WxlMvpSample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xfyunDemo/XfyunDemo.iml" filepath="$PROJECT_DIR$/xfyunDemo/XfyunDemo.iml" />
     </modules>
   </component>
 </project>

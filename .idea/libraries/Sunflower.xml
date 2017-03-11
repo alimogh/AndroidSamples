@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Sunflower">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/讯飞语音测试/libs/Sunflower.jar!/" />
+      <root url="jar://$PROJECT_DIR$/XfyunDemo/libs/Sunflower.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

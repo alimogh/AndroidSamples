@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Msc">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/讯飞语音测试/libs/Msc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/XfyunDemo/libs/Msc.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

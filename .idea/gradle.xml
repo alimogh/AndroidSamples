@@ -9,15 +9,13 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/BottomSheetDemo" />
-            <option value="$PROJECT_DIR$/HandlerTimer" />
             <option value="$PROJECT_DIR$/MvpDemo" />
             <option value="$PROJECT_DIR$/PopupWindowDemo" />
-            <option value="$PROJECT_DIR$/RecyclerDemo" />
             <option value="$PROJECT_DIR$/RetrofitDemo" />
             <option value="$PROJECT_DIR$/RxJavaDemo" />
-            <option value="$PROJECT_DIR$/WxlMvpSample" />
-            <option value="$PROJECT_DIR$/讯飞语音测试" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/wxlMvpSample" />
+            <option value="$PROJECT_DIR$/xfyunDemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

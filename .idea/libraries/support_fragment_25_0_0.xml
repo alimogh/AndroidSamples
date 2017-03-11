@@ -12,9 +12,9 @@
       <root url="jar://$PROJECT_DIR$/讯飞语音测试/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar!/" />
-      <root url="jar://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar!/" />
-      <root url="file://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/res" />
+      <root url="jar://F:/Android/.android/build-cache/c4a046aa2cba2dcedd09f846d5f6c2a2d719698d/output/jars/classes.jar!/" />
+      <root url="file://F:/Android/.android/build-cache/c4a046aa2cba2dcedd09f846d5f6c2a2d719698d/output/res" />
+      <root url="jar://F:/Android/.android/build-cache/c4a046aa2cba2dcedd09f846d5f6c2a2d719698d/output/jars/libs/internal_impl-25.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
