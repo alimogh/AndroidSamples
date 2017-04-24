@@ -8,9 +8,14 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.sdwfqin.sample.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,14 +26,10 @@ import butterknife.ButterKnife;
 
 public class BottomSheetActivity extends AppCompatActivity {
 
-    @BindView(R.id.btn_bs)
-    Button btnBs;
-    @BindView(R.id.btn_bsd)
-    Button btnBsd;
-    @BindView(R.id.btn_bsdf)
-    Button btnBsdf;
     @BindView(R.id.nsv)
     NestedScrollView nsv;
+    @BindView(R.id.bottom_list)
+    ListView bottomList;
     private BottomSheetBehavior mBottomSheetBehavior;
     private static final String TAG = "BottomSheetActivity";
 
@@ -39,37 +40,28 @@ public class BottomSheetActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         initView();
-        bottomSheet();
-        bootomSheetDialog();
-        bottomSheetDialogFragment();
 
     }
 
     private void initView() {
         mBottomSheetBehavior = BottomSheetBehavior.from(nsv);
-    }
 
-    private void bootomSheetDialog() {
-        btnBsd.setOnClickListener(new View.OnClickListener() {
+        String[] strings = new String[]{"BottomSheet", "BottomSheetDialog", "BottomSheetDialogFragment"};
+        bottomList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
+
+        bottomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                BottomSheetDialog dialog = new BottomSheetDialog(BottomSheetActivity.this);
-                View view = getLayoutInflater().inflate(R.layout.dialog_bottom_sheet, null);
-                dialog.setContentView(view);
-                dialog.show();
-            }
-        });
-    }
-
-
-    private void bottomSheet() {
-        btnBs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
-                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                } else {
-                    mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        bottomSheet();
+                        break;
+                    case 1:
+                        bootomSheetDialog();
+                        break;
+                    case 2:
+                        bottomSheetDialogFragment();
+                        break;
                 }
             }
         });
@@ -100,12 +92,24 @@ public class BottomSheetActivity extends AppCompatActivity {
         //public static final int STATE_HIDDEN = 5;//隐藏了
     }
 
-    private void bottomSheetDialogFragment() {
-        btnBsdf.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new MyBottomSheetDialogFragment().show(getSupportFragmentManager(), "dialog");
-            }
-        });
+    private void bootomSheetDialog() {
+        BottomSheetDialog dialog = new BottomSheetDialog(BottomSheetActivity.this);
+        View view = getLayoutInflater().inflate(R.layout.dialog_bottom_sheet, null);
+        dialog.setContentView(view);
+        dialog.show();
     }
+
+    private void bottomSheet() {
+
+        if (mBottomSheetBehavior.getState() == BottomSheetBehavior.STATE_EXPANDED) {
+            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
+        } else {
+            mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+        }
+    }
+
+    private void bottomSheetDialogFragment() {
+        new MyBottomSheetDialogFragment().show(getSupportFragmentManager(), "dialog");
+    }
+
 }
