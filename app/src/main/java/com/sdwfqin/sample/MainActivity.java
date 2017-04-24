@@ -2,18 +2,15 @@ package com.sdwfqin.sample;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.sdwfqin.sample.achartengine.ChartActivity;
+import com.sdwfqin.sample.mpandroidchart.ChartActivity;
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;

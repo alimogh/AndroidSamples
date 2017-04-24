@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".spinner.SpinnerActivity" />
-        <activity android:name=".achartengine.ChartActivity" />
+        <activity android:name=".mpandroidchart.ChartActivity" />
         <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".activitytransition.T1Activity" />
         <activity android:name=".activitytransition.T2Activity" />
@@ -36,6 +36,7 @@
         <activity android:name=".handletimer.HandlerTimerActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
+        <activity android:name=".mpandroidchart.LineChartActivity"></activity>
     </application>
 
 </manifest>

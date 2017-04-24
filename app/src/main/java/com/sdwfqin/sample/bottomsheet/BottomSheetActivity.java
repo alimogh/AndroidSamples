@@ -21,7 +21,6 @@ import butterknife.ButterKnife;
 
 public class BottomSheetActivity extends AppCompatActivity {
 
-    private static final String TAG = "BottomSheetActivity";
     @BindView(R.id.btn_bs)
     Button btnBs;
     @BindView(R.id.btn_bsd)
@@ -31,6 +30,7 @@ public class BottomSheetActivity extends AppCompatActivity {
     @BindView(R.id.nsv)
     NestedScrollView nsv;
     private BottomSheetBehavior mBottomSheetBehavior;
+    private static final String TAG = "BottomSheetActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
