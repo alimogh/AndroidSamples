@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="androidutils-1.0.5">
     <CLASSES>
-      <root url="file://F:/Android/.android/build-cache/205134347f58ddabb9d218ec0b9257609f75672b/output/res" />
-      <root url="jar://F:/Android/.android/build-cache/205134347f58ddabb9d218ec0b9257609f75672b/output/jars/classes.jar!/" />
+      <root url="jar://F:/AndroidAvd/.android/build-cache/cf628500838f5b9ca298ef58c040ecbbe7c40dd9/output/jars/classes.jar!/" />
+      <root url="file://F:/AndroidAvd/.android/build-cache/cf628500838f5b9ca298ef58c040ecbbe7c40dd9/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

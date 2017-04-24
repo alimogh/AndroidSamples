@@ -9,6 +9,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/DesignMode" />
             <option value="$PROJECT_DIR$/MvpDemo" />
             <option value="$PROJECT_DIR$/PopupWindowDemo" />
             <option value="$PROJECT_DIR$/RetrofitDemo" />

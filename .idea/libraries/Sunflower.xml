@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Sunflower">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/XfyunDemo/libs/Sunflower.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xfyunDemo/libs/Sunflower.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

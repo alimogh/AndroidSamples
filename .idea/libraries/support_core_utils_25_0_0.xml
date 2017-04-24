@@ -1,32 +1,13 @@
 <component name="libraryTable">
   <library name="support-core-utils-25.0.0">
-    <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/BottomSheetDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/HandlerTimer/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/MvpDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/PopupWindowDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/RecyclerDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/RetrofitDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/RxJavaDemo/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/WxlMvpSample/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/讯飞语音测试/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
-      <root url="file://F:/Android/.android/build-cache/7a1eaae458bb9a4bef0aee9babeba748c6de9225/output/res" />
-      <root url="jar://F:/Android/.android/build-cache/7a1eaae458bb9a4bef0aee9babeba748c6de9225/output/jars/libs/internal_impl-25.0.0.jar!/" />
-      <root url="jar://F:/Android/.android/build-cache/7a1eaae458bb9a4bef0aee9babeba748c6de9225/output/jars/classes.jar!/" />
+      <root url="jar://F:/AndroidAvd/.android/build-cache/b8c1efa5cda7d900e67b8ba7f47cc59487ab3f34/output/jars/classes.jar!/" />
+      <root url="file://F:/AndroidAvd/.android/build-cache/b8c1efa5cda7d900e67b8ba7f47cc59487ab3f34/output/res" />
+      <root url="jar://F:/AndroidAvd/.android/build-cache/b8c1efa5cda7d900e67b8ba7f47cc59487ab3f34/output/jars/libs/internal_impl-25.0.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
+      <root url="jar://D:/Android/AndroidSdk/extras/android/m2repository/com/android/support/support-core-utils/25.0.0/support-core-utils-25.0.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

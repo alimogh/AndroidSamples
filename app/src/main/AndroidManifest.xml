@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.sdwfqin.uidemo">
+    package="com.sdwfqin.sample">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/img_tm"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -16,31 +16,26 @@
             android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".spinner.SpinnerActivity"/>
-        <activity android:name=".achartengine.ChartActivity"/>
-        <activity android:name=".viewpager.ViewPagerActivity"/>
-        <activity android:name=".activitytransition.T1Activity"/>
-        <activity android:name=".activitytransition.T2Activity"/>
-        <activity android:name=".sqlite_table.SqliteTableActivity"/>
-        <activity android:name=".video.VideoActivity"/>
-        <activity android:name=".notifications.NotificationsActivity"/>
-        <activity android:name=".http.HttpActivity"/>
-        <activity android:name=".wifimanager.WifiManagerActivity"/>
-        <activity android:name=".time.TimeActivity"/>
+        <activity android:name=".spinner.SpinnerActivity" />
+        <activity android:name=".achartengine.ChartActivity" />
+        <activity android:name=".viewpager.ViewPagerActivity" />
+        <activity android:name=".activitytransition.T1Activity" />
+        <activity android:name=".activitytransition.T2Activity" />
+        <activity android:name=".sqlite_table.SqliteTableActivity" />
+        <activity android:name=".notifications.NotificationsActivity" />
         <!-- 指定屏幕横屏显示 -->
         <activity
             android:name=".gridview.GridViewActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".bottomsheet.BottomSheetActivity"/>
-        <activity android:name=".handletimer.HandlerTimerActivity">
-        </activity>
-        <activity android:name=".recycler.RecyclerActivity">
-        </activity>
+            android:screenOrientation="landscape" />
+        <activity android:name=".bottomsheet.BottomSheetActivity" />
+        <activity android:name=".handletimer.HandlerTimerActivity" />
+        <activity android:name=".recycler.RecyclerActivity" />
+        <activity android:name=".dagger.DaggerActivity" />
     </application>
 
 </manifest>

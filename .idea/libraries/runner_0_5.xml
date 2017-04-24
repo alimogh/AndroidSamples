@@ -1,17 +1,12 @@
 <component name="libraryTable">
   <library name="runner-0.5">
-    <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/HandlerTimer/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
-      <root url="jar://$PROJECT_DIR$/MvpDemo/build/intermediates/exploded-aar/com.android.support.test/runner/0.5/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
-      <root url="jar://F:/Android/.android/build-cache/a204ea9f07c9890a1dc866aa6664efc50c25e984/output/jars/classes.jar!/" />
-      <root url="file://F:/Android/.android/build-cache/a204ea9f07c9890a1dc866aa6664efc50c25e984/output/res" />
+      <root url="jar://F:/AndroidAvd/.android/build-cache/0721669ea2be53fd943c4d802a150f8829db355c/output/jars/classes.jar!/" />
+      <root url="file://F:/AndroidAvd/.android/build-cache/0721669ea2be53fd943c4d802a150f8829db355c/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
-      <root url="jar://D:/Android/sdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
+      <root url="jar://D:/Android/AndroidSdk/extras/android/m2repository/com/android/support/test/runner/0.5/runner-0.5-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Msc">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/XfyunDemo/libs/Msc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/xfyunDemo/libs/Msc.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
