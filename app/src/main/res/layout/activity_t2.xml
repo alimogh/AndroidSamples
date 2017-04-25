@@ -11,9 +11,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sdwfqin.sample.activitytransition.T2Activity">
 
-    <TextView
+    <Button
+        android:onClick="exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="sdjfldjsfgsdjf;"/>
+        android:text="返回"/>
 
 </RelativeLayout>
