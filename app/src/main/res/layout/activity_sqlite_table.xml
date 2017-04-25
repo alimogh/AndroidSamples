@@ -34,6 +34,7 @@
                 android:background="#dedcd2"
                 android:gravity="center"
                 android:text="路口"
+                android:width="1dp"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -42,6 +43,7 @@
                 android:background="#dedcd2"
                 android:gravity="center"
                 android:text="红灯"
+                android:width="1dp"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -50,6 +52,7 @@
                 android:background="#dedcd2"
                 android:gravity="center"
                 android:text="绿灯"
+                android:width="1dp"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
@@ -58,6 +61,7 @@
                 android:background="#dedcd2"
                 android:gravity="center"
                 android:text="黄灯"
+                android:width="1dp"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 

@@ -97,6 +97,7 @@ public class SqliteTableActivity extends AppCompatActivity {
                     tv.setBackgroundResource(R.drawable.table_bg);
                     tv.setPadding(0, 5, 0, 5);
                     tv.setGravity(Gravity.CENTER);
+                    tv.setWidth(1);
                     tableRow.addView(tv);
                 }
                 mTable1.addView(tableRow, new TableLayout.LayoutParams(

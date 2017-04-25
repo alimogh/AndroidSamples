@@ -35,7 +35,6 @@
         <activity android:name=".handletimer.HandlerTimerActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
-
         <activity android:name=".mpandroidchart.ChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.BarChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity" />
@@ -45,13 +44,13 @@
         <activity android:name=".mpandroidchart.chartactivity.MultiLineChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.PieChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity" />
-
-        <activity android:name=".popupwindow.PopupActivity"/>
-        <activity android:name=".popupwindow.PopDropDownBgActivity"/>
-        <activity android:name=".popupwindow.PopDropDownBgSeniorActivity"/>
-        <activity android:name=".popupwindow.PopshowAtLocationActivity"/>
-        <activity android:name=".popupwindow.PopupAnimActivity"/>
-        <activity android:name=".popupwindow.PopupShowAsDropDownActivity"/>
+        <activity android:name=".popupwindow.PopupActivity" />
+        <activity android:name=".popupwindow.PopDropDownBgActivity" />
+        <activity android:name=".popupwindow.PopDropDownBgSeniorActivity" />
+        <activity android:name=".popupwindow.PopshowAtLocationActivity" />
+        <activity android:name=".popupwindow.PopupAnimActivity" />
+        <activity android:name=".popupwindow.PopupShowAsDropDownActivity" />
+        <activity android:name=".retrofit.RetrofitActivity"/>
     </application>
 
 </manifest>

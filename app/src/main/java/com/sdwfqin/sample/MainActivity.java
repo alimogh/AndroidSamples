@@ -19,6 +19,7 @@ import com.sdwfqin.sample.handletimer.HandlerTimerActivity;
 import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
+import com.sdwfqin.sample.retrofit.RetrofitActivity;
 import com.sdwfqin.sample.spinner.SpinnerActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.viewpager.ViewPagerActivity;
@@ -79,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 11:
                         startActivity(new Intent(MainActivity.this, DaggerActivity.class));
+                        break;
+                    case 12:
+                        startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
                         break;
                 }
             }
