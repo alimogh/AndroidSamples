@@ -45,6 +45,13 @@
         <activity android:name=".mpandroidchart.chartactivity.MultiLineChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.PieChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity" />
+
+        <activity android:name=".popupwindow.PopupActivity"/>
+        <activity android:name=".popupwindow.PopDropDownBgActivity"/>
+        <activity android:name=".popupwindow.PopDropDownBgSeniorActivity"/>
+        <activity android:name=".popupwindow.PopshowAtLocationActivity"/>
+        <activity android:name=".popupwindow.PopupAnimActivity"/>
+        <activity android:name=".popupwindow.PopupShowAsDropDownActivity"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.sdwfqin.popupwindowdemo;
+package com.sdwfqin.sample.popupwindow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.sdwfqin.sample.R;
 
 /**
  * Created by sdwfqin on 2016/8/18.

@@ -2,16 +2,17 @@
     <string name="app_name">sdwfqin</string>
 
     <string-array name="list">
-        <item>spinner下拉列表框</item>
         <item>MpAndroidChart</item>
-        <item>ViewPager</item>
         <item>Activity跳转动画</item>
+        <item>BottomSheet</item>
+        <item>PopupWindow</item>
+        <item>Recycler</item>
+        <item>spinner下拉列表框</item>
+        <item>ViewPager</item>
         <item>SQLite数据库和动态表格</item>
         <item>Notifications通知</item>
         <item>GridView</item>
-        <item>BottomSheet</item>
         <item>HandlerTimer</item>
-        <item>Recycler</item>
         <item>Dagger2</item>
     </string-array>
 

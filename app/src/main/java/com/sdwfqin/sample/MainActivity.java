@@ -17,6 +17,7 @@ import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handletimer.HandlerTimerActivity;
 import com.sdwfqin.sample.notifications.NotificationsActivity;
+import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.spinner.SpinnerActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
@@ -44,36 +45,39 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("tag", "onItemClick: " + mData[i]);
                 switch (i) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
-                        break;
-                    case 1:
                         startActivity(new Intent(MainActivity.this, ChartActivity.class));
                         break;
-                    case 2:
-                        startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
-                        break;
-                    case 3:
+                    case 1:
                         startActivity(new Intent(MainActivity.this, T1Activity.class));
                         break;
-                    case 4:
-                        startActivity(new Intent(MainActivity.this, SqliteTableActivity.class));
-                        break;
-                    case 5:
-                        startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
-                        break;
-                    case 6:
-                        startActivity(new Intent(MainActivity.this, GridViewActivity.class));
-                        break;
-                    case 7:
+                    case 2:
                         startActivity(new Intent(MainActivity.this, BottomSheetActivity.class));
                         break;
-                    case 8:
-                        startActivity(new Intent(MainActivity.this, HandlerTimerActivity.class));
+                    case 3:
+                        startActivity(new Intent(MainActivity.this, PopupActivity.class));
                         break;
-                    case 9:
+                    case 4:
                         startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
                         break;
+                    case 5:
+                        startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+                        break;
+                    case 6:
+                        startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
+                        break;
+                    case 7:
+                        startActivity(new Intent(MainActivity.this, SqliteTableActivity.class));
+                        break;
+                    case 8:
+                        startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
+                        break;
+                    case 9:
+                        startActivity(new Intent(MainActivity.this, GridViewActivity.class));
+                        break;
                     case 10:
+                        startActivity(new Intent(MainActivity.this, HandlerTimerActivity.class));
+                        break;
+                    case 11:
                         startActivity(new Intent(MainActivity.this, DaggerActivity.class));
                         break;
                 }

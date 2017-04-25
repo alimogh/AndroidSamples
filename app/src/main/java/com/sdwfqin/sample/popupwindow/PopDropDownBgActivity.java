@@ -1,4 +1,4 @@
-package com.sdwfqin.popupwindowdemo;
+package com.sdwfqin.sample.popupwindow;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,17 +9,19 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sdwfqin.sample.R;
+
 /**
  * Created by sdwfqin on 2016/8/18.
  */
-public class PopupShowAsDropDownActivity extends AppCompatActivity implements View.OnClickListener {
+public class PopDropDownBgActivity extends AppCompatActivity implements View.OnClickListener {
     private PopupWindow mPopWindow;
     private TextView mMenuTv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.show_as_drop_down_activity);
+        setContentView(R.layout.drop_down_bg_activity);
         mMenuTv = (TextView) findViewById(R.id.menu);
         mMenuTv.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,15 +35,16 @@ public class PopupShowAsDropDownActivity extends AppCompatActivity implements Vi
                 } else {
                     showPopupWindow();
                 }
+
             }
         });
     }
 
     private void showPopupWindow() {
-        View contentView = LayoutInflater.from(PopupShowAsDropDownActivity.this).inflate(R.layout.show_as_drop_down_activity_popup, null);
+        View contentView = LayoutInflater.from(PopDropDownBgActivity.this).inflate(R.layout.drop_down_bg_activity_popup, null);
         mPopWindow = new PopupWindow(contentView);
-        mPopWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
-        mPopWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+        mPopWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+        mPopWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
 
         TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
         TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);

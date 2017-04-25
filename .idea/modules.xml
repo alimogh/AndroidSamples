@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignMode/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode/DesignMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/MvpDemo/MvpDemo.iml" filepath="$PROJECT_DIR$/MvpDemo/MvpDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" filepath="$PROJECT_DIR$/PopupWindowDemo/PopupWindowDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" filepath="$PROJECT_DIR$/RetrofitDemo/RetrofitDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" filepath="$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />

@@ -1,51 +1,49 @@
-package com.sdwfqin.popupwindowdemo;
+package com.sdwfqin.sample.popupwindow;
 
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sdwfqin.sample.R;
+
 /**
  * Created by sdwfqin on 2016/8/18.
  */
-public class PopDropDownBgSeniorActivity extends AppCompatActivity implements View.OnClickListener {
+public class PopupShowAsDropDownActivity extends AppCompatActivity implements View.OnClickListener {
     private PopupWindow mPopWindow;
     private TextView mMenuTv;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.drop_down_bg_senior_activity);
+        setContentView(R.layout.show_as_drop_down_activity);
         mMenuTv = (TextView) findViewById(R.id.menu);
         mMenuTv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showPopupWindow();
+                if (mPopWindow != null) {
+                    if (mPopWindow.isShowing()) {
+                        mPopWindow.dismiss();
+                    } else {
+                        showPopupWindow();
+                    }
+                } else {
+                    showPopupWindow();
+                }
             }
         });
-
     }
 
     private void showPopupWindow() {
-        View contentView = LayoutInflater.from(PopDropDownBgSeniorActivity.this).inflate(R.layout.drop_down_bg_senior_activity_popup, null);
+        View contentView = LayoutInflater.from(PopupShowAsDropDownActivity.this).inflate(R.layout.show_as_drop_down_activity_popup, null);
         mPopWindow = new PopupWindow(contentView);
-        mPopWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
-        mPopWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
-
-//        是否响应touch事件
-//        mPopWindow.setTouchable(false);
-//        是否具有获取焦点的能力
-        mPopWindow.setFocusable(true);
-
-        //外部是否可以点击
-        mPopWindow.setBackgroundDrawable(new BitmapDrawable());
-        mPopWindow.setOutsideTouchable(true);
+        mPopWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        mPopWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
         TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
         TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
@@ -55,7 +53,6 @@ public class PopDropDownBgSeniorActivity extends AppCompatActivity implements Vi
         tv3.setOnClickListener(this);
 
         mPopWindow.showAsDropDown(mMenuTv);
-
     }
 
     @Override

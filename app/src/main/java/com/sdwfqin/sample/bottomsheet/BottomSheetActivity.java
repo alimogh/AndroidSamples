@@ -44,6 +44,7 @@ public class BottomSheetActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
         mBottomSheetBehavior = BottomSheetBehavior.from(nsv);
 
         String[] strings = new String[]{"BottomSheet", "BottomSheetDialog", "BottomSheetDialogFragment"};
