@@ -5,10 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AndroidDemo.iml" filepath="$PROJECT_DIR$/AndroidDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/DesignMode/DesignMode.iml" filepath="$PROJECT_DIR$/DesignMode/DesignMode.iml" />
       <module fileurl="file://$PROJECT_DIR$/MvpDemo/MvpDemo.iml" filepath="$PROJECT_DIR$/MvpDemo/MvpDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" filepath="$PROJECT_DIR$/RxJavaDemo/RxJavaDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/wxlMvpSample/wxlMvpSample.iml" filepath="$PROJECT_DIR$/wxlMvpSample/wxlMvpSample.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xfyunDemo/xfyunDemo.iml" filepath="$PROJECT_DIR$/xfyunDemo/xfyunDemo.iml" />
     </modules>
   </component>
 </project>

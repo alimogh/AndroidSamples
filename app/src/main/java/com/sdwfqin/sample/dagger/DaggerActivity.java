@@ -1,7 +1,8 @@
 package com.sdwfqin.sample.dagger;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -12,7 +13,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class DaggerActivity extends Activity{
+public class DaggerActivity extends AppCompatActivity {
 
     @BindView(R.id.btnMakeCoffee)
     Button btnMakeCoffee;
@@ -37,7 +38,12 @@ public class DaggerActivity extends Activity{
         // DaggerUserComponet是编译时生成的
         DaggerUserComponet.builder().userModule(new UserModule(this)).build().inject(this);
 
-        orderController.order();
-        moneyController.payMoney();
+        btnMakeCoffee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tvCoffee.setText(moneyController.payMoney());
+                orderController.order();
+            }
+        });
     }
 }

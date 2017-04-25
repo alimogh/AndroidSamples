@@ -1,1 +1,1 @@
-include ':xfyunDemo', ':RxJavaDemo', ':MvpDemo', ':wxlMvpSample', ':app', ':DesignMode'
+include ':MvpDemo', ':app', ':DesignMode'

@@ -15,7 +15,7 @@ public class MoneyController {
         this.mContext = context;
     }
 
-    public void payMoney() {
-        Log.e("MoneyController", "payMoney");
+    public String payMoney() {
+        return "payMoney";
     }
 }

@@ -10,10 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/DesignMode" />
             <option value="$PROJECT_DIR$/MvpDemo" />
-            <option value="$PROJECT_DIR$/RxJavaDemo" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/wxlMvpSample" />
-            <option value="$PROJECT_DIR$/xfyunDemo" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

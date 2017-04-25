@@ -44,6 +44,8 @@ dependencies {
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
 
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
+
     compile "com.github.PhilJay:MPAndroidChart:$rootProject.ext.mPAndroidChartVersion"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
