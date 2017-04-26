@@ -10,18 +10,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.sdwfqin.sample.mpandroidchart.ChartActivity;
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handletimer.HandlerTimerActivity;
+import com.sdwfqin.sample.mpandroidchart.ChartActivity;
 import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
 import com.sdwfqin.sample.spinner.SpinnerActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
+import com.sdwfqin.sample.view.ViewActivity;
 import com.sdwfqin.sample.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,22 +47,22 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("tag", "onItemClick: " + mData[i]);
                 switch (i) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, ChartActivity.class));
+                        startActivity(new Intent(MainActivity.this, ViewActivity.class));
                         break;
                     case 1:
-                        startActivity(new Intent(MainActivity.this, T1Activity.class));
+                        startActivity(new Intent(MainActivity.this, ChartActivity.class));
                         break;
                     case 2:
-                        startActivity(new Intent(MainActivity.this, BottomSheetActivity.class));
+                        startActivity(new Intent(MainActivity.this, T1Activity.class));
                         break;
                     case 3:
-                        startActivity(new Intent(MainActivity.this, PopupActivity.class));
+                        startActivity(new Intent(MainActivity.this, BottomSheetActivity.class));
                         break;
                     case 4:
-                        startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
+                        startActivity(new Intent(MainActivity.this, PopupActivity.class));
                         break;
                     case 5:
-                        startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+                        startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
                         break;
                     case 6:
                         startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
@@ -83,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 12:
                         startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
+                        break;
+                    case 13:
+                        startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
                         break;
                 }
             }

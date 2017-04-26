@@ -50,7 +50,12 @@
         <activity android:name=".popupwindow.PopshowAtLocationActivity" />
         <activity android:name=".popupwindow.PopupAnimActivity" />
         <activity android:name=".popupwindow.PopupShowAsDropDownActivity" />
-        <activity android:name=".retrofit.RetrofitActivity"/>
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".view.ViewActivity" />
+        <activity android:name=".view.viewposition.ViewPositionActivity" />
+        <activity android:name=".view.motionslop.MeTsActivity" />
+        <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
+        <activity android:name=".view.scroller.ScrollerActivity"></activity>
     </application>
 
 </manifest>

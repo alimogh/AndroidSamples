@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="list">
+        <item>View</item>
         <item>MpAndroidChart</item>
         <item>Activity跳转动画</item>
         <item>BottomSheet</item>
