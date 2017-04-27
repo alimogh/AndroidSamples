@@ -48,9 +48,10 @@ public class ScrollerView extends AppCompatTextView {
     // 缓慢滚动到指定位置
     private void smoothScrollTo(int destX, int destY) {
         Log.e(TAG, "smoothScrollTo: ");
+        // scrollX,scrollY对应原始位置左上角，水平与竖直方向
         int scrollX = getScrollX();
-        int delta = destX - scrollX;
         int scrollY = getScrollY();
+        int delta = destX - scrollX;
         int deltb = destY - scrollY;
         // 1000ms内滑向destX
         scroller.startScroll(scrollX, scrollY, delta, deltb, 1000);

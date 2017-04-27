@@ -2,7 +2,9 @@ package com.sdwfqin.sample.view.viewposition;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.sdwfqin.sample.R;
 
@@ -13,6 +15,7 @@ public class ViewPositionActivity extends AppCompatActivity {
 
     @BindView(R.id.position_view)
     PositionView positionView;
+    private static final String TAG = "ViewPositionActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
