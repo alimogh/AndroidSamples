@@ -32,7 +32,7 @@ public class ScrollerView extends AppCompatTextView {
         init(context);
     }
 
-    private void init(Context context){
+    private void init(Context context) {
         this.mContext = context;
         scroller = new Scroller(mContext);
     }
@@ -40,12 +40,15 @@ public class ScrollerView extends AppCompatTextView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            smoothScrollTo(-400, -400);
+            // 这三种方法都是只改变View内容的位置，不改变View的位置
+            smoothScrollTo(-100, -100);
+//            scrollTo(-100, -100);
+//            scrollBy(-100, -100);
         }
         return true;
     }
 
-    // 缓慢滚动到指定位置
+    // 弹性滑动，只滑动内容，不改变位置（destX正左负右，destY正上负下）
     private void smoothScrollTo(int destX, int destY) {
         Log.e(TAG, "smoothScrollTo: ");
         // scrollX,scrollY对应原始位置左上角，水平与竖直方向
@@ -55,6 +58,7 @@ public class ScrollerView extends AppCompatTextView {
         int deltb = destY - scrollY;
         // 1000ms内滑向destX
         scroller.startScroll(scrollX, scrollY, delta, deltb, 1000);
+        // 调用computeScroll方法
         invalidate();
     }
 
@@ -62,6 +66,7 @@ public class ScrollerView extends AppCompatTextView {
     public void computeScroll() {
         if (scroller.computeScrollOffset()) {
             scrollTo(scroller.getCurrX(), scroller.getCurrY());
+            // 二次重绘
             postInvalidate();
         }
     }

@@ -2,9 +2,7 @@ package com.sdwfqin.sample.view.viewposition;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.sdwfqin.sample.R;
 
