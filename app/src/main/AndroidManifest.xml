@@ -55,7 +55,8 @@
         <activity android:name=".view.viewposition.ViewPositionActivity" />
         <activity android:name=".view.motionslop.MeTsActivity" />
         <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
-        <activity android:name=".view.scroller.ScrollerActivity"></activity>
+        <activity android:name=".view.scroller.ScrollerActivity" />
+        <activity android:name=".spannablestring.SpannableActivity"></activity>
     </application>
 
 </manifest>

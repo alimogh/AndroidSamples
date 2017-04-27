@@ -15,6 +15,7 @@
         <item>HandlerTimer</item>
         <item>Dagger2</item>
         <item>Retrofit</item>
+        <item>SpannableString富文本</item>
     </string-array>
 
     <string-array name="anim_type">

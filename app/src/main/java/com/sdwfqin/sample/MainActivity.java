@@ -20,6 +20,7 @@ import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
+import com.sdwfqin.sample.spannablestring.SpannableActivity;
 import com.sdwfqin.sample.spinner.SpinnerActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.view.ViewActivity;
@@ -87,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 13:
                         startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+                        break;
+                    case 14:
+                        startActivity(new Intent(MainActivity.this, SpannableActivity.class));
                         break;
                 }
             }

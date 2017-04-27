@@ -1,4 +1,18 @@
-# Test
+# 平时练习的例子，包含但不限于以下内容
+# 开发环境：AndroidStudio2.3.1、Gradle3.3，SdkVersion25
+
+![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
+![](http://7xvtvi.com1.z0.glb.clouddn.com/table2017042502.gif)
+![](http://7xvtvi.com1.z0.glb.clouddn.com/view17042602.jpg)
+![](http://7xvtvi.com1.z0.glb.clouddn.com/SpannableString20170427153509.png)
+
+- View基础
+
+    文档：http://www.sdwfqin.com/2017/04/26/View%E4%BD%8D%E7%BD%AE%E5%8F%8A%E8%A7%A6%E6%91%B8%E4%BA%8B%E4%BB%B6/
+
+- 富文本
+
+    文档：http://www.sdwfqin.com/2017/04/10/Android%E5%AF%8C%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/
 
 - RxJava
 
@@ -10,7 +24,7 @@
 
 - bottomSheet
 
-    底部弹窗
+    文档：http://www.sdwfqin.com/2016/09/18/BottomSheet%E5%BA%95%E9%83%A8%E5%BC%B9%E7%AA%97/
 
 - Recycler
 
