@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
+import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handletimer.HandlerTimerActivity;
@@ -91,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 14:
                         startActivity(new Intent(MainActivity.this, SpannableActivity.class));
+                        break;
+                    case 15:
+                        startActivity(new Intent(MainActivity.this, CanvasActivity.class));
                         break;
                 }
             }
