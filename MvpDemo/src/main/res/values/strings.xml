@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">MvpDemo</string>
-    <string name="user_name">用户名：</string>
-    <string name="user_pass">密    码：</string>
-    <string name="user_login">登陆</string>
-    <string name="user_clean">清除</string>
-</resources>

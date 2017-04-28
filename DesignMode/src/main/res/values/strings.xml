@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">DesignMode</string>
-
-    <string-array name="list">
-        <item>单例</item>
-    </string-array>
-</resources>
