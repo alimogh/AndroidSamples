@@ -20,6 +20,7 @@ import com.sdwfqin.sample.R;
 
 /**
  * Created by sdwfqin on 2017/4/27.
+ * 文档：http://www.sdwfqin.com/2017/04/15/Canvas绘图
  */
 public class CanvasView extends LinearLayout {
 
@@ -77,7 +78,7 @@ public class CanvasView extends LinearLayout {
          * @param paint 画笔
          */
         canvas.drawText("画圆：", 50, 100, p);// 画文本
-        // x,y表示圆心的位置，r半径
+
         /**
          * 画圆
          * @param cx     圆心x坐标
@@ -105,7 +106,8 @@ public class CanvasView extends LinearLayout {
         canvas.drawLine(650, 110, 800, 250, p);// 斜线
 
         /**
-         * 画笑脸方法：创建一个RectF区域（这个区域仅容纳第一笔）画第一笔，第一笔绘制完成修改RectF区域画第二笔，依次类推
+         * 画笑脸方法：创建一个RectF区域（这个区域仅容纳第一笔）画第一笔，
+         * 第一笔绘制完成修改RectF区域画第二笔，依次类推
          */
         //设置空心
         p.setStyle(Paint.Style.STROKE);
@@ -167,6 +169,7 @@ public class CanvasView extends LinearLayout {
         p.setShader(mShader);
         canvas.drawText("画扇形和椭圆:", 50, 550, p);
         RectF oval2 = new RectF(450, 450, 650, 650);// 设置个新的长方形，扫描测量
+        // 画扇形
         canvas.drawArc(oval2, 200, 130, true, p);
         //画椭圆
         oval2.set(650, 450, 900, 650);
@@ -200,9 +203,10 @@ public class CanvasView extends LinearLayout {
         p.setStyle(Paint.Style.STROKE);
         Path path2 = new Path();
         path2.moveTo(500, 1050);//设置Path的起点
-        path2.quadTo(600, 950, 700, 1050); //设置贝塞尔曲线的控制点坐标和终点坐标
-        path2.quadTo(800, 1150, 900, 1050); //设置贝塞尔曲线的控制点坐标和终点坐标
-        canvas.drawPath(path2, p);//画出贝塞尔曲线
+        //设置贝塞尔曲线的控制点坐标和终点坐标
+        path2.quadTo(600, 950, 700, 1050);
+        path2.quadTo(800, 1150, 900, 1050);
+        canvas.drawPath(path2, p);
 
         //画点
         p.setStyle(Paint.Style.FILL);
@@ -210,8 +214,10 @@ public class CanvasView extends LinearLayout {
         /**
          * x,y坐标
          */
-        canvas.drawPoint(500, 1200, p);//画一个点
-        canvas.drawPoints(new float[]{600, 1200, 650, 1250, 700, 1200}, p);//画多个点
+        //画一个点
+        canvas.drawPoint(500, 1200, p);
+        //画多个点
+        canvas.drawPoints(new float[]{600, 1200, 650, 1250, 700, 1200}, p);
 
         //画图片，就是贴图
         canvas.drawText("画图片：", 50, 1400, p);

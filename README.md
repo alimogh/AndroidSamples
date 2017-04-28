@@ -14,6 +14,10 @@
 
     文档：http://www.sdwfqin.com/2017/04/10/Android%E5%AF%8C%E6%96%87%E6%9C%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/
 
+- Canvas
+
+    文档：http://www.sdwfqin.com/2017/04/15/Canvas%E7%BB%98%E5%9B%BE/
+
 - RxJava
 
     文档：http://www.sdwfqin.com/2016/11/19/RxJava/

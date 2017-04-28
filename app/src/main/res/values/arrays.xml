@@ -7,7 +7,6 @@
         <item>BottomSheet</item>
         <item>PopupWindow</item>
         <item>Recycler</item>
-        <item>spinner下拉列表框</item>
         <item>ViewPager</item>
         <item>SQLite数据库和动态表格</item>
         <item>Notifications通知</item>
@@ -15,6 +14,7 @@
         <item>HandlerTimer</item>
         <item>Dagger2</item>
         <item>Retrofit</item>
+        <item>spinner下拉列表框</item>
         <item>SpannableString富文本</item>
         <item>Canvas</item>
     </string-array>
