@@ -1,5 +1,6 @@
 package com.sdwfqin.sample.popupwindow;
 
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -39,9 +40,12 @@ public class PopshowAtLocationActivity extends AppCompatActivity implements View
 
     private void showPopupWindow() {
         View contentView = LayoutInflater.from(PopshowAtLocationActivity.this).inflate(R.layout.show_at_location_activity_popup, null);
-        //问题1：明明在XML中设置了fill_parent，却没有充满全屏
+
         mPopWindow = new PopupWindow(contentView,
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+
+        mPopWindow.setBackgroundDrawable(new BitmapDrawable());
+        mPopWindow.setOutsideTouchable(true);
 
         TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
         TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
@@ -59,17 +63,17 @@ public class PopshowAtLocationActivity extends AppCompatActivity implements View
         int id = v.getId();
         switch (id) {
             case R.id.pop_computer: {
-                Toast.makeText(this, "clicked computer", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "计算机", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;
             case R.id.pop_financial: {
-                Toast.makeText(this, "clicked financial", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "金融", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;
             case R.id.pop_manage: {
-                Toast.makeText(this, "clicked manage", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "管理", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;

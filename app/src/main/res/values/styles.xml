@@ -37,7 +37,9 @@
     </style>
 
     <style name="contextMenuAnim" parent="@android:style/Animation.Activity">
+        <!--进入-->
         <item name="android:windowEnterAnimation">@anim/context_menu_enter</item>
+        <!--退出-->
         <item name="android:windowExitAnimation">@anim/context_menu_exit</item>
     </style>
 

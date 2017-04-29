@@ -33,6 +33,7 @@
             android:screenOrientation="landscape" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".handletimer.HandlerTimerActivity" />
+        <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
         <activity android:name=".mpandroidchart.ChartActivity" />
@@ -46,18 +47,17 @@
         <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity" />
         <activity android:name=".popupwindow.PopupActivity" />
         <activity android:name=".popupwindow.PopDropDownBgActivity" />
-        <activity android:name=".popupwindow.PopDropDownBgSeniorActivity" />
         <activity android:name=".popupwindow.PopshowAtLocationActivity" />
         <activity android:name=".popupwindow.PopupAnimActivity" />
         <activity android:name=".popupwindow.PopupShowAsDropDownActivity" />
-        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".popupwindow.LongShowPopupActivity" />
         <activity android:name=".view.ViewActivity" />
         <activity android:name=".view.viewposition.ViewPositionActivity" />
         <activity android:name=".view.motionslop.MeTsActivity" />
         <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
         <activity android:name=".view.scroller.ScrollerActivity" />
         <activity android:name=".spannablestring.SpannableActivity" />
-        <activity android:name=".canvas.CanvasActivity"></activity>
+        <activity android:name=".canvas.CanvasActivity" />
     </application>
 
 </manifest>

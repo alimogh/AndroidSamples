@@ -33,7 +33,7 @@ public class PopupActivity extends AppCompatActivity {
     private void initView() {
 
         String[] strings = new String[]{"PopDropDownBg", "PopshowAtLocation", "PopupAnim",
-                "PopupShowAsDropDown", "PopDropDownBgSeniorActivity"};
+                "PopupShowAsDropDown","任意位置长按显示弹窗"};
         popupList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
 
         popupList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -53,7 +53,7 @@ public class PopupActivity extends AppCompatActivity {
                         startActivity(new Intent(mContext, PopupShowAsDropDownActivity.class));
                         break;
                     case 4:
-                        startActivity(new Intent(mContext, PopDropDownBgSeniorActivity.class));
+                        startActivity(new Intent(mContext, LongShowPopupActivity.class));
                         break;
                 }
             }

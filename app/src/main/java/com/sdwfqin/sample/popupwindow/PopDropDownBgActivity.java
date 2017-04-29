@@ -15,6 +15,7 @@ import com.sdwfqin.sample.R;
  * Created by sdwfqin on 2016/8/18.
  */
 public class PopDropDownBgActivity extends AppCompatActivity implements View.OnClickListener {
+
     private PopupWindow mPopWindow;
     private TextView mMenuTv;
 
@@ -61,17 +62,17 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
         int id = v.getId();
         switch (id) {
             case R.id.pop_computer: {
-                Toast.makeText(this, "clicked computer", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "计算机", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;
             case R.id.pop_financial: {
-                Toast.makeText(this, "clicked financial", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "金融", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;
             case R.id.pop_manage: {
-                Toast.makeText(this, "clicked manage", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "管理", Toast.LENGTH_SHORT).show();
                 mPopWindow.dismiss();
             }
             break;
