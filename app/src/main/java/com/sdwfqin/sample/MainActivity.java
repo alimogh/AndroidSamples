@@ -1,6 +1,7 @@
 package com.sdwfqin.sample;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.sdwfqin.sample.activitytransition.T1Activity;
+import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
@@ -95,6 +97,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 15:
                         startActivity(new Intent(MainActivity.this, CanvasActivity.class));
+                        break;
+                    case 16:
+                        startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
                         break;
                 }
             }

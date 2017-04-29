@@ -17,6 +17,7 @@
         <item>spinner下拉列表框</item>
         <item>SpannableString富文本</item>
         <item>Canvas</item>
+        <item>AsyncTask</item>
     </string-array>
 
     <string-array name="anim_type">
