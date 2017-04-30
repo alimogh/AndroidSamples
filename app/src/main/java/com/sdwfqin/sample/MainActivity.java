@@ -1,7 +1,6 @@
 package com.sdwfqin.sample;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -17,7 +16,7 @@ import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
-import com.sdwfqin.sample.handletimer.HandlerTimerActivity;
+import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.mpandroidchart.ChartActivity;
 import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, GridViewActivity.class));
                         break;
                     case 10:
-                        startActivity(new Intent(MainActivity.this, HandlerTimerActivity.class));
+                        startActivity(new Intent(MainActivity.this, HandlerActivity.class));
                         break;
                     case 11:
                         startActivity(new Intent(MainActivity.this, DaggerActivity.class));

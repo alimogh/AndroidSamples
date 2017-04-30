@@ -32,7 +32,7 @@
             android:name=".gridview.GridViewActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
-        <activity android:name=".handletimer.HandlerTimerActivity" />
+        <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />

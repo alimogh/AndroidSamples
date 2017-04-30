@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.handletimer;
+package com.sdwfqin.sample.handler;
 
 import android.os.Handler;
 import android.os.Message;
@@ -11,17 +11,17 @@ import com.sdwfqin.sample.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class HandlerTimerActivity extends AppCompatActivity {
+public class HandlerActivity extends AppCompatActivity {
 
     // 状态锁
     private static Boolean isGuang = true;
-    private static String TAG = "test";
+    private static final String TAG = "HandlerActivity";
     private Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_handler_timer);
+        setContentView(R.layout.activity_handler);
 
         Message message = new Message();
         message.what = 1;
