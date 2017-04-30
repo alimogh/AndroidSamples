@@ -26,7 +26,6 @@ import com.sdwfqin.sample.spannablestring.SpannableActivity;
 import com.sdwfqin.sample.spinner.SpinnerActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.view.ViewActivity;
-import com.sdwfqin.sample.viewpager.ViewPagerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -68,36 +67,33 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
                         break;
                     case 6:
-                        startActivity(new Intent(MainActivity.this, ViewPagerActivity.class));
-                        break;
-                    case 7:
                         startActivity(new Intent(MainActivity.this, SqliteTableActivity.class));
                         break;
-                    case 8:
+                    case 7:
                         startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
                         break;
-                    case 9:
+                    case 8:
                         startActivity(new Intent(MainActivity.this, GridViewActivity.class));
                         break;
-                    case 10:
+                    case 9:
                         startActivity(new Intent(MainActivity.this, HandlerActivity.class));
                         break;
-                    case 11:
+                    case 10:
                         startActivity(new Intent(MainActivity.this, DaggerActivity.class));
                         break;
-                    case 12:
+                    case 11:
                         startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
                         break;
-                    case 13:
+                    case 12:
                         startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
                         break;
-                    case 14:
+                    case 13:
                         startActivity(new Intent(MainActivity.this, SpannableActivity.class));
                         break;
-                    case 15:
+                    case 14:
                         startActivity(new Intent(MainActivity.this, CanvasActivity.class));
                         break;
-                    case 16:
+                    case 15:
                         startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
                         break;
                 }

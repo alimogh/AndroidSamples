@@ -22,7 +22,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".spinner.SpinnerActivity" />
-        <activity android:name=".viewpager.ViewPagerActivity" />
         <activity android:name=".activitytransition.T1Activity" />
         <activity android:name=".activitytransition.T2Activity" />
         <activity android:name=".sqlite_table.SqliteTableActivity" />

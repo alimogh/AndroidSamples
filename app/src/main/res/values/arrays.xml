@@ -7,7 +7,6 @@
         <item>BottomSheet</item>
         <item>PopupWindow</item>
         <item>Recycler</item>
-        <item>ViewPager</item>
         <item>SQLite数据库和动态表格</item>
         <item>Notifications通知</item>
         <item>GridView</item>
