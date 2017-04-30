@@ -29,9 +29,6 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.mpandroidchart.common.MPChartMarkerView;
-import com.sdwfqin.sample.mpandroidchart.common.MyValueFormatter;
-import com.sdwfqin.sample.mpandroidchart.common.StringAxisValueFormatter;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -68,25 +65,26 @@ public class MPChartHelper {
      * @param barChart
      * @param xAxisValue
      * @param yAxisValue
-     * @param title 图例文字
+     * @param title         图例文字
      * @param xAxisTextSize x轴标签字体大小
      * @param barColor
      */
-    public static void setBarChart(BarChart barChart, List<String> xAxisValue, List<Float> yAxisValue, String title, float xAxisTextSize, Integer barColor) {
+    public static void setBarChart(BarChart barChart, List<String> xAxisValue, List<Float> yAxisValue,
+                                   String title, float xAxisTextSize, Integer barColor) {
         barChart.getDescription().setEnabled(false);//设置描述
         barChart.setPinchZoom(true);//设置按比例放缩柱状图
 
         //设置自定义的markerView
-        MPChartMarkerView markerView = new MPChartMarkerView(barChart.getContext(), R.layout.custom_marker_view);
-        barChart.setMarker(markerView);
+        // MPChartMarkerView markerView = new MPChartMarkerView(barChart.getContext(), R.layout.custom_marker_view);
+        // barChart.setMarker(markerView);
 
         //x坐标轴设置
-        IAxisValueFormatter xAxisFormatter = new StringAxisValueFormatter(xAxisValue);//设置自定义的x轴值格式化器
+//        IAxisValueFormatter xAxisFormatter = new StringAxisValueFormatter(xAxisValue);//设置自定义的x轴值格式化器
         XAxis xAxis = barChart.getXAxis();//获取x轴
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);//设置X轴标签显示位置
         xAxis.setDrawGridLines(false);//不绘制格网线
         xAxis.setGranularity(1f);//设置最小间隔，防止当放大时，出现重复标签。
-        xAxis.setValueFormatter(xAxisFormatter);
+//        xAxis.setValueFormatter(xAxisFormatter);
         xAxis.setTextSize(xAxisTextSize);//设置标签字体大小
         xAxis.setLabelCount(xAxisValue.size());//设置标签显示的个数
 
@@ -159,7 +157,6 @@ public class MPChartHelper {
             BarData data = new BarData(dataSets);
             data.setValueTextSize(10f);
             data.setBarWidth(0.9f);
-            data.setValueFormatter(new MyValueFormatter());
 
             barChart.setData(data);
         }
@@ -183,9 +180,6 @@ public class MPChartHelper {
         barChart.setDrawGridBackground(false);
         barChart.setExtraBottomOffset(10);
         barChart.setExtraTopOffset(30);
-
-        MPChartMarkerView markerView = new MPChartMarkerView(barChart.getContext(), R.layout.custom_marker_view);
-        barChart.setMarker(markerView);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -330,9 +324,6 @@ public class MPChartHelper {
         barChart.setExtraBottomOffset(10);
         barChart.setExtraTopOffset(30);
 
-        MPChartMarkerView markerView = new MPChartMarkerView(barChart.getContext(), R.layout.custom_marker_view);
-        barChart.setMarker(markerView);
-
         //x坐标轴设置
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -424,12 +415,6 @@ public class MPChartHelper {
             BarData data = new BarData(dataSets);
             data.setValueTextSize(10f);
             data.setBarWidth(0.9f);
-            data.setValueFormatter(new IValueFormatter() {
-                @Override
-                public String getFormattedValue(float value, Entry entry, int i, ViewPortHandler viewPortHandler) {
-                    return StringUtils.double2String(value, 2);
-                }
-            });
 
             barChart.setData(data);
         }
@@ -459,9 +444,6 @@ public class MPChartHelper {
         barChart.setPinchZoom(false);//设置不按比例放缩柱状图
         barChart.setExtraBottomOffset(10);
         barChart.setExtraTopOffset(30);
-
-        MPChartMarkerView markerView = new MPChartMarkerView(barChart.getContext(), R.layout.custom_marker_view);
-        barChart.setMarker(markerView);
 
         //x坐标轴设置
         XAxis xAxis = barChart.getXAxis();
@@ -573,12 +555,6 @@ public class MPChartHelper {
             BarData data = new BarData(dataSets);
             data.setValueTextSize(10f);
             data.setBarWidth(0.9f);
-            data.setValueFormatter(new IValueFormatter() {
-                @Override
-                public String getFormattedValue(float value, Entry entry, int i, ViewPortHandler viewPortHandler) {
-                    return StringUtils.double2String(value, 2);
-                }
-            });
 
             barChart.setData(data);
         }
@@ -588,8 +564,6 @@ public class MPChartHelper {
         barChart.getXAxis().setAxisMaximum(barChart.getBarData().getGroupWidth(groupSpace, barSpace) * xAxisValue.size() + xAxisValue.get(0));
         barChart.groupBars(xAxisValue.get(0), groupSpace, barSpace);
     }
-
-
 
 
     /**
@@ -608,36 +582,31 @@ public class MPChartHelper {
         List<String> titles = new ArrayList<>();
         titles.add(title);
 
-        setLinesChart(lineChart, xAxisValue, entriesList, titles, showSetValues,null);
+        setLinesChart(lineChart, xAxisValue, entriesList, titles, showSetValues, null);
     }
 
     /**
      * 绘制线图，默认最多绘制三种颜色。所有线均依赖左侧y轴显示。
      *
      * @param lineChart
-     * @param xAxisValue x轴的轴
-     * @param yXAxisValues y轴的值
-     * @param titles 每一个数据系列的标题
+     * @param xAxisValue    x轴的轴
+     * @param yXAxisValues  y轴的值
+     * @param titles        每一个数据系列的标题
      * @param showSetValues 是否在折线上显示数据集的值。true为显示，此时y轴上的数值不可见，否则相反。
-     * @param lineColors 线的颜色数组。为null时取默认颜色，此时最多绘制三种颜色。
+     * @param lineColors    线的颜色数组。为null时取默认颜色，此时最多绘制三种颜色。
      */
     public static void setLinesChart(LineChart lineChart, List<String> xAxisValue, List<List<Float>> yXAxisValues, List<String> titles, boolean showSetValues, int[] lineColors) {
         lineChart.getDescription().setEnabled(false);//设置描述
         lineChart.setPinchZoom(true);//设置按比例放缩柱状图
 
-        MPChartMarkerView markerView = new MPChartMarkerView(lineChart.getContext(), R.layout.custom_marker_view);
-        lineChart.setMarker(markerView);
-
 
         //x坐标轴设置
-        IAxisValueFormatter xAxisFormatter = new StringAxisValueFormatter(xAxisValue);
         XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setDrawGridLines(false);
         xAxis.setGranularity(1f);
         xAxis.setLabelCount(xAxisValue.size());
         /*xAxis.setAxisLineWidth(2f);*/
-        xAxis.setValueFormatter(xAxisFormatter);
 
         //y轴设置
         YAxis leftAxis = lineChart.getAxisLeft();
@@ -663,7 +632,7 @@ public class MPChartHelper {
         legend.setTextSize(12f);
 
         //设置柱状图数据
-        setLinesChartData(lineChart, yXAxisValues, titles, showSetValues,lineColors);
+        setLinesChartData(lineChart, yXAxisValues, titles, showSetValues, lineColors);
 
         lineChart.setExtraOffsets(10, 30, 20, 10);
         lineChart.animateX(1500);//数据显示动画，从左往右依次显示
@@ -695,7 +664,7 @@ public class MPChartHelper {
 
             for (int i = 0; i < entriesList.size(); ++i) {
                 LineDataSet set = new LineDataSet(entriesList.get(i), titles.get(i));
-                if(lineColors!=null){
+                if (lineColors != null) {
                     set.setColor(lineColors[i % entriesList.size()]);
                     set.setCircleColor(lineColors[i % entriesList.size()]);
                     set.setCircleColorHole(Color.WHITE);
@@ -715,12 +684,6 @@ public class MPChartHelper {
             LineData data = new LineData(dataSets);
             if (showSetValues) {
                 data.setValueTextSize(10f);
-                data.setValueFormatter(new IValueFormatter() {
-                    @Override
-                    public String getFormattedValue(float value, Entry entry, int i, ViewPortHandler viewPortHandler) {
-                        return StringUtils.double2String(value, 1);
-                    }
-                });
             } else {
                 data.setDrawValues(false);
             }
@@ -809,9 +772,6 @@ public class MPChartHelper {
         combineChart.getDescription().setEnabled(false);//设置描述
         combineChart.setPinchZoom(true);//设置按比例放缩柱状图
 
-        MPChartMarkerView markerView = new MPChartMarkerView(combineChart.getContext(), R.layout.custom_marker_view);
-        combineChart.setMarker(markerView);
-
         //设置绘制顺序，让线在柱的上层
         combineChart.setDrawOrder(new CombinedChart.DrawOrder[]{
                 CombinedChart.DrawOrder.BAR, CombinedChart.DrawOrder.LINE
@@ -897,13 +857,6 @@ public class MPChartHelper {
 
         LineData lineData = new LineData(lineDataSet);
         lineData.setValueTextSize(10f);
-        lineData.setValueFormatter(new IValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, Entry entry, int i, ViewPortHandler viewPortHandler) {
-                return StringUtils.double2String(value, 2);
-            }
-        });
-
         return lineData;
     }
 
@@ -929,12 +882,6 @@ public class MPChartHelper {
         BarData barData = new BarData(barDataSet);
         barData.setValueTextSize(10f);
         barData.setBarWidth(0.9f);
-        barData.setValueFormatter(new IValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, Entry entry, int i, ViewPortHandler viewPortHandler) {
-                return StringUtils.double2String(value, 2);
-            }
-        });
 
         return barData;
     }
