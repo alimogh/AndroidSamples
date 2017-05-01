@@ -22,8 +22,9 @@ import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
+import com.sdwfqin.sample.service.ServiceActivity;
 import com.sdwfqin.sample.spannablestring.SpannableActivity;
-import com.sdwfqin.sample.spinner.SpinnerActivity;
+import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.view.ViewActivity;
 
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
                         break;
                     case 12:
-                        startActivity(new Intent(MainActivity.this, SpinnerActivity.class));
+                        startActivity(new Intent(MainActivity.this, BroadcastActivity.class));
                         break;
                     case 13:
                         startActivity(new Intent(MainActivity.this, SpannableActivity.class));
@@ -95,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 15:
                         startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
+                        break;
+                    case 16:
+                        startActivity(new Intent(MainActivity.this, ServiceActivity.class));
                         break;
                 }
             }

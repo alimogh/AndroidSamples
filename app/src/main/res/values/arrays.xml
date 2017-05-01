@@ -10,13 +10,14 @@
         <item>SQLite数据库和动态表格</item>
         <item>Notifications通知</item>
         <item>GridView</item>
-        <item>HandlerTimer</item>
+        <item>Handler</item>
         <item>Dagger2</item>
         <item>Retrofit</item>
-        <item>spinner下拉列表框</item>
+        <item>Broadcast广播</item>
         <item>SpannableString富文本</item>
         <item>Canvas</item>
         <item>AsyncTask</item>
+        <item>Service服务</item>
     </string-array>
 
     <string-array name="anim_type">
