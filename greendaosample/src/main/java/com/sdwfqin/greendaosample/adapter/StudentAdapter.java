@@ -22,9 +22,13 @@ public class StudentAdapter extends BaseQuickAdapter<Student, BaseViewHolder> {
 
     @Override
     protected void convert(BaseViewHolder helper, Student item) {
-        helper.setText(R.id.tv_xh, item.getId() + "");
-        helper.setText(R.id.tv_xm, item.getName() + "");
-        helper.setText(R.id.tv_xb, item.getSex() + "");
-        helper.setText(R.id.tv_dz, item.getAddress() + "");
+        // 添加点击事件
+        helper.addOnClickListener(R.id.ll_a)
+                .addOnClickListener(R.id.btn_del)
+                .addOnClickListener(R.id.btn_xg)
+                .setText(R.id.tv_xh, item.getId() + "")
+                .setText(R.id.tv_xm, item.getName() + "")
+                .setText(R.id.tv_xb, item.getSex() + "")
+                .setText(R.id.tv_dz, item.getAddress() + "");
     }
 }
