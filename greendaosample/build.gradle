@@ -41,6 +41,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.5.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'org.greenrobot:greendao:3.2.2'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.15'
     compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
     testCompile 'junit:junit:4.12'
 }

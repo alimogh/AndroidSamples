@@ -82,10 +82,10 @@
 
         <TextView
             style="@style/add_text"
-            android:text="年龄："/>
+            android:text="性别："/>
 
         <EditText
-            android:id="@+id/et_age"
+            android:id="@+id/et_sex"
             style="@style/add_edit"/>
 
         <View

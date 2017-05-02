@@ -1,10 +1,10 @@
 package com.sdwfqin.greendaosample.model;
 
 import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.Unique;
-import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by sdwfqin on 2016/12/13.
@@ -21,52 +21,61 @@ public class Student {
     private String name;
     // 属性不能为空
     @NotNull
-    private String age;
+    private String sex;
     private String address;
-    @NotNull
-    private int top;
 
     // 编译后自动生成的构造函数、方法等的注释，提示构造函数、方法等不能被修改
-    @Generated(hash = 563604607)
-    public Student(long id, String name, @NotNull String age, String address,
-            int top) {
+    @Generated(hash = 611957646)
+    public Student(long id, String name, @NotNull String sex, String address) {
         this.id = id;
         this.name = name;
-        this.age = age;
+        this.sex = sex;
         this.address = address;
-        this.top = top;
     }
+
     @Generated(hash = 1556870573)
     public Student() {
     }
+
     public long getId() {
         return this.id;
     }
+
     public void setId(long id) {
         this.id = id;
     }
+
     public String getName() {
         return this.name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-    public String getAge() {
-        return this.age;
+
+    public String getSex() {
+        return this.sex;
     }
-    public void setAge(String age) {
-        this.age = age;
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
+
     public String getAddress() {
         return this.address;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }
-    public int getTop() {
-        return this.top;
-    }
-    public void setTop(int top) {
-        this.top = top;
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age='" + sex + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 }
