@@ -13,6 +13,7 @@ import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.view.gesturedetector.GestureDetectorActivity;
 import com.sdwfqin.sample.view.motionslop.MeTsActivity;
 import com.sdwfqin.sample.view.scroller.ScrollerActivity;
+import com.sdwfqin.sample.view.viewevent.ViewEventActivity;
 import com.sdwfqin.sample.view.viewposition.ViewPositionActivity;
 
 import butterknife.BindView;
@@ -34,7 +35,8 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        String[] strings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller"};
+        String[] strings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller",
+                "View触摸事件分发"};
         viewList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
 
         viewList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -52,6 +54,9 @@ public class ViewActivity extends AppCompatActivity {
                         break;
                     case 3:
                         startActivity(new Intent(mContext, ScrollerActivity.class));
+                        break;
+                    case 4:
+                        startActivity(new Intent(mContext, ViewEventActivity.class));
                         break;
                 }
             }

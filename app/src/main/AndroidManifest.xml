@@ -60,15 +60,14 @@
         <activity android:name=".asynctask.AsyncTaskActivity" />
         <activity android:name=".service.ServiceActivity" />
 
-        <service android:name=".service.service.NotInteractiveService"/>
-        <service android:name=".service.service.InteractiveService"/>
-        <service android:name=".service.service.StageService"/>
-        <service android:name=".service.service.MyIntentService"/>
-
+        <service android:name=".service.service.NotInteractiveService" />
+        <service android:name=".service.service.InteractiveService" />
+        <service android:name=".service.service.StageService" />
+        <service android:name=".service.service.MyIntentService" />
         // 普通广播
         <receiver android:name=".broadcast.broadcast.OrdinaryBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.sdwfqin.broadcastdemo"/>
+                <action android:name="com.sdwfqin.broadcastdemo" />
             </intent-filter>
         </receiver>
         // 有序广播
@@ -88,6 +87,7 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".view.viewevent.ViewEventActivity"></activity>
     </application>
 
 </manifest>
