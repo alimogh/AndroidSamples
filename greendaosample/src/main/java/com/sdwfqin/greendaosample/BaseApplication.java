@@ -1,4 +1,4 @@
-package com.sdwfqin.greendaosample.activity;
+package com.sdwfqin.greendaosample;
 
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;

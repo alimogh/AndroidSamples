@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="butterknife-8.5.1">
     <CLASSES>
-      <root url="jar://F:/AndroidAvd/.android/build-cache/6367fe93a2a6504bdba1e83db5322230284c4c0e/output/jars/classes.jar!/" />
-      <root url="file://F:/AndroidAvd/.android/build-cache/6367fe93a2a6504bdba1e83db5322230284c4c0e/output/res" />
+      <root url="file://F:/AndroidAvd/.android/build-cache/7ec6d2cb3ba6da08344d84c4afde0aa269563586/output/res" />
+      <root url="jar://F:/AndroidAvd/.android/build-cache/7ec6d2cb3ba6da08344d84c4afde0aa269563586/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

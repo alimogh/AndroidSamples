@@ -1,6 +1,5 @@
-package com.sdwfqin.greendaosample.activity;
+package com.sdwfqin.greendaosample.main;
 
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -21,11 +20,11 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.sdwfqin.greendaosample.BaseApplication;
 import com.sdwfqin.greendaosample.R;
 import com.sdwfqin.greendaosample.adapter.StudentAdapter;
 import com.sdwfqin.greendaosample.model.Student;
@@ -37,7 +36,8 @@ import java.util.TimerTask;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainView,View.OnClickListener,
+        SwipeRefreshLayout.OnRefreshListener,BaseQuickAdapter.OnItemChildClickListener{
 
     @BindView(R.id.toolbar_title)
     TextView mToolbarTitle;
@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout mSrl;
 
     private BaseQuickAdapter homeAdapter;
-    List<Student> mList = new ArrayList<Student>();
     private BottomSheetDialog mBottomSheetDialog;
     private static final String TAG = "MainActivity";
+    private MainPresenter mainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,59 +69,75 @@ public class MainActivity extends AppCompatActivity {
         inflateMenu();
         initSearchView();
         initView();
+
+        mainPresenter = new MainPresenterImpl(this, new MainInteractorImpl());
     }
 
     private void initView() {
 
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showBottomSheetDialog();
-            }
-        });
-
-        mSrl.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_red_light,
-                android.R.color.holo_orange_light, android.R.color.holo_green_light);
-        mSrl.setRefreshing(true);
-        mSrl.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                initAdd();
-            }
-        });
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
         // Adapter
-        homeAdapter = new StudentAdapter(R.layout.item_home, mList);
+        homeAdapter = new StudentAdapter(R.layout.item_home, null);
         homeAdapter.openLoadAnimation();
 
         mRecycler.setAdapter(homeAdapter);
 
-        // 加载数据
-        initData();
+        mSrl.setColorSchemeResources(android.R.color.holo_blue_light, android.R.color.holo_red_light,
+                android.R.color.holo_orange_light, android.R.color.holo_green_light);
 
-        homeAdapter.setOnItemChildClickListener(new BaseQuickAdapter.OnItemChildClickListener() {
+        mFab.setOnClickListener(this);
+        mSrl.setOnRefreshListener(this);
+        homeAdapter.setOnItemChildClickListener(this);
+    }
+
+    // 搜索栏
+    private void initSearchView() {
+        MenuItem search = mToolbar.getMenu().findItem(R.id.menu_search);
+        final SearchView searchView = (SearchView) search.getActionView();
+
+        searchView.setQueryHint("请输入学号：");
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
-            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-                Log.e(TAG, "onItemClick: " + "单击");
-                switch (view.getId()) {
-                    case R.id.btn_xg:
-                        Log.e(TAG, "onItemClick: " + "修改");
-                        upData((Student) adapter.getItem(position), position);
-                        break;
-                    case R.id.btn_del:
-                        Log.e(TAG, "onItemClick: " + "删除");
-                        delData((Student) adapter.getItem(position), position);
-                        break;
-                    case R.id.ll_a:
-                        Log.e(TAG, "onItemClick: " + "点击条目");
-                        break;
-                }
+            public boolean onQueryTextSubmit(String query) {
+                Log.e(TAG, query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                Log.e(TAG, s);
+                return false;
             }
         });
     }
 
+    // 菜单按钮
+    private void inflateMenu() {
+        mToolbar.inflateMenu(R.menu.menu_frist);
+        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.menu_about:
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sdwfqin"));
+                        startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+        });
+    }
+
+    // 加载数据
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mainPresenter.onResume();
+    }
+
     // 更新数据
-    private void upData(final Student student, final int position) {
+    @Override
+    public void upData(final Student student, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this)
                 .setTitle("修改");
 
@@ -164,7 +180,6 @@ public class MainActivity extends AppCompatActivity {
                 // 修改数据
                 homeAdapter.remove(position);
                 homeAdapter.addData(position, student);
-                mList = homeAdapter.getData();
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
@@ -179,7 +194,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // 删除数据
-    private void delData(Student student, int position) {
+    @Override
+    public void delData(Student student, int position) {
         try {
             BaseApplication.getDaoInstant().getStudentDao().delete(student);
         } catch (Exception e) {
@@ -191,85 +207,28 @@ public class MainActivity extends AppCompatActivity {
         homeAdapter.remove(position);
     }
 
-    // 第一次加载数据
-    private void initData() {
-        Log.e(TAG, "initData: " + "刷新");
-        try {
-            mList = BaseApplication.getDaoInstant().getStudentDao().loadAll();
-        } catch (Exception e) {
-            Log.e(TAG, "initData: ", e);
-            Toast.makeText(this, "数据读取失败", Toast.LENGTH_SHORT).show();
-        }
-        Log.e(TAG, "initData: " + mList.toString());
+    @Override
+    public void showMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void setItems(List<Student> items) {
+       homeAdapter.setNewData(items);
+    }
+
+    @Override
+    public void showProgress() {
+        mSrl.setRefreshing(true);
+    }
+
+    @Override
+    public void hideProgress() {
         mSrl.setRefreshing(false);
-        homeAdapter.setNewData(mList);
-    }
-
-    // 刷新数据
-    private void initAdd() {
-        new Handler().postDelayed(new TimerTask() {
-            @Override
-            public void run() {
-                mSrl.setRefreshing(false);
-            }
-        }, 1000);
-//        Log.e(TAG, "initData: " + "刷新");
-//        List<Student> data = new ArrayList<Student>();
-//        try {
-//            data = BaseApplication.getDaoInstant().getStudentDao().loadAll();
-//        } catch (Exception e) {
-//            Log.e(TAG, "initData: ", e);
-//            Toast.makeText(this, "数据读取失败", Toast.LENGTH_SHORT).show();
-//        }
-//        Log.e(TAG, "initData: " + mList.toString());
-//        mSrl.setRefreshing(false);
-//        homeAdapter.addData(0, data);
-////        mRecycler.getLayoutManager().scrollToPosition(0);
-//
-//        // 获取数据
-//        mList = homeAdapter.getData();
-//        Log.e(TAG, "onClick: " + mList.toString());
-    }
-
-    // 搜索栏
-    private void initSearchView() {
-        MenuItem search = mToolbar.getMenu().findItem(R.id.menu_search);
-        final SearchView searchView = (SearchView) search.getActionView();
-
-        searchView.setQueryHint("请输入学号：");
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                Log.e(TAG, query);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                Log.e(TAG, s);
-                return false;
-            }
-        });
-    }
-
-    // 菜单按钮
-    private void inflateMenu() {
-        mToolbar.inflateMenu(R.menu.menu_frist);
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.menu_about:
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sdwfqin"));
-                        startActivity(intent);
-                        break;
-                }
-                return true;
-            }
-        });
     }
 
     // 添加数据弹窗（增加数据）
+    @Override
     public void showBottomSheetDialog() {
         View v = View.inflate(this, R.layout.sheet_dialog, null);
         mBottomSheetDialog = new BottomSheetDialog(this);
@@ -317,9 +276,6 @@ public class MainActivity extends AppCompatActivity {
 
                 homeAdapter.addData(0, student);
                 mRecycler.getLayoutManager().scrollToPosition(0);
-                // 获取数据
-                mList = homeAdapter.getData();
-                Log.e(TAG, "onClick: " + mList.toString());
                 mBottomSheetDialog.dismiss();
 
             }
@@ -329,6 +285,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
+        mainPresenter.onDestroy();
         super.onDestroy();
+    }
+
+    @Override
+    public void onClick(View v) {
+        // 点击浮动按钮
+        mainPresenter.createData();
+    }
+
+    // 下拉刷新
+    @Override
+    public void onRefresh() {
+        // 重新加载一下数据
+        mainPresenter.onResume();
+    }
+
+    // 点击条目
+    @Override
+    public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+        mainPresenter.OnItemChildClick(view, (Student) adapter.getItem(position), position);
     }
 }
