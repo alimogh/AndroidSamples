@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -26,12 +25,10 @@ import android.widget.Toast;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.sdwfqin.greendaosample.BaseApplication;
 import com.sdwfqin.greendaosample.R;
-import com.sdwfqin.greendaosample.adapter.StudentAdapter;
+import com.sdwfqin.greendaosample.adapter.MainAdapter;
 import com.sdwfqin.greendaosample.model.Student;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements MainView,View.OnC
 
         mRecycler.setLayoutManager(new LinearLayoutManager(this));
         // Adapter
-        homeAdapter = new StudentAdapter(R.layout.item_home, null);
+        homeAdapter = new MainAdapter(R.layout.item_home, null);
         homeAdapter.openLoadAnimation();
 
         mRecycler.setAdapter(homeAdapter);
