@@ -22,6 +22,7 @@ import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
+import com.sdwfqin.sample.rxjava.RxJavaActivity;
 import com.sdwfqin.sample.service.ServiceActivity;
 import com.sdwfqin.sample.spannablestring.SpannableActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
@@ -99,6 +100,9 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 16:
                         startActivity(new Intent(MainActivity.this, ServiceActivity.class));
+                        break;
+                    case 17:
+                        startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
                         break;
                 }
             }

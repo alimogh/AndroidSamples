@@ -18,6 +18,7 @@
         <item>Canvas</item>
         <item>AsyncTask</item>
         <item>Service服务</item>
+        <item>RxJava</item>
     </string-array>
 
     <string-array name="anim_type">

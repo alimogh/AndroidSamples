@@ -46,6 +46,6 @@ ext {
     okhttpVersion = '3.1.2'
 
     // rxjava
-    rxjavaVersion = '2.0.9'
+    rxjavaVersion = '2.1.0'
     rxandroidVersion = '2.0.1'
 }
