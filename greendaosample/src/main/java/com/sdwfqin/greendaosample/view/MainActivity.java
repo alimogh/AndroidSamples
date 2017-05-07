@@ -1,4 +1,4 @@
-package com.sdwfqin.greendaosample.main;
+package com.sdwfqin.greendaosample.view;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -26,15 +26,18 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.sdwfqin.greendaosample.BaseApplication;
 import com.sdwfqin.greendaosample.R;
 import com.sdwfqin.greendaosample.adapter.MainAdapter;
-import com.sdwfqin.greendaosample.model.Student;
+import com.sdwfqin.greendaosample.model.entry.Student;
+import com.sdwfqin.greendaosample.model.interactor.MainInteractorImpl;
+import com.sdwfqin.greendaosample.presenter.MainPresenter;
+import com.sdwfqin.greendaosample.presenter.MainPresenterImpl;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements MainView,View.OnClickListener,
-        SwipeRefreshLayout.OnRefreshListener,BaseQuickAdapter.OnItemChildClickListener{
+public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener,
+        SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.OnItemChildClickListener {
 
     @BindView(R.id.toolbar_title)
     TextView mToolbarTitle;
@@ -211,7 +214,7 @@ public class MainActivity extends AppCompatActivity implements MainView,View.OnC
 
     @Override
     public void setItems(List<Student> items) {
-       homeAdapter.setNewData(items);
+        homeAdapter.setNewData(items);
     }
 
     @Override
@@ -302,6 +305,18 @@ public class MainActivity extends AppCompatActivity implements MainView,View.OnC
     // 点击条目
     @Override
     public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
-        mainPresenter.OnItemChildClick(view, (Student) adapter.getItem(position), position);
+        switch (view.getId()) {
+            case R.id.btn_xg:
+                Log.e(TAG, "onItemClick: " + "修改");
+                mainPresenter.OnClickUpData((Student) adapter.getItem(position), position);
+                break;
+            case R.id.btn_del:
+                Log.e(TAG, "onItemClick: " + "删除");
+                mainPresenter.OnClickDelData((Student) adapter.getItem(position), position);
+                break;
+            case R.id.ll_a:
+                Log.e(TAG, "onItemClick: " + "点击条目");
+                break;
+        }
     }
 }

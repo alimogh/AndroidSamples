@@ -1,15 +1,12 @@
-package com.sdwfqin.greendaosample.main;
+package com.sdwfqin.greendaosample.model.interactor;
 
-import android.os.Handler;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.sdwfqin.greendaosample.BaseApplication;
-import com.sdwfqin.greendaosample.model.Student;
+import com.sdwfqin.greendaosample.model.entry.Student;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.TimerTask;
 
 /**
  * Created by sdwfqin on 2017/5/5.

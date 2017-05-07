@@ -1,4 +1,4 @@
-package com.sdwfqin.greendaosample.model;
+package com.sdwfqin.greendaosample.model.entry;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Generated;

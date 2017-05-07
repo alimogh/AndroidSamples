@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.sdwfqin.greendaosample.R;
-import com.sdwfqin.greendaosample.model.Student;
+import com.sdwfqin.greendaosample.model.entry.Student;
 
 import java.util.List;
 

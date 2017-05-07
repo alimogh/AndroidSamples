@@ -1,10 +1,8 @@
-package com.sdwfqin.greendaosample.main;
+package com.sdwfqin.greendaosample.presenter;
 
-import android.util.Log;
-import android.view.View;
-
-import com.sdwfqin.greendaosample.R;
-import com.sdwfqin.greendaosample.model.Student;
+import com.sdwfqin.greendaosample.model.entry.Student;
+import com.sdwfqin.greendaosample.model.interactor.MainInteractor;
+import com.sdwfqin.greendaosample.view.MainView;
 
 import java.util.List;
 
@@ -32,24 +30,13 @@ public class MainPresenterImpl implements MainPresenter, MainInteractor.OnFinish
     }
 
     @Override
-    public void OnItemChildClick(View view, Student student, int position) {
-        Log.e(TAG, "onItemClick: " + "单击");
+    public void OnClickUpData(Student student, int position) {
+        mainView.upData(student, position);
+    }
 
-        if (mainView != null) {
-            switch (view.getId()) {
-                case R.id.btn_xg:
-                    Log.e(TAG, "onItemClick: " + "修改");
-                    mainView.upData(student, position);
-                    break;
-                case R.id.btn_del:
-                    Log.e(TAG, "onItemClick: " + "删除");
-                    mainView.delData(student, position);
-                    break;
-                case R.id.ll_a:
-                    Log.e(TAG, "onItemClick: " + "点击条目");
-                    break;
-            }
-        }
+    @Override
+    public void OnClickDelData(Student student, int position) {
+        mainView.delData(student, position);
     }
 
     @Override

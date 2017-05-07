@@ -1,6 +1,6 @@
-package com.sdwfqin.greendaosample.main;
+package com.sdwfqin.greendaosample.view;
 
-import com.sdwfqin.greendaosample.model.Student;
+import com.sdwfqin.greendaosample.model.entry.Student;
 
 import java.util.List;
 
