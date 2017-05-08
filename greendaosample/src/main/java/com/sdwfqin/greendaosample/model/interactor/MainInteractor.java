@@ -12,8 +12,21 @@ public interface MainInteractor {
 
     interface OnFinishedListener {
         void onFinishedSuccess(List<Student> items);
+
         void onFinishedError(String s);
     }
 
     void initData(OnFinishedListener listener);
+
+    interface OnMesListener {
+        void onMesSuccess(String s);
+
+        void onMesError(String s);
+    }
+
+    void upData(Student student, OnMesListener onMesListener);
+
+    void delData(Student student, OnMesListener onMesListener);
+
+    void createData(Student student, OnMesListener onMesListener);
 }

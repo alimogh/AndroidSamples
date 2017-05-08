@@ -169,23 +169,13 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
                 student.setSex(sex);
                 student.setAddress(address);
 
-                try {
-                    BaseApplication.getDaoInstant().getStudentDao().update(student);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "修改失败", Toast.LENGTH_SHORT).show();
-                    Log.e(TAG, "onClick: ", e);
-                    return;
-                }
-
-                // 修改数据
-                homeAdapter.remove(position);
-                homeAdapter.addData(position, student);
+                mainPresenter.OnUpData(student, position);
             }
         });
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                homeAdapter.notifyItemChanged(position);
+
             }
         });
 
@@ -193,18 +183,30 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         alertDialog.show();
     }
 
+    @Override
+    public void upAdapter(Student student, int position) {
+        // 修改数据
+        homeAdapter.remove(position);
+        homeAdapter.addData(position, student);
+    }
+
+    @Override
+    public void upAdapter(int position) {
+        // 删除数据
+        homeAdapter.remove(position);
+    }
+
+    @Override
+    public void addAdapter(Student student) {
+        homeAdapter.addData(0, student);
+        mRecycler.getLayoutManager().scrollToPosition(0);
+        mBottomSheetDialog.dismiss();
+    }
+
     // 删除数据
     @Override
     public void delData(Student student, int position) {
-        try {
-            BaseApplication.getDaoInstant().getStudentDao().delete(student);
-        } catch (Exception e) {
-            Log.e(TAG, "delData: ", e);
-            Toast.makeText(this, "删除失败", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        homeAdapter.remove(position);
+        mainPresenter.OnDelData(student, position);
     }
 
     @Override
@@ -261,22 +263,8 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
                     return;
                 }
                 Student student = new Student(xh, name, age, address);
-                try {
-                    BaseApplication.getDaoInstant().getStudentDao().insertOrReplace(student);
-                } catch (Exception e) {
-                    Toast.makeText(MainActivity.this, "添加失败", Toast.LENGTH_SHORT).show();
-                    Log.e(TAG, "onClick: ", e);
-                    mBottomSheetDialog.dismiss();
-                    return;
-                }
 
-//                List<Student> data = new ArrayList<Student>();
-//                data.add(student);
-//                homeAdapter.addData(0, data);
-
-                homeAdapter.addData(0, student);
-                mRecycler.getLayoutManager().scrollToPosition(0);
-                mBottomSheetDialog.dismiss();
+                mainPresenter.OnCreateData(student);
 
             }
         });

@@ -18,6 +18,12 @@ public interface MainView {
 
     void upData(Student student, int position);
 
+    void upAdapter(Student student,int position);
+
+    void upAdapter(int position);
+
+    void addAdapter(Student student);
+
     void delData(Student student, int position);
 
     void showMessage(String message);

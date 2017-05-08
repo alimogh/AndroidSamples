@@ -14,6 +14,12 @@ public interface MainPresenter {
 
     void OnClickDelData(Student student, int position);
 
+    void OnUpData(Student student, int position);
+
+    void OnDelData(Student student, int position);
+
+    void OnCreateData(Student student);
+
     void createData();
 
     void onDestroy();

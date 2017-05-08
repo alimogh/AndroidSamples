@@ -10,7 +10,7 @@ import java.util.List;
  * Created by sdwfqin on 2017/5/5.
  */
 
-public class MainPresenterImpl implements MainPresenter, MainInteractor.OnFinishedListener {
+public class MainPresenterImpl implements MainPresenter {
 
     private MainView mainView;
     private MainInteractor mainInteractor;
@@ -26,7 +26,22 @@ public class MainPresenterImpl implements MainPresenter, MainInteractor.OnFinish
         if (mainView != null) {
             mainView.showProgress();
         }
-        mainInteractor.initData(this);
+        mainInteractor.initData(new MainInteractor.OnFinishedListener() {
+            @Override
+            public void onFinishedSuccess(List<Student> items) {
+                if (mainView != null) {
+                    mainView.setItems(items);
+                    mainView.hideProgress();
+                }
+            }
+
+            @Override
+            public void onFinishedError(String s) {
+                if (mainView != null) {
+                    mainView.showMessage(s);
+                }
+            }
+        });
     }
 
     @Override
@@ -40,6 +55,54 @@ public class MainPresenterImpl implements MainPresenter, MainInteractor.OnFinish
     }
 
     @Override
+    public void OnUpData(final Student student, final int position) {
+        mainInteractor.upData(student, new MainInteractor.OnMesListener() {
+            @Override
+            public void onMesSuccess(String s) {
+                mainView.upAdapter(student, position);
+                mainView.showMessage(s);
+            }
+
+            @Override
+            public void onMesError(String s) {
+                mainView.showMessage(s);
+            }
+        });
+    }
+
+    @Override
+    public void OnDelData(Student student, final int position) {
+        mainInteractor.delData(student, new MainInteractor.OnMesListener() {
+            @Override
+            public void onMesSuccess(String s) {
+                mainView.upAdapter(position);
+                mainView.showMessage(s);
+            }
+
+            @Override
+            public void onMesError(String s) {
+                mainView.showMessage(s);
+            }
+        });
+    }
+
+    @Override
+    public void OnCreateData(final Student student) {
+        mainInteractor.createData(student, new MainInteractor.OnMesListener() {
+            @Override
+            public void onMesSuccess(String s) {
+                mainView.addAdapter(student);
+                mainView.showMessage(s);
+            }
+
+            @Override
+            public void onMesError(String s) {
+                mainView.showMessage(s);
+            }
+        });
+    }
+
+    @Override
     public void createData() {
         if (mainView != null) {
             mainView.showBottomSheetDialog();
@@ -49,20 +112,5 @@ public class MainPresenterImpl implements MainPresenter, MainInteractor.OnFinish
     @Override
     public void onDestroy() {
         mainView = null;
-    }
-
-    @Override
-    public void onFinishedSuccess(List<Student> items) {
-        if (mainView != null) {
-            mainView.setItems(items);
-            mainView.hideProgress();
-        }
-    }
-
-    @Override
-    public void onFinishedError(String s) {
-        if (mainView != null) {
-            mainView.showMessage(s);
-        }
     }
 }
