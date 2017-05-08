@@ -1,6 +1,6 @@
 # 平时练习的例子，持续更新中，包含但不限于以下内容
 # 开发环境：AndroidStudio2.3.1、Gradle3.3，Sdk25
-# 详细解释请移步到我的博客：http://www.sdwfqin.com
+# 详细解释请移步到我的博客：https://www.sdwfqin.com
 
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/table2017042502.gif)
