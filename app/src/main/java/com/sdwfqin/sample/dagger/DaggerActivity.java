@@ -7,8 +7,13 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.sdwfqin.sample.R;
+import com.sdwfqin.sample.dagger.Componet.DaggerUserComponet;
+import com.sdwfqin.sample.dagger.Controller.MoneyController;
+import com.sdwfqin.sample.dagger.Controller.OrderController;
+import com.sdwfqin.sample.dagger.model.UserModule;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,8 +25,13 @@ public class DaggerActivity extends AppCompatActivity {
     @BindView(R.id.tvCoffee)
     TextView tvCoffee;
 
+    // @Inject 通常在需要依赖的地方使用这个注解，也就是针水打进屁股的过程
+    @Named("debug")
     @Inject
-    OrderController orderController;
+    OrderController orderController1;
+    @Named("release")
+    @Inject
+    OrderController orderController2;
     @Inject
     MoneyController moneyController;
 
@@ -31,9 +41,6 @@ public class DaggerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger);
         ButterKnife.bind(this);
-        // DaggerSimpleComponent编译时生成
-//        daggerComponent = DaggerDaggerComponent.builder().simpleModule(getModule()).build();
-//        daggerComponent.inject(this);
 
         // DaggerUserComponet是编译时生成的
         DaggerUserComponet.builder().userModule(new UserModule(this)).build().inject(this);
@@ -42,7 +49,8 @@ public class DaggerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tvCoffee.setText(moneyController.payMoney());
-                orderController.order();
+                orderController1.order();
+                orderController2.age();
             }
         });
     }

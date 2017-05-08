@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.dagger;
+package com.sdwfqin.sample.dagger.Controller;
 
 import android.content.Context;
 import android.util.Log;
