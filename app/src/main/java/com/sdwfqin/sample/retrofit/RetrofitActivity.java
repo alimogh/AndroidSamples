@@ -1,68 +1,40 @@
 package com.sdwfqin.sample.retrofit;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.retrofit.api.ApiStores;
-import com.sdwfqin.sample.retrofit.model.WeatherModel;
+import com.sdwfqin.sample.retrofit.activity.Retrofit1Activity;
+import com.sdwfqin.sample.retrofit.activity.Retrofit2Activity;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.converter.scalars.ScalarsConverterFactory;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class RetrofitActivity extends AppCompatActivity {
+
+    @BindView(R.id.retrofit_list)
+    ListView retrofitList;
+
+    private String[] title = new String[]{"返回Json类", "返回String字符串"};
+    private Class[] classes = new Class[]{Retrofit1Activity.class, Retrofit2Activity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
+        ButterKnife.bind(this);
 
-        // 返回Json
-        Retrofit mRetrofit = new Retrofit.Builder() //01:获取Retrofit对象
-                .baseUrl(ApiStores.API_SERVER_URL) //02采用链式结构绑定Base url
-                .addConverterFactory(GsonConverterFactory.create()) //使用工厂模式创建Gson的解析器
-                .build();
-        //04获取API接口的实现类的实例对象
-        ApiStores mApiStores = mRetrofit.create(ApiStores.class);
-        Call<WeatherModel> mModelCall = mApiStores.loadDataByJson("101190201");
-        mModelCall.enqueue(new Callback<WeatherModel>() {
+        retrofitList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, title));
+
+        retrofitList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onResponse(Call<WeatherModel> call, Response<WeatherModel> response) {
-
-                if (response.body() == null) {
-                    Log.e("test", "onResponse: " + null);
-                } else {
-                    Log.e("test", "onResponse: " + response.body().getWeatherinfo().toString());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<WeatherModel> call, Throwable t) {
-
-            }
-        });
-
-        // 返回字符串
-        Retrofit mRetrofit2 = new Retrofit.Builder() //01:获取Retrofit对象
-                .baseUrl(ApiStores.API_SERVER_URL) //02采用链式结构绑定Base url
-                .addConverterFactory(ScalarsConverterFactory.create()) //使用工厂模式创建字符串解析器
-                .build();
-        ApiStores mApiStores2 = mRetrofit2.create(ApiStores.class);
-        Call<String> mModelCall2 = mApiStores2.loadDataByString("101190201");
-        mModelCall2.enqueue(new Callback<String>() {
-            @Override
-            public void onResponse(Call<String> call, Response<String> response) {
-                Log.e("test", "onResponse字符串：" + response.body());
-            }
-
-            @Override
-            public void onFailure(Call<String> call, Throwable t) {
-
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                startActivity(new Intent(RetrofitActivity.this, classes[position]));
             }
         });
     }

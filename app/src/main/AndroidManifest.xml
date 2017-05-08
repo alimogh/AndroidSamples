@@ -93,7 +93,9 @@
         <activity android:name=".rxjava.rxjava2.RxJava2Activity" />
         <activity android:name=".rxjava.rxjava3.RxJava3Activity" />
         <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
-        <activity android:name=".rxjava.rxjava5.RxJava5Activity"></activity>
+        <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
+        <activity android:name=".retrofit.activity.Retrofit1Activity" />
+        <activity android:name=".retrofit.activity.Retrofit2Activity"></activity>
     </application>
 
 </manifest>
