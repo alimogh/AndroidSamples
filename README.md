@@ -22,7 +22,7 @@
 
 - RxJava
 
-    文档：http://www.sdwfqin.com/2016/11/19/RxJava/
+    文档：https://www.sdwfqin.com/2016/12/25/RxJava%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/
 
 - Retrofit
 

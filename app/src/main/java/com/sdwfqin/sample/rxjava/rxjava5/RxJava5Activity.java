@@ -26,6 +26,11 @@ public class RxJava5Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rx_java5);
 
+        /**
+         * Subscription.request()方法表示Subscriber要处理几个事件
+         * emitter.requested()方法表示减少几个事件
+         * 在Flowable中使用Subscription.cancel()关闭事件处理
+         */
         Flowable.create(new FlowableOnSubscribe<Integer>() {
             @Override
             public void subscribe(FlowableEmitter<Integer> emitter) throws Exception {
@@ -46,6 +51,7 @@ public class RxJava5Activity extends AppCompatActivity {
                     @Override
                     public void onSubscribe(Subscription s) {
                         Log.e(TAG, "onSubscribe");
+                        // 全局的
                         mSubscription = s;
                         // 处理多少个发送过来的事件
                         mSubscription.request(Long.MAX_VALUE);
