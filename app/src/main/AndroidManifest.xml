@@ -32,9 +32,11 @@
             android:screenOrientation="landscape" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
         <activity android:name=".handler.HandlerActivity" />
-        <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".retrofit.activity.Retrofit1Activity" />
+        <activity android:name=".retrofit.activity.Retrofit2Activity" />
         <activity android:name=".mpandroidchart.ChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.BarChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity" />
@@ -55,10 +57,19 @@
         <activity android:name=".view.motionslop.MeTsActivity" />
         <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
         <activity android:name=".view.scroller.ScrollerActivity" />
+        <activity android:name=".view.viewevent.ViewEventActivity" />
         <activity android:name=".spannablestring.SpannableActivity" />
         <activity android:name=".canvas.CanvasActivity" />
         <activity android:name=".asynctask.AsyncTaskActivity" />
         <activity android:name=".service.ServiceActivity" />
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".rxjava.rxjava1.RxJava1Activity" />
+        <activity android:name=".rxjava.rxjava2.RxJava2Activity" />
+        <activity android:name=".rxjava.rxjava3.RxJava3Activity" />
+        <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
+        <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
+        <activity android:name=".okhttp.OkHttpActivity" />
+        <activity android:name=".okhttp.okhttp1.OkHttp1Activity"/>
 
         <service android:name=".service.service.NotInteractiveService" />
         <service android:name=".service.service.InteractiveService" />
@@ -86,16 +97,6 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".view.viewevent.ViewEventActivity" />
-        <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".rxjava.rxjava1.RxJava1Activity" />
-        <activity android:name=".rxjava.rxjava2.RxJava2Activity" />
-        <activity android:name=".rxjava.rxjava3.RxJava3Activity" />
-        <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
-        <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
-        <activity android:name=".retrofit.activity.Retrofit1Activity" />
-        <activity android:name=".retrofit.activity.Retrofit2Activity"></activity>
     </application>
 
 </manifest>

@@ -43,7 +43,7 @@ ext {
 
     // squareup
     retrofitVersion = '2.2.0'
-    okhttpVersion = '3.1.2'
+    okhttpVersion = '3.7.0'
 
     // rxjava
     rxjavaVersion = '2.1.0'

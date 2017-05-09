@@ -3,7 +3,6 @@ package com.sdwfqin.sample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,6 +12,7 @@ import android.widget.Toast;
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
+import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
@@ -25,86 +25,39 @@ import com.sdwfqin.sample.retrofit.RetrofitActivity;
 import com.sdwfqin.sample.rxjava.RxJavaActivity;
 import com.sdwfqin.sample.service.ServiceActivity;
 import com.sdwfqin.sample.spannablestring.SpannableActivity;
-import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.view.ViewActivity;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
 
-    private ListView mList;
-    private String[] mData;
+    @BindView(R.id.list)
+    ListView list;
+
+    private String[] title = new String[]{"View", "MpAndroidChart", "Activity跳转动画", "BottomSheet",
+            "PopupWindow", "Recycler", "SQLite数据库和动态表格", "Notifications通知", "GridView",
+            "Handler", "Dagger2", "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas",
+            "AsyncTask", "Service服务", "RxJava"};
+    private Class[] classes = new Class[]{ViewActivity.class, ChartActivity.class, T1Activity.class,
+            BottomSheetActivity.class, PopupActivity.class, RecyclerActivity.class, SqliteTableActivity.class,
+            NotificationsActivity.class, GridViewActivity.class, HandlerActivity.class, DaggerActivity.class,
+            RetrofitActivity.class, BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class,
+            AsyncTaskActivity.class, ServiceActivity.class, RxJavaActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        mList = (ListView) findViewById(R.id.list);
+        list.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, title));
 
-        mData = getResources().getStringArray(R.array.list);
-
-        mList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, mData));
-
-        mList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.e("tag", "onItemClick: " + mData[i]);
-                switch (i) {
-                    case 0:
-                        startActivity(new Intent(MainActivity.this, ViewActivity.class));
-                        break;
-                    case 1:
-                        startActivity(new Intent(MainActivity.this, ChartActivity.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(MainActivity.this, T1Activity.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(MainActivity.this, BottomSheetActivity.class));
-                        break;
-                    case 4:
-                        startActivity(new Intent(MainActivity.this, PopupActivity.class));
-                        break;
-                    case 5:
-                        startActivity(new Intent(MainActivity.this, RecyclerActivity.class));
-                        break;
-                    case 6:
-                        startActivity(new Intent(MainActivity.this, SqliteTableActivity.class));
-                        break;
-                    case 7:
-                        startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
-                        break;
-                    case 8:
-                        startActivity(new Intent(MainActivity.this, GridViewActivity.class));
-                        break;
-                    case 9:
-                        startActivity(new Intent(MainActivity.this, HandlerActivity.class));
-                        break;
-                    case 10:
-                        startActivity(new Intent(MainActivity.this, DaggerActivity.class));
-                        break;
-                    case 11:
-                        startActivity(new Intent(MainActivity.this, RetrofitActivity.class));
-                        break;
-                    case 12:
-                        startActivity(new Intent(MainActivity.this, BroadcastActivity.class));
-                        break;
-                    case 13:
-                        startActivity(new Intent(MainActivity.this, SpannableActivity.class));
-                        break;
-                    case 14:
-                        startActivity(new Intent(MainActivity.this, CanvasActivity.class));
-                        break;
-                    case 15:
-                        startActivity(new Intent(MainActivity.this, AsyncTaskActivity.class));
-                        break;
-                    case 16:
-                        startActivity(new Intent(MainActivity.this, ServiceActivity.class));
-                        break;
-                    case 17:
-                        startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
-                        break;
-                }
+                startActivity(new Intent(MainActivity.this, classes[i]));
             }
         });
     }
