@@ -70,11 +70,11 @@ public class ViewZ2View extends LinearLayout {
         // 刷新视图
         invalidate();
     }
-
+    // 读取圆的半径
     public int getRadius() {
         return Utils.px2dp(mContext, radius);
     }
-
+    // 设置圆的半径
     public void setRadius(int radius) {
         this.radius = Utils.dp2px(mContext, radius);
         // 刷新视图

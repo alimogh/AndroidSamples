@@ -2,6 +2,7 @@
 # 开发环境：AndroidStudio2.3.1、Gradle3.3，Sdk25
 # 详细解释请移步到我的博客：https://www.sdwfqin.com
 
+![](https://sdwfqin1-1252249614.costj.myqcloud.com/blog/viewz22017051001.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/table2017042502.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/translate2017042701.gif)
