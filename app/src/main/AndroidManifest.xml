@@ -99,7 +99,9 @@
         </receiver>
 
         <activity android:name=".view.viewz1.ViewZ1Activity" />
-        <activity android:name=".view.viewz2.ViewZ2Activity"></activity>
+        <activity android:name=".view.viewz2.ViewZ2Activity" />
+        <activity android:name=".animator.AnimatorActivity" />
+        <activity android:name=".animator.animator1.Animator1Activity"></activity>
     </application>
 
 </manifest>
