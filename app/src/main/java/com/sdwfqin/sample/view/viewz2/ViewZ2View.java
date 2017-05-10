@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.media.audiofx.LoudnessEnhancer;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -17,10 +16,10 @@ import com.sdwfqin.sample.view.Utils;
 /**
  * Created by sdwfqin on 2017/5/10.
  */
-
 public class ViewZ2View extends LinearLayout {
 
     private static final String TAG = "ViewZ2View";
+    private Context mContext;
     private int mColor = Color.WHITE;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     // 要提高精度可以使用float
@@ -45,16 +44,18 @@ public class ViewZ2View extends LinearLayout {
     }
 
     private void init(Context context) {
+        mContext = context;
         mPaint.setColor(mColor);
         gap = Utils.dp2px(context, 10);
     }
 
     private void init(Context context, @Nullable AttributeSet attrs) {
+        mContext = context;
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ViewZ2View);
         // Color.WHITE为默认颜色
         mColor = typedArray.getColor(R.styleable.ViewZ2View_circle_color, Color.WHITE);
-        radius = typedArray.getColor(R.styleable.ViewZ2View_radius, Utils.dp2px(context, 10));
-        gap = typedArray.getColor(R.styleable.ViewZ2View_gap, Utils.dp2px(context, 10));
+        radius = Utils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_radius, 10));
+        gap = Utils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_gap, 10));
         typedArray.recycle();
         mPaint.setColor(mColor);
     }
@@ -71,21 +72,21 @@ public class ViewZ2View extends LinearLayout {
     }
 
     public int getRadius() {
-        return radius;
+        return Utils.px2dp(mContext, radius);
     }
 
     public void setRadius(int radius) {
-        this.radius = radius;
+        this.radius = Utils.dp2px(mContext, radius);
         // 刷新视图
         invalidate();
     }
 
     public int getGap() {
-        return gap;
+        return Utils.px2dp(mContext, gap);
     }
 
     public void setGap(int gap) {
-        this.gap = gap;
+        this.gap = Utils.dp2px(mContext, gap);
         invalidate();
     }
 
