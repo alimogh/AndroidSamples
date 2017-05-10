@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.animator.animator1;
+package com.sdwfqin.sample.view.animator1;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

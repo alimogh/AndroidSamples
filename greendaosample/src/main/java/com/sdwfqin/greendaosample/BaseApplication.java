@@ -3,8 +3,8 @@ package com.sdwfqin.greendaosample;
 import android.app.Application;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.sdwfqin.greendaosample.model.DaoMaster;
-import com.sdwfqin.greendaosample.model.DaoSession;
+import com.sdwfqin.greendaosample.model.entry.DaoMaster;
+import com.sdwfqin.greendaosample.model.entry.DaoSession;
 
 /**
  * Created by sdwfqin on 2017/5/1.

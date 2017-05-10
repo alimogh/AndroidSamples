@@ -21,16 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".broadcast.BroadcastActivity" />
-        <activity android:name=".activitytransition.T1Activity" />
-        <activity android:name=".activitytransition.T2Activity" />
-        <activity android:name=".sqlite_table.SqliteTableActivity" />
-        <activity android:name=".notifications.NotificationsActivity" />
         <!-- 指定屏幕横屏显示 -->
         <activity
             android:name=".gridview.GridViewActivity"
             android:screenOrientation="landscape" />
         <activity android:name=".bottomsheet.BottomSheetActivity" />
+        <activity android:name=".broadcast.BroadcastActivity" />
+        <activity android:name=".activitytransition.T1Activity" />
+        <activity android:name=".activitytransition.T2Activity" />
+        <activity android:name=".sqlite_table.SqliteTableActivity" />
         <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
@@ -58,6 +57,9 @@
         <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
         <activity android:name=".view.scroller.ScrollerActivity" />
         <activity android:name=".view.viewevent.ViewEventActivity" />
+        <activity android:name=".view.animator1.Animator1Activity" />
+        <activity android:name=".view.viewz1.ViewZ1Activity" />
+        <activity android:name=".view.viewz2.ViewZ2Activity" />
         <activity android:name=".spannablestring.SpannableActivity" />
         <activity android:name=".canvas.CanvasActivity" />
         <activity android:name=".asynctask.AsyncTaskActivity" />
@@ -68,8 +70,6 @@
         <activity android:name=".rxjava.rxjava3.RxJava3Activity" />
         <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
         <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
-        <activity android:name=".okhttp.OkHttpActivity" />
-        <activity android:name=".okhttp.okhttp1.OkHttp1Activity" />
 
         <service android:name=".service.service.NotInteractiveService" />
         <service android:name=".service.service.InteractiveService" />
@@ -97,11 +97,6 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".view.viewz1.ViewZ1Activity" />
-        <activity android:name=".view.viewz2.ViewZ2Activity" />
-        <activity android:name=".animator.AnimatorActivity" />
-        <activity android:name=".animator.animator1.Animator1Activity"></activity>
     </application>
 
 </manifest>

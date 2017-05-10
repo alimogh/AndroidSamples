@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.sdwfqin.sample.R;
+import com.sdwfqin.sample.view.animator1.Animator1Activity;
 import com.sdwfqin.sample.view.gesturedetector.GestureDetectorActivity;
 import com.sdwfqin.sample.view.motionslop.MeTsActivity;
 import com.sdwfqin.sample.view.scroller.ScrollerActivity;
@@ -27,6 +28,12 @@ public class ViewActivity extends AppCompatActivity {
     ListView viewList;
     private Context mContext;
 
+    private String[] strings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller",
+            "View触摸事件分发", "按钮放大（属性动画）", "自定义View1圆", "自定义View2凹凸边缘"};
+    private Class[] classes = new Class[]{ViewPositionActivity.class, MeTsActivity.class,
+            GestureDetectorActivity.class, ScrollerActivity.class, ViewEventActivity.class,
+            Animator1Activity.class,ViewZ1Activity.class, ViewZ2Activity.class};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,36 +44,12 @@ public class ViewActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        String[] strings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller",
-                "View触摸事件分发", "自定义View1圆", "自定义View2凹凸边缘"};
         viewList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
 
         viewList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        startActivity(new Intent(mContext, ViewPositionActivity.class));
-                        break;
-                    case 1:
-                        startActivity(new Intent(mContext, MeTsActivity.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(mContext, GestureDetectorActivity.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(mContext, ScrollerActivity.class));
-                        break;
-                    case 4:
-                        startActivity(new Intent(mContext, ViewEventActivity.class));
-                        break;
-                    case 5:
-                        startActivity(new Intent(mContext, ViewZ1Activity.class));
-                        break;
-                    case 6:
-                        startActivity(new Intent(mContext, ViewZ2Activity.class));
-                        break;
-                }
+                startActivity(new Intent(mContext, classes[position]));
             }
         });
     }

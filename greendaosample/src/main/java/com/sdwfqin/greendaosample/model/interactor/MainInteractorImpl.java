@@ -48,7 +48,7 @@ public class MainInteractorImpl implements MainInteractor {
     public void delData(Student student, OnMesListener onMesListener) {
         try {
             BaseApplication.getDaoInstant().getStudentDao().delete(student);
-            onMesListener.onMesError("删除成功");
+            onMesListener.onMesSuccess("删除成功");
         } catch (Exception e) {
             Log.e(TAG, "delData: ", e);
             onMesListener.onMesError("删除失败");

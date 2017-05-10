@@ -10,7 +10,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.sdwfqin.sample.activitytransition.T1Activity;
-import com.sdwfqin.sample.animator.AnimatorActivity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
@@ -19,7 +18,6 @@ import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.mpandroidchart.ChartActivity;
-import com.sdwfqin.sample.notifications.NotificationsActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recycler.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
@@ -38,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
     ListView list;
 
     private String[] title = new String[]{"View", "MpAndroidChart", "Activity跳转动画", "BottomSheet",
-            "PopupWindow", "Recycler", "SQLite数据库和动态表格", "Notifications通知", "GridView",
+            "PopupWindow", "Recycler", "SQLite数据库和动态表格", "GridView",
             "Handler", "Dagger2", "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas",
-            "AsyncTask", "Service服务", "RxJava", "属性动画"};
+            "AsyncTask", "Service服务", "RxJava"};
     private Class[] classes = new Class[]{ViewActivity.class, ChartActivity.class, T1Activity.class,
             BottomSheetActivity.class, PopupActivity.class, RecyclerActivity.class, SqliteTableActivity.class,
-            NotificationsActivity.class, GridViewActivity.class, HandlerActivity.class, DaggerActivity.class,
+            GridViewActivity.class, HandlerActivity.class, DaggerActivity.class,
             RetrofitActivity.class, BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class,
-            AsyncTaskActivity.class, ServiceActivity.class, RxJavaActivity.class, AnimatorActivity.class};
+            AsyncTaskActivity.class, ServiceActivity.class, RxJavaActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
