@@ -69,7 +69,7 @@
         <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
         <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
         <activity android:name=".okhttp.OkHttpActivity" />
-        <activity android:name=".okhttp.okhttp1.OkHttp1Activity"/>
+        <activity android:name=".okhttp.okhttp1.OkHttp1Activity" />
 
         <service android:name=".service.service.NotInteractiveService" />
         <service android:name=".service.service.InteractiveService" />
@@ -97,6 +97,9 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".view.viewz1.ViewZ1Activity" />
+        <activity android:name=".view.viewz2.ViewZ2Activity"></activity>
     </application>
 
 </manifest>

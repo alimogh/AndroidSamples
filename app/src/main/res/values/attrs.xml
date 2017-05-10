@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ViewZ1View">
+        <attr name="bg" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="ViewZ2View">
+        <attr name="circle_color" format="color" />
+        <attr name="radius" format="integer" />
+        <attr name="gap" format="integer" />
+    </declare-styleable>
+</resources>
