@@ -1,5 +1,6 @@
 package com.sdwfqin.sample.animator.animator1;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -16,12 +17,17 @@ import butterknife.ButterKnife;
  * 使用属性动画ObjectAnimator修改属性时要确保原始对象有get和set方法，如果没有可以尝试用一个类来包装原始对象。
  * 也可以使用ValueAnimator，监听动画实现过程
  * <p>
- * ObjectAnimator在修改属性时通过不断调用属性的get和set方法实现动画效果。
+ * ObjectAnimator是ValueAnimator的子集
+ * 属性动画在修改属性时通过不断调用属性的get和set方法实现动画效果。
+ * <p>
+ * AnimatorSet是一个动画集合
  */
 public class Animator1Activity extends AppCompatActivity {
 
     @BindView(R.id.animator1_btn)
     Button animator1Btn;
+
+    private static final String TAG = "Animator1Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,19 +38,32 @@ public class Animator1Activity extends AppCompatActivity {
         animator1Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ViewWrapper viewWrapper = new ViewWrapper(animator1Btn);
-                ObjectAnimator.ofInt(viewWrapper, "width",
-                        Utils.dp2px(Animator1Activity.this, 300))
-                        .setDuration(5000)
-                        .start();
+                setButtonSize(300, 300);
             }
         });
     }
 
+    private void setButtonSize(int x, int y) {
+
+        ViewWrapper viewWrapper = new ViewWrapper(animator1Btn);
+
+        // 动画集合，同时执行下面的动画效果
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(
+                ObjectAnimator.ofInt(viewWrapper, "width",
+                        Utils.dp2px(Animator1Activity.this, x)),
+                ObjectAnimator.ofInt(viewWrapper, "height",
+                        Utils.dp2px(Animator1Activity.this, y))
+        );
+
+        set.setDuration(5000).start();
+    }
+
     /**
      * 用一个类来包装原始对象，间接为其提供get和set方法
+     * 对象的大小要在xml定死，不然与预想的效果不一样
      */
-    private static class ViewWrapper {
+    private class ViewWrapper {
         private View mTarget;
 
         public ViewWrapper(View target) {
@@ -60,5 +79,13 @@ public class Animator1Activity extends AppCompatActivity {
             mTarget.requestLayout();
         }
 
+        public int getHeight() {
+            return mTarget.getLayoutParams().height;
+        }
+
+        public void setHeight(int height) {
+            mTarget.getLayoutParams().height = height;
+            mTarget.requestLayout();
+        }
     }
 }
