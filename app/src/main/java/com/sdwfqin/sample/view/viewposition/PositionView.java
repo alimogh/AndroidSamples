@@ -7,7 +7,7 @@ import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 
-import com.sdwfqin.sample.view.Utils;
+import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
  * Created by sdwfqin on 2017/4/26.
@@ -67,9 +67,9 @@ public class PositionView extends AppCompatTextView {
 //        Log.e(TAG, "Z: " + Z);
 
         int width = Right - left;
-        int widthdp = Utils.px2dp(context, width);
+        int widthdp = ViewUtils.px2dp(context, width);
         int height = Bottom - Top;
-        int heightdp = Utils.px2dp(context, height);
+        int heightdp = ViewUtils.px2dp(context, height);
         // 转换为dp
         Log.e(TAG, "width:" + width);
         Log.e(TAG, "宽度（dp）:" + widthdp);

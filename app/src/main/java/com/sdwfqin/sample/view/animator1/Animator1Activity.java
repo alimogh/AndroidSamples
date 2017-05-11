@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.view.Utils;
+import com.sdwfqin.sample.utils.ViewUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,9 +51,9 @@ public class Animator1Activity extends AppCompatActivity {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
                 ObjectAnimator.ofInt(viewWrapper, "width",
-                        Utils.dp2px(Animator1Activity.this, x)),
+                        ViewUtils.dp2px(Animator1Activity.this, x)),
                 ObjectAnimator.ofInt(viewWrapper, "height",
-                        Utils.dp2px(Animator1Activity.this, y))
+                        ViewUtils.dp2px(Animator1Activity.this, y))
         );
 
         set.setDuration(5000).start();

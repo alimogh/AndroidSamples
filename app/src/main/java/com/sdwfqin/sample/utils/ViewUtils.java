@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.view;
+package com.sdwfqin.sample.utils;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import android.content.Context;
  * Created by sdwfqin on 2017/4/26.
  */
 
-public class Utils {
+public class ViewUtils {
 
     /**
      * dp转为px(像素)

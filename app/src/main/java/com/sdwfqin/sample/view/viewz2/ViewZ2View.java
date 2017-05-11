@@ -11,7 +11,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.view.Utils;
+import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
  * Created by sdwfqin on 2017/5/10.
@@ -46,7 +46,7 @@ public class ViewZ2View extends LinearLayout {
     private void init(Context context) {
         mContext = context;
         mPaint.setColor(mColor);
-        gap = Utils.dp2px(context, 10);
+        gap = ViewUtils.dp2px(context, 10);
     }
 
     private void init(Context context, @Nullable AttributeSet attrs) {
@@ -54,8 +54,8 @@ public class ViewZ2View extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ViewZ2View);
         // Color.WHITE为默认颜色
         mColor = typedArray.getColor(R.styleable.ViewZ2View_circle_color, Color.WHITE);
-        radius = Utils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_radius, 10));
-        gap = Utils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_gap, 10));
+        radius = ViewUtils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_radius, 10));
+        gap = ViewUtils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_gap, 10));
         typedArray.recycle();
         mPaint.setColor(mColor);
     }
@@ -72,21 +72,21 @@ public class ViewZ2View extends LinearLayout {
     }
     // 读取圆的半径
     public int getRadius() {
-        return Utils.px2dp(mContext, radius);
+        return ViewUtils.px2dp(mContext, radius);
     }
     // 设置圆的半径
     public void setRadius(int radius) {
-        this.radius = Utils.dp2px(mContext, radius);
+        this.radius = ViewUtils.dp2px(mContext, radius);
         // 刷新视图
         invalidate();
     }
 
     public int getGap() {
-        return Utils.px2dp(mContext, gap);
+        return ViewUtils.px2dp(mContext, gap);
     }
 
     public void setGap(int gap) {
-        this.gap = Utils.dp2px(mContext, gap);
+        this.gap = ViewUtils.dp2px(mContext, gap);
         invalidate();
     }
 

@@ -97,6 +97,8 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".view.paypwdInput.PayPwdInputActivity"></activity>
     </application>
 
 </manifest>
