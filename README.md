@@ -1,5 +1,5 @@
 # 平时练习的例子，持续更新中，包含但不限于以下内容
-# 开发环境：AndroidStudio2.3.1、Gradle3.3，Sdk25
+# 开发环境：AndroidStudio2.3.3
 # 详细解释请移步到我的博客：https://www.sdwfqin.com
 
 ![](https://sdwfqin1-1252249614.costj.myqcloud.com/blog/viewz22017051001.gif)

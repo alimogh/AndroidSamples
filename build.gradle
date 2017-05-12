@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:2.3.2'
         classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -31,7 +31,7 @@ ext {
     targetSdkVersion = 25
     compileSdkVersion = 25
     buildToolsVersion = '25.0.0'
-    constraintVersion = '1.0.2'
+    supportConstraint = '1.0.2'
 
     // App dependencies
     supportLibraryVersion = '25.0.0'
@@ -40,6 +40,10 @@ ext {
     androidutilsVersion = '1.0.5'
     mPAndroidChartVersion = 'v3.0.2'
     daggerVersion = '2.10'
+    eventbus = '3.0.0'
+    greendao = '3.2.2'
+    BaseRecyclerViewAdapterHelper = '2.9.15'
+    SwipeDelMenuLayout = 'V1.2.5'
 
     // squareup
     retrofitVersion = '2.2.0'
