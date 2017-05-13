@@ -1,11 +1,9 @@
 package com.sdwfqin.greendaosample.model.interactor;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.sdwfqin.greendaosample.BaseApplication;
 import com.sdwfqin.greendaosample.model.entry.Student;
-import com.sdwfqin.greendaosample.view.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

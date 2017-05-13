@@ -23,7 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.sdwfqin.greendaosample.BaseApplication;
 import com.sdwfqin.greendaosample.R;
 import com.sdwfqin.greendaosample.adapter.MainAdapter;
 import com.sdwfqin.greendaosample.model.entry.Student;
