@@ -27,9 +27,12 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    // support
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.supportConstraint"
 
     // butterknife
     compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
@@ -39,14 +42,19 @@ dependencies {
     compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
 
+    // retrofit2
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
 
-    // RxJava
+    // RxJava2
     compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
     compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
 
+    // eventbus
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbus"
+
+    // chart
     compile "com.github.PhilJay:MPAndroidChart:$rootProject.ext.mPAndroidChartVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

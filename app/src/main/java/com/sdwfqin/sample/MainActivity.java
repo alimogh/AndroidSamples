@@ -15,6 +15,7 @@ import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
+import com.sdwfqin.sample.eventbus.EventBusActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.mpandroidchart.ChartActivity;
@@ -38,12 +39,12 @@ public class MainActivity extends AppCompatActivity {
     private String[] title = new String[]{"View", "MpAndroidChart", "Activity跳转动画", "BottomSheet",
             "PopupWindow", "Recycler", "SQLite数据库和动态表格", "GridView",
             "Handler", "Dagger2", "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas",
-            "AsyncTask", "Service服务", "RxJava"};
+            "AsyncTask", "Service服务", "RxJava", "Eventbus"};
     private Class[] classes = new Class[]{ViewActivity.class, ChartActivity.class, T1Activity.class,
             BottomSheetActivity.class, PopupActivity.class, RecyclerActivity.class, SqliteTableActivity.class,
             GridViewActivity.class, HandlerActivity.class, DaggerActivity.class,
             RetrofitActivity.class, BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class,
-            AsyncTaskActivity.class, ServiceActivity.class, RxJavaActivity.class};
+            AsyncTaskActivity.class, ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
