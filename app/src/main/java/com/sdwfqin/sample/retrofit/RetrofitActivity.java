@@ -20,7 +20,7 @@ public class RetrofitActivity extends AppCompatActivity {
     @BindView(R.id.retrofit_list)
     ListView retrofitList;
 
-    private String[] title = new String[]{"返回Json类", "返回String字符串"};
+    private String[] title = new String[]{"入门例子", "get请求"};
     private Class[] classes = new Class[]{Retrofit1Activity.class, Retrofit2Activity.class};
 
     @Override
