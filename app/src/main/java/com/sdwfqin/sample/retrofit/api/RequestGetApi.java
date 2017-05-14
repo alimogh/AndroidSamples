@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 /**
  * Created by sdwfqin on 2017/5/14.
  */
-public interface BookSearchApi {
+public interface RequestGetApi {
 
     // @get注解就表示get请求，@query表示请求参数，将会以key=value的方式拼接在url后面
     // Query非必填可以用null填充，例如：("小王子", null, 0, 3)
@@ -19,7 +19,7 @@ public interface BookSearchApi {
                                             @Query("start") int start,
                                             @Query("count") int count);
 
-    // 如果Query参数比较多，那么可以通过@querymap方式将所有的参数集成在一个Map统一传递
+    // 如果Query参数比较多，那么可以通过@QueryMap方式将所有的参数集成在一个Map统一传递
 //    public interface BlueService {
 //        @GET("book/search")
 //        Call<BookSearchResponse> getSearchBooks(@QueryMap Map<String, String> options);

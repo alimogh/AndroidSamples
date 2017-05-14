@@ -103,7 +103,8 @@
         <activity android:name=".eventbus.eventbus1.EventBus1Activity" />
         <activity android:name=".eventbus.eventbus2.EventBus2Activity" />
         <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".glide.glide1.Glide1Activity"></activity>
+        <activity android:name=".glide.glide1.Glide1Activity" />
+        <activity android:name=".retrofit.activity.Retrofit3Activity"></activity>
     </application>
 
 </manifest>

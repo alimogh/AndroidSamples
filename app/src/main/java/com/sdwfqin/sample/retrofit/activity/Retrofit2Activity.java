@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.retrofit.api.BookSearchApi;
+import com.sdwfqin.sample.retrofit.api.RequestGetApi;
 import com.sdwfqin.sample.retrofit.model.BookSearchResponse;
 
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class Retrofit2Activity extends AppCompatActivity {
     @BindView(R.id.retrofit2_tv)
     TextView retrofit2Tv;
     private Retrofit mRetrofit;
-    private BookSearchApi searchApi;
+    private RequestGetApi searchApi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,7 @@ public class Retrofit2Activity extends AppCompatActivity {
                 .baseUrl("https://api.douban.com/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        searchApi = mRetrofit.create(BookSearchApi.class);
+        searchApi = mRetrofit.create(RequestGetApi.class);
     }
 
     // 设置TextView
