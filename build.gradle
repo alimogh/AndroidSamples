@@ -44,6 +44,7 @@ ext {
     greendao = '3.2.2'
     BaseRecyclerViewAdapterHelper = '2.9.15'
     SwipeDelMenuLayout = 'V1.2.5'
+    glide = '3.7.0'
 
     // squareup
     retrofitVersion = '2.2.0'

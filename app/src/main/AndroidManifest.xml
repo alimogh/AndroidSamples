@@ -101,7 +101,9 @@
         <activity android:name=".view.paypwdInput.PayPwdInputActivity" />
         <activity android:name=".eventbus.EventBusActivity" />
         <activity android:name=".eventbus.eventbus1.EventBus1Activity" />
-        <activity android:name=".eventbus.eventbus2.EventBus2Activity"></activity>
+        <activity android:name=".eventbus.eventbus2.EventBus2Activity" />
+        <activity android:name=".glide.GlideActivity" />
+        <activity android:name=".glide.glide1.Glide1Activity"></activity>
     </application>
 
 </manifest>
