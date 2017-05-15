@@ -16,8 +16,8 @@
         android:background="@color/bar"
         android:gravity="center"
         app:circle_color="#ffffff"
-        app:gap="10"
-        app:radius="10">
+        app:gap="10dp"
+        app:radius="10dp">
 
         <TextView
             android:layout_width="wrap_content"

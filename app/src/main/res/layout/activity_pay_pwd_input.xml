@@ -16,6 +16,7 @@
         android:inputType="number"
         app:maxCount="6"
         app:psdType="weChat"
+        app:divideLineWidth="1dp"
         app:rectAngle="0dp" />
 
     <com.sdwfqin.sample.view.paypwdInput.PayPwdInputView

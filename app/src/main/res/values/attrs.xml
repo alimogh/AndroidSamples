@@ -6,8 +6,8 @@
 
     <declare-styleable name="ViewZ2View">
         <attr name="circle_color" format="color" />
-        <attr name="radius" format="integer" />
-        <attr name="gap" format="integer" />
+        <attr name="radius" format="dimension" />
+        <attr name="gap" format="dimension" />
     </declare-styleable>
 
     <declare-styleable name="PayPwdInputView">

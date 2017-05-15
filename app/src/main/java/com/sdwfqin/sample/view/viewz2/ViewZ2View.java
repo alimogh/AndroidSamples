@@ -24,9 +24,9 @@ public class ViewZ2View extends LinearLayout {
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     // 要提高精度可以使用float
     //圆的半径
-    private int radius;
+    private int radius = 10;
     //圆之间的间距
-    private int gap;
+    private int gap = 10;
 
     public ViewZ2View(Context context) {
         super(context);
@@ -54,8 +54,8 @@ public class ViewZ2View extends LinearLayout {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ViewZ2View);
         // Color.WHITE为默认颜色
         mColor = typedArray.getColor(R.styleable.ViewZ2View_circle_color, Color.WHITE);
-        radius = ViewUtils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_radius, 10));
-        gap = ViewUtils.dp2px(context, typedArray.getInteger(R.styleable.ViewZ2View_gap, 10));
+        radius = typedArray.getDimensionPixelSize(R.styleable.ViewZ2View_radius, radius);
+        gap = typedArray.getDimensionPixelSize(R.styleable.ViewZ2View_gap, gap);
         typedArray.recycle();
         mPaint.setColor(mColor);
     }

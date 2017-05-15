@@ -9,13 +9,17 @@ import android.graphics.RectF;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.EditText;
 
 import com.sdwfqin.sample.R;
 
+// EditText先忽略，我也不知道why
 public class PayPwdInputView extends EditText {
 
     private Context mContext;
+    private static final String TAG = "PayPwdInputView";
+
     /**
      * 第一个圆开始绘制的圆心坐标
      */
@@ -24,11 +28,11 @@ public class PayPwdInputView extends EditText {
 
     private float cX;
 
-
     /**
      * 实心圆的半径
      */
     private int pwdRadius = 10;
+
     /**
      * view的高度
      */
@@ -40,14 +44,17 @@ public class PayPwdInputView extends EditText {
      */
     private int textLength = 0;
     private int bottomLineLength;
+
     /**
      * 最大输入位数
      */
     private int maxCount = 6;
+
     /**
      * 圆的颜色   默认BLACK
      */
     private int circleColor = Color.BLACK;
+
     /**
      * 底部线的颜色   默认GRAY
      */
@@ -57,10 +64,12 @@ public class PayPwdInputView extends EditText {
      * 分割线的颜色
      */
     private int borderColor = Color.GRAY;
+
     /**
      * 分割线的画笔
      */
     private Paint borderPaint;
+
     /**
      * 分割线开始的坐标x
      */
@@ -70,12 +79,16 @@ public class PayPwdInputView extends EditText {
      * 分割线的宽度  默认2
      */
     private int divideLineWidth = 2;
+
     /**
      * 竖直分割线的颜色
      */
     private int divideLineColor = Color.GRAY;
-    private RectF rectF = new RectF();
 
+    private RectF rectF = new RectF();
+    /**
+     * 输入框类型(weChat or bottom）
+     */
     private int psdType = 0;
     private final static int psdType_weChat = 0;
     private final static int psdType_bottomLine = 1;
@@ -84,39 +97,58 @@ public class PayPwdInputView extends EditText {
      * 矩形边框的圆角
      */
     private int rectAngle = 0;
+
     /**
      * 竖直分割线的画笔
      */
     private Paint divideLinePaint;
+
     /**
      * 圆的画笔
      */
     private Paint circlePaint;
+
     /**
      * 底部线的画笔
      */
     private Paint bottomLinePaint;
 
     /**
-     * 需要对比的密码  一般为上次输入的
+     * 需要对比的密码（调用者传过来的）
      */
     private String mComparePassword = null;
 
     private onPasswordListener mListener;
 
+    /**
+     * 构造方法
+     *
+     * @param context
+     * @param attrs
+     */
     public PayPwdInputView(Context context, AttributeSet attrs) {
         super(context, attrs);
         mContext = context;
 
+        // 获取attr
         getAtt(attrs);
+        // 初始化画笔
         initPaint();
 
+        // 设置EditText背景为透明
         this.setBackgroundColor(Color.TRANSPARENT);
+        // 设置不显示光标
         this.setCursorVisible(false);
+        // 设置EditText的最大长度
         this.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxCount)});
 
     }
 
+    /**
+     * 读取自定义属性值
+     *
+     * @param attrs
+     */
     private void getAtt(AttributeSet attrs) {
         TypedArray typedArray = mContext.obtainStyledAttributes(attrs, R.styleable.PayPwdInputView);
         maxCount = typedArray.getInt(R.styleable.PayPwdInputView_maxCount, maxCount);
@@ -185,6 +217,7 @@ public class PayPwdInputView extends EditText {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        Log.e(TAG, "onDraw: ");
         //不删除的画会默认绘制输入的文字
 //        super.onDraw(canvas);
 
@@ -208,9 +241,12 @@ public class PayPwdInputView extends EditText {
      */
     private void drawWeChatBorder(Canvas canvas) {
 
+        // 画一个长方形框
         canvas.drawRoundRect(rectF, rectAngle, rectAngle, borderPaint);
 
+        // 竖线，两侧已经有了
         for (int i = 0; i < maxCount - 1; i++) {
+            // 画竖线
             canvas.drawLine((i + 1) * divideLineWStartX,
                     0,
                     (i + 1) * divideLineWStartX,
@@ -228,8 +264,11 @@ public class PayPwdInputView extends EditText {
      */
     private void drawBottomBorder(Canvas canvas) {
 
+        // startX是底部横线的长度 cx是x轴横线的中间位置
+        // 画底部横线
         for (int i = 0; i < maxCount; i++) {
             cX = startX + i * 2 * startX;
+            Log.e(TAG, "cX" + cX + "startX" + startX);
             canvas.drawLine(cX - bottomLineLength / 2,
                     height,
                     cX + bottomLineLength / 2,
@@ -238,11 +277,12 @@ public class PayPwdInputView extends EditText {
     }
 
     /**
-     * 画密码实心圆
+     * 画密码实心圆，在onTextChanged中调用重绘方法
      *
-     * @param canvas
+     * @param canvas 画布
      */
     private void drawPsdCircle(Canvas canvas) {
+        // 画圆
         for (int i = 0; i < textLength; i++) {
             canvas.drawCircle(startX + i * 2 * startX,
                     startY,
@@ -251,24 +291,41 @@ public class PayPwdInputView extends EditText {
         }
     }
 
+    /**
+     * 监听文本变化
+     *
+     * @param text
+     * @param start
+     * @param lengthBefore
+     * @param lengthAfter
+     */
     @Override
     protected void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter) {
         super.onTextChanged(text, start, lengthBefore, lengthAfter);
+        Log.e(TAG, "onTextChanged: ");
         textLength = text.toString().length();
 
+        // 如果密码输入完成，调用回调方法
         if (mComparePassword != null && textLength == maxCount) {
             if (TextUtils.equals(mComparePassword, getPasswordString())) {
-                mListener.onEqual(getPasswordString());
+                mListener.onSuccess(getPasswordString());
             } else {
-                mListener.onDifference();
+                mListener.onError();
             }
         }
+        // 重绘
         invalidate();
-
     }
 
+    /**
+     * 保证光标始终在最后
+     *
+     * @param selStart
+     * @param selEnd
+     */
     @Override
     protected void onSelectionChanged(int selStart, int selEnd) {
+        Log.e(TAG, "onSelectionChanged: ");
         super.onSelectionChanged(selStart, selEnd);
 
         //保证光标始终在最后
@@ -280,7 +337,7 @@ public class PayPwdInputView extends EditText {
     /**
      * 获取输入的密码
      *
-     * @return
+     * @return String 用户输入的密码
      */
     public String getPasswordString() {
         return getText().toString().trim();
@@ -290,11 +347,24 @@ public class PayPwdInputView extends EditText {
      * 密码比较监听
      */
     public interface onPasswordListener {
-        void onDifference();
 
-        void onEqual(String psd);
+        /**
+         * 匹配成功
+         */
+        void onSuccess(String psd);
+
+        /**
+         * 匹配失败
+         */
+        void onError();
     }
 
+    /**
+     * 密码比较的外部接口
+     *
+     * @param comparePassword 原始密码
+     * @param listener        比较监听器
+     */
     public void setComparePassword(String comparePassword, onPasswordListener listener) {
         mComparePassword = comparePassword;
         mListener = listener;
