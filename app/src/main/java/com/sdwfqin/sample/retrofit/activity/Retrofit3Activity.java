@@ -51,7 +51,7 @@ public class Retrofit3Activity extends AppCompatActivity {
         retrofit3BtnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 调用请求方法，并得到Call实例
+                // 调用请求方法，并得到Observable实例
                 Observable<PostModel> observable = searchApi.addReviews("码农Mrz", "www.sdwfqin.com");
                 observable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
