@@ -31,11 +31,13 @@
         <activity android:name=".activitytransition.T2Activity" />
         <activity android:name=".sqlite_table.SqliteTableActivity" />
         <activity android:name=".handler.HandlerActivity" />
+        <activity android:name=".glide.GlideActivity" />
         <activity android:name=".recycler.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".retrofit.activity.Retrofit1Activity" />
         <activity android:name=".retrofit.activity.Retrofit2Activity" />
+        <activity android:name=".retrofit.activity.Retrofit3Activity" />
         <activity android:name=".mpandroidchart.ChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.BarChartActivity" />
         <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity" />
@@ -60,6 +62,10 @@
         <activity android:name=".view.animator1.Animator1Activity" />
         <activity android:name=".view.viewz1.ViewZ1Activity" />
         <activity android:name=".view.viewz2.ViewZ2Activity" />
+        <activity android:name=".view.paypwdInput.PayPwdInputActivity" />
+        <activity android:name=".eventbus.EventBusActivity" />
+        <activity android:name=".eventbus.eventbus1.EventBus1Activity" />
+        <activity android:name=".eventbus.eventbus2.EventBus2Activity" />
         <activity android:name=".spannablestring.SpannableActivity" />
         <activity android:name=".canvas.CanvasActivity" />
         <activity android:name=".asynctask.AsyncTaskActivity" />
@@ -75,13 +81,13 @@
         <service android:name=".service.service.InteractiveService" />
         <service android:name=".service.service.StageService" />
         <service android:name=".service.service.MyIntentService" />
-        // 普通广播
+        <!--普通广播-->
         <receiver android:name=".broadcast.broadcast.OrdinaryBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.sdwfqin.broadcastdemo" />
             </intent-filter>
         </receiver>
-        // 有序广播
+        <!--有序广播-->
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$HighPriority">
             <intent-filter android:priority="300">
                 <action android:name="com.sdwfqin.broadcastdemo2" />
@@ -97,14 +103,6 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
-
-        <activity android:name=".view.paypwdInput.PayPwdInputActivity" />
-        <activity android:name=".eventbus.EventBusActivity" />
-        <activity android:name=".eventbus.eventbus1.EventBus1Activity" />
-        <activity android:name=".eventbus.eventbus2.EventBus2Activity" />
-        <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".glide.glide1.Glide1Activity" />
-        <activity android:name=".retrofit.activity.Retrofit3Activity"></activity>
     </application>
 
 </manifest>

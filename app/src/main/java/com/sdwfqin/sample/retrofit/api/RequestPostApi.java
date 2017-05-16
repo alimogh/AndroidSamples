@@ -1,15 +1,17 @@
 package com.sdwfqin.sample.retrofit.api;
 
+import com.sdwfqin.sample.retrofit.model.PostModel;
+
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Field;
-import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
  * Created by sdwfqin on 2017/5/14.
  */
-public interface RequesPostApi {
+public interface RequestPostApi {
 
     /**
      * Post请求需要把请求参数放置在请求体中，而非拼接在url后面
@@ -21,10 +23,10 @@ public interface RequesPostApi {
      * 例如：@Field(value = "book", encoded = true) String book
      * encoded参数为true的话，key-value-pair将会被编码，即将中文和特殊字符进行编码转换
      */
-    @FormUrlEncoded
-    @POST("book/reviews")
-    Call<String> addReviews(@Field("book") String bookId, @Field("title") String title,
-                            @Field("content") String content, @Field("rating") String rating);
+    @FormUrlEncoded // @FormUrlEncoded的默认编码方式为UTF-8
+    @POST("SdwfqinAndroidTest/PostServlet")
+    Observable<PostModel> addReviews(@Field("name") String name,
+                                     @Field("value") String value);
 
 // @FieldMap
 // 与get请求中的@QueryMap类似

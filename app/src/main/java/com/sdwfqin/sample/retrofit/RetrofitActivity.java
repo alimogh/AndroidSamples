@@ -21,7 +21,7 @@ public class RetrofitActivity extends AppCompatActivity {
     @BindView(R.id.retrofit_list)
     ListView retrofitList;
 
-    private String[] title = new String[]{"入门例子", "get请求", "post请求"};
+    private String[] title = new String[]{"入门例子", "get请求", "post请求+RxJava"};
     private Class[] classes = new Class[]{Retrofit1Activity.class, Retrofit2Activity.class,
             Retrofit3Activity.class};
 
