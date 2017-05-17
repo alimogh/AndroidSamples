@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.retrofit.api.RequestPostApi;
-import com.sdwfqin.sample.retrofit.model.PostModel;
+import com.sdwfqin.sample.retrofit.model.RequestModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,7 +42,7 @@ public class Retrofit3Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mRetrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.32.206:8080/")
+                .baseUrl("http://test.sdwfqin.com/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//RxJava2
                 .build();
@@ -52,17 +52,17 @@ public class Retrofit3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 调用请求方法，并得到Observable实例
-                Observable<PostModel> observable = searchApi.addReviews("码农Mrz", "www.sdwfqin.com");
+                Observable<RequestModel> observable = searchApi.PostData("码农Mrz", "www.sdwfqin.com");
                 observable.subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(new Observer<PostModel>() {
+                        .subscribe(new Observer<RequestModel>() {
                             @Override
                             public void onSubscribe(@NonNull Disposable d) {
-
+                                Log.e(TAG, "onSubscribe: ");
                             }
 
                             @Override
-                            public void onNext(@NonNull PostModel postModel) {
+                            public void onNext(@NonNull RequestModel postModel) {
                                 Log.e(TAG, "onNext: " + postModel.toString());
                                 setText(postModel.toString());
                             }

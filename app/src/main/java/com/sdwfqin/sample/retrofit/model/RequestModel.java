@@ -4,7 +4,7 @@ package com.sdwfqin.sample.retrofit.model;
  * Created by sdwfqin on 2017/5/16.
  */
 
-public class PostModel {
+public class RequestModel {
 
     /**
      * uuid : 92770f95-0b9e-4655-9277-940233053d1a
@@ -20,7 +20,7 @@ public class PostModel {
 
     @Override
     public String toString() {
-        return "PostModel{" +
+        return "RequestModel{" +
                 "uuid='" + uuid + '\'' +
                 ", name='" + name + '\'' +
                 ", value='" + value + '\'' +
