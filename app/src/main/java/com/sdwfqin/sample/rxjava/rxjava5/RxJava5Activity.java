@@ -44,6 +44,11 @@ public class RxJava5Activity extends AppCompatActivity {
             // BackpressureStrategy.DROP   存不下的事件直接丢弃
             // BackpressureStrategy.LATEST 只保留最新的事件，与DROP相反
         }, BackpressureStrategy.ERROR).subscribeOn(Schedulers.io())
+                /**
+                 * onBackpressureBuffer()
+                 * onBackpressureDrop()
+                 * onBackpressureLatest()
+                 */
                 // .onBackpressureDrop()//添加背压策略
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<Integer>() {

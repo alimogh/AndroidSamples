@@ -9,11 +9,9 @@ import retrofit2.http.Path;
 /**
  * Created by sdwfqin on 2016/12/7.
  */
-
 public interface ApiStores {
     //baseUrl
     String API_SERVER_URL = "http://www.weather.com.cn/";
-
 
     // @Path可以用于任何请求，拼接url地址
     // @GET表示get请求

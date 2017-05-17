@@ -35,7 +35,6 @@ public class Retrofit1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_retrofit1);
         ButterKnife.bind(this);
 
-        // 返回Json
         mRetrofit = new Retrofit.Builder() //01:获取Retrofit对象
                 .baseUrl(ApiStores.API_SERVER_URL) //02采用链式结构绑定Base url
                 // 注意：字符创解析器要放在Gson解析器前面，不然无法解析字符串

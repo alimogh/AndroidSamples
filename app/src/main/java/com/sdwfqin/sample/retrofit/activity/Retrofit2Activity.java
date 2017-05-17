@@ -1,6 +1,8 @@
 package com.sdwfqin.sample.retrofit.activity;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +30,14 @@ public class Retrofit2Activity extends AppCompatActivity {
     TextView retrofit2Tv;
     private Retrofit mRetrofit;
     private RequestGetApi searchApi;
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            setText(msg.getData().getString("value"));
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +89,13 @@ public class Retrofit2Activity extends AppCompatActivity {
                         Call<RequestModel> call = searchApi.getData("码农Mrz", "get同步请求");
                         try {
                             RequestModel response = call.execute().body();
-                            setText("同步请求结果: " + response.toString());
+                            Log.e(TAG, "run: " + response.toString());
+
+                            Bundle bundle = new Bundle();
+                            bundle.putString("value","同步请求结果: " + response.toString());
+                            Message message = new Message();
+                            message.setData(bundle);
+                            handler.sendMessage(message);
                         } catch (IOException e) {
                             Log.e(TAG, "run: ", e);
                         }

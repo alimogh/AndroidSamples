@@ -25,7 +25,7 @@ public interface RequestPostApi {
     @FormUrlEncoded // @FormUrlEncoded的默认编码方式为UTF-8
     @POST("PostServlet")
     Observable<RequestModel> PostData(@Field("name") String name,
-                                        @Field("value") String value);
+                                    @Field("value") String value);
 
 // @FieldMap
 // 与get请求中的@QueryMap类似

@@ -47,7 +47,7 @@ ext {
     glide = '3.7.0'
 
     // squareup
-    retrofitVersion = '2.2.0'
+    retrofitVersion = '2.3.0'
     okhttpVersion = '3.7.0'
 
     // rxjava

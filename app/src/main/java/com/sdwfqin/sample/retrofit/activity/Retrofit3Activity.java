@@ -53,7 +53,8 @@ public class Retrofit3Activity extends AppCompatActivity {
             public void onClick(View v) {
                 // 调用请求方法，并得到Observable实例
                 Observable<RequestModel> observable = searchApi.PostData("码农Mrz", "www.sdwfqin.com");
-                observable.subscribeOn(Schedulers.io())
+                observable.subscribeOn(Schedulers.io()) //在io线程进行网络请求
+                        // 在主线程处理返回的数据
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Observer<RequestModel>() {
                             @Override
