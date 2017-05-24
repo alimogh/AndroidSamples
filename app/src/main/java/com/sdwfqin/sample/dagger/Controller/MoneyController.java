@@ -1,7 +1,6 @@
 package com.sdwfqin.sample.dagger.Controller;
 
-import android.content.Context;
-import android.util.Log;
+import okhttp3.OkHttpClient;
 
 /**
  * Created by sdwfqin on 2017/4/24.
@@ -9,10 +8,8 @@ import android.util.Log;
 
 public class MoneyController {
 
-    private Context mContext;
-    //需要传入参数，虽然没什么用，但是为了演示Dagger2而用
-    public MoneyController(Context context) {
-        this.mContext = context;
+    public MoneyController(OkHttpClient okHttpClient) {
+
     }
 
     public String payMoney() {
