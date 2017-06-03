@@ -1,7 +1,7 @@
 # 平时练习的例子，持续更新中，包含但不限于以下内容
 # Kotlin版本请移步：https://github.com/sdwfqin/KotlinAndroidSamples
 # 开发环境：AndroidStudio2.3.3
-# 详细解释请移步到我的博客：https://www.sdwfqin.com
+# 详细解释请移步到我的博客：http://www.sdwfqin.com
 
 ![](https://sdwfqin1-1252249614.costj.myqcloud.com/blog/viewz22017051001.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
@@ -24,7 +24,7 @@
 
 - RxJava
 
-    文档：https://www.sdwfqin.com/2016/12/25/RxJava%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/
+    文档：http://www.sdwfqin.com/2016/12/25/RxJava%E7%9A%84%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8/
 
 - Retrofit
 
