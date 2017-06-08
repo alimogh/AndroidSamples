@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh_cn">
+<head>
+    <title>WebView测试</title>
+    <meta charset="UTF-8">
+    <!-- 下面两句代码是做手机适配用的 ， 加上之后手机网页就会自动适配-->
+    <meta name="viewport" content="width=device-width">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript">
+            function sayhello(){
+                var name = document.getElementById("txtName").value;
+                window.app.showName(name);//传参数给APP
+            }
+            function setName(name){
+                document.getElementById("txtName").value=name;
+            }
+
+
+    </script>
+</head>
+<body class="container">
+<h1>这是WebView</h1>
+<br>
+<div class="form-group">
+    <label for="txtName">Input标签</label>
+    <input type="text" id="txtName" class="form-control "/>
+</div>
+<br>
+<input type="button" value="显示input中的数据" onclick="sayhello()" class="btn btn-success"/>
+</body>
+</html>

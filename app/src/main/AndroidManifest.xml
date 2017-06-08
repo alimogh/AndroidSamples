@@ -81,13 +81,13 @@
         <service android:name=".service.service.InteractiveService" />
         <service android:name=".service.service.StageService" />
         <service android:name=".service.service.MyIntentService" />
-        <!--普通广播-->
+        <!-- 普通广播 -->
         <receiver android:name=".broadcast.broadcast.OrdinaryBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.sdwfqin.broadcastdemo" />
             </intent-filter>
         </receiver>
-        <!--有序广播-->
+        <!-- 有序广播 -->
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$HighPriority">
             <intent-filter android:priority="300">
                 <action android:name="com.sdwfqin.broadcastdemo2" />
@@ -103,6 +103,8 @@
                 <action android:name="com.sdwfqin.broadcastdemo2" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".webview.WebViewActivity"></activity>
     </application>
 
 </manifest>
