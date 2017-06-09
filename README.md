@@ -5,8 +5,8 @@
 # 本项目当前共有3个Module
 
 1. app：这是sample大合集，内有多个小例子
-2. drrmvp：这个是Dagger2+Rxjava2+Retrofit2+mvp写的一个例子
-3. greendaomvp：这个是一个使用mvp重度分离的例子，使用greendao简化数据库操作
+2. drrmvp：这是使用Dagger2+Rxjava2+Retrofit2+mvp架构写的一个小例子
+3. greendaomvp：这是一个使用mvp模式重度分离的例子，使用greendao简化数据库操作
 
 ![](https://sdwfqin1-1252249614.costj.myqcloud.com/blog/viewz22017051001.gif)
 ![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
