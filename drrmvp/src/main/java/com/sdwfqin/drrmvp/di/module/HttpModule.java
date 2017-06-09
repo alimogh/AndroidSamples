@@ -87,18 +87,6 @@ public class HttpModule {
                 return response;
             }
         };
-//        Interceptor apikey = new Interceptor() {
-//            @Override
-//            public Response intercept(Chain chain) throws IOException {
-//                Request request = chain.request();
-//                request = request.newBuilder()
-//                        .addHeader("apikey",Constants.KEY_API)
-//                        .build();
-//                return chain.proceed(request);
-//            }
-//        }
-//        设置统一的请求头部参数
-//        builder.addInterceptor(apikey);
         //设置缓存
         builder.addNetworkInterceptor(cacheInterceptor);
         builder.addInterceptor(cacheInterceptor);
