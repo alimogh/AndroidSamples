@@ -1,7 +1,6 @@
 package com.sdwfqin.sample.webview;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
