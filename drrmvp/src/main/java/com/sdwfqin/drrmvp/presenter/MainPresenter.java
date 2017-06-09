@@ -14,7 +14,6 @@ import io.reactivex.functions.Consumer;
 /**
  * Created by sdwfqin on 2017/6/9.
  */
-
 public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter {
 
     private DataManager mDataManager;
