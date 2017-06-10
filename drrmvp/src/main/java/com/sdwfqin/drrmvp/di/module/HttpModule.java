@@ -54,10 +54,18 @@ public class HttpModule {
     OkHttpClient provideClient(OkHttpClient.Builder builder) {
         if (BuildConfig.DEBUG) {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
+            /**
+             *  共包含四个级别：NONE、BASIC、HEADER、BODYNONE
+             *  不记录BASIC
+             *  请求/响应行HEADER
+             *  请求/响应行 + 头
+             *  BODY 请求/响应行 + 头 + 体
+             */
             loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
             builder.addInterceptor(loggingInterceptor);
         }
         File cacheFile = new File(Constants.PATH_CACHE);
+        // 最大50MB
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
         Interceptor cacheInterceptor = new Interceptor() {
             @Override
