@@ -12,7 +12,7 @@ import com.sdwfqin.drrmvp.di.module.HttpModule;
  */
 public class App extends Application {
 
-    public static AppComponent appComponent;
+    private static AppComponent appComponent;
     private static App instance;
 
     public static synchronized App getInstance() {
