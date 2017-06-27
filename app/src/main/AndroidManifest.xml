@@ -106,7 +106,9 @@
 
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".view.surface.SurfaceActivity" />
-        <activity android:name=".view.surface2.Surface2Activity"></activity>
+        <activity android:name=".view.surface2.Surface2Activity" />
+        <activity android:name=".recycler.recycler1.Recycler1Activity" />
+        <activity android:name=".recycler.vlayout.VLayoutActivity"></activity>
     </application>
 
 </manifest>
