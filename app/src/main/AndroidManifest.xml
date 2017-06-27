@@ -104,7 +104,9 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".view.surface.SurfaceActivity" />
+        <activity android:name=".view.surface2.Surface2Activity"></activity>
     </application>
 
 </manifest>
