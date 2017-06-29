@@ -119,7 +119,7 @@ public class SubAdapter extends DelegateAdapter.Adapter {
 
         public void bindData(String s) {
             title.setText(s);
-            title.setBackgroundColor(0x88888888);
+            title.setBackgroundColor(0x883F51B5);
         }
     }
 
