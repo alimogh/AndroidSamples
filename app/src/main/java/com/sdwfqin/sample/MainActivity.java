@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.list)
     ListView list;
 
-    private String[] title = new String[]{"View", "Recycler列表", "MpAndroidChart", "Activity跳转动画",
+    private String[] title = new String[]{"View", "Recycler列表", "Activity跳转动画",
             "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler", "Dagger2",
             "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas", "AsyncTask", "Service服务",
             "RxJava", "Eventbus", "Glide", "WebView"};
-    private Class[] classes = new Class[]{ViewActivity.class, RecyclerActivity.class, ChartActivity.class,
+    private Class[] classes = new Class[]{ViewActivity.class, RecyclerActivity.class,
             T1Activity.class, BottomSheetActivity.class, PopupActivity.class, SqliteTableActivity.class,
             GridViewActivity.class, HandlerActivity.class, DaggerActivity.class, RetrofitActivity.class,
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,

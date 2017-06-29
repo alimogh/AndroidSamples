@@ -24,7 +24,6 @@ import java.util.List;
 /**
  * Created by sdwfqin on 2017/2/23.
  */
-
 public class ChartActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
