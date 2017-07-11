@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -108,7 +111,8 @@
         <activity android:name=".view.surface.SurfaceActivity" />
         <activity android:name=".view.surface2.Surface2Activity" />
         <activity android:name=".recycler.recycler1.Recycler1Activity" />
-        <activity android:name=".recycler.vlayout.VLayoutActivity"></activity>
+        <activity android:name=".recycler.vlayout.VLayoutActivity" />
+        <activity android:name=".retrofit.activity.TranslateActivity"></activity>
     </application>
 
 </manifest>

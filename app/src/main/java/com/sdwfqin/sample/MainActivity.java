@@ -1,6 +1,7 @@
 package com.sdwfqin.sample;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -49,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
             ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class, GlideActivity.class,
             WebViewActivity.class};
 
+    public static final String[] permissions = {
+            "android.permission.READ_EXTERNAL_STORAGE",
+            "android.permission.WRITE_EXTERNAL_STORAGE"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, classes[i]));
             }
         });
+
+        if(Build.VERSION.SDK_INT>=23){//判断Android SDK版本号，动态设置权限。
+            requestPermissions(permissions,1);
+        }
     }
 
     long exitTime = 0;
