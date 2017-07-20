@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recycler.recycler1;
+package com.sdwfqin.sample.recyclerview.recycler1;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,8 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.recycler.data.MyData;
-import com.sdwfqin.sample.recycler.data.MyDataLab;
+import com.sdwfqin.sample.recyclerview.recycler1.data.MyData;
+import com.sdwfqin.sample.recyclerview.recycler1.data.MyDataLab;
 
 import java.util.List;
 

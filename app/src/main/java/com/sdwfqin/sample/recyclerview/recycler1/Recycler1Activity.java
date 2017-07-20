@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recycler.recycler1;
+package com.sdwfqin.sample.recyclerview.recycler1;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

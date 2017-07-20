@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recycler.data;
+package com.sdwfqin.sample.recyclerview.recycler1.data;
 
 import android.content.Context;
 

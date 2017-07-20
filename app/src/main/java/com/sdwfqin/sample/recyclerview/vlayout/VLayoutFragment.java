@@ -1,7 +1,6 @@
-package com.sdwfqin.sample.recycler.vlayout;
+package com.sdwfqin.sample.recyclerview.vlayout;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

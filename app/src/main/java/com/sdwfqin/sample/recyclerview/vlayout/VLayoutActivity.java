@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recycler.vlayout;
+package com.sdwfqin.sample.recyclerview.vlayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -5,9 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -35,7 +34,7 @@
         <activity android:name=".sqlite_table.SqliteTableActivity" />
         <activity android:name=".handler.HandlerActivity" />
         <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".recycler.RecyclerActivity" />
+        <activity android:name=".recyclerview.RecyclerActivity" />
         <activity android:name=".dagger.DaggerActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".retrofit.activity.Retrofit1Activity" />
@@ -110,9 +109,10 @@
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".view.surface.SurfaceActivity" />
         <activity android:name=".view.surface2.Surface2Activity" />
-        <activity android:name=".recycler.recycler1.Recycler1Activity" />
-        <activity android:name=".recycler.vlayout.VLayoutActivity" />
-        <activity android:name=".retrofit.activity.TranslateActivity"></activity>
+        <activity android:name=".recyclerview.recycler1.Recycler1Activity" />
+        <activity android:name=".recyclerview.vlayout.VLayoutActivity" />
+        <activity android:name=".retrofit.activity.TranslateActivity" />
+        <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity"></activity>
     </application>
 
 </manifest>
