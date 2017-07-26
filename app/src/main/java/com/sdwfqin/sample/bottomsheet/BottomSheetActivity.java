@@ -23,7 +23,6 @@ import butterknife.ButterKnife;
 /**
  * Created by sdwfqin on 2017/3/11.
  */
-
 public class BottomSheetActivity extends AppCompatActivity {
 
     @BindView(R.id.nsv)
