@@ -1,9 +1,13 @@
 package com.sdwfqin.sample;
 
+import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,11 +36,20 @@ import com.sdwfqin.sample.webview.WebViewActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import permissions.dispatcher.NeedsPermission;
+import permissions.dispatcher.OnNeverAskAgain;
+import permissions.dispatcher.OnPermissionDenied;
+import permissions.dispatcher.OnShowRationale;
+import permissions.dispatcher.PermissionRequest;
+import permissions.dispatcher.RuntimePermissions;
 
+@RuntimePermissions
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.list)
     ListView list;
+
+    private long exitTime = 0;
 
     private String[] title = new String[]{"View", "Recycler列表", "Activity跳转动画",
             "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler", "Dagger2",
@@ -48,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
             ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class, GlideActivity.class,
             WebViewActivity.class};
-
-    public static final String[] permissions = {
-            "android.permission.READ_EXTERNAL_STORAGE",
-            "android.permission.WRITE_EXTERNAL_STORAGE"
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,12 +77,47 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        if(Build.VERSION.SDK_INT>=23){//判断Android SDK版本号，动态设置权限。
-            requestPermissions(permissions,1);
-        }
+        // 调用带权限检查的 showCamera 方法
+        MainActivityPermissionsDispatcher.getPermissionWithCheck(this);
     }
 
-    long exitTime = 0;
+    // 获取权限
+    @NeedsPermission({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    public void getPermission() {
+
+    }
+
+    // 向用户说明为什么需要这些权限（可选）
+    @OnShowRationale(Manifest.permission.CAMERA)
+    void showRationaleForCamera(final PermissionRequest request) {
+        new AlertDialog.Builder(this)
+                .setMessage("有些项目需要存储权限")
+                .setPositiveButton("知道了", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        request.proceed();
+                    }
+                })
+                .setNegativeButton("不需要", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        request.cancel();
+                    }
+                })
+                .show();
+    }
+
+    // 用户拒绝授权回调（可选）
+    @OnPermissionDenied({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void showDeniedForCamera() {
+        Toast.makeText(this, "不给你权限", Toast.LENGTH_SHORT).show();
+    }
+
+    // 用户勾选了“不再提醒”时调用（可选）
+    @OnNeverAskAgain({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
+    void showNeverAskForCamera() {
+        Toast.makeText(this, "不再提醒", Toast.LENGTH_SHORT).show();
+    }
 
     // 双击退出
     @Override

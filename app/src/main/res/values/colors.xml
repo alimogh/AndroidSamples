@@ -54,4 +54,6 @@
     <color name="btn_text_hover">#CCFFFFFF</color>
     <color name="btn_live">#5F6164</color>
     <color name="btn_live_press">#2F3134</color>
+
+    <color name="rippleColor">#C0362E</color>
 </resources>

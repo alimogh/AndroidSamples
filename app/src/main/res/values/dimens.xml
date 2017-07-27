@@ -49,4 +49,7 @@
     <dimen name="dp_37">37dp</dimen>
     <dimen name="dp_72">72dp</dimen>
     <dimen name="dp_066">66dp</dimen>
+
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">32dp</dimen>
 </resources>

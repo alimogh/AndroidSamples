@@ -112,7 +112,8 @@
         <activity android:name=".recyclerview.recycler1.Recycler1Activity" />
         <activity android:name=".recyclerview.vlayout.VLayoutActivity" />
         <activity android:name=".retrofit.activity.TranslateActivity" />
-        <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity"></activity>
+        <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity" />
+        <activity android:name=".view.rippleanimation.RippleAnimationActivity"></activity>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import com.sdwfqin.sample.view.animator1.Animator1Activity;
 import com.sdwfqin.sample.view.gesturedetector.GestureDetectorActivity;
 import com.sdwfqin.sample.view.motionslop.MeTsActivity;
 import com.sdwfqin.sample.view.paypwdInput.PayPwdInputActivity;
+import com.sdwfqin.sample.view.rippleanimation.RippleAnimationActivity;
 import com.sdwfqin.sample.view.scroller.ScrollerActivity;
 import com.sdwfqin.sample.view.surface.SurfaceActivity;
 import com.sdwfqin.sample.view.surface2.Surface2Activity;
@@ -33,11 +34,11 @@ public class ViewActivity extends AppCompatActivity {
 
     private String[] strings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller",
             "View触摸事件分发", "按钮放大（属性动画）", "自定义View1圆", "自定义View2凹凸边缘", "SurfaceView",
-            "SurfaceView画板", "自定义输入密码"};
+            "SurfaceView画板", "自定义输入密码", "网易云听歌识曲"};
     private Class[] classes = new Class[]{ViewPositionActivity.class, MeTsActivity.class,
             GestureDetectorActivity.class, ScrollerActivity.class, ViewEventActivity.class,
             Animator1Activity.class, ViewZ1Activity.class, ViewZ2Activity.class, SurfaceActivity.class,
-            Surface2Activity.class, PayPwdInputActivity.class};
+            Surface2Activity.class, PayPwdInputActivity.class, RippleAnimationActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
