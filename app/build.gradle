@@ -57,9 +57,8 @@ dependencies {
     // 知乎图片选择
     compile "com.zhihu.android:matisse:$rootProject.ext.matisse"
 
-    // 运行时权限，要求sdk：25.3.1
-    compile"com.github.hotchemi:permissionsdispatcher:$rootProject.ext.permissionsdispatcher"
-    annotationProcessor "com.github.hotchemi:permissionsdispatcher-processor:$rootProject.ext.permissionsdispatcher"
+    // 运行时权限
+    compile "pub.devrel:easypermissions:$rootProject.ext.easypermissions"
 
     compile('com.alibaba.android:vlayout:1.0.7@aar')
             {

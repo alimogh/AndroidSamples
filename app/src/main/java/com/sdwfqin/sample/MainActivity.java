@@ -1,13 +1,9 @@
 package com.sdwfqin.sample;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -34,21 +30,18 @@ import com.sdwfqin.sample.sqlite_table.SqliteTableActivity;
 import com.sdwfqin.sample.view.ViewActivity;
 import com.sdwfqin.sample.webview.WebViewActivity;
 
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import permissions.dispatcher.NeedsPermission;
-import permissions.dispatcher.OnNeverAskAgain;
-import permissions.dispatcher.OnPermissionDenied;
-import permissions.dispatcher.OnShowRationale;
-import permissions.dispatcher.PermissionRequest;
-import permissions.dispatcher.RuntimePermissions;
+import pub.devrel.easypermissions.EasyPermissions;
 
-@RuntimePermissions
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
     @BindView(R.id.list)
     ListView list;
 
+    private final int RESULT_CODE_1 = 100;
     private long exitTime = 0;
 
     private String[] title = new String[]{"View", "Recycler列表", "Activity跳转动画",
@@ -70,53 +63,23 @@ public class MainActivity extends AppCompatActivity {
 
         list.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, title));
 
+        // 判断权限
+        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE};
+        if (EasyPermissions.hasPermissions(this, perms)) {
+            initListener();
+        } else {
+            // 如果用户拒绝权限，第二次打开才会显示提示文字
+            EasyPermissions.requestPermissions(this, "维持App正常运行需要存储权限", RESULT_CODE_1, perms);
+        }
+    }
+
+    private void initListener() {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 startActivity(new Intent(MainActivity.this, classes[i]));
             }
         });
-
-        // 调用带权限检查的 showCamera 方法
-        MainActivityPermissionsDispatcher.getPermissionWithCheck(this);
-    }
-
-    // 获取权限
-    @NeedsPermission({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    public void getPermission() {
-
-    }
-
-    // 向用户说明为什么需要这些权限（可选）
-    @OnShowRationale(Manifest.permission.CAMERA)
-    void showRationaleForCamera(final PermissionRequest request) {
-        new AlertDialog.Builder(this)
-                .setMessage("有些项目需要存储权限")
-                .setPositiveButton("知道了", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        request.proceed();
-                    }
-                })
-                .setNegativeButton("不需要", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        request.cancel();
-                    }
-                })
-                .show();
-    }
-
-    // 用户拒绝授权回调（可选）
-    @OnPermissionDenied({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    void showDeniedForCamera() {
-        Toast.makeText(this, "不给你权限", Toast.LENGTH_SHORT).show();
-    }
-
-    // 用户勾选了“不再提醒”时调用（可选）
-    @OnNeverAskAgain({Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    void showNeverAskForCamera() {
-        Toast.makeText(this, "不再提醒", Toast.LENGTH_SHORT).show();
     }
 
     // 双击退出
@@ -128,5 +91,33 @@ public class MainActivity extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+    }
+
+    /**
+     * 同意授权
+     * @param requestCode
+     * @param perms
+     */
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        initListener();
+    }
+
+    /**
+     * 拒绝授权
+     * @param requestCode
+     * @param perms
+     */
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Toast.makeText(this, "权限", Toast.LENGTH_SHORT).show();
+        finish();
     }
 }

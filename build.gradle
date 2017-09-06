@@ -50,7 +50,7 @@ ext {
     okhttp = '3.8.0'
     banner = '1.4.9'
     matisse = '0.4.3'
-    permissionsdispatcher = '2.4.0'
+    easypermissions = '1.0.0'
 
     // squareup
     retrofitVersion = '2.3.0'
