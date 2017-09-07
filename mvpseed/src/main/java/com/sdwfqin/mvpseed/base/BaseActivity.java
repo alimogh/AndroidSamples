@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.mvpseed.di.component.ActivityComponent;
 import com.sdwfqin.mvpseed.di.component.DaggerActivityComponent;
 import com.sdwfqin.mvpseed.di.module.ActivityModule;
@@ -22,7 +21,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
     protected T mPresenter;
 
     protected Activity mContext;
-    protected String TAG = getLogTag();
     private Unbinder mUnBinder;
 
     protected ActivityComponent getActivityComponent() {
@@ -79,24 +77,4 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
      * 加载数据
      */
     protected abstract void initEventAndData();
-
-    private String getLogTag() {
-        return this.getClass().getSimpleName();
-    }
-
-    protected void log_d(String msg) {
-        LogUtils.d(TAG, msg);
-    }
-
-    protected void log_i(String msg) {
-        LogUtils.i(TAG, msg);
-    }
-
-    protected void log_w(String msg) {
-        LogUtils.w(TAG, msg);
-    }
-
-    protected void log_e(String msg) {
-        LogUtils.e(TAG, msg);
-    }
 }

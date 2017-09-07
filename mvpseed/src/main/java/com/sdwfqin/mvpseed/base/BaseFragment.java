@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.mvpseed.di.component.DaggerFragmentComponent;
 import com.sdwfqin.mvpseed.di.component.FragmentComponent;
 import com.sdwfqin.mvpseed.di.module.FragmentModule;
@@ -46,7 +45,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
      */
     protected boolean isLoad = false;
     private Unbinder mUnBinder;
-    private String TAG = getLogTag();
 
 
     protected FragmentComponent getFragmentComponent() {
@@ -140,25 +138,5 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
      */
     protected void lazyLoad() {
 
-    }
-
-    private String getLogTag() {
-        return this.getClass().getSimpleName();
-    }
-
-    protected void log_d(String msg) {
-        LogUtils.d(TAG, msg);
-    }
-
-    protected void log_i(String msg) {
-        LogUtils.i(TAG, msg);
-    }
-
-    protected void log_w(String msg) {
-        LogUtils.w(TAG, msg);
-    }
-
-    protected void log_e(String msg) {
-        LogUtils.e(TAG, msg);
     }
 }

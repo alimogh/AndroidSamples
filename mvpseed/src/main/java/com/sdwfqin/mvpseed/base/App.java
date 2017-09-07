@@ -32,8 +32,7 @@ public class App extends Application {
     private void initLog() {
         LogUtils.Config config = LogUtils.getConfig()
                 .setLogSwitch(Constants.LOG_TYPE)
-                .setConsoleSwitch(Constants.LOG_TYPE)
-                .setGlobalTag("mvpseed");
+                .setConsoleSwitch(Constants.LOG_TYPE);
     }
 
     public static AppComponent getAppComponent() {

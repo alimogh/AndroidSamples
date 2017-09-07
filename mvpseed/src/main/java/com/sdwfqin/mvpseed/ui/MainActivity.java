@@ -2,6 +2,7 @@ package com.sdwfqin.mvpseed.ui;
 
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.mvpseed.R;
 import com.sdwfqin.mvpseed.base.BaseActivity;
 import com.sdwfqin.mvpseed.contract.MainContract;
@@ -34,6 +35,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     protected void initEventAndData() {
+
+        LogUtils.i("日志测试");
+
         main_tv = (TextView) findViewById(R.id.main_tv);
 
         mPresenter.getWeather("101190201");
