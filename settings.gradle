@@ -1,1 +1,1 @@
-include ':app', ':greendaomvp', ':drrmvp'
+include ':app', ':greendaomvp', ':mvpseed'
