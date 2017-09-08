@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sdwfqin.sample">
+          package="com.sdwfqin.sample">
 
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -14,106 +15,117 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.sdwfqin.sample.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public"/>
+        </provider>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <!-- 指定屏幕横屏显示 -->
         <activity
             android:name=".gridview.GridViewActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name=".bottomsheet.BottomSheetActivity" />
-        <activity android:name=".broadcast.BroadcastActivity" />
-        <activity android:name=".activitytransition.T1Activity" />
-        <activity android:name=".activitytransition.T2Activity" />
-        <activity android:name=".sqlite_table.SqliteTableActivity" />
-        <activity android:name=".handler.HandlerActivity" />
-        <activity android:name=".glide.GlideActivity" />
-        <activity android:name=".recyclerview.RecyclerActivity" />
-        <activity android:name=".dagger.DaggerActivity" />
-        <activity android:name=".retrofit.RetrofitActivity" />
-        <activity android:name=".retrofit.activity.Retrofit1Activity" />
-        <activity android:name=".retrofit.activity.Retrofit2Activity" />
-        <activity android:name=".retrofit.activity.Retrofit3Activity" />
-        <activity android:name=".mpandroidchart.ChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.BarChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.ThreeBarChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.PositiveNegativeBarChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.LineChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.MultiLineChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.PieChartActivity" />
-        <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity" />
-        <activity android:name=".popupwindow.PopupActivity" />
-        <activity android:name=".popupwindow.PopDropDownBgActivity" />
-        <activity android:name=".popupwindow.PopshowAtLocationActivity" />
-        <activity android:name=".popupwindow.PopupAnimActivity" />
-        <activity android:name=".popupwindow.PopupShowAsDropDownActivity" />
-        <activity android:name=".popupwindow.LongShowPopupActivity" />
-        <activity android:name=".view.ViewActivity" />
-        <activity android:name=".view.viewposition.ViewPositionActivity" />
-        <activity android:name=".view.motionslop.MeTsActivity" />
-        <activity android:name=".view.gesturedetector.GestureDetectorActivity" />
-        <activity android:name=".view.scroller.ScrollerActivity" />
-        <activity android:name=".view.viewevent.ViewEventActivity" />
-        <activity android:name=".view.animator1.Animator1Activity" />
-        <activity android:name=".view.viewz1.ViewZ1Activity" />
-        <activity android:name=".view.viewz2.ViewZ2Activity" />
-        <activity android:name=".view.paypwdInput.PayPwdInputActivity" />
-        <activity android:name=".eventbus.EventBusActivity" />
-        <activity android:name=".eventbus.eventbus1.EventBus1Activity" />
-        <activity android:name=".eventbus.eventbus2.EventBus2Activity" />
-        <activity android:name=".spannablestring.SpannableActivity" />
-        <activity android:name=".canvas.CanvasActivity" />
-        <activity android:name=".asynctask.AsyncTaskActivity" />
-        <activity android:name=".service.ServiceActivity" />
-        <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".rxjava.rxjava1.RxJava1Activity" />
-        <activity android:name=".rxjava.rxjava2.RxJava2Activity" />
-        <activity android:name=".rxjava.rxjava3.RxJava3Activity" />
-        <activity android:name=".rxjava.rxjava4.RxJava4Activity" />
-        <activity android:name=".rxjava.rxjava5.RxJava5Activity" />
+            android:screenOrientation="landscape"/>
+        <activity android:name=".bottomsheet.BottomSheetActivity"/>
+        <activity android:name=".broadcast.BroadcastActivity"/>
+        <activity android:name=".activitytransition.T1Activity"/>
+        <activity android:name=".activitytransition.T2Activity"/>
+        <activity android:name=".sqlite_table.SqliteTableActivity"/>
+        <activity android:name=".handler.HandlerActivity"/>
+        <activity android:name=".glide.GlideActivity"/>
+        <activity android:name=".recyclerview.RecyclerActivity"/>
+        <activity android:name=".dagger.DaggerActivity"/>
+        <activity android:name=".retrofit.RetrofitActivity"/>
+        <activity android:name=".retrofit.activity.Retrofit1Activity"/>
+        <activity android:name=".retrofit.activity.Retrofit2Activity"/>
+        <activity android:name=".retrofit.activity.Retrofit3Activity"/>
+        <activity android:name=".mpandroidchart.ChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.BarChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.ThreeBarChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.PositiveNegativeBarChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.LineChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.MultiLineChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.PieChartActivity"/>
+        <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity"/>
+        <activity android:name=".popupwindow.PopupActivity"/>
+        <activity android:name=".popupwindow.PopDropDownBgActivity"/>
+        <activity android:name=".popupwindow.PopshowAtLocationActivity"/>
+        <activity android:name=".popupwindow.PopupAnimActivity"/>
+        <activity android:name=".popupwindow.PopupShowAsDropDownActivity"/>
+        <activity android:name=".popupwindow.LongShowPopupActivity"/>
+        <activity android:name=".view.ViewActivity"/>
+        <activity android:name=".view.viewposition.ViewPositionActivity"/>
+        <activity android:name=".view.motionslop.MeTsActivity"/>
+        <activity android:name=".view.gesturedetector.GestureDetectorActivity"/>
+        <activity android:name=".view.scroller.ScrollerActivity"/>
+        <activity android:name=".view.viewevent.ViewEventActivity"/>
+        <activity android:name=".view.animator1.Animator1Activity"/>
+        <activity android:name=".view.viewz1.ViewZ1Activity"/>
+        <activity android:name=".view.viewz2.ViewZ2Activity"/>
+        <activity android:name=".view.paypwdInput.PayPwdInputActivity"/>
+        <activity android:name=".eventbus.EventBusActivity"/>
+        <activity android:name=".eventbus.eventbus1.EventBus1Activity"/>
+        <activity android:name=".eventbus.eventbus2.EventBus2Activity"/>
+        <activity android:name=".spannablestring.SpannableActivity"/>
+        <activity android:name=".canvas.CanvasActivity"/>
+        <activity android:name=".asynctask.AsyncTaskActivity"/>
+        <activity android:name=".service.ServiceActivity"/>
+        <activity android:name=".rxjava.RxJavaActivity"/>
+        <activity android:name=".rxjava.rxjava1.RxJava1Activity"/>
+        <activity android:name=".rxjava.rxjava2.RxJava2Activity"/>
+        <activity android:name=".rxjava.rxjava3.RxJava3Activity"/>
+        <activity android:name=".rxjava.rxjava4.RxJava4Activity"/>
+        <activity android:name=".rxjava.rxjava5.RxJava5Activity"/>
 
-        <service android:name=".service.service.NotInteractiveService" />
-        <service android:name=".service.service.InteractiveService" />
-        <service android:name=".service.service.StageService" />
-        <service android:name=".service.service.MyIntentService" />
+        <service android:name=".service.service.NotInteractiveService"/>
+        <service android:name=".service.service.InteractiveService"/>
+        <service android:name=".service.service.StageService"/>
+        <service android:name=".service.service.MyIntentService"/>
         <!-- 普通广播 -->
         <receiver android:name=".broadcast.broadcast.OrdinaryBroadcastReceiver">
             <intent-filter>
-                <action android:name="com.sdwfqin.broadcastdemo" />
+                <action android:name="com.sdwfqin.broadcastdemo"/>
             </intent-filter>
         </receiver>
         <!-- 有序广播 -->
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$HighPriority">
             <intent-filter android:priority="300">
-                <action android:name="com.sdwfqin.broadcastdemo2" />
+                <action android:name="com.sdwfqin.broadcastdemo2"/>
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$MidPriority">
             <intent-filter android:priority="200">
-                <action android:name="com.sdwfqin.broadcastdemo2" />
+                <action android:name="com.sdwfqin.broadcastdemo2"/>
             </intent-filter>
         </receiver>
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$LowPriority">
             <intent-filter android:priority="100">
-                <action android:name="com.sdwfqin.broadcastdemo2" />
+                <action android:name="com.sdwfqin.broadcastdemo2"/>
             </intent-filter>
         </receiver>
 
-        <activity android:name=".webview.WebViewActivity" />
-        <activity android:name=".view.surface.SurfaceActivity" />
-        <activity android:name=".view.surface2.Surface2Activity" />
-        <activity android:name=".recyclerview.recycler1.Recycler1Activity" />
-        <activity android:name=".recyclerview.vlayout.VLayoutActivity" />
-        <activity android:name=".retrofit.activity.TranslateActivity" />
-        <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity" />
-        <activity android:name=".view.rippleanimation.RippleAnimationActivity" />
+        <activity android:name=".webview.WebViewActivity"/>
+        <activity android:name=".view.surface.SurfaceActivity"/>
+        <activity android:name=".view.surface2.Surface2Activity"/>
+        <activity android:name=".recyclerview.recycler1.Recycler1Activity"/>
+        <activity android:name=".recyclerview.vlayout.VLayoutActivity"/>
+        <activity android:name=".retrofit.activity.TranslateActivity"/>
+        <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity"/>
+        <activity android:name=".view.rippleanimation.RippleAnimationActivity"/>
+        <activity android:name=".camera.CameraActivity">
+        </activity>
     </application>
 
 </manifest>

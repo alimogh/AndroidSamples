@@ -14,6 +14,7 @@ import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
+import com.sdwfqin.sample.camera.CameraActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.eventbus.EventBusActivity;
@@ -47,13 +48,13 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private String[] title = new String[]{"View", "Recycler列表", "Activity跳转动画",
             "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler", "Dagger2",
             "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas", "AsyncTask", "Service服务",
-            "RxJava", "Eventbus", "Glide", "WebView"};
+            "RxJava", "Eventbus", "Glide", "WebView", "拍照与相册"};
     private Class[] classes = new Class[]{ViewActivity.class, RecyclerActivity.class,
             T1Activity.class, BottomSheetActivity.class, PopupActivity.class, SqliteTableActivity.class,
             GridViewActivity.class, HandlerActivity.class, DaggerActivity.class, RetrofitActivity.class,
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
             ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class, GlideActivity.class,
-            WebViewActivity.class};
+            WebViewActivity.class, CameraActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     /**
      * 同意授权
+     *
      * @param requestCode
      * @param perms
      */
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
 
     /**
      * 拒绝授权
+     *
      * @param requestCode
      * @param perms
      */

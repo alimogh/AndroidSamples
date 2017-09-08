@@ -52,7 +52,6 @@ dependencies {
     // eventbus
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbus"
     // chart
-    compile "com.github.PhilJay:MPAndroidChart:$rootProject.ext.mPAndroidChartVersion"
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glide"
     // 知乎图片选择
     compile "com.zhihu.android:matisse:$rootProject.ext.matisse"
@@ -67,4 +66,5 @@ dependencies {
     // banner导航栏
     compile "com.youth.banner:banner:$rootProject.ext.banner"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.blankj:utilcode:1.9.0'
 }
