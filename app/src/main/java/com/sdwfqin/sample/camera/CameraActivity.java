@@ -34,9 +34,9 @@ import pub.devrel.easypermissions.EasyPermissions;
 public class CameraActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
     private static final String TAG = "CameraActivity";
+    public static final int PERMISSIONS_CODE_1 = 101;
     public static final int RESULT_CODE_1 = 201;
     public static final int RESULT_CODE_2 = 202;
-    public static final int RESULT_CODE_3 = 203;
 
     @BindView(R.id.camera_pz)
     Button mCameraPz;
@@ -47,13 +47,14 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     @BindView(R.id.camera_tv)
     TextView mCameraTv;
 
+    // 所需要的权限
     private String[] mPerms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
     // 7.0 以上的uri
     private Uri mProviderUri;
     // 7.0 以下的uri
     private Uri mUri;
     // 图片路径
-    private String mFilepath = SDCardUtils.getSDCardPath() + "APPNAME";
+    private String mFilepath = SDCardUtils.getSDCardPath() + "AndroidSamples";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +66,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         if (EasyPermissions.hasPermissions(this, mPerms)) {
         } else {
             // 如果用户拒绝权限，第二次打开才会显示提示文字
-            EasyPermissions.requestPermissions(this, "使用拍照功能需要拍照权限！", RESULT_CODE_1, mPerms);
+            EasyPermissions.requestPermissions(this, "使用拍照功能需要拍照权限！", PERMISSIONS_CODE_1, mPerms);
         }
     }
 
@@ -88,7 +89,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         Intent pickIntent = new Intent(Intent.ACTION_PICK,
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         pickIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-        startActivityForResult(pickIntent, RESULT_CODE_3);
+        startActivityForResult(pickIntent, RESULT_CODE_2);
     }
 
     /**
@@ -112,7 +113,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
             intent.putExtra(MediaStore.EXTRA_OUTPUT, mUri);
         }
         try {
-            startActivityForResult(intent, RESULT_CODE_2);
+            startActivityForResult(intent, RESULT_CODE_1);
         } catch (ActivityNotFoundException anf) {
             ToastUtils.showShort("摄像头未准备好！");
         }
@@ -136,7 +137,8 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
         // 设置图片压缩质量
         options.setCompressionQuality(100);
-        // 是否让用户调整范围
+        // 是否让用户调整范围(默认false)，如果开启，可能会造成剪切的图片的长宽比不是设定的
+        // 如果不开启，用户不能拖动选框，只能缩放图片
         options.setFreeStyleCropEnabled(true);
 
         // 设置源uri及目标uri
@@ -155,14 +157,14 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
-                case RESULT_CODE_2:
+                case RESULT_CODE_1:
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                         cropRawPhoto(mProviderUri);
                     } else {
                         cropRawPhoto(mUri);
                     }
                     break;
-                case RESULT_CODE_3:
+                case RESULT_CODE_2:
                     Log.i(TAG, "onActivityResult: " + data.getData());
                     cropRawPhoto(data.getData());
                     break;
