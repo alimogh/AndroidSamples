@@ -74,10 +74,10 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.camera_pz:
-                pz();
+                camera();
                 break;
             case R.id.camera_cc:
-                xcxt();
+                selectImg();
                 break;
         }
     }
@@ -85,7 +85,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     /**
      * 相册选图
      */
-    private void xcxt() {
+    private void selectImg() {
         Intent pickIntent = new Intent(Intent.ACTION_PICK,
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         pickIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
@@ -95,7 +95,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     /**
      * 拍照
      */
-    private void pz() {
+    private void camera() {
         File file = new File(mFilepath, System.currentTimeMillis() + ".jpg");
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
