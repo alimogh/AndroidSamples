@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,8 +45,11 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
     private void showPopupWindow() {
         View contentView = LayoutInflater.from(PopDropDownBgActivity.this).inflate(R.layout.drop_down_bg_activity_popup, null);
         mPopWindow = new PopupWindow(contentView);
+
         mPopWindow.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
-        mPopWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+        mPopWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        backgroundAlpha(0.6f);
 
         TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
         TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
@@ -55,6 +59,24 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
         tv3.setOnClickListener(this);
 
         mPopWindow.showAsDropDown(mMenuTv);
+
+        mPopWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                backgroundAlpha(1f);
+            }
+        });
+    }
+
+    /**
+     * 设置背景透明度
+     *
+     * @param bgAlpha
+     */
+    private void backgroundAlpha(float bgAlpha) {
+        WindowManager.LayoutParams lp = getWindow().getAttributes();
+        lp.alpha = bgAlpha; //0.0-1.0
+        getWindow().setAttributes(lp);
     }
 
     @Override

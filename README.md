@@ -94,15 +94,8 @@
     ```
     |- mvp
     |- Greendao
+    |- item侧滑
     ```
-
-
-![](https://sdwfqin1-1252249614.costj.myqcloud.com/blog/viewz22017051001.gif)
-![](http://7xvtvi.com1.z0.glb.clouddn.com/bottomsheet2017042502.gif)
-![](http://7xvtvi.com1.z0.glb.clouddn.com/table2017042502.gif)
-![](http://7xvtvi.com1.z0.glb.clouddn.com/translate2017042701.gif)
-![](http://7xvtvi.com1.z0.glb.clouddn.com/SpannableString20170427153509.png)
-![](http://7xvtvi.com1.z0.glb.clouddn.com/popupwindow2017042901.gif)
 
 ## License
 
