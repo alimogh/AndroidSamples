@@ -50,15 +50,6 @@
         <activity android:name=".retrofit.activity.Retrofit1Activity"/>
         <activity android:name=".retrofit.activity.Retrofit2Activity"/>
         <activity android:name=".retrofit.activity.Retrofit3Activity"/>
-        <activity android:name=".mpandroidchart.ChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.BarChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.TwoBarChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.ThreeBarChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.PositiveNegativeBarChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.LineChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.MultiLineChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.PieChartActivity"/>
-        <activity android:name=".mpandroidchart.chartactivity.CombineChartActivity"/>
         <activity android:name=".popupwindow.PopupActivity"/>
         <activity android:name=".popupwindow.PopDropDownBgActivity"/>
         <activity android:name=".popupwindow.PopshowAtLocationActivity"/>
@@ -124,8 +115,12 @@
         <activity android:name=".retrofit.activity.TranslateActivity"/>
         <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity"/>
         <activity android:name=".view.rippleanimation.RippleAnimationActivity"/>
-        <activity android:name=".camera.CameraActivity">
-        </activity>
+        <activity android:name=".camera.CameraActivity"/>
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+
     </application>
 
 </manifest>

@@ -3,21 +3,25 @@ package com.sdwfqin.sample.camera;
 import android.Manifest;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blankj.utilcode.util.SDCardUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.sdwfqin.sample.R;
+import com.yalantis.ucrop.UCrop;
 
 import java.io.File;
 import java.util.List;
@@ -33,16 +37,23 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     public static final int RESULT_CODE_1 = 201;
     public static final int RESULT_CODE_2 = 202;
     public static final int RESULT_CODE_3 = 203;
+
     @BindView(R.id.camera_pz)
     Button mCameraPz;
     @BindView(R.id.camera_cc)
     Button mCameraCc;
     @BindView(R.id.camera_img)
     ImageView mCameraImg;
+    @BindView(R.id.camera_tv)
+    TextView mCameraTv;
+
     private String[] mPerms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
+    // 7.0 以上的uri
     private Uri mProviderUri;
-    private String mPhoto_image;
+    // 7.0 以下的uri
     private Uri mUri;
+    // 图片路径
+    private String mFilepath = SDCardUtils.getSDCardPath() + "APPNAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,16 +76,26 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
                 pz();
                 break;
             case R.id.camera_cc:
+                xcxt();
                 break;
         }
+    }
+
+    /**
+     * 相册选图
+     */
+    private void xcxt() {
+        Intent pickIntent = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
+        startActivityForResult(pickIntent, RESULT_CODE_3);
     }
 
     /**
      * 拍照
      */
     private void pz() {
-        mPhoto_image = SDCardUtils.getSDCardPath() + "APPNAME/" + System.currentTimeMillis() + ".jpg";
-        File file = new File(mPhoto_image);
+        File file = new File(mFilepath, System.currentTimeMillis() + ".jpg");
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
@@ -97,6 +118,38 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
         }
     }
 
+    /**
+     * 使用UCrop进行图片剪裁
+     *
+     * @param uri
+     */
+    public void cropRawPhoto(Uri uri) {
+
+        UCrop.Options options = new UCrop.Options();
+        // 修改标题栏颜色
+        options.setToolbarColor(getResources().getColor(R.color.colorPrimary));
+        // 修改状态栏颜色
+        options.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
+        // 隐藏底部工具
+        options.setHideBottomControls(true);
+        // 图片格式
+        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
+        // 设置图片压缩质量
+        options.setCompressionQuality(100);
+        // 是否让用户调整范围
+        options.setFreeStyleCropEnabled(true);
+
+        // 设置源uri及目标uri
+        UCrop.of(uri, Uri.fromFile(new File(mFilepath, System.currentTimeMillis() + ".jpg")))
+                // 长宽比
+                .withAspectRatio(1, 1)
+                // 图片大小
+                .withMaxResultSize(200, 200)
+                // 配置参数
+                .withOptions(options)
+                .start(this);
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -104,16 +157,25 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
             switch (requestCode) {
                 case RESULT_CODE_2:
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                        Glide.with(this)
-                                .load(mProviderUri)
-                                .crossFade()
-                                .into(mCameraImg);
+                        cropRawPhoto(mProviderUri);
                     } else {
-                        Glide.with(this)
-                                .load(mUri)
-                                .crossFade()
-                                .into(mCameraImg);
+                        cropRawPhoto(mUri);
                     }
+                    break;
+                case RESULT_CODE_3:
+                    Log.i(TAG, "onActivityResult: " + data.getData());
+                    cropRawPhoto(data.getData());
+                    break;
+                case UCrop.REQUEST_CROP:
+                    Log.i(TAG, "onActivityResult: " + UCrop.getOutput(data));
+                    mCameraTv.setText(UCrop.getOutput(data) + "");
+                    Glide.with(this)
+                            .load(UCrop.getOutput(data))
+                            .crossFade()
+                            .into(mCameraImg);
+                    break;
+                case UCrop.RESULT_ERROR:
+                    mCameraTv.setText(UCrop.getError(data) + "");
                     break;
             }
         }
@@ -121,7 +183,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-
+        Log.i(TAG, "onPermissionsGranted: " + "同意授权");
     }
 
     @Override
