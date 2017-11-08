@@ -71,7 +71,7 @@
         |- api参数配置
     |- WebView
         |- js与native交互
-    |- 拍照&相册&UCrop
+    |- Picture
         |- Android7.0拍照
         |- Android相册选图
         |- UCrop剪切图片
