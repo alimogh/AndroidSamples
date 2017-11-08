@@ -3,8 +3,6 @@ package com.sdwfqin.sample.eventbus;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -21,14 +19,16 @@ import butterknife.ButterKnife;
  * <p>
  * 比如请求网络，等网络返回时通过Handler或Broadcast通知UI，
  * 两个Fragment之间需要通过Listener通信，这些需求都可以通过EventBus实现。
+ *
+ * @author sdwfqin
  */
 public class EventBusActivity extends AppCompatActivity {
 
     @BindView(R.id.eventbus_list)
-    ListView eventbusList;
+    ListView mEventbusList;
 
-    private String[] title = new String[]{"入门", "StickyEvent黏性事件"};
-    private Class[] classes = new Class[]{EventBus1Activity.class, EventBus2Activity.class};
+    private String[] mTitle = new String[]{"入门", "StickyEvent黏性事件"};
+    private Class[] mClasses = new Class[]{EventBus1Activity.class, EventBus2Activity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,14 +36,11 @@ public class EventBusActivity extends AppCompatActivity {
         setContentView(R.layout.activity_eventbus);
         ButterKnife.bind(this);
 
-        eventbusList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, title));
+        mEventbusList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, mTitle));
 
-        eventbusList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(EventBusActivity.this, classes[i]));
-            }
-        });
+        mEventbusList.setOnItemClickListener((adapterView, view, i, l)
+                -> startActivity(new Intent(EventBusActivity.this, mClasses[i]))
+        );
 
     }
 }

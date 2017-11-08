@@ -21,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 //greendao配置
@@ -30,26 +34,23 @@ greendao {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     // support
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.supportConstraint"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 
     // butterknife
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
 
     // greendao
-    compile "org.greenrobot:greendao:$rootProject.ext.greendao"
+    implementation "org.greenrobot:greendao:$rootProject.ext.greendao"
 
     // BaseRecyclerViewAdapterHelper
-    compile "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.BaseRecyclerViewAdapterHelper"
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.brvah"
 
     // SwipeDelMenuLayout
-    compile "com.github.mcxtzhang:SwipeDelMenuLayout:$rootProject.ext.SwipeDelMenuLayout"
+    implementation "com.github.mcxtzhang:SwipeDelMenuLayout:$rootProject.ext.SwipeDelMenuLayout"
 }

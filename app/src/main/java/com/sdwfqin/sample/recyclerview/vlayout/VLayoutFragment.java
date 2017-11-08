@@ -24,6 +24,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * 描述：
+ *
+ * @author sdwfqin
+ */
 public class VLayoutFragment extends Fragment {
 
     @BindView(R.id.main_view)

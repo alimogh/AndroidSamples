@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
 public class EventBus1Activity extends AppCompatActivity {
 
     @BindView(R.id.btn_event1_send)
-    Button btnEvent1Send;
+    Button mBtnEvent1Send;
     @BindView(R.id.btn_event1_send2)
     Button btnEvent1Send2;
     @BindView(R.id.tv_event1_msg)
@@ -35,7 +35,7 @@ public class EventBus1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_event_bus1);
         ButterKnife.bind(this);
 
-        btnEvent1Send.setOnClickListener(new View.OnClickListener() {
+        mBtnEvent1Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // post发布消息

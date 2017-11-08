@@ -22,6 +22,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+// TODO:需要修改
 public class SortDetailFragment extends Fragment {
 
     @BindView(R.id.rv)

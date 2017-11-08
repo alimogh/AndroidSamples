@@ -19,7 +19,8 @@ import com.sdwfqin.sample.recyclerview.recycler1.data.MyDataLab;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2016/7/10.
+ * @author sdwfqin
+ * @date 2016/7/10
  */
 public class RecyFragment extends Fragment {
 
@@ -39,7 +40,7 @@ public class RecyFragment extends Fragment {
 
     public void initData() {
 
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.main_recycler);
+        mRecyclerView = v.findViewById(R.id.main_recycler);
         // 创建后转交给LinearLayoutManager对象，在屏幕上定位列表项，并且负责定义屏幕的滚动行为。
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -57,7 +58,9 @@ public class RecyFragment extends Fragment {
 
     }
 
-    // 定义ViewHolder内部类
+    /**
+     * 定义ViewHolder内部类
+     */
     private class myItemData extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private MyData mData;
@@ -72,8 +75,8 @@ public class RecyFragment extends Fragment {
 
             itemView.setOnClickListener(this);
 
-            tv_title = (TextView) itemView.findViewById(R.id.tv_title);
-            tv_text = (TextView) itemView.findViewById(R.id.tv_text);
+            tv_title = itemView.findViewById(R.id.tv_title);
+            tv_text = itemView.findViewById(R.id.tv_text);
         }
 
         public void bindData(MyData myData) {

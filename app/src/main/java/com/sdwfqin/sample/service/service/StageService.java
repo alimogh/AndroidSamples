@@ -9,31 +9,29 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.MainActivity;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by sdwfqin on 2016/12/8.
+ * 描述：常驻通知栏
  *
- * 常驻通知栏
+ * @author sdwfqin
+ * @date 2016/12/8
  */
-
 public class StageService extends Service {
-
-    private static final String TAG = "StageService";
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        Log.e(TAG, "onBind: ");
+        LogUtils.e("onBind: ");
         return null;
     }
 
     @Override
     public void onCreate() {
-        Log.e(TAG, "onCreate: ");
+        LogUtils.e("onCreate: ");
         showNotification();
         super.onCreate();
     }

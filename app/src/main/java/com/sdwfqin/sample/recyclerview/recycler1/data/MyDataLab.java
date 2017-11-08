@@ -9,8 +9,9 @@ import java.util.UUID;
 
 /**
  * 单例
- * <p>
- * Created by sdwfqin on 2016/7/7.
+ *
+ * @author sdwfqin
+ * @date 2016/7/7
  */
 public class MyDataLab {
     private static MyDataLab sMyDataLab;

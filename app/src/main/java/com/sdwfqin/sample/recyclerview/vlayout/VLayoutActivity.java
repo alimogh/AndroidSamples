@@ -5,6 +5,11 @@ import android.os.Bundle;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * 描述：天猫VLayout
+ *
+ * @author sdwfqin
+ */
 public class VLayoutActivity extends AppCompatActivity {
 
     @Override

@@ -6,6 +6,9 @@ import android.view.View;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * @author sdwfqin
+ */
 public class T2Activity extends AppCompatActivity {
 
     @Override

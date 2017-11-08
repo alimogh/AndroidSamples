@@ -2,10 +2,10 @@ package com.sdwfqin.sample.retrofit.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.retrofit.api.ApiStores;
 import com.sdwfqin.sample.retrofit.model.WeatherModel;
@@ -20,11 +20,15 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+/**
+ * 描述：简单例子
+ *
+ * @author sdwfqin
+ */
 public class Retrofit1Activity extends AppCompatActivity {
 
     @BindView(R.id.retrofit1_tv)
-    TextView retrofit1Tv;
-    private static final String TAG = "Retrofit1Activity";
+    TextView mRetrofit1Tv;
 
     private Retrofit mRetrofit;
     private ApiStores mApiStores;
@@ -34,9 +38,10 @@ public class Retrofit1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit1);
         ButterKnife.bind(this);
-
-        mRetrofit = new Retrofit.Builder() //01:获取Retrofit对象
-                .baseUrl(ApiStores.API_SERVER_URL) //02采用链式结构绑定Base url
+        //01:获取Retrofit对象
+        mRetrofit = new Retrofit.Builder()
+                //02采用链式结构绑定Base url
+                .baseUrl(ApiStores.API_SERVER_URL)
                 // 注意：字符创解析器要放在Gson解析器前面，不然无法解析字符串
                 //使用工厂模式创建字符串解析器
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -48,12 +53,15 @@ public class Retrofit1Activity extends AppCompatActivity {
 
     }
 
-    // 设置TextView
+    /**
+     * 设置TextView
+     * @param s 要设置的字符
+     */
     private void setText(String s) {
         try {
-            retrofit1Tv.setText(s);
+            mRetrofit1Tv.setText(s);
         } catch (Exception e) {
-            Log.e(TAG, "setText: ", e);
+            LogUtils.e("setText: ", e);
         }
     }
 
@@ -62,7 +70,7 @@ public class Retrofit1Activity extends AppCompatActivity {
         switch (view.getId()) {
             // 返回JSON
             case R.id.retrofit1_btn_json:
-                Log.e(TAG, "onViewClicked: " + "返回json数据");
+                LogUtils.e("onViewClicked: " + "返回json数据");
                 // 调用请求方法，并得到Call实例
                 Call<WeatherModel> mModelCall = mApiStores.loadDataByJson("101190201");
                 // 异步请求
@@ -79,7 +87,7 @@ public class Retrofit1Activity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<WeatherModel> call, Throwable t) {
-                        Log.e(TAG, "onFailure: ", t);
+                        LogUtils.e("onFailure: ", t);
                     }
                 });
                 break;
@@ -98,9 +106,11 @@ public class Retrofit1Activity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Log.e(TAG, "onFailure: ", t);
+                        LogUtils.e("onFailure: ", t);
                     }
                 });
+                break;
+            default:
                 break;
         }
     }

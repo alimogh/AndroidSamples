@@ -29,11 +29,15 @@ import com.sdwfqin.sample.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：富文本字符串
+ *
+ * @author sdwfqin
+ */
 public class SpannableActivity extends AppCompatActivity {
 
     @BindView(R.id.span_string)
     TextView spanString;
-    private static final String TAG = "SpannableActivity";
     @BindView(R.id.span_builder)
     TextView spanBuilder;
 

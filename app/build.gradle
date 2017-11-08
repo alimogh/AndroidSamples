@@ -20,52 +20,52 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     // support
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:support-v4:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:cardview-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
     // butterknife
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
     // dagger2
-    compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
     // retrofit2
-    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
-    compile "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
 
-    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp"
     // RxJava2
-    compile "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
-    compile "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
     // eventbus
-    compile "org.greenrobot:eventbus:$rootProject.ext.eventbus"
-    // chart
-    compile "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    implementation "org.greenrobot:eventbus:$rootProject.ext.eventbus"
+    implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
     // 知乎图片选择
-    compile "com.zhihu.android:matisse:$rootProject.ext.matisse"
+    implementation "com.zhihu.android:matisse:$rootProject.ext.matisse"
 
     // 运行时权限
-    compile "pub.devrel:easypermissions:$rootProject.ext.easypermissions"
+    implementation "pub.devrel:easypermissions:$rootProject.ext.easypermissions"
 
-    compile('com.alibaba.android:vlayout:1.0.7@aar')
+    implementation('com.alibaba.android:vlayout:1.0.7@aar')
             {
                 transitive = true
             }
     // banner导航栏
-    compile "com.youth.banner:banner:$rootProject.ext.banner"
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.blankj:utilcode:1.9.0'
-    compile 'com.github.yalantis:ucrop:2.2.1'
+    implementation "com.youth.banner:banner:$rootProject.ext.banner"
+    implementation "com.blankj:utilcode:$rootProject.ext.utilcode"
+    implementation "com.github.yalantis:ucrop:$rootProject.ext.ucrop"
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }

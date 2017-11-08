@@ -21,9 +21,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2017/6/28.
+ * @author sdwfqin
+ * @date 2017/6/28
  */
-
 public class SubAdapter extends DelegateAdapter.Adapter {
 
     private int TYPE_Banner = 1;
@@ -99,7 +99,7 @@ public class SubAdapter extends DelegateAdapter.Adapter {
 
         public MainViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.vl_title);
+            title = itemView.findViewById(R.id.vl_title);
         }
 
         public void bindData(String s) {
@@ -113,7 +113,7 @@ public class SubAdapter extends DelegateAdapter.Adapter {
 
         public StickyViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.vl_title);
+            title = itemView.findViewById(R.id.vl_title);
         }
 
         public void bindData(String s) {
@@ -128,7 +128,7 @@ public class SubAdapter extends DelegateAdapter.Adapter {
 
         public BannerViewHolder(View itemView) {
             super(itemView);
-            banner = (Banner) itemView.findViewById(R.id.banner);
+            banner = itemView.findViewById(R.id.banner);
         }
 
         public void bindData() {

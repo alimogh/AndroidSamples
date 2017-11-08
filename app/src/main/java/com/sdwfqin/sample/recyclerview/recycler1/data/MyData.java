@@ -3,7 +3,10 @@ package com.sdwfqin.sample.recyclerview.recycler1.data;
 import java.util.UUID;
 
 /**
- * Created by sdwfqin on 2016/7/7.
+ * 描述：实体类
+ *
+ * @author sdwfqin
+ * @date 2016/7/7
  */
 public class MyData {
 

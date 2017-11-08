@@ -1,9 +1,9 @@
 package com.sdwfqin.sample.rxjava.rxjava3;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 
 import java.util.ArrayList;
@@ -11,18 +11,16 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.ObservableSource;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * 描述：map变换
+ *
+ * @author sdwfqin
+ */
 public class RxJava3Activity extends AppCompatActivity {
-
-    private static final String TAG = "RxJava3Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,51 +37,29 @@ public class RxJava3Activity extends AppCompatActivity {
     }
 
     private void rxJavaFlatMap() {
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                emitter.onNext(1);
-                emitter.onNext(2);
-                emitter.onNext(3);
+        Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
+            emitter.onNext(1);
+            emitter.onNext(2);
+            emitter.onNext(3);
+        }).flatMap(integer -> {
+            final List<String> list = new ArrayList<>();
+            for (int i = 0; i < 3; i++) {
+                list.add("I am value " + integer);
             }
-        }).flatMap(new Function<Integer, ObservableSource<String>>() {
-            @Override
-            public ObservableSource<String> apply(Integer integer) throws Exception {
-                final List<String> list = new ArrayList<>();
-                for (int i = 0; i < 3; i++) {
-                    list.add("I am value " + integer);
-                }
-                // 10毫秒的延时
-                return Observable.fromIterable(list).delay(10, TimeUnit.MILLISECONDS);
-            }
+            // 10毫秒的延时
+            return Observable.fromIterable(list).delay(10, TimeUnit.MILLISECONDS);
         }).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<String>() {
-                    @Override
-                    public void accept(String s) throws Exception {
-                        Log.e(TAG, s);
-                    }
-                });
+                .subscribe(s -> LogUtils.e(s));
     }
 
     private void rxJavaMap() {
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(ObservableEmitter<Integer> emitter) throws Exception {
-                emitter.onNext(1);
-                emitter.onNext(2);
-                emitter.onNext(3);
-            }
-        }).map(new Function<Integer, String>() {
-            @Override
-            public String apply(Integer integer) throws Exception {
-                return "This is result " + integer;
-            }
-        }).subscribe(new Consumer<String>() {
-            @Override
-            public void accept(String s) throws Exception {
-                Log.e(TAG, s);
-            }
-        });
+        Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
+            emitter.onNext(1);
+            emitter.onNext(2);
+            emitter.onNext(3);
+        })
+                .map(integer -> "This is result " + integer)
+                .subscribe(s -> LogUtils.e(s));
     }
 }

@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -17,13 +15,19 @@ import com.sdwfqin.sample.recyclerview.vlayout.VLayoutActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：Recycler列表
+ *
+ * @author sdwfqin
+ * @date 2017/11/8
+ */
 public class RecyclerActivity extends AppCompatActivity {
 
     @BindView(R.id.recycler_list)
-    ListView recyclerList;
+    ListView mRecyclerList;
 
-    private String[] title = new String[]{"基本使用", "VLayout", "双列表联动"};
-    private Class[] classes = new Class[]{Recycler1Activity.class, VLayoutActivity.class,
+    private String[] mTitle = new String[]{"基本使用", "VLayout", "双列表联动"};
+    private Class[] mClasses = new Class[]{Recycler1Activity.class, VLayoutActivity.class,
             DoublelistlinkageActivity.class};
 
     @Override
@@ -33,13 +37,10 @@ public class RecyclerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recycler);
         ButterKnife.bind(this);
 
-        recyclerList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, title));
+        mRecyclerList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, mTitle));
 
-        recyclerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(RecyclerActivity.this, classes[position]));
-            }
-        });
+        mRecyclerList.setOnItemClickListener((parent, view, position, id) ->
+                startActivity(new Intent(RecyclerActivity.this, mClasses[position]))
+        );
     }
 }

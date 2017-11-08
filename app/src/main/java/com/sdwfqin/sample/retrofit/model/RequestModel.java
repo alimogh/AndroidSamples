@@ -1,9 +1,11 @@
 package com.sdwfqin.sample.retrofit.model;
 
 /**
- * Created by sdwfqin on 2017/5/16.
+ * 描述：
+ *
+ * @author sdwfqin
+ * @date 2017/5/16
  */
-
 public class RequestModel {
 
     /**

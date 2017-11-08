@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.camera;
+package com.sdwfqin.sample.picture;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
@@ -10,13 +10,13 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.SDCardUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
@@ -31,9 +31,14 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pub.devrel.easypermissions.EasyPermissions;
 
-public class CameraActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+/**
+ * 描述：拍照与图片剪裁
+ *
+ * @author sdwfqin
+ * @date 2017/9/14
+ */
+public class PictureActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 
-    private static final String TAG = "CameraActivity";
     public static final int PERMISSIONS_CODE_1 = 101;
     public static final int RESULT_CODE_1 = 201;
     public static final int RESULT_CODE_2 = 202;
@@ -47,14 +52,22 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     @BindView(R.id.camera_tv)
     TextView mCameraTv;
 
-    // 所需要的权限
+    /**
+     * 需要的权限
+     */
     private String[] mPerms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
-    // 7.0 以上的uri
+    /**
+     * 7.0 以上的uri
+     */
     private Uri mProviderUri;
-    // 7.0 以下的uri
+    /**
+     * 7.0 以下的uri
+     */
     private Uri mUri;
-    // 图片路径
-    private String mFilepath = SDCardUtils.getSDCardPath() + "AndroidSamples";
+    /**
+     * 图片路径
+     */
+    private String mFilepath = SDCardUtils.getSDCardPaths() + "AndroidSamples";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +91,8 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
                 break;
             case R.id.camera_cc:
                 selectImg();
+                break;
+            default:
                 break;
         }
     }
@@ -155,6 +170,10 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == UCrop.RESULT_ERROR) {
+            mCameraTv.setText(UCrop.getError(data) + "");
+            return;
+        }
         if (resultCode == RESULT_OK) {
             switch (requestCode) {
                 case RESULT_CODE_1:
@@ -165,19 +184,18 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
                     }
                     break;
                 case RESULT_CODE_2:
-                    Log.i(TAG, "onActivityResult: " + data.getData());
+                    LogUtils.i("onActivityResult: " + data.getData());
                     cropRawPhoto(data.getData());
                     break;
                 case UCrop.REQUEST_CROP:
-                    Log.i(TAG, "onActivityResult: " + UCrop.getOutput(data));
-                    mCameraTv.setText(UCrop.getOutput(data) + "");
+                    LogUtils.i("onActivityResult: " + UCrop.getOutput(data));
+                    mCameraTv.setText(UCrop.getOutput(data).getPath());
                     Glide.with(this)
                             .load(UCrop.getOutput(data))
                             .crossFade()
                             .into(mCameraImg);
                     break;
-                case UCrop.RESULT_ERROR:
-                    mCameraTv.setText(UCrop.getError(data) + "");
+                default:
                     break;
             }
         }
@@ -185,7 +203,7 @@ public class CameraActivity extends AppCompatActivity implements EasyPermissions
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-        Log.i(TAG, "onPermissionsGranted: " + "同意授权");
+        LogUtils.i("onPermissionsGranted: " + "同意授权");
     }
 
     @Override

@@ -2,19 +2,18 @@ package com.sdwfqin.sample.dagger.model;
 
 import android.content.Context;
 
-import com.sdwfqin.sample.dagger.Controller.MoneyController;
-import com.sdwfqin.sample.dagger.Controller.OrderController;
-
-import javax.inject.Named;
+import com.sdwfqin.sample.dagger.controller.MoneyController;
+import com.sdwfqin.sample.dagger.controller.OrderController;
 
 import dagger.Module;
 import dagger.Provides;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by sdwfqin on 2017/4/24.
- * <p>
- * 通过这个Module绑定Controller
+ * 描述：通过这个Module绑定Controller
+ *
+ * @author sdwfqin
+ * @date 2017/4/24
  */
 // @Modules 类似于我们的模块，提供各种实例跟对象
 // includes引用

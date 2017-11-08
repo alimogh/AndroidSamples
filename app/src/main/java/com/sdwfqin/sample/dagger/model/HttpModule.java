@@ -5,7 +5,10 @@ import dagger.Provides;
 import okhttp3.OkHttpClient;
 
 /**
- * Created by sdwfqin on 2017/5/24.
+ * 描述：通过这个Module绑定Controller
+ *
+ * @author sdwfqin
+ * @date 2017/4/24
  */
 @Module
 public class HttpModule {

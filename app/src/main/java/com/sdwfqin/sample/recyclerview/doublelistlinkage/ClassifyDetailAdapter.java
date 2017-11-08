@@ -2,7 +2,6 @@ package com.sdwfqin.sample.recyclerview.doublelistlinkage;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +14,9 @@ import java.util.List;
 
 /**
  * 右侧列表
- * Created by sdwfqin on 2017/7/20.
+ *
+ * @author sdwfqin
+ * @date 2017/7/20
  */
 public class ClassifyDetailAdapter extends RecyclerView.Adapter<ClassifyDetailAdapter.ClassifyHolder> {
 
@@ -23,9 +24,8 @@ public class ClassifyDetailAdapter extends RecyclerView.Adapter<ClassifyDetailAd
     private Context mContext;
     private RvListener listener;
     private LayoutInflater mInflater;
-    private static final String TAG = "ClassifyDetailAdapter";
 
-    public ClassifyDetailAdapter(Context mContext,List<SortBean> list, RvListener listener) {
+    public ClassifyDetailAdapter(Context mContext, List<SortBean> list, RvListener listener) {
         this.list = list;
         this.mContext = mContext;
         this.listener = listener;
@@ -63,21 +63,18 @@ public class ClassifyDetailAdapter extends RecyclerView.Adapter<ClassifyDetailAd
             super(itemView);
             switch (type) {
                 case 0:
-                    tvTitle = (TextView) itemView.findViewById(R.id.tv_title);
+                    tvTitle = itemView.findViewById(R.id.tv_title);
                     break;
                 case 1:
-                    tvCity = (TextView) itemView.findViewById(R.id.tvCity);
-                    avatar = (ImageView) itemView.findViewById(R.id.ivAvatar);
+                    tvCity = itemView.findViewById(R.id.tvCity);
+                    avatar = itemView.findViewById(R.id.ivAvatar);
+                    break;
+                default:
                     break;
             }
 
             this.mListener = listener;
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    mListener.onItemClick(v.getId(), getAdapterPosition());
-                }
-            });
+            itemView.setOnClickListener(v -> mListener.onItemClick(v.getId(), getAdapterPosition()));
         }
 
         public void bindHolder(SortBean sortBean, int position) {
@@ -88,6 +85,8 @@ public class ClassifyDetailAdapter extends RecyclerView.Adapter<ClassifyDetailAd
                     break;
                 case 1:
                     tvCity.setText(sortBean.getName());
+                    break;
+                default:
                     break;
             }
 

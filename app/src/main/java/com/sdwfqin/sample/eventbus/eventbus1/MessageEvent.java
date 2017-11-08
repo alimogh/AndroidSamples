@@ -3,7 +3,8 @@ package com.sdwfqin.sample.eventbus.eventbus1;
 /**
  * 定义 MessageEvent 对象
  * <p>
- * Created by sdwfqin on 2017/5/13.
+ * @author sdwfqin
+ * @date 2017/5/13
  */
 public class MessageEvent {
 

@@ -8,6 +8,11 @@ import android.os.Bundle;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * 描述：Recycler学习
+ *
+ * @author sdwfqin
+ */
 public class Recycler1Activity extends AppCompatActivity {
 
     @Override

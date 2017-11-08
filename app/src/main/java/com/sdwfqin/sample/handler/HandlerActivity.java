@@ -11,6 +11,9 @@ import com.sdwfqin.sample.R;
 import java.util.Timer;
 import java.util.TimerTask;
 
+/**
+ * @author sdwfqin
+ */
 public class HandlerActivity extends AppCompatActivity {
 
     // 状态锁
@@ -28,25 +31,15 @@ public class HandlerActivity extends AppCompatActivity {
         handlerA.sendMessage(message);
 
         // 在子线程发送Message
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                handlerA.sendEmptyMessage(2);
-            }
-        }).start();
+        new Thread(() -> handlerA.sendEmptyMessage(2)).start();
 
         // 延时5s发送数据
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                handlerA.sendEmptyMessage(3);
-            }
-        }, 5000);
+        new Handler().postDelayed(() -> handlerA.sendEmptyMessage(3), 5000);
     }
 
     private final Handler handlerA = new Handler() {
 
+        @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
@@ -89,7 +82,6 @@ public class HandlerActivity extends AppCompatActivity {
                 case 3:
                     Log.e(TAG, "handlerA:case:3");
                     break;
-
                 default:
                     break;
             }
@@ -97,6 +89,7 @@ public class HandlerActivity extends AppCompatActivity {
     };
 
     private final Handler handlerB = new Handler() {
+        @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 0x01:
@@ -113,7 +106,6 @@ public class HandlerActivity extends AppCompatActivity {
                             try {
                                 Thread.sleep(3000);
                             } catch (InterruptedException e) {
-                                // TODO Auto-generated catch block
                                 e.printStackTrace();
                             }
                             isGuang = true;
@@ -131,7 +123,6 @@ public class HandlerActivity extends AppCompatActivity {
                                         // 休眠1000ms
                                         Thread.sleep(1000);
                                     } catch (InterruptedException e) {
-                                        // TODO Auto-generated catch block
                                         e.printStackTrace();
                                     }
                                     Log.e(TAG, "这是来自计时器的第二条消息");
@@ -150,7 +141,6 @@ public class HandlerActivity extends AppCompatActivity {
     };
 
     TimerTask task = new TimerTask() {
-
         @Override
         public void run() {
             handlerB.sendEmptyMessage(0x01);

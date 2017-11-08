@@ -7,24 +7,26 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.broadcast.broadcast.LocalBroadcastReceiver;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：Broadcast广播
+ *
+ * @author sdwfqin
+ * @date 2016/12/10
+ */
 public class BroadcastActivity extends AppCompatActivity {
 
     @BindView(R.id.broadcast_list)
-    ListView broadcastList;
-
-    private static final String TAG = "BroadcastActivity";
+    ListView mBroadcastList;
 
     private BroadcastReceiver mReceiver1;
     private BroadcastReceiver mReceiver2;
@@ -41,22 +43,21 @@ public class BroadcastActivity extends AppCompatActivity {
     private void initView() {
 
         String[] strings = new String[]{"普通广播", "有序广播", "本地广播"};
-        broadcastList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
+        mBroadcastList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, strings));
 
-        broadcastList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        ordinaryBroadcast();
-                        break;
-                    case 1:
-                        orderBroadcast();
-                        break;
-                    case 2:
-                        localBroadcast();
-                        break;
-                }
+        mBroadcastList.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case 0:
+                    ordinaryBroadcast();
+                    break;
+                case 1:
+                    orderBroadcast();
+                    break;
+                case 2:
+                    localBroadcast();
+                    break;
+                default:
+                    break;
             }
         });
     }
@@ -69,7 +70,7 @@ public class BroadcastActivity extends AppCompatActivity {
             @Override
             public void onReceive(Context context, Intent intent) {
                 String str = intent.getStringExtra("name");
-                Log.e(TAG, "onReceive(普通广播，动态注册): " + str);
+                LogUtils.i("onReceive(普通广播，动态注册): " + str);
             }
         };
         IntentFilter filter1 = new IntentFilter();

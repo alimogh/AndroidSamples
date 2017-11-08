@@ -3,30 +3,33 @@ package com.sdwfqin.sample.asynctask;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：AsyncTask
+ *
+ * @author sdwfqin
+ */
 public class AsyncTaskActivity extends AppCompatActivity {
 
     @BindView(R.id.async_tv)
-    TextView asyncTv;
+    TextView mAsyncTv;
     @BindView(R.id.async_progress)
-    ProgressBar asyncProgress;
+    ProgressBar mAsyncProgress;
     @BindView(R.id.async_btn)
-    Button asyncBtn;
-    private static final String TAG = "AsyncTaskActivity";
+    Button mAsyncBtn;
     @BindView(R.id.async_t)
-    Button asyncT;
+    Button mAsyncT;
 
-    private MyAsyncTask asyncTask;
+    private MyAsyncTask mAsyncTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,22 +37,15 @@ public class AsyncTaskActivity extends AppCompatActivity {
         setContentView(R.layout.activity_async_task);
         ButterKnife.bind(this);
 
-        asyncBtn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                asyncTask = new MyAsyncTask();
-                // 使用指定的Params参数执行任务
-                asyncTask.execute(100, 50);
-            }
+        mAsyncBtn.setOnClickListener(v -> {
+            mAsyncTask = new MyAsyncTask();
+            // 使用指定的Params参数执行任务
+            mAsyncTask.execute(100, 50);
         });
 
-        asyncT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 停止任务
-                // asyncTask.cancel(true);
-            }
+        mAsyncT.setOnClickListener(v -> {
+            // 停止任务
+            // asyncTask.cancel(true);
         });
     }
 
@@ -63,7 +59,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(Integer... params) {
             int count = params.length;
-            Log.e(TAG, "doInBackground: " + count);
+            LogUtils.e("doInBackground: " + count);
             int i = 0;
             for (i = 10; i <= params[0].intValue(); i += 10) {
                 try {
@@ -84,14 +80,14 @@ public class AsyncTaskActivity extends AppCompatActivity {
          */
         @Override
         protected void onPostExecute(String result) {
-            asyncTv.setText("异步操作执行结束" + result);
+            mAsyncTv.setText("异步操作执行结束" + result);
         }
 
 
         //该方法运行在UI线程当中,并且运行在UI线程当中可以对UI空间进行设置
         @Override
         protected void onPreExecute() {
-            asyncTv.setText("开始执行异步线程，请稍等");
+            mAsyncTv.setText("开始执行异步线程，请稍等");
         }
 
 
@@ -103,7 +99,7 @@ public class AsyncTaskActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Integer... values) {
             int vlaue = values[0];
-            asyncProgress.setProgress(vlaue);
+            mAsyncProgress.setProgress(vlaue);
         }
 
     }

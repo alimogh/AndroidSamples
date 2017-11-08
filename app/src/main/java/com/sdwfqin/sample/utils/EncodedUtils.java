@@ -12,7 +12,13 @@ import java.security.NoSuchAlgorithmException;
  * Created by sdwfqin on 2017/7/11.
  */
 
-public class Utils {
+/**
+ * 描述：编码工具类
+ *
+ * @author sdwfqin
+ * @date 2017/7/11
+ */
+public class EncodedUtils {
 
     public static String stringToMD5(String plainText) {
         try {
@@ -23,10 +29,12 @@ public class Utils {
             StringBuffer buf = new StringBuffer("");
             for (int offset = 0; offset < b.length; offset++) {
                 i = b[offset];
-                if (i < 0)
+                if (i < 0) {
                     i += 256;
-                if (i < 16)
+                }
+                if (i < 16) {
                     buf.append("0");
+                }
                 buf.append(Integer.toHexString(i));
             }
             //32位加密

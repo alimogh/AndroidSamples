@@ -4,7 +4,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -16,12 +15,17 @@ import com.sdwfqin.sample.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：WebView与Native交互
+ *
+ * @author sdwfqin
+ */
 public class WebViewActivity extends AppCompatActivity {
 
     @BindView(R.id.webview)
-    WebView webview;
+    WebView mWebView;
     @BindView(R.id.webview_btn)
-    Button webviewBtn;
+    Button mWebviewBtn;
 
     private Context mContext;
     private static final String TAG = "WebViewActivity";
@@ -36,17 +40,12 @@ public class WebViewActivity extends AppCompatActivity {
         initWeb();
 
         // 调用js中的setName方法
-        webviewBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                webview.loadUrl("javascript:setName('测试与js交互')");
-            }
-        });
+        mWebviewBtn.setOnClickListener(v -> mWebView.loadUrl("javascript:setName('测试与js交互')"));
 
     }
 
     private void initWeb() {
-        WebSettings webSettings = webview.getSettings();
+        WebSettings webSettings = mWebView.getSettings();
 
         // 启用js
         webSettings.setJavaScriptEnabled(true);
@@ -58,8 +57,8 @@ public class WebViewActivity extends AppCompatActivity {
 
         // WebView 背景透明效果
         // webview.setBackgroundColor(Color.TRANSPARENT);
-        webview.addJavascriptInterface(new JsInteration(), "app");
-        webview.loadUrl("file:///android_asset/html/webtest.html");
+        mWebView.addJavascriptInterface(new JsInteration(), "app");
+        mWebView.loadUrl("file:///android_asset/html/webtest.html");
     }
 
     public class JsInteration {

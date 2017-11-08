@@ -8,7 +8,10 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 
 /**
- * Created by sdwfqin on 2017/5/14.
+ * 描述：Post请求
+ *
+ * @author sdwfqin
+ * @date 2017/5/14
  */
 public interface RequestPostApi {
 

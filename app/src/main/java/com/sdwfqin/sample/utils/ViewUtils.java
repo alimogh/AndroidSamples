@@ -3,9 +3,11 @@ package com.sdwfqin.sample.utils;
 import android.content.Context;
 
 /**
- * Created by sdwfqin on 2017/4/26.
+ * 描述：视图工具类
+ *
+ * @author sdwfqin
+ * @date 2017/4/26
  */
-
 public class ViewUtils {
 
     /**

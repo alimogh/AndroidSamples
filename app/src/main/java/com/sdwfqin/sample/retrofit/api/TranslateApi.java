@@ -6,7 +6,10 @@ import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
- * Created by sdwfqin on 2017/7/11.
+ * 描述：google夏令营时用来测试的一个接口
+ *
+ * @author sdwfqin
+ * @date 2017/7/11
  */
 public interface TranslateApi {
 

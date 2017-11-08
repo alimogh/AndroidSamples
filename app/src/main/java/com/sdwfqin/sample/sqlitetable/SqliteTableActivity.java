@@ -1,7 +1,6 @@
-package com.sdwfqin.sample.sqlite_table;
+package com.sdwfqin.sample.sqlitetable;
 
 import android.content.ContentValues;
-import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -22,30 +21,31 @@ import com.sdwfqin.sample.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 描述：Sqlite数据库
+ *
+ * @author sdwfqin
+ * @date 2017/11/8
+ */
 public class SqliteTableActivity extends AppCompatActivity {
 
     private MySqlite mMySqlite;
     private Button mBtn_add;
     private SQLiteDatabase db;
     private TableLayout mTable1;
-    private List<List> mList = new ArrayList<List>();
+    private List<List> mList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sqlite_table);
-        mTable1 = (TableLayout) findViewById(R.id.table1);
+        mTable1 = findViewById(R.id.table1);
 
         mMySqlite = new MySqlite(this);
         db = mMySqlite.getWritableDatabase();
 
-        mBtn_add = (Button) findViewById(R.id.btn_add);
-        mBtn_add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showMyDialog();
-            }
-        });
+        mBtn_add = findViewById(R.id.btn_add);
+        mBtn_add.setOnClickListener(view -> showMyDialog());
 
         showData();
     }
@@ -62,7 +62,7 @@ public class SqliteTableActivity extends AppCompatActivity {
             int x = cursor.getCount();
             //遍历游标
             do {
-                List<String> list = new ArrayList<String>();
+                List<String> list = new ArrayList<>();
                 //获得ID
                 int id = cursor.getInt(0);
                 String name = cursor.getString(1);
@@ -109,32 +109,31 @@ public class SqliteTableActivity extends AppCompatActivity {
 
     }
 
-    // 显示增加弹窗
+    /**
+     * 显示增加弹窗
+     */
     private void showMyDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         View view = View.inflate(this, R.layout.dialog_add, null);
-        final EditText add_name = (EditText) view.findViewById(R.id.add_name);
-        final EditText add_red = (EditText) view.findViewById(R.id.add_red);
-        final EditText add_green = (EditText) view.findViewById(R.id.add_green);
-        final EditText add_yellow = (EditText) view.findViewById(R.id.add_yellow);
+        final EditText add_name = view.findViewById(R.id.add_name);
+        final EditText add_red = view.findViewById(R.id.add_red);
+        final EditText add_green = view.findViewById(R.id.add_green);
+        final EditText add_yellow = view.findViewById(R.id.add_yellow);
 
         builder.setTitle("增加数据")
                 .setView(view)
                 .setCancelable(false);
 
-        builder.setPositiveButton("确认", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                ContentValues values = new ContentValues();
-                values.put("name", add_name.getText().toString().trim() + "");
-                values.put("red", add_red.getText().toString().trim() + "");
-                values.put("green", add_green.getText().toString().trim() + "");
-                values.put("yellow", add_yellow.getText().toString().trim() + "");
-                db.insert("usertable", null, values);
+        builder.setPositiveButton("确认", (dialogInterface, i) -> {
+            ContentValues values = new ContentValues();
+            values.put("name", add_name.getText().toString().trim() + "");
+            values.put("red", add_red.getText().toString().trim() + "");
+            values.put("green", add_green.getText().toString().trim() + "");
+            values.put("yellow", add_yellow.getText().toString().trim() + "");
+            db.insert("usertable", null, values);
 
-                showData();
-            }
+            showData();
         })
                 .setNegativeButton("取消", null);
         AlertDialog alertDialog = builder.create();

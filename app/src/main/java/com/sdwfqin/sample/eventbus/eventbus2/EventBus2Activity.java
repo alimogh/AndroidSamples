@@ -2,11 +2,10 @@ package com.sdwfqin.sample.eventbus.eventbus2;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 
 import org.greenrobot.eventbus.EventBus;
@@ -21,18 +20,19 @@ import butterknife.ButterKnife;
  * 直到被removeStickyEvent 删除掉。那么只要订阅了该粘性事件的所有方法，
  * 只要被register 的时候，就会被检测到，并且执行。
  * 订阅的方法需要添加 sticky = true 属性
+ *
+ * @author sdwfqin
  */
 public class EventBus2Activity extends AppCompatActivity {
 
     @BindView(R.id.btn_event2_send)
-    Button btnEvent2Send;
+    Button mBtnEvent2Send;
     @BindView(R.id.btn_event2_remove)
-    Button btnEvent2Remove;
+    Button mBtnEvent2Remove;
     @BindView(R.id.tv_event2_msg)
-    TextView tvEvent2Msg;
+    TextView mTvEvent2Msg;
 
-    private static final String TAG = "EventBus2Activity";
-    private String string;
+    private String mString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,28 +40,22 @@ public class EventBus2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_event_bus2);
         ButterKnife.bind(this);
 
-        btnEvent2Send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                string = "EventBus2Activity发出的粘性事件，不删除退出这个activity再进来或者到EventBus1Activity仍然可以看到我";
-                EventBus.getDefault().postSticky(string);
-            }
+        mBtnEvent2Send.setOnClickListener(v -> {
+            mString = "EventBus2Activity发出的粘性事件，不删除退出这个activity再进来或者到EventBus1Activity仍然可以看到我";
+            EventBus.getDefault().postSticky(mString);
         });
-        btnEvent2Remove.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 移除全部粘性事件
-                EventBus.getDefault().removeAllStickyEvents();
-            }
+        mBtnEvent2Remove.setOnClickListener(v -> {
+            // 移除全部粘性事件
+            EventBus.getDefault().removeAllStickyEvents();
         });
     }
 
     @Subscribe(sticky = true, threadMode = ThreadMode.MAIN, priority = 100)
     public <T> void onMessageEvent(T t) {
         try {
-            tvEvent2Msg.setText(t.toString());
+            mTvEvent2Msg.setText(t.toString());
         } catch (Exception e) {
-            Log.e(TAG, "onMessageEvent: ", e);
+            LogUtils.e("onMessageEvent: ", e);
         }
     }
 

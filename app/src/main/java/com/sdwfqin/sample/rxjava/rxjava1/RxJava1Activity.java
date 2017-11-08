@@ -1,9 +1,9 @@
 package com.sdwfqin.sample.rxjava.rxjava1;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 
 import io.reactivex.Observable;
@@ -13,9 +13,12 @@ import io.reactivex.Observer;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 描述：RxJava2 入门
+ *
+ * @author sdwfqin
+ */
 public class RxJava1Activity extends AppCompatActivity {
-
-    private static final String TAG = "RxJava1Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,7 @@ public class RxJava1Activity extends AppCompatActivity {
 
     private void rx01() {
 
-        Log.e(TAG, "rx01: ====== start ======");
+        LogUtils.e("rx01: ====== start ======");
 
         //创建一个 Observable (被观察者)
         Observable<Integer> observable = Observable.create(new ObservableOnSubscribe<Integer>() {
@@ -59,23 +62,23 @@ public class RxJava1Activity extends AppCompatActivity {
         Observer<Integer> observer = new Observer<Integer>() {
             @Override
             public void onSubscribe(Disposable d) {
-                Log.e(TAG, "subscribe");
+                LogUtils.e("subscribe");
             }
 
             @Override
             public void onNext(Integer value) {
-                Log.e(TAG, "" + value);
+                LogUtils.e("" + value);
             }
 
             @Override
             public void onError(Throwable e) {
-                Log.e(TAG, "error", e);
+                LogUtils.e("error", e);
             }
 
             @Override
             public void onComplete() {
-                Log.e(TAG, "complete");
-                Log.e(TAG, "rx01: ====== end ======");
+                LogUtils.e("complete");
+                LogUtils.e("rx01: ====== end ======");
             }
         };
 
@@ -85,19 +88,16 @@ public class RxJava1Activity extends AppCompatActivity {
 
     private void rx02() {
 
-        Log.e(TAG, "rx02: ====== start ======");
+        LogUtils.e("rx02: ====== start ======");
 
-        Observable.create(new ObservableOnSubscribe<Integer>() {
-            @Override
-            public void subscribe(@NonNull ObservableEmitter<Integer> e) throws Exception {
-                for (int i = 0; i < 3; i++) {
-                    Log.e(TAG, "发送: " + i);
-                    e.onNext(i);
-                }
-                e.onComplete();
-                Log.e(TAG, "发送: " + 99);
-                e.onNext(99);
+        Observable.create((ObservableOnSubscribe<Integer>) e -> {
+            for (int i = 0; i < 3; i++) {
+                LogUtils.e("发送: " + i);
+                e.onNext(i);
             }
+            e.onComplete();
+            LogUtils.e("发送: " + 99);
+            e.onNext(99);
         }).subscribe(new Observer<Integer>() {
 
             // 调用dispose()会导致Observer不在接收事件
@@ -105,13 +105,13 @@ public class RxJava1Activity extends AppCompatActivity {
 
             @Override
             public void onSubscribe(@NonNull Disposable d) {
-                Log.e(TAG, "绑定: ");
+                LogUtils.e("绑定: ");
                 disposable = d;
             }
 
             @Override
             public void onNext(@NonNull Integer integer) {
-                Log.e(TAG, "接收: " + integer);
+                LogUtils.e("接收: " + integer);
                 if (integer == 1) {
                     disposable.dispose();
                 }
@@ -119,13 +119,13 @@ public class RxJava1Activity extends AppCompatActivity {
 
             @Override
             public void onError(@NonNull Throwable e) {
-                Log.e(TAG, "onError: ", e);
+                LogUtils.e("onError: ", e);
             }
 
             @Override
             public void onComplete() {
-                Log.e(TAG, "onComplete: ");
-                Log.e(TAG, "rx02: ====== end ======");
+                LogUtils.e("onComplete: ");
+                LogUtils.e("rx02: ====== end ======");
             }
         });
     }

@@ -7,7 +7,10 @@ import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 /**
- * Created by sdwfqin on 2017/5/14.
+ * 描述：get请求
+ *
+ * @author sdwfqin
+ * @date 2017/5/14
  */
 public interface RequestGetApi {
 

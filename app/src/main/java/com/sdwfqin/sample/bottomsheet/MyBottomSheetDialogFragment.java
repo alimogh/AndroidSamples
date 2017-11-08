@@ -10,9 +10,11 @@ import android.view.View;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by sdwfqin on 2017/4/24.
+ * 描述：BottomSheetDialogFragment
+ *
+ * @author sdwfqin
+ * @date 2017/4/24
  */
-
 public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {
 
     private BottomSheetBehavior mBehavior;

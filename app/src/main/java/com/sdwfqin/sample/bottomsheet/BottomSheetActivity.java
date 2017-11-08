@@ -6,31 +6,30 @@ import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by sdwfqin on 2017/3/11.
+ * 描述：底部弹窗
+ *
+ * @author sdwfqin
+ * @date 2017/3/11
  */
 public class BottomSheetActivity extends AppCompatActivity {
 
     @BindView(R.id.nsv)
-    NestedScrollView nsv;
+    NestedScrollView mNsv;
     @BindView(R.id.bottom_list)
-    ListView bottomList;
+    ListView mBottomList;
+
     private BottomSheetBehavior mBottomSheetBehavior;
-    private static final String TAG = "BottomSheetActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,25 +43,24 @@ public class BottomSheetActivity extends AppCompatActivity {
 
     private void initView() {
 
-        mBottomSheetBehavior = BottomSheetBehavior.from(nsv);
+        mBottomSheetBehavior = BottomSheetBehavior.from(mNsv);
 
         String[] strings = new String[]{"BottomSheet", "BottomSheetDialog", "BottomSheetDialogFragment"};
-        bottomList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
+        mBottomList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, strings));
 
-        bottomList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        bottomSheet();
-                        break;
-                    case 1:
-                        bootomSheetDialog();
-                        break;
-                    case 2:
-                        bottomSheetDialogFragment();
-                        break;
-                }
+        mBottomList.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case 0:
+                    bottomSheet();
+                    break;
+                case 1:
+                    bootomSheetDialog();
+                    break;
+                case 2:
+                    bottomSheetDialogFragment();
+                    break;
+                default:
+                    break;
             }
         });
 
@@ -70,12 +68,12 @@ public class BottomSheetActivity extends AppCompatActivity {
         mBottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
-                Log.e(TAG, "onStateChanged: " + "状态改变" + newState);
+                LogUtils.i("onStateChanged: " + "状态改变" + newState);
             }
 
             @Override
             public void onSlide(@NonNull View bottomSheet, float slideOffset) {
-                Log.e(TAG, "onSlide: " + slideOffset);
+                LogUtils.i("onSlide: " + slideOffset);
             }
         });
 
