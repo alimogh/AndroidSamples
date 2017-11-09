@@ -1,14 +1,17 @@
 package com.sdwfqin.mvpseed.model.http;
 
-/**
- * Created by sdwfqin on 2017/9/7.
- */
 import com.sdwfqin.mvpseed.model.bean.TestBean;
 
 import javax.inject.Inject;
 
 import io.reactivex.Flowable;
 
+/**
+ * 描述：Retrofit帮助类
+ *
+ * @author sdwfqin
+ * @date 2017/9/7
+ */
 public class RetrofitHelper implements HttpHelper {
 
     private TestApi mTestApiService;

@@ -1,7 +1,10 @@
 package com.sdwfqin.mvpseed.model.bean;
 
 /**
- * Created by sdwfqin on 2017/6/9.
+ * 描述：实体对象
+ *
+ * @author sdwfqin
+ * @date 2017/6/9
  */
 public class TestBean {
 

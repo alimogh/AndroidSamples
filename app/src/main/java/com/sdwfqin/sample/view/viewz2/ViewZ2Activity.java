@@ -9,14 +9,20 @@ import com.sdwfqin.sample.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：自定义View2凹凸边缘
+ *
+ * @author sdwfqin
+ * @date 2017/5/10
+ */
 public class ViewZ2Activity extends AppCompatActivity {
 
     @BindView(R.id.viewz2_seek)
-    SeekBar viewz2Seek;
+    SeekBar mViewz2Seek;
     @BindView(R.id.viewz2_main)
-    ViewZ2View viewz2Main;
+    ViewZ2View mViewz2Main;
     @BindView(R.id.viewz2_seek2)
-    SeekBar viewz2Seek2;
+    SeekBar mViewz2Seek2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,14 +30,14 @@ public class ViewZ2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_view_z2);
         ButterKnife.bind(this);
 
-        viewz2Seek.setProgress(viewz2Main.getRadius());
-        viewz2Seek2.setProgress(viewz2Main.getGap());
+        mViewz2Seek.setProgress(mViewz2Main.getRadius());
+        mViewz2Seek2.setProgress(mViewz2Main.getGap());
 
         // 圆的半径
-        viewz2Seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mViewz2Seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                viewz2Main.setRadius(progress);
+                mViewz2Main.setRadius(progress);
             }
 
             @Override
@@ -45,10 +51,10 @@ public class ViewZ2Activity extends AppCompatActivity {
             }
         });
         // 圆的间距
-        viewz2Seek2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        mViewz2Seek2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                viewz2Main.setGap(progress);
+                mViewz2Main.setGap(progress);
             }
 
             @Override

@@ -1,3 +1,5 @@
+package com.sdwfqin.sample;
+
 import android.app.Application;
 
 import com.blankj.utilcode.util.Utils;

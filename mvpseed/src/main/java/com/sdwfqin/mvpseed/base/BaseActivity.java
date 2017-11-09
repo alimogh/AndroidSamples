@@ -15,6 +15,12 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+/**
+ * 描述：Activity的基类
+ *
+ * @author sdwfqin
+ * @date 2017/6/9
+ */
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements BaseView {
 
     @Inject
@@ -45,16 +51,18 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 
     protected void onViewCreated() {
         initInject();
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.attachView(this);
+        }
         initEventAndData();
     }
 
     @Override
     protected void onDestroy() {
         mUnBinder.unbind();
-        if (mPresenter != null)
+        if (mPresenter != null) {
             mPresenter.detachView();
+        }
         super.onDestroy();
     }
 

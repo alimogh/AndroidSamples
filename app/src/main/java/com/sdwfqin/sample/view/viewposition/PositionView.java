@@ -5,19 +5,18 @@ import android.graphics.Canvas;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.util.Log;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
- * Created by sdwfqin on 2017/4/26.
+ * @author sdwfqin
+ * @date 2017/4/26
  */
-
 public class PositionView extends AppCompatTextView {
 
-    private static final String TAG = "TestView";
     private Context context;
-    private boolean tranFlag = false;
+    private boolean mTranFlag = false;
 
     public PositionView(Context context) {
         super(context);
@@ -35,20 +34,20 @@ public class PositionView extends AppCompatTextView {
     }
 
     public void setTranslation() {
-        if (!tranFlag) {
+        if (!mTranFlag) {
             // 正数往右，负数往左
             setTranslationX(100);
             setTranslationY(100);
             // 设置该组件在Z方向（垂直屏幕方向）上的位移，可以看到添加了阴影
 //            setTranslationZ(100);
-            tranFlag = true;
+            mTranFlag = true;
         } else {
             // 回复原来的位置
             setTranslationX(0);
             setTranslationY(0);
             // 设置该组件在Z方向（垂直屏幕方向）上的位移。
 //            setTranslationZ(0);
-            tranFlag = false;
+            mTranFlag = false;
         }
     }
 
@@ -60,36 +59,36 @@ public class PositionView extends AppCompatTextView {
         int Bottom = getBottom();
 //        float Z = getZ();
 
-        Log.e(TAG, "left: " + left);
-        Log.e(TAG, "right: " + Right);
-        Log.e(TAG, "top: " + Top);
-        Log.e(TAG, "bottom: " + Bottom);
-//        Log.e(TAG, "Z: " + Z);
+        LogUtils.i("left: " + left);
+        LogUtils.i("right: " + Right);
+        LogUtils.i("top: " + Top);
+        LogUtils.i("bottom: " + Bottom);
+//        LogUtils.i("Z: " + Z);
 
         int width = Right - left;
         int widthdp = ViewUtils.px2dp(context, width);
         int height = Bottom - Top;
         int heightdp = ViewUtils.px2dp(context, height);
         // 转换为dp
-        Log.e(TAG, "width:" + width);
-        Log.e(TAG, "宽度（dp）:" + widthdp);
-        Log.e(TAG, "height:" + height);
-        Log.e(TAG, "高度（dp）:" + heightdp);
+        LogUtils.i("width:" + width);
+        LogUtils.i("宽度（dp）:" + widthdp);
+        LogUtils.i("height:" + height);
+        LogUtils.i("高度（dp）:" + heightdp);
 
         float translationX = getTranslationX();
         float translationY = getTranslationY();
 //        float translationZ = getTranslationZ();
 
-        Log.e(TAG, "translationX:" + translationX);
-        Log.e(TAG, "translationY:" + translationY);
-//        Log.e(TAG, "translationZ:" + translationZ);
+        LogUtils.i("translationX:" + translationX);
+        LogUtils.i("translationY:" + translationY);
+//        LogUtils.i("translationZ:" + translationZ);
 
         // x,y:移动后left与top的位置
         float x = left + translationX;
         float y = Top + translationY;
 
-        Log.e(TAG, "移动后left的位置" + x);
-        Log.e(TAG, "移动后top的位置" + y);
+        LogUtils.i("移动后left的位置" + x);
+        LogUtils.i("移动后top的位置" + y);
 
         super.onDraw(canvas);
     }

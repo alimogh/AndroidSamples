@@ -8,9 +8,10 @@ import javax.inject.Qualifier;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 /**
- * Created by codeest on 2017/2/26.
+ * 描述：自定义注解，区分不同的BaseUrl
+ *
+ * @author sdwfqin
  */
-
 @Qualifier
 @Documented
 @Retention(RUNTIME)

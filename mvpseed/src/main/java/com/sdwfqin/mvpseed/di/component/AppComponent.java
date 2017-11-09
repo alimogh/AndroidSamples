@@ -9,6 +9,11 @@ import javax.inject.Singleton;
 
 import dagger.Component;
 
+/**
+ * 描述：全局注入器
+ *
+ * @author sdwfqin
+ */
 @Singleton
 @Component(modules = {AppModule.class, HttpModule.class})
 public interface AppComponent {

@@ -10,7 +10,10 @@ import com.sdwfqin.mvpseed.di.module.AppModule;
 import com.sdwfqin.mvpseed.di.module.HttpModule;
 
 /**
- * Created by sdwfqin on 2017/6/9.
+ * 描述：
+ *
+ * @author sdwfqin
+ * @date 2017/6/9
  */
 public class App extends Application {
 

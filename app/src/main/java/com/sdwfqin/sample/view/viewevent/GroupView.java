@@ -7,9 +7,9 @@ import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 /**
- * Created by sdwfqin on 2017/5/4.
+ * @author sdwfqin
+ * @date 2017/5/4
  */
-
 public class GroupView extends LinearLayout {
 
     private static final String TAG = "GroupView";

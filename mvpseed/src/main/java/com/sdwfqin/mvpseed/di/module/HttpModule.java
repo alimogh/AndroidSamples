@@ -7,7 +7,6 @@ import com.sdwfqin.mvpseed.model.http.TestApi;
 import com.sdwfqin.mvpseed.util.SystemUtil;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
@@ -26,6 +25,12 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
+/**
+ * 描述：网络操作的Module
+ *
+ * @author sdwfqin
+ * @date 2017/11/9
+ */
 @Module
 public class HttpModule {
 
@@ -74,37 +79,34 @@ public class HttpModule {
         File cacheFile = new File(Constants.PATH_CACHE);
         // 最大50MB
         Cache cache = new Cache(cacheFile, 1024 * 1024 * 50);
-        Interceptor cacheInterceptor = new Interceptor() {
-            @Override
-            public Response intercept(Chain chain) throws IOException {
-                Request request = chain.request();
-                // 判断网络条件，如果有网络的话就直接获取网络上面的数据，如果没有网络就去缓存里面取数据
-                if (!SystemUtil.isNetworkConnected()) {
-                    request = request.newBuilder()
-                            // 设置缓存策略
-                            .cacheControl(CacheControl.FORCE_CACHE)
-                            .build();
-                }
-                Response response = chain.proceed(request);
-                if (SystemUtil.isNetworkConnected()) {
-                    // 有网络时, 不缓存, 最大保存时长为0
-                    int maxAge = 0;
-                    response.newBuilder()
-                            .header("Cache-Control", "public, max-age=" + maxAge)
-                            // 清除头信息，因为服务器如果不支持，会返回一些干扰信息
-                            .removeHeader("Pragma")
-                            .build();
-                } else {
-                    // 无网络时，设置超时为4周
-                    int maxStale = 60 * 60 * 24 * 28;
-                    response.newBuilder()
-                            .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
-                            // 清除头信息，因为服务器如果不支持，会返回一些干扰信息
-                            .removeHeader("Pragma")
-                            .build();
-                }
-                return response;
+        Interceptor cacheInterceptor = chain -> {
+            Request request = chain.request();
+            // 判断网络条件，如果有网络的话就直接获取网络上面的数据，如果没有网络就去缓存里面取数据
+            if (!SystemUtil.isNetworkConnected()) {
+                request = request.newBuilder()
+                        // 设置缓存策略
+                        .cacheControl(CacheControl.FORCE_CACHE)
+                        .build();
             }
+            Response response = chain.proceed(request);
+            if (SystemUtil.isNetworkConnected()) {
+                // 有网络时, 不缓存, 最大保存时长为0
+                int maxAge = 0;
+                response.newBuilder()
+                        .header("Cache-Control", "public, max-age=" + maxAge)
+                        // 清除头信息，因为服务器如果不支持，会返回一些干扰信息
+                        .removeHeader("Pragma")
+                        .build();
+            } else {
+                // 无网络时，设置超时为4周
+                int maxStale = 60 * 60 * 24 * 28;
+                response.newBuilder()
+                        .header("Cache-Control", "public, only-if-cached, max-stale=" + maxStale)
+                        // 清除头信息，因为服务器如果不支持，会返回一些干扰信息
+                        .removeHeader("Pragma")
+                        .build();
+            }
+            return response;
         };
 
         // 网络拦截器

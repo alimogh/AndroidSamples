@@ -9,10 +9,15 @@ import com.sdwfqin.sample.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：自定义View1圆
+ *
+ * @author sdwfqin
+ */
 public class ViewZ1Activity extends AppCompatActivity {
 
     @BindView(R.id.viewz1)
-    ViewZ1View viewz1;
+    ViewZ1View mViewz1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,6 @@ public class ViewZ1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_view_z1);
         ButterKnife.bind(this);
 
-        viewz1.setColor(Color.RED);
+        mViewz1.setColor(Color.RED);
     }
 }

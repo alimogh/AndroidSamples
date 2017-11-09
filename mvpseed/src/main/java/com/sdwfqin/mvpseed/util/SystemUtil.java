@@ -11,6 +11,11 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * 描述：系统工具类
+ *
+ * @author sdwfqin
+ */
 public class SystemUtil {
 
     /**

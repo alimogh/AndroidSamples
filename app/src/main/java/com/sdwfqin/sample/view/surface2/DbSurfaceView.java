@@ -6,25 +6,29 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-/**
- * SurfaceView画板
- * <p>
- * Created by sdwfqin on 2017/6/27.
- */
+import com.blankj.utilcode.util.LogUtils;
 
+/**
+ * 描述：SurfaceView画板
+ *
+ * @author sdwfqin
+ * @date 2017/6/27
+ */
 public class DbSurfaceView extends SurfaceView
         implements SurfaceHolder.Callback, Runnable {
 
-    private static final String TAG = "SurfaceViewTemplate";
     private SurfaceHolder mHolder;
-    // 用于绘图的Canvas
+    /**
+     * 用于绘图的Canvas
+     */
     private Canvas mCanvas;
-    // 子线程标志位
+    /**
+     * 子线程标志位
+     */
     private boolean mIsDrawing;
     private Paint mPaint = new Paint();
     private Path mPath = new Path();
@@ -76,6 +80,8 @@ public class DbSurfaceView extends SurfaceView
                 break;
             case MotionEvent.ACTION_UP:
                 break;
+            default:
+                break;
         }
         return true;
     }
@@ -108,7 +114,7 @@ public class DbSurfaceView extends SurfaceView
             try {
                 Thread.sleep(100 - (end - start));
             } catch (InterruptedException e) {
-                Log.e(TAG, "run: ", e);
+                LogUtils.i("run: ", e);
             }
         }
     }
@@ -121,7 +127,7 @@ public class DbSurfaceView extends SurfaceView
             mCanvas.drawColor(Color.WHITE);
             mCanvas.drawPath(mPath, mPaint);
         } catch (Exception e) {
-            Log.e(TAG, "draw: ", e);
+            LogUtils.i("draw: ", e);
         } finally {
             if (mCanvas != null) {
                 // 提交画布内容

@@ -7,6 +7,11 @@ import com.sdwfqin.mvpseed.di.scope.ActivityScope;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * 描述：ActivityModule
+ *
+ * @author sdwfqin
+ */
 @Module
 public class ActivityModule {
     private Activity mActivity;

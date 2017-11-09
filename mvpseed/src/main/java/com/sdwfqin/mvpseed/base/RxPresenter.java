@@ -3,6 +3,11 @@ package com.sdwfqin.mvpseed.base;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 
+/**
+ * 描述：RxPresenter
+ *
+ * @author sdwfqin
+ */
 public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
 
     protected T mView;

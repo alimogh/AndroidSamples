@@ -9,6 +9,11 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * 描述：AppModule
+ *
+ * @author sdwfqin
+ */
 @Module
 public class AppModule {
     private final App application;

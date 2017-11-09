@@ -17,25 +17,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * 波纹动画
+ * 描述：波纹动画
  *
- * Created by sdwfqin on 2017/7/27.
+ * @author sdwfqin
+ * @date 2017/7/27
  */
 public class RippleAnimationView extends RelativeLayout {
 
-    private int rippleType;
-    private int rippleColor;
-    private int rippleAmount;
-    private float rippleScale;
-    private float rippleRadius;
-    private int rippleDuration;
-    public Paint paint;
-    public float rippleStrokeWidth;
-    private TypedArray typedArray;
+    private int mRippleType;
+    private int mRippleColor;
+    private int mRippleAmount;
+    private float mRippleScale;
+    private float mRippleRadius;
+    private int mRippleDuration;
+    public Paint mPaint;
+    public float mRippleStrokeWidth;
+    private TypedArray mTypedArray;
 
-    private AnimatorSet animatorSet;
-    private boolean animationRunning = false;
-    private ArrayList<RippleCircleView> rippleViewList = new ArrayList<>();
+    private AnimatorSet mAnimatorSet;
+    private boolean mAnimationRunning = false;
+    private ArrayList<RippleCircleView> mRippleViewList = new ArrayList<>();
 
     //默认实心圆圈
     private static final int DEFAULT_FILL_TYPE = 0;
@@ -69,65 +70,69 @@ public class RippleAnimationView extends RelativeLayout {
         }
 
         //加载自定义属性
-        typedArray = context.obtainStyledAttributes(attrs, R.styleable.RippleAnimationView);
-        rippleType = typedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_type, DEFAULT_FILL_TYPE);
-        rippleColor = typedArray.getColor(R.styleable.RippleAnimationView_ripple_anim_color, ContextCompat.getColor(context, R.color.rippleColor));
-        rippleAmount = typedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_amount, DEFAULT_RIPPLE_COUNT);
-        rippleScale = typedArray.getFloat(R.styleable.RippleAnimationView_ripple_anim_scale, DEFAULT_SCALE);
-        rippleRadius = typedArray.getDimension(R.styleable.RippleAnimationView_ripple_anim_radius, getResources().getDimension(R.dimen.rippleRadius));
-        rippleDuration = typedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_duration, DEFAULT_DURATION_TIME);
-        rippleStrokeWidth = typedArray.getDimension(R.styleable.RippleAnimationView_ripple_anim_strokeWidth, getResources().getDimension(R.dimen.rippleStrokeWidth));
+        mTypedArray = context.obtainStyledAttributes(attrs, R.styleable.RippleAnimationView);
+        mRippleType = mTypedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_type, DEFAULT_FILL_TYPE);
+        mRippleColor = mTypedArray.getColor(R.styleable.RippleAnimationView_ripple_anim_color, ContextCompat.getColor(context, R.color.rippleColor));
+        mRippleAmount = mTypedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_amount, DEFAULT_RIPPLE_COUNT);
+        mRippleScale = mTypedArray.getFloat(R.styleable.RippleAnimationView_ripple_anim_scale, DEFAULT_SCALE);
+        mRippleRadius = mTypedArray.getDimension(R.styleable.RippleAnimationView_ripple_anim_radius, getResources().getDimension(R.dimen.rippleRadius));
+        mRippleDuration = mTypedArray.getInt(R.styleable.RippleAnimationView_ripple_anim_duration, DEFAULT_DURATION_TIME);
+        mRippleStrokeWidth = mTypedArray.getDimension(R.styleable.RippleAnimationView_ripple_anim_strokeWidth, getResources().getDimension(R.dimen.rippleStrokeWidth));
         //注意回收TypedArray
-        typedArray.recycle();
+        mTypedArray.recycle();
 
-        int rippleDelay = rippleDuration / rippleAmount;
+        int rippleDelay = mRippleDuration / mRippleAmount;
 
-        paint = new Paint();
-        paint.setAntiAlias(true);//抗锯齿
-        if (rippleType == DEFAULT_FILL_TYPE) {
-            rippleStrokeWidth = 0;
-            paint.setStyle(Paint.Style.FILL);
+        mPaint = new Paint();
+        //抗锯齿
+        mPaint.setAntiAlias(true);
+        if (mRippleType == DEFAULT_FILL_TYPE) {
+            mRippleStrokeWidth = 0;
+            mPaint.setStyle(Paint.Style.FILL);
         } else {
-            paint.setStyle(Paint.Style.STROKE);
+            mPaint.setStyle(Paint.Style.STROKE);
         }
-        paint.setColor(rippleColor);
+        mPaint.setColor(mRippleColor);
 
-        LayoutParams rippleParams = new LayoutParams((int) (2 * (rippleRadius + rippleStrokeWidth)), (int) (2 * (rippleRadius + rippleStrokeWidth)));
+        LayoutParams rippleParams = new LayoutParams((int) (2 * (mRippleRadius + mRippleStrokeWidth)), (int) (2 * (mRippleRadius + mRippleStrokeWidth)));
         rippleParams.addRule(CENTER_IN_PARENT, TRUE);
 
         //分析该动画后将其拆分为缩放、渐变
         ArrayList<Animator> animatorList = new ArrayList<>();
-        for (int i = 0; i < rippleAmount; i++) {
+        for (int i = 0; i < mRippleAmount; i++) {
 
             RippleCircleView rippleView = new RippleCircleView(this, context);
             addView(rippleView, rippleParams);
-            rippleViewList.add(rippleView);
+            mRippleViewList.add(rippleView);
             //ScaleX缩放
-            final ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(rippleView, "ScaleX", 1.0f, rippleScale);
-            scaleXAnimator.setRepeatCount(ObjectAnimator.INFINITE);//无限重复
+            final ObjectAnimator scaleXAnimator = ObjectAnimator.ofFloat(rippleView, "ScaleX", 1.0f, mRippleScale);
+            //无限重复
+            scaleXAnimator.setRepeatCount(ObjectAnimator.INFINITE);
             scaleXAnimator.setRepeatMode(ObjectAnimator.RESTART);
             scaleXAnimator.setStartDelay(i * rippleDelay);
-            scaleXAnimator.setDuration(rippleDuration);
+            scaleXAnimator.setDuration(mRippleDuration);
             animatorList.add(scaleXAnimator);
             //ScaleY缩放
-            final ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(rippleView, "ScaleY", 1.0f, rippleScale);
-            scaleYAnimator.setRepeatCount(ObjectAnimator.INFINITE);//无限重复
+            final ObjectAnimator scaleYAnimator = ObjectAnimator.ofFloat(rippleView, "ScaleY", 1.0f, mRippleScale);
+            //无限重复
+            scaleYAnimator.setRepeatCount(ObjectAnimator.INFINITE);
             scaleYAnimator.setRepeatMode(ObjectAnimator.RESTART);
             scaleYAnimator.setStartDelay(i * rippleDelay);
-            scaleYAnimator.setDuration(rippleDuration);
+            scaleYAnimator.setDuration(mRippleDuration);
             animatorList.add(scaleYAnimator);
             //Alpha渐变
             final ObjectAnimator alphaAnimator = ObjectAnimator.ofFloat(rippleView, "Alpha", 1.0f, 0f);
-            alphaAnimator.setRepeatCount(ObjectAnimator.INFINITE);//无限重复
+            //无限重复
+            alphaAnimator.setRepeatCount(ObjectAnimator.INFINITE);
             alphaAnimator.setRepeatMode(ObjectAnimator.RESTART);
             alphaAnimator.setStartDelay(i * rippleDelay);
-            alphaAnimator.setDuration(rippleDuration);
+            alphaAnimator.setDuration(mRippleDuration);
             animatorList.add(alphaAnimator);
         }
 
-        animatorSet = new AnimatorSet();
-        animatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
-        animatorSet.playTogether(animatorList);
+        mAnimatorSet = new AnimatorSet();
+        mAnimatorSet.setInterpolator(new AccelerateDecelerateInterpolator());
+        mAnimatorSet.playTogether(animatorList);
     }
 
     /**
@@ -135,11 +140,11 @@ public class RippleAnimationView extends RelativeLayout {
      */
     public void startRippleAnimation() {
         if (!isRippleRunning()) {
-            for (RippleCircleView rippleView : rippleViewList) {
+            for (RippleCircleView rippleView : mRippleViewList) {
                 rippleView.setVisibility(VISIBLE);
             }
-            animatorSet.start();
-            animationRunning = true;
+            mAnimatorSet.start();
+            mAnimationRunning = true;
         }
     }
 
@@ -148,12 +153,12 @@ public class RippleAnimationView extends RelativeLayout {
      */
     public void stopRippleAnimation() {
         if (isRippleRunning()) {
-            Collections.reverse(rippleViewList);
-            for (RippleCircleView rippleView : rippleViewList) {
+            Collections.reverse(mRippleViewList);
+            for (RippleCircleView rippleView : mRippleViewList) {
                 rippleView.setVisibility(INVISIBLE);
             }
-            animatorSet.end();
-            animationRunning = false;
+            mAnimatorSet.end();
+            mAnimationRunning = false;
         }
     }
 
@@ -163,6 +168,6 @@ public class RippleAnimationView extends RelativeLayout {
      * @return boolean isRippleRunning
      */
     public boolean isRippleRunning() {
-        return animationRunning;
+        return mAnimationRunning;
     }
 }

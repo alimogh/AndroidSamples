@@ -14,6 +14,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
+ * 按钮放大（属性动画）
+ * <p>
  * 使用属性动画ObjectAnimator修改属性时要确保原始对象有get和set方法，如果没有可以尝试用一个类来包装原始对象。
  * 也可以使用ValueAnimator，监听动画实现过程
  * <p>
@@ -21,13 +23,13 @@ import butterknife.ButterKnife;
  * 属性动画在修改属性时通过不断调用属性的get和set方法实现动画效果。
  * <p>
  * AnimatorSet是一个动画集合
+ *
+ * @author sdwfqin
  */
 public class Animator1Activity extends AppCompatActivity {
 
     @BindView(R.id.animator1_btn)
     Button animator1Btn;
-
-    private static final String TAG = "Animator1Activity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +37,7 @@ public class Animator1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_animator1);
         ButterKnife.bind(this);
 
-        animator1Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setButtonSize(300, 300);
-            }
-        });
+        animator1Btn.setOnClickListener(v -> setButtonSize(300, 300));
     }
 
     private void setButtonSize(int x, int y) {

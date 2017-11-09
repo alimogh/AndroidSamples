@@ -2,29 +2,28 @@ package com.sdwfqin.sample.view.viewposition;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 
 import com.sdwfqin.sample.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：View的位置参数
+ *
+ * @author sdwfqin
+ * @date 2017/4/27
+ */
 public class ViewPositionActivity extends AppCompatActivity {
 
     @BindView(R.id.position_view)
     PositionView positionView;
-    private static final String TAG = "ViewPositionActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_position);
         ButterKnife.bind(this);
-        positionView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                positionView.setTranslation();
-            }
-        });
+        positionView.setOnClickListener(v -> positionView.setTranslation());
     }
 }

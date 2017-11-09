@@ -9,10 +9,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by sdwfqin on 2017/7/11.
- */
-
-/**
  * 描述：编码工具类
  *
  * @author sdwfqin

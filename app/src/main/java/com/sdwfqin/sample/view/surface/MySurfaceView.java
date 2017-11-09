@@ -5,26 +5,29 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.PixelFormat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
+import com.blankj.utilcode.util.LogUtils;
+
 /**
  * SurfaceView实例
- * <p>
- * Created by sdwfqin on 2017/6/27.
+ *
+ * @author sdwfqin
+ * @date 2017/6/27
  */
-
 public class MySurfaceView extends SurfaceView
         implements SurfaceHolder.Callback, Runnable {
 
-    private static final String TAG = "SurfaceViewTemplate";
     private SurfaceHolder mHolder;
-    // 用于绘图的Canvas
+    /**
+     * 用于绘图的Canvas
+     */
     private Canvas mCanvas;
-    // 子线程标志位
+    /**
+     * 子线程标志位
+     */
     private boolean mIsDrawing;
     private int x, y;
     private Paint mPaint = new Paint();
@@ -94,9 +97,9 @@ public class MySurfaceView extends SurfaceView
             mCanvas = mHolder.lockCanvas();
             // SurfaceView背景
             mCanvas.drawColor(Color.WHITE);
-            mCanvas.drawPath(mPath,mPaint);
+            mCanvas.drawPath(mPath, mPaint);
         } catch (Exception e) {
-            Log.e(TAG, "draw: ", e);
+            LogUtils.e("draw: ", e);
         } finally {
             if (mCanvas != null) {
                 // 提交画布内容

@@ -6,11 +6,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by sdwfqin on 2017/7/27.
+ * @author sdwfqin
+ * @date 2017/7/27
  */
 public class RippleCircleView extends View {
 
-    private RippleAnimationView rippleAnimationView;
+    private RippleAnimationView mRippleAnimationView;
 
     public RippleCircleView(Context context) {
         super(context);
@@ -26,13 +27,13 @@ public class RippleCircleView extends View {
 
     public RippleCircleView(RippleAnimationView rippleAnimationView, Context context) {
         super(context);
-        this.rippleAnimationView = rippleAnimationView;
+        this.mRippleAnimationView = rippleAnimationView;
         this.setVisibility(View.INVISIBLE);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         int radius = (Math.min(getWidth(), getHeight())) / 2;
-        canvas.drawCircle(radius, radius, radius - rippleAnimationView.rippleStrokeWidth, rippleAnimationView.paint);
+        canvas.drawCircle(radius, radius, radius - mRippleAnimationView.mRippleStrokeWidth, mRippleAnimationView.mPaint);
     }
 }

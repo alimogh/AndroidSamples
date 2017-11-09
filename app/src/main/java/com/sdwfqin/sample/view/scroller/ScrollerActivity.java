@@ -5,6 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * 描述：View滑动
+ *
+ * @author sdwfqin
+ * @date 2017/4/26
+ */
 public class ScrollerActivity extends AppCompatActivity {
 
     @Override

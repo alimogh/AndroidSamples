@@ -7,18 +7,20 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.widget.LinearLayout;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
- * Created by sdwfqin on 2017/5/10.
+ * 描述：自定义View2凹凸边缘
+ *
+ * @author sdwfqin
+ * @date 2017/5/10
  */
 public class ViewZ2View extends LinearLayout {
 
-    private static final String TAG = "ViewZ2View";
     private Context mContext;
     private int mColor = Color.WHITE;
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -70,10 +72,12 @@ public class ViewZ2View extends LinearLayout {
         // 刷新视图
         invalidate();
     }
+
     // 读取圆的半径
     public int getRadius() {
         return ViewUtils.px2dp(mContext, radius);
     }
+
     // 设置圆的半径
     public void setRadius(int radius) {
         this.radius = ViewUtils.dp2px(mContext, radius);
@@ -104,7 +108,7 @@ public class ViewZ2View extends LinearLayout {
             count = (width - gap) / (radius * 2 + gap);
         } catch (Exception e) {
             count = 0;
-            Log.e(TAG, "onDraw: ", e);
+            LogUtils.e("onDraw: ", e);
         }
         // 圆的直径
         int h = (radius * 2);

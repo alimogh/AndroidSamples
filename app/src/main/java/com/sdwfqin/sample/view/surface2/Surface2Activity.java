@@ -5,6 +5,12 @@ import android.os.Bundle;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * 描述：SurfaceView画板
+ *
+ * @author sdwfqin
+ * @date 2017/6/27
+ */
 public class Surface2Activity extends AppCompatActivity {
 
     @Override

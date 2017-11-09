@@ -3,17 +3,19 @@ package com.sdwfqin.sample.view.scroller;
 import android.content.Context;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Scroller;
 
-/**
- * Created by sdwfqin on 2017/4/26.
- */
+import com.blankj.utilcode.util.LogUtils;
 
+/**
+ * 描述：View滑动
+ *
+ * @author sdwfqin
+ * @date 2017/4/26
+ */
 public class ScrollerView extends AppCompatTextView {
 
-    private static final String TAG = "ScrollerView";
     private Context mContext;
     private Scroller scroller;
 
@@ -48,9 +50,13 @@ public class ScrollerView extends AppCompatTextView {
         return true;
     }
 
-    // 弹性滑动，只滑动内容，不改变位置（destX正左负右，destY正上负下）
+    /**
+     * 弹性滑动，只滑动内容，不改变位置（destX正左负右，destY正上负下）
+     * @param destX
+     * @param destY
+     */
     private void smoothScrollTo(int destX, int destY) {
-        Log.e(TAG, "smoothScrollTo: ");
+        LogUtils.e("smoothScrollTo: ");
         // scrollX,scrollY对应原始位置左上角，水平与竖直方向
         int scrollX = getScrollX();
         int scrollY = getScrollY();

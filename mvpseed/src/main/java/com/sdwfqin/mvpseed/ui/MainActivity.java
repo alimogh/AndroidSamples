@@ -21,7 +21,7 @@ import com.sdwfqin.mvpseed.presenter.MainPresenter;
  */
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 
-    private TextView main_tv;
+    private TextView mMain_tv;
 
     @Override
     protected void initInject() {
@@ -38,13 +38,13 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
         LogUtils.i("日志测试");
 
-        main_tv = (TextView) findViewById(R.id.main_tv);
+        mMain_tv = (TextView) findViewById(R.id.main_tv);
 
         mPresenter.getWeather("101190201");
     }
 
     @Override
     public void showTextView(TestBean testBean) {
-        main_tv.setText(testBean.getWeatherinfo().toString());
+        mMain_tv.setText(testBean.getWeatherinfo().toString());
     }
 }

@@ -20,8 +20,10 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by sdwfqin on 2017/8/3.
- * Fragment基类
+ * 描述：Fragment基类
+ *
+ * @author sdwfqin
+ * @date 2017/8/3
  */
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView {
 
@@ -95,10 +97,11 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         mUnBinder = ButterKnife.bind(this, view);
-        mInflater = getLayoutInflater(savedInstanceState);
+        mInflater = onGetLayoutInflater(savedInstanceState);
         initInject();
-        if (mPresenter != null)
+        if (mPresenter != null){
             mPresenter.attachView(this);
+        }
         initEventAndData();
         // 界面加载完成
         isPrepared = true;
@@ -108,8 +111,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
     @Override
     public void onDestroyView() {
         mUnBinder.unbind();
-        if (mPresenter != null)
+        if (mPresenter != null){
             mPresenter.detachView();
+        }
         super.onDestroyView();
     }
 

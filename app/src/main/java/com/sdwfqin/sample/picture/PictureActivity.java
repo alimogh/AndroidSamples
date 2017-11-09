@@ -67,7 +67,7 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
     /**
      * 图片路径
      */
-    private String mFilepath = SDCardUtils.getSDCardPaths() + "AndroidSamples";
+    private String mFilepath = SDCardUtils.getSDCardPaths().get(0) + "/AndroidSamples";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +111,10 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
      * 拍照
      */
     private void camera() {
+        LogUtils.e(SDCardUtils.getSDCardPaths().get(0));
+
         File file = new File(mFilepath, System.currentTimeMillis() + ".jpg");
+        LogUtils.e(file.getPath());
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
         }
@@ -189,7 +192,7 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
                     break;
                 case UCrop.REQUEST_CROP:
                     LogUtils.i("onActivityResult: " + UCrop.getOutput(data));
-                    mCameraTv.setText(UCrop.getOutput(data).getPath());
+                    mCameraTv.setText(UCrop.getOutput(data) + "");
                     Glide.with(this)
                             .load(UCrop.getOutput(data))
                             .crossFade()

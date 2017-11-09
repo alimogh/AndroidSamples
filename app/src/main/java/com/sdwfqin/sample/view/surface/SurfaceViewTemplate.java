@@ -2,26 +2,29 @@ package com.sdwfqin.sample.view.surface;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.PixelFormat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-/**
- * SurfaceView模板
- * <p>
- * Created by sdwfqin on 2017/6/27.
- */
+import com.blankj.utilcode.util.LogUtils;
 
+/**
+ * 描述：SurfaceView模板
+ *
+ * @author sdwfqin
+ * @date 2017/6/27
+ */
 public class SurfaceViewTemplate extends SurfaceView
         implements SurfaceHolder.Callback, Runnable {
 
-    private static final String TAG = "SurfaceViewTemplate";
     private SurfaceHolder mHolder;
-    // 用于绘图的Canvas
+    /**
+     * 用于绘图的Canvas
+     */
     private Canvas mCanvas;
-    // 子线程标志位
+    /**
+     * 子线程标志位
+     */
     private boolean mIsDrawing;
 
     public SurfaceViewTemplate(Context context) {
@@ -79,7 +82,7 @@ public class SurfaceViewTemplate extends SurfaceView
             // 获取Canvas对象
             mCanvas = mHolder.lockCanvas();
         } catch (Exception e) {
-            Log.e(TAG, "draw: ", e);
+            LogUtils.e("draw: ", e);
         } finally {
             if (mCanvas != null) {
                 // 提交画布内容

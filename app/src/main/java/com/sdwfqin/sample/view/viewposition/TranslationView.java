@@ -7,12 +7,12 @@ import android.view.MotionEvent;
 import android.widget.LinearLayout;
 
 /**
- * Created by sdwfqin on 2017/4/27.
+ * 描述：
+ *
+ * @author sdwfqin
+ * @date 2017/4/27
  */
-
 public class TranslationView extends LinearLayout {
-
-    private static final String TAG = "TranslationView";
 
     public TranslationView(Context context) {
         super(context);
@@ -27,6 +27,7 @@ public class TranslationView extends LinearLayout {
     }
 
     private float x = 0, y = 0;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
@@ -52,6 +53,8 @@ public class TranslationView extends LinearLayout {
                 y = event.getRawY();
                 break;
             case MotionEvent.ACTION_UP:
+                break;
+            default:
                 break;
         }
         return true;

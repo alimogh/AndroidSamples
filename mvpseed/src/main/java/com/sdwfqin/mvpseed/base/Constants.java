@@ -2,6 +2,11 @@ package com.sdwfqin.mvpseed.base;
 
 import java.io.File;
 
+/**
+ * 描述：全局变量
+ *
+ * @author sdwfqin
+ */
 public class Constants {
 
     public static final boolean LOG_TYPE = true;

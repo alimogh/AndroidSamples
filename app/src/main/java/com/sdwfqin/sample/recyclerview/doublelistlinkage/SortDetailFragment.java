@@ -84,12 +84,13 @@ public class SortDetailFragment extends Fragment {
                     case R.id.content:
                         content = "content";
                         break;
-
+                    default:
+                        break;
                 }
                 Snackbar snackbar = Snackbar.make(mRv, "当前点击的是" + content + ":" + mDatas.get(position).getName(), Snackbar.LENGTH_SHORT);
                 View mView = snackbar.getView();
                 mView.setBackgroundColor(Color.BLUE);
-                TextView text = (TextView) mView.findViewById(android.support.design.R.id.snackbar_text);
+                TextView text = mView.findViewById(android.support.design.R.id.snackbar_text);
                 text.setTextColor(Color.WHITE);
                 text.setTextSize(25);
                 snackbar.show();
@@ -111,7 +112,8 @@ public class SortDetailFragment extends Fragment {
     private void initData(final String[] data) {
         for (int i = 0; i < data.length; i++) {
             SortBean titleBean = new SortBean(String.valueOf(i));
-            titleBean.setTitle(true);//头部设置为true
+            //头部设置为true
+            titleBean.setTitle(true);
             titleBean.setTag(String.valueOf(i));
             mDatas.add(titleBean);
             for (int j = 0; j < 10; j++) {

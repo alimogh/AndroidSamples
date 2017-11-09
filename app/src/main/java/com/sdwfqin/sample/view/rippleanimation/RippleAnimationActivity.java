@@ -2,20 +2,24 @@ package com.sdwfqin.sample.view.rippleanimation;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
 
 import com.sdwfqin.sample.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：波纹动画
+ *
+ * @author sdwfqin
+ * @date 2017/7/27
+ */
 public class RippleAnimationActivity extends AppCompatActivity {
 
     @BindView(R.id.ImageView)
-    android.widget.ImageView ImageView;
+    android.widget.ImageView mImageView;
     @BindView(R.id.layout_RippleAnimation)
-    RippleAnimationView layoutRippleAnimation;
+    RippleAnimationView mLayoutRippleAnimation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,17 +27,14 @@ public class RippleAnimationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ripple_animation);
         ButterKnife.bind(this);
 
-        ImageView = (ImageView) findViewById(R.id.ImageView);
-        layoutRippleAnimation = (RippleAnimationView) findViewById(R.id.layout_RippleAnimation);
+        mImageView = findViewById(R.id.ImageView);
+        mLayoutRippleAnimation = findViewById(R.id.layout_RippleAnimation);
 
-        ImageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (layoutRippleAnimation.isRippleRunning()) {
-                    layoutRippleAnimation.stopRippleAnimation();
-                } else {
-                    layoutRippleAnimation.startRippleAnimation();
-                }
+        mImageView.setOnClickListener(view -> {
+            if (mLayoutRippleAnimation.isRippleRunning()) {
+                mLayoutRippleAnimation.stopRippleAnimation();
+            } else {
+                mLayoutRippleAnimation.startRippleAnimation();
             }
         });
     }

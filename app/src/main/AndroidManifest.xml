@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
-        android:name="BaseApp"
+        android:name=".BaseApp"
         android:allowBackup="true"
         android:icon="@drawable/img_tm"
         android:label="@string/app_name"
@@ -66,7 +66,7 @@
         <activity android:name=".view.animator1.Animator1Activity"/>
         <activity android:name=".view.viewz1.ViewZ1Activity"/>
         <activity android:name=".view.viewz2.ViewZ2Activity"/>
-        <activity android:name=".view.paypwdInput.PayPwdInputActivity"/>
+        <activity android:name=".view.paypwdinput.PayPwdInputActivity"/>
         <activity android:name=".eventbus.EventBusActivity"/>
         <activity android:name=".eventbus.eventbus1.EventBus1Activity"/>
         <activity android:name=".eventbus.eventbus2.EventBus2Activity"/>

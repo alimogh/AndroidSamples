@@ -11,10 +11,17 @@ import android.view.View;
 
 import com.sdwfqin.sample.R;
 
+/**
+ * 描述：自定义View1圆
+ *
+ * @author sdwfqin
+ */
 public class ViewZ1View extends View {
 
     private int mColor = Color.BLUE;
-    // 抗锯齿
+    /**
+     * 抗锯齿
+     */
     private Paint mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
 
     public ViewZ1View(Context context) {

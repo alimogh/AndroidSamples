@@ -8,6 +8,11 @@ import com.sdwfqin.mvpseed.di.scope.FragmentScope;
 import dagger.Module;
 import dagger.Provides;
 
+/**
+ * 描述：FragmentModule
+ *
+ * @author sdwfqin
+ */
 @Module
 public class FragmentModule {
 
