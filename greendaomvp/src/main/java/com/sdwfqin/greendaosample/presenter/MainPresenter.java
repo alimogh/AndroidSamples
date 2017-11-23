@@ -3,9 +3,11 @@ package com.sdwfqin.greendaosample.presenter;
 import com.sdwfqin.greendaosample.model.entry.Student;
 
 /**
- * Created by sdwfqin on 2017/5/5.
+ * 描述：P层接口
+ *
+ * @author sdwfqin
+ * @date 2017/5/5
  */
-
 public interface MainPresenter {
 
     void onResume();

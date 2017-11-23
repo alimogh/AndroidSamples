@@ -7,12 +7,16 @@ import com.sdwfqin.greendaosample.model.entry.DaoMaster;
 import com.sdwfqin.greendaosample.model.entry.DaoSession;
 
 /**
- * Created by sdwfqin on 2017/5/1.
+ * 描述：Application
+ *
+ * @author sdwfqin
+ * @date 2017/5/1
  */
-
 public class BaseApplication extends Application {
 
-    // DaoSession：管理所有的Dao对象，Dao对象中存在着增删改查等API
+    /**
+     * DaoSession：管理所有的Dao对象，Dao对象中存在着增删改查等API
+     */
     private static DaoSession daoSession;
 
     @Override

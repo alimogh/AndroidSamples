@@ -1,6 +1,5 @@
 package com.sdwfqin.greendaosample.view;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -35,6 +34,12 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 描述：程序入口，V层
+ *
+ * @author sdwfqin
+ * @date 2017/5/5
+ */
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener,
         SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.OnItemChildClickListener {
 
@@ -89,7 +94,9 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         homeAdapter.setOnItemChildClickListener(this);
     }
 
-    // 搜索栏
+    /**
+     * 搜索栏
+     */
     private void initSearchView() {
         MenuItem search = mToolbar.getMenu().findItem(R.id.menu_search);
         final SearchView searchView = (SearchView) search.getActionView();
@@ -110,20 +117,21 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         });
     }
 
-    // 菜单按钮
+    /**
+     * 菜单按钮
+     */
     private void inflateMenu() {
         mToolbar.inflateMenu(R.menu.menu_frist);
-        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.menu_about:
-                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sdwfqin"));
-                        startActivity(intent);
-                        break;
-                }
-                return true;
+        mToolbar.setOnMenuItemClickListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.menu_about:
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/sdwfqin"));
+                    startActivity(intent);
+                    break;
+                default:
+                    break;
             }
+            return true;
         });
     }
 
@@ -141,9 +149,9 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
                 .setTitle("修改");
 
         View view = View.inflate(MainActivity.this, R.layout.dialog_xg, null);
-        final EditText et_name = (EditText) view.findViewById(R.id.et_name);
-        final EditText et_sex = (EditText) view.findViewById(R.id.et_sex);
-        final EditText et_address = (EditText) view.findViewById(R.id.et_address);
+        final EditText et_name = view.findViewById(R.id.et_name);
+        final EditText et_sex = view.findViewById(R.id.et_sex);
+        final EditText et_address = view.findViewById(R.id.et_address);
 
         et_name.setText(student.getName());
         et_sex.setText(student.getSex());
@@ -151,31 +159,25 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
 
         builder.setView(view);
 
-        builder.setPositiveButton("完成", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        builder.setPositiveButton("完成", (dialog, which) -> {
 
-                String name = et_name.getText().toString().trim();
-                String sex = et_sex.getText().toString().trim();
-                String address = et_address.getText().toString().trim();
+            String name = et_name.getText().toString().trim();
+            String sex = et_sex.getText().toString().trim();
+            String address = et_address.getText().toString().trim();
 
-                if (name.isEmpty() || sex.isEmpty() || address.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "内容不能为空", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                student.setName(name);
-                student.setSex(sex);
-                student.setAddress(address);
-
-                mainPresenter.OnUpData(student, position);
+            if (name.isEmpty() || sex.isEmpty() || address.isEmpty()) {
+                Toast.makeText(MainActivity.this, "内容不能为空", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            student.setName(name);
+            student.setSex(sex);
+            student.setAddress(address);
+
+            mainPresenter.OnUpData(student, position);
         });
-        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
+        builder.setNegativeButton("取消", (dialogInterface, i) -> {
 
-            }
         });
 
         AlertDialog alertDialog = builder.create();
@@ -234,38 +236,35 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
         View v = View.inflate(this, R.layout.sheet_dialog, null);
         mBottomSheetDialog = new BottomSheetDialog(this);
         mBottomSheetDialog.setContentView(v);
-        Button btn_enter = (Button) v.findViewById(R.id.btn_enter);
-        final EditText et_xh = (EditText) v.findViewById(R.id.et_xh);
-        final EditText et_name = (EditText) v.findViewById(R.id.et_name);
-        final EditText et_age = (EditText) v.findViewById(R.id.et_sex);
-        final EditText et_address = (EditText) v.findViewById(R.id.et_address);
+        Button btn_enter = v.findViewById(R.id.btn_enter);
+        final EditText et_xh = v.findViewById(R.id.et_xh);
+        final EditText et_name = v.findViewById(R.id.et_name);
+        final EditText et_age = v.findViewById(R.id.et_sex);
+        final EditText et_address = v.findViewById(R.id.et_address);
 
-        btn_enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btn_enter.setOnClickListener(view -> {
 
-                long xh = 0;
-                try {
-                    xh = Long.parseLong(et_xh.getText().toString().trim());
-                } catch (NumberFormatException e) {
-                    Toast.makeText(MainActivity.this, "学号请输入数字", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                String name = et_name.getText().toString().trim();
-                String age = et_age.getText().toString().trim();
-                String address = et_address.getText().toString().trim();
-
-                if (xh == 0 || name.isEmpty() || age.isEmpty() || address.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "内容不能为空", Toast.LENGTH_SHORT).show();
-                    mBottomSheetDialog.dismiss();
-                    return;
-                }
-                Student student = new Student(xh, name, age, address);
-
-                mainPresenter.OnCreateData(student);
-
+            long xh = 0;
+            try {
+                xh = Long.parseLong(et_xh.getText().toString().trim());
+            } catch (NumberFormatException e) {
+                Toast.makeText(MainActivity.this, "学号请输入数字", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            String name = et_name.getText().toString().trim();
+            String age = et_age.getText().toString().trim();
+            String address = et_address.getText().toString().trim();
+
+            if (xh == 0 || name.isEmpty() || age.isEmpty() || address.isEmpty()) {
+                Toast.makeText(MainActivity.this, "内容不能为空", Toast.LENGTH_SHORT).show();
+                mBottomSheetDialog.dismiss();
+                return;
+            }
+            Student student = new Student(xh, name, age, address);
+
+            mainPresenter.OnCreateData(student);
+
         });
         mBottomSheetDialog.show();
     }
@@ -303,6 +302,8 @@ public class MainActivity extends AppCompatActivity implements MainView, View.On
                 break;
             case R.id.ll_a:
                 Log.e(TAG, "onItemClick: " + "点击条目");
+                break;
+            default:
                 break;
         }
     }

@@ -13,7 +13,10 @@ import android.widget.Toast;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by sdwfqin on 2016/8/18.
+ * 描述：PopDropDownBg
+ *
+ * @author sdwfqin
+ * @date 2016/8/18
  */
 public class PopDropDownBgActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -24,21 +27,18 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drop_down_bg_activity);
-        mMenuTv = (TextView) findViewById(R.id.menu);
-        mMenuTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mPopWindow != null) {
-                    if (mPopWindow.isShowing()) {
-                        mPopWindow.dismiss();
-                    } else {
-                        showPopupWindow();
-                    }
+        mMenuTv = findViewById(R.id.menu);
+        mMenuTv.setOnClickListener(v -> {
+            if (mPopWindow != null) {
+                if (mPopWindow.isShowing()) {
+                    mPopWindow.dismiss();
                 } else {
                     showPopupWindow();
                 }
-
+            } else {
+                showPopupWindow();
             }
+
         });
     }
 
@@ -51,21 +51,16 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
 
         backgroundAlpha(0.6f);
 
-        TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
-        TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
-        TextView tv3 = (TextView) contentView.findViewById(R.id.pop_manage);
+        TextView tv1 = contentView.findViewById(R.id.pop_computer);
+        TextView tv2 = contentView.findViewById(R.id.pop_financial);
+        TextView tv3 = contentView.findViewById(R.id.pop_manage);
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);
 
         mPopWindow.showAsDropDown(mMenuTv);
 
-        mPopWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
-            @Override
-            public void onDismiss() {
-                backgroundAlpha(1f);
-            }
-        });
+        mPopWindow.setOnDismissListener(() -> backgroundAlpha(1f));
     }
 
     /**
@@ -75,7 +70,8 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
      */
     private void backgroundAlpha(float bgAlpha) {
         WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.alpha = bgAlpha; //0.0-1.0
+        //0.0-1.0
+        lp.alpha = bgAlpha;
         getWindow().setAttributes(lp);
     }
 
@@ -98,6 +94,8 @@ public class PopDropDownBgActivity extends AppCompatActivity implements View.OnC
                 mPopWindow.dismiss();
             }
             break;
+            default:
+                break;
         }
     }
 }

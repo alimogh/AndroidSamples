@@ -12,7 +12,10 @@ import android.widget.Toast;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by sdwfqin on 2016/8/18.
+ * 描述：PopupShowAsDropDown
+ *
+ * @author sdwfqin
+ * @date 2016/8/18
  */
 public class PopupShowAsDropDownActivity extends AppCompatActivity implements View.OnClickListener {
     private PopupWindow mPopWindow;
@@ -22,19 +25,16 @@ public class PopupShowAsDropDownActivity extends AppCompatActivity implements Vi
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_as_drop_down_activity);
-        mMenuTv = (TextView) findViewById(R.id.menu);
-        mMenuTv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mPopWindow != null) {
-                    if (mPopWindow.isShowing()) {
-                        mPopWindow.dismiss();
-                    } else {
-                        showPopupWindow();
-                    }
+        mMenuTv = findViewById(R.id.menu);
+        mMenuTv.setOnClickListener(v -> {
+            if (mPopWindow != null) {
+                if (mPopWindow.isShowing()) {
+                    mPopWindow.dismiss();
                 } else {
                     showPopupWindow();
                 }
+            } else {
+                showPopupWindow();
             }
         });
     }
@@ -45,9 +45,9 @@ public class PopupShowAsDropDownActivity extends AppCompatActivity implements Vi
         mPopWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         mPopWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
-        TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
-        TextView tv3 = (TextView) contentView.findViewById(R.id.pop_manage);
+        TextView tv1 = contentView.findViewById(R.id.pop_computer);
+        TextView tv2 = contentView.findViewById(R.id.pop_financial);
+        TextView tv3 = contentView.findViewById(R.id.pop_manage);
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);
@@ -74,6 +74,8 @@ public class PopupShowAsDropDownActivity extends AppCompatActivity implements Vi
                 mPopWindow.dismiss();
             }
             break;
+            default:
+                break;
         }
     }
 }

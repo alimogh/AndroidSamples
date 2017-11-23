@@ -7,9 +7,11 @@ import com.sdwfqin.greendaosample.view.MainView;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2017/5/5.
+ * 描述：P层实现
+ *
+ * @author sdwfqin
+ * @date 2017/5/5
  */
-
 public class MainPresenterImpl implements MainPresenter {
 
     private MainView mainView;
