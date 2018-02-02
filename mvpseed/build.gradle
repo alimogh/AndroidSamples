@@ -43,7 +43,7 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
 
-    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
 
     // RxJava2
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
@@ -55,6 +55,7 @@ dependencies {
 
     implementation "com.blankj:utilcode:$rootProject.ext.utilcode"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glide"
     implementation "com.github.mcxtzhang:SwipeDelMenuLayout:$rootProject.ext.SwipeDelMenuLayout"
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.ext.brvah"
     // 运行时权限

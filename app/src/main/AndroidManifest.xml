@@ -45,9 +45,7 @@
         <activity android:name=".activitytransition.T2Activity"/>
         <activity android:name=".sqlitetable.SqliteTableActivity"/>
         <activity android:name=".handler.HandlerActivity"/>
-        <activity android:name=".glide.GlideActivity"/>
         <activity android:name=".recyclerview.RecyclerActivity"/>
-        <activity android:name=".dagger.DaggerActivity"/>
         <activity android:name=".retrofit.RetrofitActivity"/>
         <activity android:name=".retrofit.activity.Retrofit1Activity"/>
         <activity android:name=".retrofit.activity.Retrofit2Activity"/>
@@ -64,9 +62,9 @@
         <activity android:name=".view.gesturedetector.GestureDetectorActivity"/>
         <activity android:name=".view.scroller.ScrollerActivity"/>
         <activity android:name=".view.viewevent.ViewEventActivity"/>
-        <activity android:name=".view.animator1.Animator1Activity"/>
-        <activity android:name=".view.viewz1.ViewZ1Activity"/>
-        <activity android:name=".view.viewz2.ViewZ2Activity"/>
+        <activity android:name=".view.bottomzoom.BottomZoomActivity"/>
+        <activity android:name=".view.descircle.DesCircleActivity"/>
+        <activity android:name=".view.courtesycard.CourtesyCardActivity"/>
         <activity android:name=".view.paypwdinput.PayPwdInputActivity"/>
         <activity android:name=".eventbus.EventBusActivity"/>
         <activity android:name=".eventbus.eventbus1.EventBus1Activity"/>
@@ -111,10 +109,9 @@
 
         <activity android:name=".webview.WebViewActivity"/>
         <activity android:name=".view.surface.SurfaceActivity"/>
-        <activity android:name=".view.surface2.Surface2Activity"/>
+        <activity android:name=".view.surfacepalette.SurfacePaletteActivity"/>
         <activity android:name=".recyclerview.recycler1.Recycler1Activity"/>
         <activity android:name=".recyclerview.vlayout.VLayoutActivity"/>
-        <activity android:name=".retrofit.activity.TranslateActivity"/>
         <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity"/>
         <activity android:name=".view.rippleanimation.RippleAnimationActivity"/>
         <activity android:name=".picture.PictureActivity"/>

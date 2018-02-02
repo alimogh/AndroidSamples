@@ -190,7 +190,6 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
                     mCameraTv.setText(UCrop.getOutput(data) + "");
                     Glide.with(this)
                             .load(UCrop.getOutput(data))
-                            .crossFade()
                             .into(mCameraImg);
                     break;
                 default:

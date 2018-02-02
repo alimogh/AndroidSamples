@@ -67,8 +67,6 @@
     |- EventBus
         |- 普通事件
         |- 粘性事件
-    |- Glide
-        |- api参数配置
     |- WebView
         |- js与native交互
     |- Picture

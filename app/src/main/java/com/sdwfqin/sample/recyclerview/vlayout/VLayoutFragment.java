@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * 描述：
+ * 描述：VLayout多布局
  *
  * @author zhangqin
  */

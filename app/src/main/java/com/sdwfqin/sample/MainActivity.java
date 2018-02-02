@@ -12,13 +12,11 @@ import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
-import com.sdwfqin.sample.picture.PictureActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
-import com.sdwfqin.sample.dagger.DaggerActivity;
 import com.sdwfqin.sample.eventbus.EventBusActivity;
-import com.sdwfqin.sample.glide.GlideActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
+import com.sdwfqin.sample.picture.PictureActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recyclerview.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
@@ -50,14 +48,14 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private long exitTime = 0;
 
     private String[] mTitle = new String[]{"View", "Recycler列表", "Activity跳转动画",
-            "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler", "Dagger2",
+            "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler",
             "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas", "AsyncTask", "Service服务",
-            "RxJava", "Eventbus", "Glide", "WebView", "拍照与相册"};
+            "RxJava", "Eventbus", "WebView交互", "拍照与相册"};
     private Class[] mClasses = new Class[]{ViewActivity.class, RecyclerActivity.class,
             T1Activity.class, BottomSheetActivity.class, PopupActivity.class, SqliteTableActivity.class,
-            GridViewActivity.class, HandlerActivity.class, DaggerActivity.class, RetrofitActivity.class,
+            GridViewActivity.class, HandlerActivity.class, RetrofitActivity.class,
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
-            ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class, GlideActivity.class,
+            ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class,
             WebViewActivity.class, PictureActivity.class};
 
     @Override

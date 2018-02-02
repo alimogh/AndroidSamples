@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ViewZ1View">
+    <declare-styleable name="DesCircleView">
         <attr name="bg" format="color" />
     </declare-styleable>
 
-    <declare-styleable name="ViewZ2View">
+    <declare-styleable name="CourtesyCardView">
         <attr name="circle_color" format="color" />
         <attr name="radius" format="dimension" />
         <attr name="gap" format="dimension" />

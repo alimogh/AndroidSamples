@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.sdwfqin.sample.view.viewz1.ViewZ1Activity">
+    tools:context="com.sdwfqin.sample.view.descircle.DesCircleActivity">
 
-    <com.sdwfqin.sample.view.viewz1.ViewZ1View
+    <com.sdwfqin.sample.view.descircle.DesCircleView
         android:id="@+id/viewz1"
         android:gravity="center"
         android:layout_width="match_parent"

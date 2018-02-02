@@ -37,32 +37,24 @@ dependencies {
     // butterknife
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeVersion"
-    // dagger2
-    implementation "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
     // retrofit2
     implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:converter-scalars:$rootProject.ext.retrofitVersion"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.ext.retrofitVersion"
 
-    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.okhttpVersion"
     // RxJava2
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.ext.rxandroidVersion"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.ext.rxjavaVersion"
     // eventbus
     implementation "org.greenrobot:eventbus:$rootProject.ext.eventbus"
     implementation "com.github.bumptech.glide:glide:$rootProject.ext.glide"
-    // 知乎图片选择
-    implementation "com.zhihu.android:matisse:$rootProject.ext.matisse"
-
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.ext.glide"
     // 运行时权限
     implementation "pub.devrel:easypermissions:$rootProject.ext.easypermissions"
 
-    implementation('com.alibaba.android:vlayout:1.2.6@aar')
-            {
-                transitive = true
-            }
+    implementation('com.alibaba.android:vlayout:1.2.10@aar') { transitive = true }
     // banner导航栏
     implementation "com.youth.banner:banner:$rootProject.ext.banner"
     implementation "com.blankj:utilcode:$rootProject.ext.utilcode"

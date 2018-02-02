@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     android:orientation="vertical"
-    tools:context="com.sdwfqin.sample.view.viewz2.ViewZ2Activity">
+    tools:context="com.sdwfqin.sample.view.courtesycard.CourtesyCardActivity">
 
-    <com.sdwfqin.sample.view.viewz2.ViewZ2View
+    <com.sdwfqin.sample.view.courtesycard.CourtesyCardView
         android:id="@+id/viewz2_main"
         android:layout_width="match_parent"
         android:layout_height="200dp"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="抽奖券" />
-    </com.sdwfqin.sample.view.viewz2.ViewZ2View>
+    </com.sdwfqin.sample.view.courtesycard.CourtesyCardView>
 
     <TextView
         android:layout_width="wrap_content"
