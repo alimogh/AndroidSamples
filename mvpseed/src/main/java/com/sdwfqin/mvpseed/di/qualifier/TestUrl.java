@@ -10,7 +10,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * 描述：自定义注解，区分不同的BaseUrl
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @Qualifier
 @Documented

@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 import com.google.gson.JsonObject;
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.retrofit.api.TranslateApi;
-import com.sdwfqin.sample.utils.EncodedUtils;
+import com.sdwfqin.sample.EncodedUtils;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 import com.zhihu.matisse.engine.impl.GlideEngine;
@@ -42,7 +42,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 /**
  * 描述：google夏令时用来测试的一个界面
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class TranslateActivity extends AppCompatActivity {
 

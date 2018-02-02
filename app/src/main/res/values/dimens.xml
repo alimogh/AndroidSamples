@@ -52,4 +52,6 @@
 
     <dimen name="rippleStrokeWidth">2dp</dimen>
     <dimen name="rippleRadius">32dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 </resources>

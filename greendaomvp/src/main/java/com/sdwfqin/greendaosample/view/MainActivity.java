@@ -37,7 +37,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：程序入口，V层
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/5
  */
 public class MainActivity extends AppCompatActivity implements MainView, View.OnClickListener,

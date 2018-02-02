@@ -9,7 +9,7 @@ import retrofit2.http.Query;
 /**
  * 描述：get请求
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/14
  */
 public interface RequestGetApi {

@@ -10,7 +10,7 @@ import dagger.Component;
 /**
  * 描述：Fragment注入器
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @FragmentScope
 @Component(dependencies = AppComponent.class, modules = FragmentModule.class)

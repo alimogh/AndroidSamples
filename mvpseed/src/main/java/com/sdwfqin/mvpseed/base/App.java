@@ -12,7 +12,7 @@ import com.sdwfqin.mvpseed.di.module.HttpModule;
 /**
  * 描述：
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public class App extends Application {

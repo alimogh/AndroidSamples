@@ -28,7 +28,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 /**
  * 描述：网络操作的Module
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/9
  */
 @Module

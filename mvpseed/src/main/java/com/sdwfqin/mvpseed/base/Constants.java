@@ -5,7 +5,7 @@ import java.io.File;
 /**
  * 描述：全局变量
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class Constants {
 

@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
  * http://www.sdwfqin.com/2017/02/27/Activity%E8%B7%B3%E8%BD%AC%E5%8A%A8%E7%94%BB/
  * http://www.sdwfqin.com/2017/04/01/Animation%E5%8A%A8%E7%94%BB/
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class T1Activity extends AppCompatActivity {
 

@@ -15,7 +15,7 @@ import com.blankj.utilcode.util.LogUtils;
  * 用法：把调用context的sendBroadcast、registerReceiver、unregisterReceiver的地方
  * 换为LocalBroadcastManager.getInstance(Context context)中对应的函数
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/10
  */
 

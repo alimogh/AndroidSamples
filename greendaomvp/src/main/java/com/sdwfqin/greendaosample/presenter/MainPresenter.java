@@ -5,7 +5,7 @@ import com.sdwfqin.greendaosample.model.entry.Student;
 /**
  * 描述：P层接口
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/5
  */
 public interface MainPresenter {

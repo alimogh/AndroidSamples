@@ -11,7 +11,7 @@ import com.sdwfqin.greendaosample.model.entry.Student;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2016/12/19.
+ * Created by zhangqin on 2016/12/19.
  */
 // 第一个参数是实体类，第二个参数是ViewHolder(可以自定义，必须继承BaseViewHolder)
 public class MainAdapter extends BaseQuickAdapter<Student, BaseViewHolder> {

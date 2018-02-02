@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：底部弹窗
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/3/11
  */
 public class BottomSheetActivity extends AppCompatActivity {

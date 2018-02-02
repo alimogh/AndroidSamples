@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * 描述：Get请求
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class Retrofit2Activity extends AppCompatActivity {
 

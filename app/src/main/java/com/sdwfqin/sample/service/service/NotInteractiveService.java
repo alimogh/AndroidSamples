@@ -19,7 +19,7 @@ import java.util.TimerTask;
  * 服务一旦开启后，我们就需要通过stopService()方法或者stopSelf()方法，
  * 就能把服务关闭，这时就会回调onDestroy()
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/8
  */
 public class NotInteractiveService extends Service {

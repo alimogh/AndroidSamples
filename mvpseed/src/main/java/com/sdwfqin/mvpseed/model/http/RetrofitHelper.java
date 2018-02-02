@@ -9,7 +9,7 @@ import io.reactivex.Flowable;
 /**
  * 描述：Retrofit帮助类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/9/7
  */
 public class RetrofitHelper implements HttpHelper {

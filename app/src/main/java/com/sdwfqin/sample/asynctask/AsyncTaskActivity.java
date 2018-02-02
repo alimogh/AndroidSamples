@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：AsyncTask
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class AsyncTaskActivity extends AppCompatActivity {
 

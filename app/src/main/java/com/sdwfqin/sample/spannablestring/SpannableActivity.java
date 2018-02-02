@@ -32,7 +32,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：富文本字符串
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class SpannableActivity extends AppCompatActivity {
 

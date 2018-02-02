@@ -23,7 +23,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 /**
  * 描述：简单例子
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class Retrofit1Activity extends AppCompatActivity {
 

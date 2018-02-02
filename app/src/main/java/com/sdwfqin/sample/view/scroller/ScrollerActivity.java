@@ -8,7 +8,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：View滑动
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/26
  */
 public class ScrollerActivity extends AppCompatActivity {

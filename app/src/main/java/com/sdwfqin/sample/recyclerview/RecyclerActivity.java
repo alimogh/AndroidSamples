@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：Recycler列表
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public class RecyclerActivity extends AppCompatActivity {

@@ -3,7 +3,7 @@ package com.sdwfqin.sample.retrofit.model;
 /**
  * 描述：
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/16
  */
 public class RequestModel {

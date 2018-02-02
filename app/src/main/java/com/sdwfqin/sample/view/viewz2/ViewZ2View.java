@@ -9,14 +9,14 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
  * 描述：自定义View2凹凸边缘
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/10
  */
 public class ViewZ2View extends LinearLayout {
@@ -48,7 +48,7 @@ public class ViewZ2View extends LinearLayout {
     private void init(Context context) {
         mContext = context;
         mPaint.setColor(mColor);
-        gap = ViewUtils.dp2px(context, 10);
+        gap = ConvertUtils.dp2px(10);
     }
 
     private void init(Context context, @Nullable AttributeSet attrs) {
@@ -75,22 +75,22 @@ public class ViewZ2View extends LinearLayout {
 
     // 读取圆的半径
     public int getRadius() {
-        return ViewUtils.px2dp(mContext, radius);
+        return ConvertUtils.px2dp(radius);
     }
 
     // 设置圆的半径
     public void setRadius(int radius) {
-        this.radius = ViewUtils.dp2px(mContext, radius);
+        this.radius = ConvertUtils.dp2px(radius);
         // 刷新视图
         invalidate();
     }
 
     public int getGap() {
-        return ViewUtils.px2dp(mContext, gap);
+        return ConvertUtils.px2dp(gap);
     }
 
     public void setGap(int gap) {
-        this.gap = ViewUtils.dp2px(mContext, gap);
+        this.gap = ConvertUtils.dp2px(gap);
         invalidate();
     }
 

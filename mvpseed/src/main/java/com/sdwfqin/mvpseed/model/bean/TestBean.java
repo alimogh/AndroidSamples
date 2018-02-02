@@ -3,7 +3,7 @@ package com.sdwfqin.mvpseed.model.bean;
 /**
  * 描述：实体对象
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public class TestBean {

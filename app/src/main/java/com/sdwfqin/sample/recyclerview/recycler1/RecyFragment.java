@@ -19,7 +19,7 @@ import com.sdwfqin.sample.recyclerview.recycler1.data.MyDataLab;
 import java.util.List;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/7/10
  */
 public class RecyFragment extends Fragment {

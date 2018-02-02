@@ -11,7 +11,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：Recycler学习
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class Recycler1Activity extends AppCompatActivity {
 

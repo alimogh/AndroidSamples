@@ -9,7 +9,7 @@ import com.sdwfqin.greendaosample.model.entry.DaoSession;
 /**
  * 描述：Application
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/1
  */
 public class BaseApplication extends Application {

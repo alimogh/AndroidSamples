@@ -15,7 +15,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * 描述：SurfaceView画板
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/27
  */
 public class DbSurfaceView extends SurfaceView

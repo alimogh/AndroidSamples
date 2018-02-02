@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 描述：V层接口
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/5
  */
 public interface MainView {

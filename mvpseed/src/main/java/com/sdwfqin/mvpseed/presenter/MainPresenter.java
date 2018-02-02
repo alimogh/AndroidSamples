@@ -11,7 +11,7 @@ import javax.inject.Inject;
 /**
  * 描述：Presenter
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public class MainPresenter extends RxPresenter<MainContract.View> implements MainContract.Presenter {

@@ -7,7 +7,7 @@ import com.blankj.utilcode.util.Utils;
 /**
  * 描述：Application
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public class BaseApp extends Application {

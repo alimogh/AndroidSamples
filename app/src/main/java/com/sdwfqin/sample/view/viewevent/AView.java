@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import com.blankj.utilcode.util.LogUtils;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/4
  */
 public class AView extends AppCompatTextView {

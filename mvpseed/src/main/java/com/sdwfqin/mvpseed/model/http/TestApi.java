@@ -7,13 +7,13 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 /**
- * Created by sdwfqin on 2017/6/9.
+ * Created by zhangqin on 2017/6/9.
  */
 
 /**
  * 描述：Retrofit接口
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public interface TestApi {

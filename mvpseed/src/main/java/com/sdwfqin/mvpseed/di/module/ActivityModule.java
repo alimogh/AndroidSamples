@@ -10,7 +10,7 @@ import dagger.Provides;
 /**
  * 描述：ActivityModule
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @Module
 public class ActivityModule {

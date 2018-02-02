@@ -15,7 +15,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：PopDropDownBg
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/8/18
  */
 public class PopDropDownBgActivity extends AppCompatActivity implements View.OnClickListener {

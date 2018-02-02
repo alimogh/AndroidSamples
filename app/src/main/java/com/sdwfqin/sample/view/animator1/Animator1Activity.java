@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.utils.ViewUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  * <p>
  * AnimatorSet是一个动画集合
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class Animator1Activity extends AppCompatActivity {
 
@@ -48,9 +48,9 @@ public class Animator1Activity extends AppCompatActivity {
         AnimatorSet set = new AnimatorSet();
         set.playTogether(
                 ObjectAnimator.ofInt(viewWrapper, "width",
-                        ViewUtils.dp2px(Animator1Activity.this, x)),
+                        ConvertUtils.dp2px(x)),
                 ObjectAnimator.ofInt(viewWrapper, "height",
-                        ViewUtils.dp2px(Animator1Activity.this, y))
+                        ConvertUtils.dp2px(y))
         );
 
         set.setDuration(5000).start();

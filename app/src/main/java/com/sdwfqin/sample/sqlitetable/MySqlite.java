@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 /**
  * 描述：创建数据库
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/2/28
  */
 public class MySqlite extends SQLiteOpenHelper {

@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.utils;
+package com.sdwfqin.sample;
 
 import android.graphics.Bitmap;
 import android.util.Base64;
@@ -11,7 +11,7 @@ import java.security.NoSuchAlgorithmException;
 /**
  * 描述：编码工具类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/11
  */
 public class EncodedUtils {

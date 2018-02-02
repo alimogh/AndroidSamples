@@ -11,7 +11,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * 描述：View滑动
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/26
  */
 public class ScrollerView extends AppCompatTextView {

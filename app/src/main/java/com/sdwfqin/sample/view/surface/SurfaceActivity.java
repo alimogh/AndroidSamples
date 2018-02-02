@@ -8,7 +8,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：SurfaceView
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/27
  */
 public class SurfaceActivity extends AppCompatActivity {

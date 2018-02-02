@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 /**
  * 描述：
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/27
  */
 public class TranslationView extends LinearLayout {

@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：Broadcast广播
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/10
  */
 public class BroadcastActivity extends AppCompatActivity {

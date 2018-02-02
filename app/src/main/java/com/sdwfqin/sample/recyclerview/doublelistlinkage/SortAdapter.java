@@ -13,7 +13,7 @@ import com.sdwfqin.sample.R;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2017/7/19.
+ * Created by zhangqin on 2017/7/19.
  */
 
 public class SortAdapter extends RecyclerView.Adapter<SortAdapter.SortHolder> {

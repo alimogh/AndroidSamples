@@ -12,7 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  */
 public class HandlerActivity extends AppCompatActivity {
 

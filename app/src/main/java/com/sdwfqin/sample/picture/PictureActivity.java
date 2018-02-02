@@ -17,9 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blankj.utilcode.util.LogUtils;
-import com.blankj.utilcode.util.SDCardUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
+import com.sdwfqin.sample.Config;
 import com.sdwfqin.sample.R;
 import com.yalantis.ucrop.UCrop;
 
@@ -34,7 +34,7 @@ import pub.devrel.easypermissions.EasyPermissions;
 /**
  * 描述：拍照与图片剪裁
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/9/14
  */
 public class PictureActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
@@ -64,10 +64,6 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
      * 7.0 以下的uri
      */
     private Uri mUri;
-    /**
-     * 图片路径
-     */
-    private String mFilepath = SDCardUtils.getSDCardPaths().get(0) + "/AndroidSamples";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,9 +107,8 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
      * 拍照
      */
     private void camera() {
-        LogUtils.e(SDCardUtils.getSDCardPaths().get(0));
 
-        File file = new File(mFilepath, System.currentTimeMillis() + ".jpg");
+        File file = new File(Config.SAVE_REAL_PATH, System.currentTimeMillis() + ".jpg");
         LogUtils.e(file.getPath());
         if (!file.getParentFile().exists()) {
             file.getParentFile().mkdirs();
@@ -160,7 +155,7 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
         options.setFreeStyleCropEnabled(true);
 
         // 设置源uri及目标uri
-        UCrop.of(uri, Uri.fromFile(new File(mFilepath, System.currentTimeMillis() + ".jpg")))
+        UCrop.of(uri, Uri.fromFile(new File(Config.SAVE_REAL_PATH, System.currentTimeMillis() + ".jpg")))
                 // 长宽比
                 .withAspectRatio(1, 1)
                 // 图片大小

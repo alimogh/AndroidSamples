@@ -6,11 +6,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.blankj.utilcode.util.LogUtils;
-import com.sdwfqin.sample.utils.ViewUtils;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/26
  */
 public class PositionView extends AppCompatTextView {
@@ -66,9 +66,9 @@ public class PositionView extends AppCompatTextView {
 //        LogUtils.i("Z: " + Z);
 
         int width = Right - left;
-        int widthdp = ViewUtils.px2dp(context, width);
+        int widthdp = ConvertUtils.px2dp(width);
         int height = Bottom - Top;
-        int heightdp = ViewUtils.px2dp(context, height);
+        int heightdp = ConvertUtils.px2dp(height);
         // 转换为dp
         LogUtils.i("width:" + width);
         LogUtils.i("宽度（dp）:" + widthdp);

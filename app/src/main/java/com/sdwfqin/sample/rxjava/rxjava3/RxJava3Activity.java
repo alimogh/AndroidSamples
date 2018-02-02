@@ -18,7 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 描述：map变换
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxJava3Activity extends AppCompatActivity {
 

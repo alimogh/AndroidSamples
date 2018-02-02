@@ -18,7 +18,7 @@ import butterknife.Unbinder;
 /**
  * 描述：Activity的基类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity implements BaseView {

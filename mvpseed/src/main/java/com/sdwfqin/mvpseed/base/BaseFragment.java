@@ -22,7 +22,7 @@ import butterknife.Unbinder;
 /**
  * 描述：Fragment基类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/8/3
  */
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView {

@@ -19,7 +19,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：Rxjava2
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxJavaActivity extends AppCompatActivity {
 

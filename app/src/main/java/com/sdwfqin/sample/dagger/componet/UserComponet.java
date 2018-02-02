@@ -9,7 +9,7 @@ import dagger.Component;
 /**
  * 描述：注入器
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/24
  */
 // @Component：注入器，是@Inject和@Module的桥梁，它的主要作用就是连接这两个部分

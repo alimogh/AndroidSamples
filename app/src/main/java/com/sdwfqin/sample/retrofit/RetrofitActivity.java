@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：Retrofit网络请求
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public class RetrofitActivity extends AppCompatActivity {

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import com.sdwfqin.sample.R;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/4
  */
 public class ViewEventActivity extends AppCompatActivity {

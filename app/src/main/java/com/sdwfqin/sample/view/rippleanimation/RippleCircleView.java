@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/27
  */
 public class RippleCircleView extends View {

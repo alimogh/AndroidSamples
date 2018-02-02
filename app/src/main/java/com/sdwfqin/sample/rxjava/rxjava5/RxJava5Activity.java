@@ -18,7 +18,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 描述：背压处理
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxJava5Activity extends AppCompatActivity {
 

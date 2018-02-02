@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：Dagger2
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/24
  */
 public class DaggerActivity extends AppCompatActivity {

@@ -44,7 +44,7 @@ ext {
     banner = '1.4.10'
     matisse = '0.4.3'
     easypermissions = '1.0.1'
-    utilcode = '1.9.6'
+    utilcode = '1.9.12'
     ucrop = '2.2.1'
 
     // squareup

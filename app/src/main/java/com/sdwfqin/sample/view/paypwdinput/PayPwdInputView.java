@@ -17,7 +17,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：验证码
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class PayPwdInputView extends EditText {
 

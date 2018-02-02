@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  * 只要被register 的时候，就会被检测到，并且执行。
  * 订阅的方法需要添加 sticky = true 属性
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class EventBus2Activity extends AppCompatActivity {
 

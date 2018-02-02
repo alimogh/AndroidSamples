@@ -15,7 +15,7 @@ import com.sdwfqin.sample.R;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2017/3/10.
+ * Created by zhangqin on 2017/3/10.
  */
 
 public class SensorGridAdapter extends ArrayAdapter<SensorBean> {

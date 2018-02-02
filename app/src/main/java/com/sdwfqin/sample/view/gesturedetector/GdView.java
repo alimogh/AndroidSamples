@@ -12,7 +12,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * 描述：手势识别
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/26
  */
 public class GdView extends LinearLayout {

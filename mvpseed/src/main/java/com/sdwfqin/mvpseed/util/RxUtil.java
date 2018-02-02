@@ -7,7 +7,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 描述：Rx工具类
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxUtil {
 

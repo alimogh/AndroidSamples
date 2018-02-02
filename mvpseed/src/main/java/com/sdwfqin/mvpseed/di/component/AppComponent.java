@@ -12,7 +12,7 @@ import dagger.Component;
 /**
  * 描述：全局注入器
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @Singleton
 @Component(modules = {AppModule.class, HttpModule.class})

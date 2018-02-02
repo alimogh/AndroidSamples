@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.blankj.utilcode.util.LogUtils;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/26
  */
 public class MeTsView extends LinearLayout {

@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * 描述：Sqlite数据库
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public class SqliteTableActivity extends AppCompatActivity {

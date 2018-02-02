@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：验证码
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class PayPwdInputActivity extends AppCompatActivity {
 

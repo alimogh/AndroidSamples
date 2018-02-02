@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：View的位置参数
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/27
  */
 public class ViewPositionActivity extends AppCompatActivity {

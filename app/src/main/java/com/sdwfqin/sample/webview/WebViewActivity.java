@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：WebView与Native交互
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class WebViewActivity extends AppCompatActivity {
 

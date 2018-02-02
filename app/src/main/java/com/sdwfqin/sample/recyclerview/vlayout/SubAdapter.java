@@ -21,7 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/28
  */
 public class SubAdapter extends DelegateAdapter.Adapter {

@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.NotNull;
 import org.greenrobot.greendao.annotation.Unique;
 
 /**
- * Created by sdwfqin on 2016/12/13.
+ * Created by zhangqin on 2016/12/13.
  */
 @Entity
 public class Student {

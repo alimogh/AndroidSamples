@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 右侧列表
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/20
  */
 public class ClassifyDetailAdapter extends RecyclerView.Adapter<ClassifyDetailAdapter.ClassifyHolder> {

@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * 描述：系统工具类
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class SystemUtil {
 

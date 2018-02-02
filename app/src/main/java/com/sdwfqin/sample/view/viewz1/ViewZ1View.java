@@ -14,7 +14,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：自定义View1圆
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class ViewZ1View extends View {
 

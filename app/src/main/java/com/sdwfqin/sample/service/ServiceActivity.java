@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：服务
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/8
  */
 public class ServiceActivity extends AppCompatActivity {

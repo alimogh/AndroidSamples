@@ -19,7 +19,7 @@ import java.util.Collections;
 /**
  * 描述：波纹动画
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/27
  */
 public class RippleAnimationView extends RelativeLayout {

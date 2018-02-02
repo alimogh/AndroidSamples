@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 /**
  * 描述：Post请求
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/14
  */
 public interface RequestPostApi {

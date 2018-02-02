@@ -11,7 +11,7 @@ import dagger.Component;
 /**
  * 描述：Activity注入器
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/9
  */
 @ActivityScope

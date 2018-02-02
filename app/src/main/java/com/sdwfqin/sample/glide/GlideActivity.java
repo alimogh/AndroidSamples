@@ -20,7 +20,7 @@ import butterknife.OnClick;
 /**
  * 描述：Glide的用法
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public class GlideActivity extends AppCompatActivity {

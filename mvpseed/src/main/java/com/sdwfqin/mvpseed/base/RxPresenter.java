@@ -6,7 +6,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * 描述：RxPresenter
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxPresenter<T extends BaseView> implements BasePresenter<T> {
 

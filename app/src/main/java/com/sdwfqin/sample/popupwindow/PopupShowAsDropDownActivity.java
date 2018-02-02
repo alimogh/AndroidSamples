@@ -14,7 +14,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：PopupShowAsDropDown
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/8/18
  */
 public class PopupShowAsDropDownActivity extends AppCompatActivity implements View.OnClickListener {

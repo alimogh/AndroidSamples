@@ -8,7 +8,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：天猫VLayout
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class VLayoutActivity extends AppCompatActivity {
 

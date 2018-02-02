@@ -12,7 +12,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：BottomSheetDialogFragment
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/24
  */
 public class MyBottomSheetDialogFragment extends BottomSheetDialogFragment {

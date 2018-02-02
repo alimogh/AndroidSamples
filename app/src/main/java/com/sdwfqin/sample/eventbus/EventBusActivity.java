@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
  * 比如请求网络，等网络返回时通过Handler或Broadcast通知UI，
  * 两个Fragment之间需要通过Listener通信，这些需求都可以通过EventBus实现。
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class EventBusActivity extends AppCompatActivity {
 

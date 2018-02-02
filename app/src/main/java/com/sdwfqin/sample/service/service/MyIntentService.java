@@ -8,7 +8,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * 描述：后台服务
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/8
  */
 public class MyIntentService extends IntentService {

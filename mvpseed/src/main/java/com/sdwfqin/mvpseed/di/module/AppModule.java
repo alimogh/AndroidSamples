@@ -12,7 +12,7 @@ import dagger.Provides;
 /**
  * 描述：AppModule
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @Module
 public class AppModule {

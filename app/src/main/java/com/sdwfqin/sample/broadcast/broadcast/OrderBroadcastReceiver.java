@@ -17,7 +17,7 @@ import com.blankj.utilcode.util.LogUtils;
  * 当广播接收器接收到广播后，也可以用abortBroadcast()函数来让系统拦截下来该广播，
  * 并将该广播丢弃，使该广播不再传送到别的广播接收器接收
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/10
  */
 public class OrderBroadcastReceiver {

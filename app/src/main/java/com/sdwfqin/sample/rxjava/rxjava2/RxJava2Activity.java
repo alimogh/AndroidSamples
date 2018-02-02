@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 /**
  * 描述：RxJava2线程切换
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxJava2Activity extends AppCompatActivity {
 

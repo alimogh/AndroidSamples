@@ -17,7 +17,7 @@ import com.sdwfqin.sample.R;
 /**
  * 描述：常驻通知栏
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/8
  */
 public class StageService extends Service {

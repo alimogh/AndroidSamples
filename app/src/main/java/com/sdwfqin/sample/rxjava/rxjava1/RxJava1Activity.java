@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable;
 /**
  * 描述：RxJava2 入门
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class RxJava1Activity extends AppCompatActivity {
 

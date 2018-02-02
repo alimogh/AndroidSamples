@@ -59,7 +59,7 @@ dependencies {
     // 运行时权限
     implementation "pub.devrel:easypermissions:$rootProject.ext.easypermissions"
 
-    implementation('com.alibaba.android:vlayout:1.0.7@aar')
+    implementation('com.alibaba.android:vlayout:1.2.6@aar')
             {
                 transitive = true
             }

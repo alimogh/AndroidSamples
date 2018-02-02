@@ -14,8 +14,8 @@ import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.alibaba.android.vlayout.layout.LinearLayoutHelper;
 import com.alibaba.android.vlayout.layout.StickyLayoutHelper;
+import com.blankj.utilcode.util.ConvertUtils;
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.utils.ViewUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -27,7 +27,7 @@ import butterknife.Unbinder;
 /**
  * 描述：
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class VLayoutFragment extends Fragment {
 
@@ -78,7 +78,7 @@ public class VLayoutFragment extends Fragment {
 
     private void initBanner() {
         adapters.add(new SubAdapter(mContext, new LinearLayoutHelper(), 1,
-                new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewUtils.dp2px(getActivity(), 200))) {
+                new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ConvertUtils.dp2px(200))) {
             @Override
             public int getItemViewType(int position) {
                 return 1;
@@ -93,7 +93,7 @@ public class VLayoutFragment extends Fragment {
         // 宽与高的比例
         // layoutHelper.setAspectRatio(4);
         // layoutHelper.setBgColor(0xFFF5A623);
-        adapters.add(new SubAdapter(mContext, layoutHelper, 1){
+        adapters.add(new SubAdapter(mContext, layoutHelper, 1) {
             @Override
             public int getItemViewType(int position) {
                 return 3;

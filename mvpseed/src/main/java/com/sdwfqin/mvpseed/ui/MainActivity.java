@@ -12,7 +12,7 @@ import com.sdwfqin.mvpseed.presenter.MainPresenter;
 /**
  * Dagger2+Rxjava2+Retrofit
  *
- * @author sdwfqin
+ * @author zhangqin
  * @version 1.0.0
  * @since 2017-06-09
  * <p/>

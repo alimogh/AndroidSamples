@@ -14,8 +14,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.ConvertUtils;
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.utils.ViewUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,7 +57,7 @@ public class LongShowPopupActivity extends AppCompatActivity implements View.OnT
             // 获取点击位置相对于屏幕的坐标
             int x = (int) e.getRawX();
             int y = (int) e.getRawY();
-            x -= ViewUtils.dp2px(LongShowPopupActivity.this, 55);
+            x -= ConvertUtils.dp2px(55);
             if (mPopWindow != null) {
                 if (mPopWindow.isShowing()) {
                     mPopWindow.dismiss();

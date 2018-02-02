@@ -5,7 +5,7 @@ import com.sdwfqin.greendaosample.model.entry.Student;
 import java.util.List;
 
 /**
- * Created by sdwfqin on 2017/5/5.
+ * Created by zhangqin on 2017/5/5.
  */
 
 public interface MainInteractor {

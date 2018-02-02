@@ -12,7 +12,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：自定义View1圆
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class ViewZ1Activity extends AppCompatActivity {
 

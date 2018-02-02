@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * 描述：P层实现
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/5/5
  */
 public class MainPresenterImpl implements MainPresenter {

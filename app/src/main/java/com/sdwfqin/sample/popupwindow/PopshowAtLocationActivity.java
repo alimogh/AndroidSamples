@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by sdwfqin on 2016/8/18.
+ * Created by zhangqin on 2016/8/18.
  */
 public class PopshowAtLocationActivity extends AppCompatActivity implements View.OnClickListener {
     private PopupWindow mPopWindow;

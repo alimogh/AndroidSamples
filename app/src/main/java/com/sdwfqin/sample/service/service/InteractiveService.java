@@ -15,7 +15,7 @@ import com.blankj.utilcode.util.LogUtils;
  * startService和bindService -> 混合性交互的后台服务，即可以单独运行后台服务，也可以运行后台服务中提供的方法，
  * 其完整的生命周期是：onCreate->onStartCommand->onBind->onUnBind->onDestroy
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/8
  */
 public class InteractiveService extends Service {

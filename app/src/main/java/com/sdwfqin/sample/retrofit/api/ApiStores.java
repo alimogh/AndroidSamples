@@ -9,7 +9,7 @@ import retrofit2.http.Path;
 /**
  * 描述：测试接口
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/11/8
  */
 public interface ApiStores {

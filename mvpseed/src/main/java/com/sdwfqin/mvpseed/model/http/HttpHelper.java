@@ -5,7 +5,7 @@ import com.sdwfqin.mvpseed.model.bean.TestBean;
 import io.reactivex.Flowable;
 
 /**
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/9/7
  */
 public interface HttpHelper {

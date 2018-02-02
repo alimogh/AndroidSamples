@@ -12,7 +12,7 @@ import okhttp3.OkHttpClient;
 /**
  * 描述：通过这个Module绑定Controller
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/24
  */
 // @Modules 类似于我们的模块，提供各种实例跟对象

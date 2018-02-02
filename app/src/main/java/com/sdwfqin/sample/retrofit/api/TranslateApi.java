@@ -8,7 +8,7 @@ import retrofit2.http.POST;
 /**
  * 描述：google夏令营时用来测试的一个接口
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/11
  */
 public interface TranslateApi {

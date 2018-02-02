@@ -5,7 +5,7 @@ import java.util.UUID;
 /**
  * 描述：实体类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/7/7
  */
 public class MyData {

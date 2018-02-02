@@ -14,7 +14,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * SurfaceView实例
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/27
  */
 public class MySurfaceView extends SurfaceView

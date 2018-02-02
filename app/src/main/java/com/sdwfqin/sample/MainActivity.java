@@ -39,7 +39,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * 描述：AndroidSample
  * 项目地址：https://github.com/sdwfqin/AndroidSamples
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public class MainActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
 

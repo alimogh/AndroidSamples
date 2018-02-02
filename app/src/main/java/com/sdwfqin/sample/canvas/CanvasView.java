@@ -21,7 +21,7 @@ import com.sdwfqin.sample.R;
 /**
  * 文档：http://www.sdwfqin.com/2017/04/15/Canvas绘图
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/4/27
  */
 public class CanvasView extends LinearLayout {

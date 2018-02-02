@@ -7,7 +7,7 @@ import com.sdwfqin.mvpseed.model.bean.TestBean;
 /**
  * 描述：绑定类
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/6/9
  */
 public interface MainContract {

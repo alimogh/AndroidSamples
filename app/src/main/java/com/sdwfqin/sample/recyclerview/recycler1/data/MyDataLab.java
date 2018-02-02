@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * 单例
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/7/7
  */
 public class MyDataLab {

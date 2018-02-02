@@ -11,7 +11,7 @@ import dagger.Provides;
 /**
  * 描述：FragmentModule
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 @Module
 public class FragmentModule {

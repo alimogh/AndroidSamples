@@ -3,7 +3,7 @@ package com.sdwfqin.mvpseed.base;
 /**
  * 描述：View的基类
  *
- * @author sdwfqin
+ * @author zhangqin
  */
 public interface BaseView {
 

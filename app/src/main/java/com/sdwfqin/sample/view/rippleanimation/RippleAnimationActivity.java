@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
 /**
  * 描述：波纹动画
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2017/7/27
  */
 public class RippleAnimationActivity extends AppCompatActivity {

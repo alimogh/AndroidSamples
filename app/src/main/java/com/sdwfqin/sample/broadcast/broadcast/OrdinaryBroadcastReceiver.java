@@ -9,7 +9,7 @@ import com.blankj.utilcode.util.LogUtils;
 /**
  * 描述：普通广播，静态注册
  *
- * @author sdwfqin
+ * @author zhangqin
  * @date 2016/12/10
  */
 
