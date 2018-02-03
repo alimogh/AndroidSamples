@@ -37,7 +37,7 @@ public class EventBusStickyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_bus2);
+        setContentView(R.layout.activity_event_bus_sticky);
         ButterKnife.bind(this);
 
         mBtnEvent2Send.setOnClickListener(v -> {

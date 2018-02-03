@@ -3,7 +3,6 @@ package com.sdwfqin.sample.eventbus.eventbus;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -32,26 +31,20 @@ public class EventBusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_event_bus1);
+        setContentView(R.layout.activity_event_bus);
         ButterKnife.bind(this);
 
-        mBtnEvent1Send.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // post发布消息
-                EventBus.getDefault().post("Hello everyone!");
-            }
+        mBtnEvent1Send.setOnClickListener(v -> {
+            // post发布消息
+            EventBus.getDefault().post("Hello everyone!");
         });
 
-        btnEvent1Send2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MessageEvent event = new MessageEvent();
-                event.setId(UUID.randomUUID().toString());
-                event.setName("张三");
-                event.setMessage("测试");
-                EventBus.getDefault().post(event);
-            }
+        btnEvent1Send2.setOnClickListener(v -> {
+            MessageEvent event = new MessageEvent();
+            event.setId(UUID.randomUUID().toString());
+            event.setName("张三");
+            event.setMessage("测试");
+            EventBus.getDefault().post(event);
         });
 
     }
