@@ -4,15 +4,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
+import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.retrofit.api.RequestGetApi;
 import com.sdwfqin.sample.retrofit.model.RequestModel;
 
 import java.io.IOException;
+import java.lang.ref.WeakReference;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,19 +38,15 @@ public class RetrofitGetActivity extends AppCompatActivity {
     private Retrofit mRetrofit;
     private RequestGetApi searchApi;
 
-    Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            setText(msg.getData().getString("value"));
-        }
-    };
+    private MyHandler mHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit_get);
         ButterKnife.bind(this);
+
+        mHandler = new MyHandler(this);
 
         mRetrofit = new Retrofit.Builder()
                 .baseUrl("http://test.sdwfqin.com/")
@@ -58,9 +57,10 @@ public class RetrofitGetActivity extends AppCompatActivity {
 
     /**
      * 设置TextView
+     *
      * @param s
      */
-    private void setText(String s) {
+    public void setText(String s) {
         try {
             mRetrofit2Tv.setText(s);
         } catch (Exception e) {
@@ -100,7 +100,7 @@ public class RetrofitGetActivity extends AppCompatActivity {
                         bundle.putString("value", "同步请求结果: " + response.toString());
                         Message message = new Message();
                         message.setData(bundle);
-                        handler.sendMessage(message);
+                        mHandler.sendMessage(message);
                     } catch (IOException e) {
                         LogUtils.e("run: ", e);
                     }
@@ -108,6 +108,27 @@ public class RetrofitGetActivity extends AppCompatActivity {
                 break;
             default:
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        mHandler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
+
+    class MyHandler extends Handler {
+
+        private WeakReference<RetrofitGetActivity> mActivity;
+
+        public MyHandler(RetrofitGetActivity activity) {
+            mActivity = new WeakReference<>(activity);
+        }
+
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            setText(msg.getData().getString("value"));
         }
     }
 }
