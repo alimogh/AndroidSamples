@@ -103,9 +103,9 @@ public class LongShowPopupActivity extends AppCompatActivity implements View.OnT
         mPopWindow.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
         mPopWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
-        TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
-        TextView tv3 = (TextView) contentView.findViewById(R.id.pop_manage);
+        TextView tv1 = contentView.findViewById(R.id.pop_computer);
+        TextView tv2 = contentView.findViewById(R.id.pop_financial);
+        TextView tv3 = contentView.findViewById(R.id.pop_manage);
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);

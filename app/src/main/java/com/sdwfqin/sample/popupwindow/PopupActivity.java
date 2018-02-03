@@ -34,28 +34,25 @@ public class PopupActivity extends AppCompatActivity {
 
         String[] strings = new String[]{"PopDropDownBg", "PopshowAtLocation", "PopupAnim",
                 "PopupShowAsDropDown","任意位置长按显示弹窗"};
-        popupList.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, strings));
+        popupList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, strings));
 
-        popupList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        startActivity(new Intent(mContext, PopDropDownBgActivity.class));
-                        break;
-                    case 1:
-                        startActivity(new Intent(mContext, PopshowAtLocationActivity.class));
-                        break;
-                    case 2:
-                        startActivity(new Intent(mContext, PopupAnimActivity.class));
-                        break;
-                    case 3:
-                        startActivity(new Intent(mContext, PopupShowAsDropDownActivity.class));
-                        break;
-                    case 4:
-                        startActivity(new Intent(mContext, LongShowPopupActivity.class));
-                        break;
-                }
+        popupList.setOnItemClickListener((parent, view, position, id) -> {
+            switch (position) {
+                case 0:
+                    startActivity(new Intent(mContext, PopDropDownBgActivity.class));
+                    break;
+                case 1:
+                    startActivity(new Intent(mContext, PopshowAtLocationActivity.class));
+                    break;
+                case 2:
+                    startActivity(new Intent(mContext, PopupAnimActivity.class));
+                    break;
+                case 3:
+                    startActivity(new Intent(mContext, PopupShowAsDropDownActivity.class));
+                    break;
+                case 4:
+                    startActivity(new Intent(mContext, LongShowPopupActivity.class));
+                    break;
             }
         });
     }

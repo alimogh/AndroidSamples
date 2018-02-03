@@ -15,9 +15,11 @@ import com.sdwfqin.sample.R;
 import java.util.List;
 
 /**
- * Created by zhangqin on 2017/3/10.
+ * 描述：
+ *
+ * @author 张钦
+ * @date 2017/3/10
  */
-
 public class SensorGridAdapter extends ArrayAdapter<SensorBean> {
 
     private static class ViewHolder {
@@ -59,7 +61,7 @@ public class SensorGridAdapter extends ArrayAdapter<SensorBean> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        SensorBean itemInfo = (SensorBean) getItem(position);
+        SensorBean itemInfo = getItem(position);
         ViewHolder holder = null;
 
         if (convertView == null){
@@ -67,15 +69,15 @@ public class SensorGridAdapter extends ArrayAdapter<SensorBean> {
                     parent, false);
             holder = new ViewHolder();
             // 界面初始化
-            holder.mBgLayout = (LinearLayout) convertView
+            holder.mBgLayout = convertView
                     .findViewById(R.id.sensor_item_layout);
-            holder.mNameTV = (TextView) convertView
+            holder.mNameTV = convertView
                     .findViewById(R.id.sensor_name_text);
-            holder.mStautsTV = (TextView) convertView
+            holder.mStautsTV = convertView
                     .findViewById(R.id.status_text);
-            holder.mSetValeuTV = (TextView) convertView
+            holder.mSetValeuTV = convertView
                     .findViewById(R.id.set_value_text);
-            holder.mValueTV = (TextView) convertView
+            holder.mValueTV = convertView
                     .findViewById(R.id.sensor_value_text);
             convertView.setTag(holder);
         } else {

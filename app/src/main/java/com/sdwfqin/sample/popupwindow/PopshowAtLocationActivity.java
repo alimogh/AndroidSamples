@@ -15,7 +15,10 @@ import android.widget.Toast;
 import com.sdwfqin.sample.R;
 
 /**
- * Created by zhangqin on 2016/8/18.
+ * 描述：showAtLocation
+ *
+ * @author 张钦
+ * @date 2016/8/18
  */
 public class PopshowAtLocationActivity extends AppCompatActivity implements View.OnClickListener {
     private PopupWindow mPopWindow;
@@ -29,13 +32,8 @@ public class PopshowAtLocationActivity extends AppCompatActivity implements View
         super.onCreate(savedInstanceState);
         setContentView(R.layout.show_at_location_activity);
 
-        mBtn = (Button) findViewById(R.id.btn);
-        mBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showPopupWindow();
-            }
-        });
+        mBtn = findViewById(R.id.btn);
+        mBtn.setOnClickListener(v -> showPopupWindow());
     }
 
     private void showPopupWindow() {
@@ -47,9 +45,9 @@ public class PopshowAtLocationActivity extends AppCompatActivity implements View
         mPopWindow.setBackgroundDrawable(new BitmapDrawable());
         mPopWindow.setOutsideTouchable(true);
 
-        TextView tv1 = (TextView) contentView.findViewById(R.id.pop_computer);
-        TextView tv2 = (TextView) contentView.findViewById(R.id.pop_financial);
-        TextView tv3 = (TextView) contentView.findViewById(R.id.pop_manage);
+        TextView tv1 = contentView.findViewById(R.id.pop_computer);
+        TextView tv2 = contentView.findViewById(R.id.pop_financial);
+        TextView tv3 = contentView.findViewById(R.id.pop_manage);
         tv1.setOnClickListener(this);
         tv2.setOnClickListener(this);
         tv3.setOnClickListener(this);

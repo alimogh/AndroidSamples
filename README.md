@@ -101,7 +101,6 @@
     现在还存在如下几个问题：
     
         1. 线程池需要改
-        2. popupWindow目前还没做Android N的适配修改
 
 ## License
 

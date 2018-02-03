@@ -9,6 +9,12 @@ import com.sdwfqin.sample.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 描述：建议使用RecyclerView替换GridView
+ *
+ * @author 张钦
+ * @date 2017/3/10
+ */
 public class GridViewActivity extends AppCompatActivity {
 
     List<SensorBean> mList;
@@ -20,7 +26,7 @@ public class GridViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_view);
 
-        mGridView = (GridView) findViewById(R.id.gridview);
+        mGridView = findViewById(R.id.gridview);
         initData();
         mAdpater = new SensorGridAdapter(this, mList);
         mGridView.setAdapter(mAdpater);
@@ -29,7 +35,7 @@ public class GridViewActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        mList = new ArrayList<SensorBean>();
+        mList = new ArrayList<>();
         SensorBean mBean;
         String[] mStrings = getResources().getStringArray(R.array.sensor);
         for (int i = 0; i < mStrings.length; i++) {
