@@ -9,7 +9,6 @@ import android.widget.ListView;
 
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.recyclerview.doublelistlinkage.DoublelistlinkageActivity;
-import com.sdwfqin.sample.recyclerview.recycler1.Recycler1Activity;
 import com.sdwfqin.sample.recyclerview.vlayout.VLayoutActivity;
 
 import butterknife.BindView;
@@ -23,18 +22,18 @@ import butterknife.ButterKnife;
  */
 public class RecyclerActivity extends AppCompatActivity {
 
-    @BindView(R.id.recycler_list)
+    @BindView(R.id.list)
     ListView mRecyclerList;
 
     private String[] mTitle = new String[]{"基本使用", "VLayout", "双列表联动"};
-    private Class[] mClasses = new Class[]{Recycler1Activity.class, VLayoutActivity.class,
+    private Class[] mClasses = new Class[]{com.sdwfqin.sample.recyclerview.recycler.RecyclerActivity.class, VLayoutActivity.class,
             DoublelistlinkageActivity.class};
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_recycler);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         mRecyclerList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, mTitle));

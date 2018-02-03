@@ -4,22 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sdwfqin.sample.retrofit.activity.Retrofit1Activity">
+    tools:context="com.sdwfqin.sample.retrofit.activity.RetrofitGetActivity">
 
     <Button
-        android:id="@+id/retrofit1_btn_json"
+        android:id="@+id/retrofit3_btn_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="返回Json" />
-
-    <Button
-        android:id="@+id/retrofit1_btn_str"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="返回String" />
+        android:text="异步post请求" />
 
     <TextView
-        android:id="@+id/retrofit1_tv"
+        android:id="@+id/retrofit3_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

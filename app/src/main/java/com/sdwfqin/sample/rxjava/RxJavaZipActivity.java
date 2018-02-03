@@ -23,7 +23,7 @@ public class RxJavaZipActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java4);
+        setContentView(R.layout.activity_rx_java);
 
         Observable<Integer> observable1 = Observable.create((ObservableOnSubscribe<Integer>) emitter -> {
 

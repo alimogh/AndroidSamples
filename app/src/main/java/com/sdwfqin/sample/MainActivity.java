@@ -17,7 +17,7 @@ import com.sdwfqin.sample.eventbus.EventBusActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.picture.PictureActivity;
-import com.sdwfqin.sample.popupwindow.PopupActivity;
+import com.sdwfqin.sample.popupwindow.PopupMainActivity;
 import com.sdwfqin.sample.recyclerview.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
 import com.sdwfqin.sample.rxjava.RxJavaMainActivity;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas", "AsyncTask", "Service服务",
             "RxJava", "Eventbus", "WebView交互", "拍照与相册"};
     private Class[] mClasses = new Class[]{ViewActivity.class, RecyclerActivity.class,
-            T1Activity.class, BottomSheetActivity.class, PopupActivity.class, SqliteTableActivity.class,
+            T1Activity.class, BottomSheetActivity.class, PopupMainActivity.class, SqliteTableActivity.class,
             GridViewActivity.class, HandlerActivity.class, RetrofitActivity.class,
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
             ServiceActivity.class, RxJavaMainActivity.class, EventBusActivity.class,

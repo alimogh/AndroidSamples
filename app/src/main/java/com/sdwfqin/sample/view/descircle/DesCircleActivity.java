@@ -22,7 +22,7 @@ public class DesCircleActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_z1);
+        setContentView(R.layout.activity_des_circle);
         ButterKnife.bind(this);
 
         mViewz1.setColor(Color.RED);

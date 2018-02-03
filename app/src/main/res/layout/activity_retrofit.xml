@@ -3,11 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sdwfqin.sample.retrofit.RetrofitActivity">
+    android:orientation="vertical"
+    tools:context="com.sdwfqin.sample.retrofit.activity.RetrofitActivity">
 
-    <ListView
-        android:id="@+id/retrofit_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <Button
+        android:id="@+id/retrofit1_btn_json"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回Json" />
+
+    <Button
+        android:id="@+id/retrofit1_btn_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回String" />
+
+    <TextView
+        android:id="@+id/retrofit1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

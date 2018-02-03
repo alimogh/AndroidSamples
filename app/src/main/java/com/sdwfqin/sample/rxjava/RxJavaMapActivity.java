@@ -25,7 +25,7 @@ public class RxJavaMapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java3);
+        setContentView(R.layout.activity_rx_java);
 
         // 事件转换
         rxJavaMap();

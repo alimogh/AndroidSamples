@@ -29,7 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * @author zhangqin
  */
-public class Retrofit3Activity extends AppCompatActivity {
+public class RetrofitPostActivity extends AppCompatActivity {
 
     @BindView(R.id.retrofit3_btn_post)
     Button mRetrofit3BtnPost;
@@ -42,7 +42,7 @@ public class Retrofit3Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit3);
+        setContentView(R.layout.activity_retrofit_post);
         ButterKnife.bind(this);
 
         mRetrofit = new Retrofit.Builder()

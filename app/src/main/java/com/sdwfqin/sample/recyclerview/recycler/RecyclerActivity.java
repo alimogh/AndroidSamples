@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recyclerview.recycler1;
+package com.sdwfqin.sample.recyclerview.recycler;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,13 +13,13 @@ import com.sdwfqin.sample.R;
  *
  * @author zhangqin
  */
-public class Recycler1Activity extends AppCompatActivity {
+public class RecyclerActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_recycler1);
+        setContentView(R.layout.activity_recycler);
 
         FragmentManager fm = getSupportFragmentManager();
         Fragment fragment = fm.findFragmentById(R.id.fragment_container);

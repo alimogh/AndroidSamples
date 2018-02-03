@@ -21,7 +21,7 @@ public class RxJavaSchedulersActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java2);
+        setContentView(R.layout.activity_rx_java);
 
         Observable<Integer> observable = Observable.create(emitter -> {
             LogUtils.e("Observable thread is : " + Thread.currentThread().getName());

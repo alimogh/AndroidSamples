@@ -25,7 +25,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
  *
  * @author zhangqin
  */
-public class Retrofit1Activity extends AppCompatActivity {
+public class RetrofitActivity extends AppCompatActivity {
 
     @BindView(R.id.retrofit1_tv)
     TextView mRetrofit1Tv;
@@ -36,7 +36,7 @@ public class Retrofit1Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit1);
+        setContentView(R.layout.activity_retrofit);
         ButterKnife.bind(this);
         //01:获取Retrofit对象
         mRetrofit = new Retrofit.Builder()

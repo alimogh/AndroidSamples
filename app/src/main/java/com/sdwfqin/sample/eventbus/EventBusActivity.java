@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  */
 public class EventBusActivity extends AppCompatActivity {
 
-    @BindView(R.id.eventbus_list)
+    @BindView(R.id.list)
     ListView mEventbusList;
 
     private String[] mTitle = new String[]{"入门", "StickyEvent黏性事件"};
@@ -32,7 +32,7 @@ public class EventBusActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_eventbus);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         mEventbusList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, mTitle));

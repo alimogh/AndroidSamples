@@ -28,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * @author zhangqin
  */
-public class Retrofit2Activity extends AppCompatActivity {
+public class RetrofitGetActivity extends AppCompatActivity {
 
     @BindView(R.id.retrofit2_tv)
     TextView mRetrofit2Tv;
@@ -46,7 +46,7 @@ public class Retrofit2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit2);
+        setContentView(R.layout.activity_retrofit_get);
         ButterKnife.bind(this);
 
         mRetrofit = new Retrofit.Builder()

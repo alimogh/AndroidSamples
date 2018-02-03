@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sdwfqin.sample.retrofit.activity.Retrofit2Activity">
+    tools:context="com.sdwfqin.sample.retrofit.activity.RetrofitGetActivity">
 
     <Button
         android:id="@+id/retrofit2_btn_async"

@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  */
 public class RxJavaMainActivity extends AppCompatActivity {
 
-    @BindView(R.id.rx_java_list)
+    @BindView(R.id.list)
     ListView mRxJavaList;
 
     private String[] mTitle = new String[]{"基础入门", "线程调度", "Map与FlatMap",
@@ -29,7 +29,7 @@ public class RxJavaMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         mRxJavaList.setAdapter(new ArrayAdapter<>(this, R.layout.item_list, R.id.tv_items, mTitle));

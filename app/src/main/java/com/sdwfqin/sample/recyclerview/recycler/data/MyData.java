@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.recyclerview.recycler1.data;
+package com.sdwfqin.sample.recyclerview.recycler.data;
 
 import java.util.UUID;
 

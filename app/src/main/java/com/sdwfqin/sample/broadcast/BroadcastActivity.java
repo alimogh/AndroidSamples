@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
  */
 public class BroadcastActivity extends AppCompatActivity {
 
-    @BindView(R.id.broadcast_list)
+    @BindView(R.id.list)
     ListView mBroadcastList;
 
     private BroadcastReceiver mReceiver1;
@@ -34,7 +34,7 @@ public class BroadcastActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_broadcast);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         initView();

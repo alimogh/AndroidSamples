@@ -27,7 +27,7 @@ public class RxJavaFlowableActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java5);
+        setContentView(R.layout.activity_rx_java);
 
         /**
          * Subscription.request()方法表示Subscriber要处理几个事件

@@ -28,7 +28,7 @@ import butterknife.ButterKnife;
  */
 public class ServiceActivity extends AppCompatActivity {
 
-    @BindView(R.id.service_list)
+    @BindView(R.id.list)
     ListView mServiceList;
 
     MyServiceConnection conn = null;
@@ -36,7 +36,7 @@ public class ServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         initView();

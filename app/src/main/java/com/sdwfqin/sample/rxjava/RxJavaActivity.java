@@ -23,7 +23,7 @@ public class RxJavaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rx_java1);
+        setContentView(R.layout.activity_rx_java);
 
         // 入门
         rx01();

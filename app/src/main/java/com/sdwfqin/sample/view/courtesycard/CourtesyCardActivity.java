@@ -27,7 +27,7 @@ public class CourtesyCardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_z2);
+        setContentView(R.layout.activity_courtesy_card);
         ButterKnife.bind(this);
 
         mViewz2Seek.setProgress(mViewz2Main.getRadius());
