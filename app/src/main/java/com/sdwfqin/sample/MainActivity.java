@@ -20,7 +20,7 @@ import com.sdwfqin.sample.picture.PictureActivity;
 import com.sdwfqin.sample.popupwindow.PopupActivity;
 import com.sdwfqin.sample.recyclerview.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
-import com.sdwfqin.sample.rxjava.RxJavaActivity;
+import com.sdwfqin.sample.rxjava.RxJavaMainActivity;
 import com.sdwfqin.sample.service.ServiceActivity;
 import com.sdwfqin.sample.spannablestring.SpannableActivity;
 import com.sdwfqin.sample.sqlitetable.SqliteTableActivity;
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             T1Activity.class, BottomSheetActivity.class, PopupActivity.class, SqliteTableActivity.class,
             GridViewActivity.class, HandlerActivity.class, RetrofitActivity.class,
             BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
-            ServiceActivity.class, RxJavaActivity.class, EventBusActivity.class,
+            ServiceActivity.class, RxJavaMainActivity.class, EventBusActivity.class,
             WebViewActivity.class, PictureActivity.class};
 
     @Override

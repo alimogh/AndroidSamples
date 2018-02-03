@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sdwfqin.sample.rxjava.rxjava5.RxJava5Activity">
+    tools:context="com.sdwfqin.sample.rxjava.RxJavaFlowableActivity">
 
 </android.support.constraint.ConstraintLayout>

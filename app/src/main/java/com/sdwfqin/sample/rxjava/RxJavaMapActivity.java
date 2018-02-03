@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.rxjava.rxjava3;
+package com.sdwfqin.sample.rxjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  *
  * @author zhangqin
  */
-public class RxJava3Activity extends AppCompatActivity {
+public class RxJavaMapActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

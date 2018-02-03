@@ -73,12 +73,12 @@
         <activity android:name=".canvas.CanvasActivity"/>
         <activity android:name=".asynctask.AsyncTaskActivity"/>
         <activity android:name=".service.ServiceActivity"/>
+        <activity android:name=".rxjava.RxJavaMainActivity"/>
         <activity android:name=".rxjava.RxJavaActivity"/>
-        <activity android:name=".rxjava.rxjava1.RxJava1Activity"/>
-        <activity android:name=".rxjava.rxjava2.RxJava2Activity"/>
-        <activity android:name=".rxjava.rxjava3.RxJava3Activity"/>
-        <activity android:name=".rxjava.rxjava4.RxJava4Activity"/>
-        <activity android:name=".rxjava.rxjava5.RxJava5Activity"/>
+        <activity android:name=".rxjava.RxJavaSchedulersActivity"/>
+        <activity android:name=".rxjava.RxJavaMapActivity"/>
+        <activity android:name=".rxjava.RxJavaZipActivity"/>
+        <activity android:name=".rxjava.RxJavaFlowableActivity"/>
 
         <service android:name=".service.service.NotInteractiveService"/>
         <service android:name=".service.service.InteractiveService"/>

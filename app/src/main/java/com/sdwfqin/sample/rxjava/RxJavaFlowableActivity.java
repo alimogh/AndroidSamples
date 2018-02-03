@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.rxjava.rxjava5;
+package com.sdwfqin.sample.rxjava;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +20,7 @@ import io.reactivex.schedulers.Schedulers;
  *
  * @author zhangqin
  */
-public class RxJava5Activity extends AppCompatActivity {
+public class RxJavaFlowableActivity extends AppCompatActivity {
 
     private Subscription mSubscription;
 
