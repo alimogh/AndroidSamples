@@ -60,7 +60,7 @@ public class RetrofitGetActivity extends AppCompatActivity {
      *
      * @param s
      */
-    public void setText(String s) {
+    private void setText(String s) {
         try {
             mRetrofit2Tv.setText(s);
         } catch (Exception e) {
@@ -117,7 +117,7 @@ public class RetrofitGetActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    class MyHandler extends Handler {
+    static class MyHandler extends Handler {
 
         private WeakReference<RetrofitGetActivity> mActivity;
 
@@ -128,7 +128,8 @@ public class RetrofitGetActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            setText(msg.getData().getString("value"));
+            RetrofitGetActivity activity = mActivity.get();
+            activity.setText(msg.getData().getString("value"));
         }
     }
 }

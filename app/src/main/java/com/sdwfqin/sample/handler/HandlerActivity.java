@@ -50,6 +50,7 @@ public class HandlerActivity extends AppCompatActivity {
 
         @Override
         public void handleMessage(Message msg) {
+            HandlerActivity activity = mActivity.get();
             switch (msg.what) {
                 case 1:
                     Log.e(TAG, "handlerA:case:1");
