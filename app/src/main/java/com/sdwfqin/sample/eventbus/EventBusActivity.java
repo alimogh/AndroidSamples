@@ -7,8 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.sdwfqin.sample.R;
-import com.sdwfqin.sample.eventbus.eventbus1.EventBus1Activity;
-import com.sdwfqin.sample.eventbus.eventbus2.EventBus2Activity;
+import com.sdwfqin.sample.eventbus.eventbussticky.EventBusStickyActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -28,7 +27,7 @@ public class EventBusActivity extends AppCompatActivity {
     ListView mEventbusList;
 
     private String[] mTitle = new String[]{"入门", "StickyEvent黏性事件"};
-    private Class[] mClasses = new Class[]{EventBus1Activity.class, EventBus2Activity.class};
+    private Class[] mClasses = new Class[]{com.sdwfqin.sample.eventbus.eventbus.EventBusActivity.class, EventBusStickyActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

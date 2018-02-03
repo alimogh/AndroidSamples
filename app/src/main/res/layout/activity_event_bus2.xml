@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.sdwfqin.sample.eventbus.eventbus2.EventBus2Activity">
+    tools:context="com.sdwfqin.sample.eventbus.eventbussticky.EventBusStickyActivity">
 
     <Button
         android:id="@+id/btn_event2_send"

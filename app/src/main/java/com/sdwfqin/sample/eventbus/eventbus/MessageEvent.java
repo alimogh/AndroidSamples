@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.eventbus.eventbus1;
+package com.sdwfqin.sample.eventbus.eventbus;
 
 /**
  * 定义 MessageEvent 对象

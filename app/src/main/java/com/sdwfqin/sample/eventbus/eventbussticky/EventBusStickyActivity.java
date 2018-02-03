@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.eventbus.eventbus2;
+package com.sdwfqin.sample.eventbus.eventbussticky;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +23,7 @@ import butterknife.ButterKnife;
  *
  * @author zhangqin
  */
-public class EventBus2Activity extends AppCompatActivity {
+public class EventBusStickyActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_event2_send)
     Button mBtnEvent2Send;

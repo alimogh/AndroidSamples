@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.eventbus.eventbus1;
+package com.sdwfqin.sample.eventbus.eventbus;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +18,7 @@ import java.util.UUID;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class EventBus1Activity extends AppCompatActivity {
+public class EventBusActivity extends AppCompatActivity {
 
     @BindView(R.id.btn_event1_send)
     Button mBtnEvent1Send;
@@ -27,7 +27,7 @@ public class EventBus1Activity extends AppCompatActivity {
     @BindView(R.id.tv_event1_msg)
     TextView tvEvent1Msg;
 
-    private static final String TAG = "EventBus1Activity";
+    private static final String TAG = "EventBusActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
