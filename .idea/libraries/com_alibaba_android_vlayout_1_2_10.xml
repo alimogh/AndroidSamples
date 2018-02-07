@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="com.alibaba.android:vlayout-1.2.10">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.10.aar/0fa5c005f4533c2a773b7208812350a5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.10.aar/0fa5c005f4533c2a773b7208812350a5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.10.aar/34b6560ba50abf7671b6bdf5280241a2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/vlayout-1.2.10.aar/34b6560ba50abf7671b6bdf5280241a2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

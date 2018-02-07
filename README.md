@@ -4,6 +4,9 @@
 # 详细解释请移步到我的博客：http://www.sdwfqin.com
 # 本项目当前共有3个Module
 
+## Apk下载
+http://fir.im/tn3d
+
 1. app：这是sample大合集，内有多个小例子
 
     ```
