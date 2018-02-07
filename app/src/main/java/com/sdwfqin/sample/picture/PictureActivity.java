@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.blankj.utilcode.util.FileUtils;
 import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
@@ -153,6 +154,14 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
         // 是否让用户调整范围(默认false)，如果开启，可能会造成剪切的图片的长宽比不是设定的
         // 如果不开启，用户不能拖动选框，只能缩放图片
         options.setFreeStyleCropEnabled(true);
+        // 设置图片压缩质量
+        options.setCompressionQuality(100);
+        // 圆
+        options.setCircleDimmedLayer(true);
+        // 不显示网格线
+        options.setShowCropGrid(false);
+
+        FileUtils.createOrExistsDir(Config.SAVE_REAL_PATH);
 
         // 设置源uri及目标uri
         UCrop.of(uri, Uri.fromFile(new File(Config.SAVE_REAL_PATH, System.currentTimeMillis() + ".jpg")))
