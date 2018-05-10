@@ -10,6 +10,7 @@ import android.widget.ListView;
 import com.sdwfqin.sample.R;
 import com.sdwfqin.sample.view.bottomzoom.BottomZoomActivity;
 import com.sdwfqin.sample.view.courtesycard.CourtesyCardActivity;
+import com.sdwfqin.sample.view.delbtn.DeleteButtonActivity;
 import com.sdwfqin.sample.view.descircle.DesCircleActivity;
 import com.sdwfqin.sample.view.gesturedetector.GestureDetectorActivity;
 import com.sdwfqin.sample.view.motionslop.MeTsActivity;
@@ -37,11 +38,12 @@ public class ViewActivity extends AppCompatActivity {
 
     private String[] mStrings = new String[]{"View的位置参数", "MotionEvent与TouchSlop", "GestureDetector", "Scroller",
             "View触摸事件分发", "按钮放大（属性动画）", "自定义View1圆", "自定义View2凹凸边缘", "SurfaceView",
-            "SurfaceView画板", "自定义输入密码", "网易云听歌识曲"};
+            "SurfaceView画板", "自定义输入密码", "网易云听歌识曲", "长按删除按钮"};
     private Class[] mClasses = new Class[]{ViewPositionActivity.class, MeTsActivity.class,
             GestureDetectorActivity.class, ScrollerActivity.class, ViewEventActivity.class,
             BottomZoomActivity.class, DesCircleActivity.class, CourtesyCardActivity.class, SurfaceActivity.class,
-            SurfacePaletteActivity.class, PayPwdInputActivity.class, RippleAnimationActivity.class};
+            SurfacePaletteActivity.class, PayPwdInputActivity.class,
+            RippleAnimationActivity.class, DeleteButtonActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
