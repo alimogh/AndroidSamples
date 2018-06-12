@@ -6,10 +6,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.support.v7.widget.AppCompatEditText;
 import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 import com.blankj.utilcode.util.LogUtils;
 import com.sdwfqin.sample.R;
@@ -19,7 +19,7 @@ import com.sdwfqin.sample.R;
  *
  * @author zhangqin
  */
-public class PayPwdInputView extends EditText {
+public class PayPwdInputView extends AppCompatEditText {
 
     private Context mContext;
 
