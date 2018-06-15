@@ -41,8 +41,6 @@ http://fir.im/tn3d
         |- 之前一个比赛的项目里摘出来的哈哈
     |- Handler
         |- Handler与Timer
-    |- Dagger2
-        |- 简单用法，没有全局单例
     |- Retrofit
         |- get
         |- post
