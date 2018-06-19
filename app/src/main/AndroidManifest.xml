@@ -122,6 +122,8 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".view.delbtn.DeleteButtonActivity">
         </activity>
+        <activity android:name=".notification.NotificationActivity">
+        </activity>
     </application>
 
 </manifest>

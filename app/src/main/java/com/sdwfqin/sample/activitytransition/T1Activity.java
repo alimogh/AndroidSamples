@@ -21,14 +21,14 @@ import butterknife.ButterKnife;
  */
 public class T1Activity extends AppCompatActivity {
 
-    @BindView(R.id.anim_list)
+    @BindView(R.id.list)
     ListView mAnimList;
     private Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_t1);
+        setContentView(R.layout.activity_list);
         ButterKnife.bind(this);
 
         mContext = this;

@@ -16,6 +16,7 @@ import com.sdwfqin.sample.canvas.CanvasActivity;
 import com.sdwfqin.sample.eventbus.EventBusActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
+import com.sdwfqin.sample.notification.NotificationActivity;
 import com.sdwfqin.sample.picture.PictureActivity;
 import com.sdwfqin.sample.popupwindow.PopupMainActivity;
 import com.sdwfqin.sample.recyclerview.RecyclerActivity;
@@ -47,21 +48,49 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
     private final int RESULT_CODE_1 = 100;
     private long exitTime = 0;
 
-    private String[] mTitle = new String[]{"View", "Recycler列表", "Activity跳转动画",
-            "BottomSheet", "PopupWindow", "SQLite数据库和动态表格", "GridView", "Handler",
-            "Retrofit", "Broadcast广播", "SpannableString富文本", "Canvas", "AsyncTask", "Service服务",
-            "RxJava", "Eventbus", "WebView交互", "拍照与相册"};
-    private Class[] mClasses = new Class[]{ViewActivity.class, RecyclerActivity.class,
-            T1Activity.class, BottomSheetActivity.class, PopupMainActivity.class, SqliteTableActivity.class,
-            GridViewActivity.class, HandlerActivity.class, RetrofitActivity.class,
-            BroadcastActivity.class, SpannableActivity.class, CanvasActivity.class, AsyncTaskActivity.class,
-            ServiceActivity.class, RxJavaMainActivity.class, EventBusActivity.class,
-            WebViewActivity.class, PictureActivity.class};
+    private String[] mTitle = new String[]{"View",
+            "Notification",
+            "Recycler列表",
+            "Activity跳转动画",
+            "BottomSheet",
+            "PopupWindow",
+            "SQLite数据库和动态表格",
+            "GridView",
+            "Handler",
+            "Retrofit",
+            "Broadcast广播",
+            "SpannableString富文本",
+            "Canvas",
+            "AsyncTask",
+            "Service服务",
+            "RxJava",
+            "Eventbus",
+            "WebView交互",
+            "拍照与相册"};
+    private Class[] mClasses = new Class[]{ViewActivity.class,
+            NotificationActivity.class,
+            RecyclerActivity.class,
+            T1Activity.class,
+            BottomSheetActivity.class,
+            PopupMainActivity.class,
+            SqliteTableActivity.class,
+            GridViewActivity.class,
+            HandlerActivity.class,
+            RetrofitActivity.class,
+            BroadcastActivity.class,
+            SpannableActivity.class,
+            CanvasActivity.class,
+            AsyncTaskActivity.class,
+            ServiceActivity.class,
+            RxJavaMainActivity.class,
+            EventBusActivity.class,
+            WebViewActivity.class,
+            PictureActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_list);
         ButterKnife.bind(this);
 
         list.setAdapter(new ArrayAdapter<String>(this, R.layout.item_list, R.id.tv_items, mTitle));
