@@ -49,6 +49,8 @@ http://fir.im/tn3d
         |- 普通广播
         |- 有序广播
         |- 本地广播
+    |- Notification
+        |- 消息通知（兼容8.0）
     |- SpannableString
         |- 富文本字符串
     |- Canvas
