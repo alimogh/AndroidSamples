@@ -1,0 +1,32 @@
+ext {
+    // Sdk and tools
+    minSdkVersion = 17
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+
+    // App dependencies
+    support = '27.1.1'
+    constraint = '1.1.2'
+    vlayout = '1.2.15'
+    butterknifeVersion = '8.8.1'
+    daggerVersion = '2.16'
+    eventbus = '3.1.1'
+    greendao = '3.2.2'
+    brvah = '2.9.40'
+    SwipeDelMenuLayout = 'V1.2.5'
+    glide = '4.7.1'
+    banner = '1.4.10'
+    matisse = '0.4.3'
+    easypermissions = '1.2.0'
+    utilcode = '1.16.4'
+    ucrop = '2.2.1'
+
+    // squareup
+    retrofitVersion = '2.4.0'
+    okhttpVersion = '3.10.0'
+
+    // rxjava
+    rxjavaVersion = '2.1.14'
+    rxandroidVersion = '2.0.2'
+}
