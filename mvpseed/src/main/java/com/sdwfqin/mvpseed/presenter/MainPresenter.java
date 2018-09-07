@@ -32,6 +32,8 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
                 .subscribe(testBean -> {
                     mView.showTextView(testBean);
                     LogUtils.i(testBean.toString());
+                }, throwable -> {
+                    LogUtils.e(throwable.getMessage());
                 }));
     }
 }
