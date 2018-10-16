@@ -60,6 +60,7 @@ public class FingerprintActivity extends AppCompatActivity {
      * 管理系统提供的生物识别对话框的类（Android P）
      */
     private BiometricPrompt mBiometricPrompt;
+
     private Signature mSignature;
     private String mToBeSignedMessage;
 
@@ -67,7 +68,6 @@ public class FingerprintActivity extends AppCompatActivity {
      * 提供取消正在进行的操作的功能
      */
     private CancellationSignal mCancellationSignal;
-    private android.support.v4.os.CancellationSignal mCancellationSignalV4;
     /**
      * 识别回调（Android P）
      */
@@ -143,7 +143,6 @@ public class FingerprintActivity extends AppCompatActivity {
                         getMainExecutor(),
                         (dialogInterface, i) -> {
                             LogUtils.i("取消");
-                            mCancellationSignal.cancel();
                         })
                 .build();
 
