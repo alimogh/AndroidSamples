@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
+import com.sdwfqin.sample.biometrics.BiometricsMainActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
@@ -66,7 +67,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             "RxJava",
             "Eventbus",
             "WebView交互",
-            "拍照与相册"};
+            "拍照与相册",
+            "生物识别"};
     private Class[] mClasses = new Class[]{ViewActivity.class,
             NotificationActivity.class,
             RecyclerActivity.class,
@@ -85,7 +87,8 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             RxJavaMainActivity.class,
             EventBusActivity.class,
             WebViewActivity.class,
-            PictureActivity.class};
+            PictureActivity.class,
+            BiometricsMainActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
