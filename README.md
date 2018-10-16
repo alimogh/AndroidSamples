@@ -78,6 +78,8 @@ http://fir.im/tn3d
         |- UCrop剪切图片
     |- 运行时权限
         |- EasyPermissions
+    |- 生物识别
+        |- FingerprintActivity 指纹
     ```
 
 2. mvpseed：这是使用Dagger2+Rxjava2+Retrofit2+mvp架构写的一个小例子
