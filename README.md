@@ -1,7 +1,7 @@
 # 平时练习的例子，持续更新中，包含但不限于以下内容
 # Kotlin版本请移步：https://github.com/sdwfqin/KotlinAndroidSamples
 # 开发环境：Android Studio 3.0
-# 详细解释请移步到我的博客：http://www.sdwfqin.com
+# 详细解释请移步到我的博客：https://sdwfqin.github.io
 # 本项目当前共有3个Module
 
 ## Apk下载
