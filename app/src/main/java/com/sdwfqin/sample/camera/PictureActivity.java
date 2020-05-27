@@ -1,4 +1,4 @@
-package com.sdwfqin.sample.picture;
+package com.sdwfqin.sample.camera;
 
 import android.Manifest;
 import android.content.ActivityNotFoundException;
@@ -69,7 +69,7 @@ public class PictureActivity extends AppCompatActivity implements EasyPermission
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camera);
+        setContentView(R.layout.activity_picture);
         ButterKnife.bind(this);
 
         // 判断权限

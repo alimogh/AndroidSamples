@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSamples.iml" filepath="$PROJECT_DIR$/AndroidSamples.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/greendaomvp/greendaomvp.iml" filepath="$PROJECT_DIR$/greendaomvp/greendaomvp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mvpseed/mvpseed.iml" filepath="$PROJECT_DIR$/mvpseed/mvpseed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AndroidSamples.iml" filepath="$PROJECT_DIR$/AndroidSamples.iml" group="AndroidSamples" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="AndroidSamples/app" />
+      <module fileurl="file://$PROJECT_DIR$/greendaomvp/greendaomvp.iml" filepath="$PROJECT_DIR$/greendaomvp/greendaomvp.iml" group="AndroidSamples/greendaomvp" />
+      <module fileurl="file://$PROJECT_DIR$/mvpseed/mvpseed.iml" filepath="$PROJECT_DIR$/mvpseed/mvpseed.iml" group="AndroidSamples/mvpseed" />
     </modules>
   </component>
 </project>

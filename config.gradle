@@ -19,8 +19,8 @@ ext {
     banner = '1.4.10'
     matisse = '0.5.2-beta3'
     easypermissions = '2.0.0'
-    utilcode = '1.20.4'
-    ucrop = '2.2.1'
+    utilcode = '1.22.0'
+    ucrop = '2.2.2'
 
     // squareup
     retrofitVersion = '2.4.0'

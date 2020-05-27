@@ -8,17 +8,18 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.sdwfqin.sample.camera.CameraMainActivity;
 import com.sdwfqin.sample.activitytransition.T1Activity;
 import com.sdwfqin.sample.asynctask.AsyncTaskActivity;
 import com.sdwfqin.sample.biometrics.BiometricsMainActivity;
 import com.sdwfqin.sample.bottomsheet.BottomSheetActivity;
 import com.sdwfqin.sample.broadcast.BroadcastActivity;
 import com.sdwfqin.sample.canvas.CanvasActivity;
+import com.sdwfqin.sample.drag.DragMainActivity;
 import com.sdwfqin.sample.eventbus.EventBusActivity;
 import com.sdwfqin.sample.gridview.GridViewActivity;
 import com.sdwfqin.sample.handler.HandlerActivity;
 import com.sdwfqin.sample.notification.NotificationActivity;
-import com.sdwfqin.sample.picture.PictureActivity;
 import com.sdwfqin.sample.popupwindow.PopupMainActivity;
 import com.sdwfqin.sample.recyclerview.RecyclerActivity;
 import com.sdwfqin.sample.retrofit.RetrofitActivity;
@@ -67,8 +68,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             "RxJava",
             "Eventbus",
             "WebView交互",
-            "拍照与相册",
-            "生物识别"};
+            "Camera",
+            "生物识别",
+            "ViewDragHelper"};
     private Class[] mClasses = new Class[]{ViewActivity.class,
             NotificationActivity.class,
             RecyclerActivity.class,
@@ -87,8 +89,9 @@ public class MainActivity extends AppCompatActivity implements EasyPermissions.P
             RxJavaMainActivity.class,
             EventBusActivity.class,
             WebViewActivity.class,
-            PictureActivity.class,
-            BiometricsMainActivity.class};
+            CameraMainActivity.class,
+            BiometricsMainActivity.class,
+            DragMainActivity.class};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

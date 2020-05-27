@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".drag.Draw0Activity"></activity>
+        <activity android:name=".drag.DragMainActivity" />
+
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.sdwfqin.sample.fileprovider"
@@ -38,8 +41,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- 指定屏幕横屏显示 -->
+        </activity> <!-- 指定屏幕横屏显示 -->
         <activity
             android:name=".gridview.GridViewActivity"
             android:screenOrientation="landscape" />
@@ -88,14 +90,12 @@
         <service android:name=".service.service.NotInteractiveService" />
         <service android:name=".service.service.InteractiveService" />
         <service android:name=".service.service.StageService" />
-        <service android:name=".service.service.MyIntentService" />
-        <!-- 普通广播 -->
+        <service android:name=".service.service.MyIntentService" /> <!-- 普通广播 -->
         <receiver android:name=".broadcast.broadcast.OrdinaryBroadcastReceiver">
             <intent-filter>
                 <action android:name="com.sdwfqin.broadcastdemo" />
             </intent-filter>
-        </receiver>
-        <!-- 有序广播 -->
+        </receiver> <!-- 有序广播 -->
         <receiver android:name=".broadcast.broadcast.OrderBroadcastReceiver$HighPriority">
             <intent-filter android:priority="300">
                 <action android:name="com.sdwfqin.broadcastdemo2" />
@@ -119,15 +119,17 @@
         <activity android:name=".recyclerview.vlayout.VLayoutActivity" />
         <activity android:name=".recyclerview.doublelistlinkage.DoublelistlinkageActivity" />
         <activity android:name=".view.rippleanimation.RippleAnimationActivity" />
-        <activity android:name=".picture.PictureActivity" />
-        <activity
-            android:name="com.yalantis.ucrop.UCropActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".view.delbtn.DeleteButtonActivity" />
         <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".biometrics.BiometricsMainActivity" />
         <activity android:name=".biometrics.fingerprint.FingerprintActivity" />
+        <activity android:name=".camera.CameraMainActivity" />
+        <activity android:name=".camera.PictureActivity" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".camera.CameraActivity" />
     </application>
 
 </manifest>
